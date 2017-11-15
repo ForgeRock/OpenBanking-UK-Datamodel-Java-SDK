@@ -20,8 +20,8 @@ package uk.org.openbanking.datamodel.account;
 import java.util.Objects;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import io.swagger.annotations.ApiModel;
@@ -38,6 +38,7 @@ public class OBReadRequest1 {
   private OBReadData1 data = null;
 
   @JsonProperty("Risk")
+  @JsonInclude(JsonInclude.Include.NON_NULL)
   private OBRisk2 risk = null;
 
   public OBReadRequest1 data(OBReadData1 data) {
@@ -71,7 +72,6 @@ public class OBReadRequest1 {
    * @return risk
   **/
   @ApiModelProperty(required = true, value = "The Risk payload is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Account Info.")
-  @NotNull
 
 
   public OBRisk2 getRisk() {
