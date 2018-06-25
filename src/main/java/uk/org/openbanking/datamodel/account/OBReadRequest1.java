@@ -20,6 +20,7 @@ package uk.org.openbanking.datamodel.account;
 import java.util.Objects;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -53,7 +54,7 @@ public class OBReadRequest1 {
   @ApiModelProperty(value = "")
 
   @Valid
-
+  @NotNull
   public OBReadData1 getData() {
     return data;
   }
