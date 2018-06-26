@@ -42,10 +42,10 @@ public class OBBeneficiary2   {
   private String reference = null;
 
   @JsonProperty("CreditorAgent")
-  private OBBeneficiary2CreditorAgent creditorAgent = null;
+  private OBBranchAndFinancialInstitutionIdentification3 creditorAgent = null;
 
   @JsonProperty("CreditorAccount")
-  private OBBeneficiary2CreditorAccount creditorAccount = null;
+  private OBCashAccount1 creditorAccount = null;
 
   public OBBeneficiary2 accountId(String accountId) {
     this.accountId = accountId;
@@ -107,7 +107,7 @@ public class OBBeneficiary2   {
     this.reference = reference;
   }
 
-  public OBBeneficiary2 creditorAgent(OBBeneficiary2CreditorAgent creditorAgent) {
+  public OBBeneficiary2 creditorAgent(OBBranchAndFinancialInstitutionIdentification3 creditorAgent) {
     this.creditorAgent = creditorAgent;
     return this;
   }
@@ -120,15 +120,15 @@ public class OBBeneficiary2   {
 
   @Valid
 
-  public OBBeneficiary2CreditorAgent getCreditorAgent() {
+  public OBBranchAndFinancialInstitutionIdentification3 getCreditorAgent() {
     return creditorAgent;
   }
 
-  public void setCreditorAgent(OBBeneficiary2CreditorAgent creditorAgent) {
+  public void setCreditorAgent(OBBranchAndFinancialInstitutionIdentification3 creditorAgent) {
     this.creditorAgent = creditorAgent;
   }
 
-  public OBBeneficiary2 creditorAccount(OBBeneficiary2CreditorAccount creditorAccount) {
+  public OBBeneficiary2 creditorAccount(OBCashAccount1 creditorAccount) {
     this.creditorAccount = creditorAccount;
     return this;
   }
@@ -141,11 +141,11 @@ public class OBBeneficiary2   {
 
   @Valid
 
-  public OBBeneficiary2CreditorAccount getCreditorAccount() {
+  public OBCashAccount1 getCreditorAccount() {
     return creditorAccount;
   }
 
-  public void setCreditorAccount(OBBeneficiary2CreditorAccount creditorAccount) {
+  public void setCreditorAccount(OBCashAccount1 creditorAccount) {
     this.creditorAccount = creditorAccount;
   }
 
