@@ -53,11 +53,11 @@ public class OBProduct2   {
   @JsonProperty("OtherProductType")
   private OBOtherProductType1 otherProductType = null;
 
-  @JsonProperty("PCA")
-  private OBPCAData1 PCA = null;
-
   @JsonProperty("BCA")
   private OBBCAData1 BCA = null;
+
+  @JsonProperty("PCA")
+  private OBPCAData1 PCA = null;
 
   public OBProduct2 productName(String productName) {
     this.productName = productName;

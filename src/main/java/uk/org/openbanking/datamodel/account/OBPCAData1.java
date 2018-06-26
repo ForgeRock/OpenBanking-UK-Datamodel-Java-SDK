@@ -35,13 +35,13 @@ public class OBPCAData1   {
   private OBPCAProductDetails1 productDetails = null;
 
   @JsonProperty("CreditInterest")
-  private CreditInterest creditInterest = null;
+  private OBCreditInterest1 creditInterest = null;
 
   @JsonProperty("Overdraft")
-  private Overdraft overdraft = null;
+  private OBOverdraft1 overdraft = null;
 
   @JsonProperty("OtherFeesCharges")
-  private OtherFeesCharges otherFeesCharges = null;
+  private OBOtherFeesAndCharges1 otherFeesCharges = null;
 
   public OBPCAData1 productDetails(OBPCAProductDetails1 productDetails) {
     this.productDetails = productDetails;
@@ -64,7 +64,7 @@ public class OBPCAData1   {
     this.productDetails = productDetails;
   }
 
-  public OBPCAData1 creditInterest(CreditInterest creditInterest) {
+  public OBPCAData1 creditInterest(OBCreditInterest1 creditInterest) {
     this.creditInterest = creditInterest;
     return this;
   }
@@ -77,15 +77,15 @@ public class OBPCAData1   {
 
   @Valid
 
-  public CreditInterest getCreditInterest() {
+  public OBCreditInterest1 getCreditInterest() {
     return creditInterest;
   }
 
-  public void setCreditInterest(CreditInterest creditInterest) {
+  public void setCreditInterest(OBCreditInterest1 creditInterest) {
     this.creditInterest = creditInterest;
   }
 
-  public OBPCAData1 overdraft(Overdraft overdraft) {
+  public OBPCAData1 overdraft(OBOverdraft1 overdraft) {
     this.overdraft = overdraft;
     return this;
   }
@@ -98,15 +98,15 @@ public class OBPCAData1   {
 
   @Valid
 
-  public Overdraft getOverdraft() {
+  public OBOverdraft1 getOverdraft() {
     return overdraft;
   }
 
-  public void setOverdraft(Overdraft overdraft) {
+  public void setOverdraft(OBOverdraft1 overdraft) {
     this.overdraft = overdraft;
   }
 
-  public OBPCAData1 otherFeesCharges(OtherFeesCharges otherFeesCharges) {
+  public OBPCAData1 otherFeesCharges(OBOtherFeesAndCharges1 otherFeesCharges) {
     this.otherFeesCharges = otherFeesCharges;
     return this;
   }
@@ -119,11 +119,11 @@ public class OBPCAData1   {
 
   @Valid
 
-  public OtherFeesCharges getOtherFeesCharges() {
+  public OBOtherFeesAndCharges1 getOtherFeesCharges() {
     return otherFeesCharges;
   }
 
-  public void setOtherFeesCharges(OtherFeesCharges otherFeesCharges) {
+  public void setOtherFeesCharges(OBOtherFeesAndCharges1 otherFeesCharges) {
     this.otherFeesCharges = otherFeesCharges;
   }
 

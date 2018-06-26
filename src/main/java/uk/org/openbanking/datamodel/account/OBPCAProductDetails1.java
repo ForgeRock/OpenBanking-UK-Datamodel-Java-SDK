@@ -36,64 +36,10 @@ import java.util.Objects;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
 public class OBPCAProductDetails1 {
-  /**
-   * Market segmentation is a marketing term referring to the aggregating of prospective buyers into groups, or segments, that have common needs and respond similarly to a marketing action. Market segmentation enables companies to target different categories of consumers who perceive the full value of certain products and services differently from one another.  Read more: Market Segmentation http://www.investopedia.com/terms/m/marketsegmentation.asp#ixzz4gfEEalTd  With respect to PCA products, they are segmented in relation to different markets that they wish to focus on. 
-   */
-  public enum SegmentEnum {
-    BASIC("Basic"),
-    
-    BENEFITANDREWARD("BenefitAndReward"),
-    
-    CREDITINTEREST("CreditInterest"),
-    
-    CASHBACK("Cashback"),
-    
-    GENERAL("General"),
-    
-    GRADUATE("Graduate"),
-    
-    OTHER("Other"),
-    
-    OVERDRAFT("Overdraft"),
-    
-    PACKAGED("Packaged"),
-    
-    PREMIUM("Premium"),
-    
-    REWARD("Reward"),
-    
-    STUDENT("Student"),
-    
-    YOUNGADULT("YoungAdult"),
-    
-    YOUTH("Youth");
-
-    private String value;
-
-    SegmentEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static SegmentEnum fromValue(String text) {
-      for (SegmentEnum b : SegmentEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
 
   @JsonProperty("Segment")
   @Valid
-  private List<SegmentEnum> segment = null;
+  private List<OBPCAProductSegment1Code> segment = null;
 
   @JsonProperty("MonthlyMaximumCharge")
   private String monthlyMaximumCharge = null;
@@ -102,14 +48,14 @@ public class OBPCAProductDetails1 {
   @Valid
   private List<String> notes = null;
 
-  public OBPCAProductDetails1 segment(List<SegmentEnum> segment) {
+  public OBPCAProductDetails1 segment(List<OBPCAProductSegment1Code> segment) {
     this.segment = segment;
     return this;
   }
 
-  public OBPCAProductDetails1 addSegmentItem(SegmentEnum segmentItem) {
+  public OBPCAProductDetails1 addSegmentItem(OBPCAProductSegment1Code segmentItem) {
     if (this.segment == null) {
-      this.segment = new ArrayList<SegmentEnum>();
+      this.segment = new ArrayList<OBPCAProductSegment1Code>();
     }
     this.segment.add(segmentItem);
     return this;
@@ -122,11 +68,11 @@ public class OBPCAProductDetails1 {
   @ApiModelProperty(value = "Market segmentation is a marketing term referring to the aggregating of prospective buyers into groups, or segments, that have common needs and respond similarly to a marketing action. Market segmentation enables companies to target different categories of consumers who perceive the full value of certain products and services differently from one another.  Read more: Market Segmentation http://www.investopedia.com/terms/m/marketsegmentation.asp#ixzz4gfEEalTd  With respect to PCA products, they are segmented in relation to different markets that they wish to focus on. ")
 
 
-  public List<SegmentEnum> getSegment() {
+  public List<OBPCAProductSegment1Code> getSegment() {
     return segment;
   }
 
-  public void setSegment(List<SegmentEnum> segment) {
+  public void setSegment(List<OBPCAProductSegment1Code> segment) {
     this.segment = segment;
   }
 
