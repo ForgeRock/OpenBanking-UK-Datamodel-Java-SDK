@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -35,12 +36,12 @@ import java.util.Objects;
 
 public class OBStatementBenefit1   {
   @JsonProperty("Amount")
-  private OBStatementBenefit1Amount amount = null;
+  private ActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("Type")
   private OBExternalStatementBenefitType1Code type = null;
 
-  public OBStatementBenefit1 amount(OBStatementBenefit1Amount amount) {
+  public OBStatementBenefit1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -54,11 +55,11 @@ public class OBStatementBenefit1   {
 
   @Valid
 
-  public OBStatementBenefit1Amount getAmount() {
+  public ActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(OBStatementBenefit1Amount amount) {
+  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 

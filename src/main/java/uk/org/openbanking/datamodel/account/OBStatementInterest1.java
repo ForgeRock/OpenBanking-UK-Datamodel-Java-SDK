@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -37,83 +38,15 @@ import java.util.Objects;
 
 public class OBStatementInterest1   {
   @JsonProperty("Amount")
-  private OBStatement1Amount2 amount = null;
-
-  /**
-   * Indicates whether the amount is a credit or a debit.  Usage: A zero amount is considered to be a credit amount.
-   */
-  public enum CreditDebitIndicatorEnum {
-    CREDIT("Credit"),
-    
-    DEBIT("Debit");
-
-    private String value;
-
-    CreditDebitIndicatorEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static CreditDebitIndicatorEnum fromValue(String text) {
-      for (CreditDebitIndicatorEnum b : CreditDebitIndicatorEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private ActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("CreditDebitIndicator")
-  private CreditDebitIndicatorEnum creditDebitIndicator = null;
-
-  /**
-   * Interest amount type, in a coded form.
-   */
-  public enum TypeEnum {
-    BALANCETRANSFER("BalanceTransfer"),
-    
-    CASH("Cash"),
-    
-    ESTIMATEDNEXT("EstimatedNext"),
-    
-    PURCHASE("Purchase"),
-    
-    TOTAL("Total");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TypeEnum fromValue(String text) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBCreditDebitCode creditDebitIndicator = null;
 
   @JsonProperty("Type")
-  private TypeEnum type = null;
+  private OBExternalStatementInterestType1Code type = null;
 
-  public OBStatementInterest1 amount(OBStatement1Amount2 amount) {
+  public OBStatementInterest1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -127,15 +60,15 @@ public class OBStatementInterest1   {
 
   @Valid
 
-  public OBStatement1Amount2 getAmount() {
+  public ActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(OBStatement1Amount2 amount) {
+  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 
-  public OBStatementInterest1 creditDebitIndicator(CreditDebitIndicatorEnum creditDebitIndicator) {
+  public OBStatementInterest1 creditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
     this.creditDebitIndicator = creditDebitIndicator;
     return this;
   }
@@ -148,15 +81,15 @@ public class OBStatementInterest1   {
   @NotNull
 
 
-  public CreditDebitIndicatorEnum getCreditDebitIndicator() {
+  public OBCreditDebitCode getCreditDebitIndicator() {
     return creditDebitIndicator;
   }
 
-  public void setCreditDebitIndicator(CreditDebitIndicatorEnum creditDebitIndicator) {
+  public void setCreditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
     this.creditDebitIndicator = creditDebitIndicator;
   }
 
-  public OBStatementInterest1 type(TypeEnum type) {
+  public OBStatementInterest1 type(OBExternalStatementInterestType1Code type) {
     this.type = type;
     return this;
   }
@@ -169,11 +102,11 @@ public class OBStatementInterest1   {
   @NotNull
 
 
-  public TypeEnum getType() {
+  public OBExternalStatementInterestType1Code getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(OBExternalStatementInterestType1Code type) {
     this.type = type;
   }
 

@@ -22,8 +22,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -49,54 +49,17 @@ public class OBStatement1   {
   @JsonProperty("StatementReference")
   private String statementReference = null;
 
-  /**
-   * Statement type, in a coded form.
-   */
-  public enum TypeEnum {
-    ACCOUNTCLOSURE("AccountClosure"),
-    
-    ACCOUNTOPENING("AccountOpening"),
-    
-    ANNUAL("Annual"),
-    
-    INTERIM("Interim"),
-    
-    REGULARPERIODIC("RegularPeriodic");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TypeEnum fromValue(String text) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
   @JsonProperty("Type")
-  private TypeEnum type = null;
+  private OBExternalStatementType1Code type = null;
 
   @JsonProperty("StartDateTime")
-  private OffsetDateTime startDateTime = null;
+  private DateTime startDateTime = null;
 
   @JsonProperty("EndDateTime")
-  private OffsetDateTime endDateTime = null;
+  private DateTime endDateTime = null;
 
   @JsonProperty("CreationDateTime")
-  private OffsetDateTime creationDateTime = null;
+  private DateTime creationDateTime = null;
 
   @JsonProperty("StatementDescription")
   @Valid
@@ -104,31 +67,31 @@ public class OBStatement1   {
 
   @JsonProperty("StatementBenefit")
   @Valid
-  private List<OBStatement1StatementBenefit> statementBenefit = null;
+  private List<OBStatementBenefit1> statementBenefit = null;
 
   @JsonProperty("StatementFee")
   @Valid
-  private List<OBStatement1StatementFee> statementFee = null;
+  private List<OBStatementFee1> statementFee = null;
 
   @JsonProperty("StatementInterest")
   @Valid
-  private List<OBStatement1StatementInterest> statementInterest = null;
+  private List<OBStatementInterest1> statementInterest = null;
 
   @JsonProperty("StatementDateTime")
   @Valid
-  private List<OBStatement1StatementDateTime> statementDateTime = null;
+  private List<OBStatementDateTime1> statementDateTime = null;
 
   @JsonProperty("StatementRate")
   @Valid
-  private List<OBStatement1StatementRate> statementRate = null;
+  private List<OBStatementRate1> statementRate = null;
 
   @JsonProperty("StatementValue")
   @Valid
-  private List<OBStatement1StatementValue> statementValue = null;
+  private List<OBStatementValue1> statementValue = null;
 
   @JsonProperty("StatementAmount")
   @Valid
-  private List<OBStatement1StatementAmount> statementAmount = null;
+  private List<OBStatementAmount1> statementAmount = null;
 
   public OBStatement1 accountId(String accountId) {
     this.accountId = accountId;
@@ -191,7 +154,7 @@ public class OBStatement1   {
     this.statementReference = statementReference;
   }
 
-  public OBStatement1 type(TypeEnum type) {
+  public OBStatement1 type(OBExternalStatementType1Code type) {
     this.type = type;
     return this;
   }
@@ -204,15 +167,15 @@ public class OBStatement1   {
   @NotNull
 
 
-  public TypeEnum getType() {
+  public OBExternalStatementType1Code getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(OBExternalStatementType1Code type) {
     this.type = type;
   }
 
-  public OBStatement1 startDateTime(OffsetDateTime startDateTime) {
+  public OBStatement1 startDateTime(DateTime startDateTime) {
     this.startDateTime = startDateTime;
     return this;
   }
@@ -226,15 +189,15 @@ public class OBStatement1   {
 
   @Valid
 
-  public OffsetDateTime getStartDateTime() {
+  public DateTime getStartDateTime() {
     return startDateTime;
   }
 
-  public void setStartDateTime(OffsetDateTime startDateTime) {
+  public void setStartDateTime(DateTime startDateTime) {
     this.startDateTime = startDateTime;
   }
 
-  public OBStatement1 endDateTime(OffsetDateTime endDateTime) {
+  public OBStatement1 endDateTime(DateTime endDateTime) {
     this.endDateTime = endDateTime;
     return this;
   }
@@ -248,15 +211,15 @@ public class OBStatement1   {
 
   @Valid
 
-  public OffsetDateTime getEndDateTime() {
+  public DateTime getEndDateTime() {
     return endDateTime;
   }
 
-  public void setEndDateTime(OffsetDateTime endDateTime) {
+  public void setEndDateTime(DateTime endDateTime) {
     this.endDateTime = endDateTime;
   }
 
-  public OBStatement1 creationDateTime(OffsetDateTime creationDateTime) {
+  public OBStatement1 creationDateTime(DateTime creationDateTime) {
     this.creationDateTime = creationDateTime;
     return this;
   }
@@ -270,11 +233,11 @@ public class OBStatement1   {
 
   @Valid
 
-  public OffsetDateTime getCreationDateTime() {
+  public DateTime getCreationDateTime() {
     return creationDateTime;
   }
 
-  public void setCreationDateTime(OffsetDateTime creationDateTime) {
+  public void setCreationDateTime(DateTime creationDateTime) {
     this.creationDateTime = creationDateTime;
   }
 
@@ -306,14 +269,14 @@ public class OBStatement1   {
     this.statementDescription = statementDescription;
   }
 
-  public OBStatement1 statementBenefit(List<OBStatement1StatementBenefit> statementBenefit) {
+  public OBStatement1 statementBenefit(List<OBStatementBenefit1> statementBenefit) {
     this.statementBenefit = statementBenefit;
     return this;
   }
 
-  public OBStatement1 addStatementBenefitItem(OBStatement1StatementBenefit statementBenefitItem) {
+  public OBStatement1 addStatementBenefitItem(OBStatementBenefit1 statementBenefitItem) {
     if (this.statementBenefit == null) {
-      this.statementBenefit = new ArrayList<OBStatement1StatementBenefit>();
+      this.statementBenefit = new ArrayList<OBStatementBenefit1>();
     }
     this.statementBenefit.add(statementBenefitItem);
     return this;
@@ -327,22 +290,22 @@ public class OBStatement1   {
 
   @Valid
 
-  public List<OBStatement1StatementBenefit> getStatementBenefit() {
+  public List<OBStatementBenefit1> getStatementBenefit() {
     return statementBenefit;
   }
 
-  public void setStatementBenefit(List<OBStatement1StatementBenefit> statementBenefit) {
+  public void setStatementBenefit(List<OBStatementBenefit1> statementBenefit) {
     this.statementBenefit = statementBenefit;
   }
 
-  public OBStatement1 statementFee(List<OBStatement1StatementFee> statementFee) {
+  public OBStatement1 statementFee(List<OBStatementFee1> statementFee) {
     this.statementFee = statementFee;
     return this;
   }
 
-  public OBStatement1 addStatementFeeItem(OBStatement1StatementFee statementFeeItem) {
+  public OBStatement1 addStatementFeeItem(OBStatementFee1 statementFeeItem) {
     if (this.statementFee == null) {
-      this.statementFee = new ArrayList<OBStatement1StatementFee>();
+      this.statementFee = new ArrayList<OBStatementFee1>();
     }
     this.statementFee.add(statementFeeItem);
     return this;
@@ -356,22 +319,22 @@ public class OBStatement1   {
 
   @Valid
 
-  public List<OBStatement1StatementFee> getStatementFee() {
+  public List<OBStatementFee1> getStatementFee() {
     return statementFee;
   }
 
-  public void setStatementFee(List<OBStatement1StatementFee> statementFee) {
+  public void setStatementFee(List<OBStatementFee1> statementFee) {
     this.statementFee = statementFee;
   }
 
-  public OBStatement1 statementInterest(List<OBStatement1StatementInterest> statementInterest) {
+  public OBStatement1 statementInterest(List<OBStatementInterest1> statementInterest) {
     this.statementInterest = statementInterest;
     return this;
   }
 
-  public OBStatement1 addStatementInterestItem(OBStatement1StatementInterest statementInterestItem) {
+  public OBStatement1 addStatementInterestItem(OBStatementInterest1 statementInterestItem) {
     if (this.statementInterest == null) {
-      this.statementInterest = new ArrayList<OBStatement1StatementInterest>();
+      this.statementInterest = new ArrayList<OBStatementInterest1>();
     }
     this.statementInterest.add(statementInterestItem);
     return this;
@@ -385,22 +348,22 @@ public class OBStatement1   {
 
   @Valid
 
-  public List<OBStatement1StatementInterest> getStatementInterest() {
+  public List<OBStatementInterest1> getStatementInterest() {
     return statementInterest;
   }
 
-  public void setStatementInterest(List<OBStatement1StatementInterest> statementInterest) {
+  public void setStatementInterest(List<OBStatementInterest1> statementInterest) {
     this.statementInterest = statementInterest;
   }
 
-  public OBStatement1 statementDateTime(List<OBStatement1StatementDateTime> statementDateTime) {
+  public OBStatement1 statementDateTime(List<OBStatementDateTime1> statementDateTime) {
     this.statementDateTime = statementDateTime;
     return this;
   }
 
-  public OBStatement1 addStatementDateTimeItem(OBStatement1StatementDateTime statementDateTimeItem) {
+  public OBStatement1 addStatementDateTimeItem(OBStatementDateTime1 statementDateTimeItem) {
     if (this.statementDateTime == null) {
-      this.statementDateTime = new ArrayList<OBStatement1StatementDateTime>();
+      this.statementDateTime = new ArrayList<OBStatementDateTime1>();
     }
     this.statementDateTime.add(statementDateTimeItem);
     return this;
@@ -414,22 +377,22 @@ public class OBStatement1   {
 
   @Valid
 
-  public List<OBStatement1StatementDateTime> getStatementDateTime() {
+  public List<OBStatementDateTime1> getStatementDateTime() {
     return statementDateTime;
   }
 
-  public void setStatementDateTime(List<OBStatement1StatementDateTime> statementDateTime) {
+  public void setStatementDateTime(List<OBStatementDateTime1> statementDateTime) {
     this.statementDateTime = statementDateTime;
   }
 
-  public OBStatement1 statementRate(List<OBStatement1StatementRate> statementRate) {
+  public OBStatement1 statementRate(List<OBStatementRate1	> statementRate) {
     this.statementRate = statementRate;
     return this;
   }
 
-  public OBStatement1 addStatementRateItem(OBStatement1StatementRate statementRateItem) {
+  public OBStatement1 addStatementRateItem(OBStatementRate1	 statementRateItem) {
     if (this.statementRate == null) {
-      this.statementRate = new ArrayList<OBStatement1StatementRate>();
+      this.statementRate = new ArrayList<OBStatementRate1	>();
     }
     this.statementRate.add(statementRateItem);
     return this;
@@ -443,22 +406,22 @@ public class OBStatement1   {
 
   @Valid
 
-  public List<OBStatement1StatementRate> getStatementRate() {
+  public List<OBStatementRate1	> getStatementRate() {
     return statementRate;
   }
 
-  public void setStatementRate(List<OBStatement1StatementRate> statementRate) {
+  public void setStatementRate(List<OBStatementRate1	> statementRate) {
     this.statementRate = statementRate;
   }
 
-  public OBStatement1 statementValue(List<OBStatement1StatementValue> statementValue) {
+  public OBStatement1 statementValue(List<OBStatementValue1> statementValue) {
     this.statementValue = statementValue;
     return this;
   }
 
-  public OBStatement1 addStatementValueItem(OBStatement1StatementValue statementValueItem) {
+  public OBStatement1 addStatementValueItem(OBStatementValue1 statementValueItem) {
     if (this.statementValue == null) {
-      this.statementValue = new ArrayList<OBStatement1StatementValue>();
+      this.statementValue = new ArrayList<OBStatementValue1>();
     }
     this.statementValue.add(statementValueItem);
     return this;
@@ -472,22 +435,22 @@ public class OBStatement1   {
 
   @Valid
 
-  public List<OBStatement1StatementValue> getStatementValue() {
+  public List<OBStatementValue1> getStatementValue() {
     return statementValue;
   }
 
-  public void setStatementValue(List<OBStatement1StatementValue> statementValue) {
+  public void setStatementValue(List<OBStatementValue1> statementValue) {
     this.statementValue = statementValue;
   }
 
-  public OBStatement1 statementAmount(List<OBStatement1StatementAmount> statementAmount) {
+  public OBStatement1 statementAmount(List<OBStatementAmount1> statementAmount) {
     this.statementAmount = statementAmount;
     return this;
   }
 
-  public OBStatement1 addStatementAmountItem(OBStatement1StatementAmount statementAmountItem) {
+  public OBStatement1 addStatementAmountItem(OBStatementAmount1 statementAmountItem) {
     if (this.statementAmount == null) {
-      this.statementAmount = new ArrayList<OBStatement1StatementAmount>();
+      this.statementAmount = new ArrayList<OBStatementAmount1>();
     }
     this.statementAmount.add(statementAmountItem);
     return this;
@@ -501,11 +464,11 @@ public class OBStatement1   {
 
   @Valid
 
-  public List<OBStatement1StatementAmount> getStatementAmount() {
+  public List<OBStatementAmount1> getStatementAmount() {
     return statementAmount;
   }
 
-  public void setStatementAmount(List<OBStatement1StatementAmount> statementAmount) {
+  public void setStatementAmount(List<OBStatementAmount1> statementAmount) {
     this.statementAmount = statementAmount;
   }
 

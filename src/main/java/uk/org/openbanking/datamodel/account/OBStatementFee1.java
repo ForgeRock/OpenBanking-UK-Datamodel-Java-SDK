@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -37,101 +38,15 @@ import java.util.Objects;
 
 public class OBStatementFee1   {
   @JsonProperty("Amount")
-  private OBStatement1Amount1 amount = null;
-
-  /**
-   * Indicates whether the amount is a credit or a debit.  Usage: A zero amount is considered to be a credit amount.
-   */
-  public enum CreditDebitIndicatorEnum {
-    CREDIT("Credit"),
-    
-    DEBIT("Debit");
-
-    private String value;
-
-    CreditDebitIndicatorEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static CreditDebitIndicatorEnum fromValue(String text) {
-      for (CreditDebitIndicatorEnum b : CreditDebitIndicatorEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private ActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("CreditDebitIndicator")
-  private CreditDebitIndicatorEnum creditDebitIndicator = null;
-
-  /**
-   * Fee type, in a coded form.
-   */
-  public enum TypeEnum {
-    ANNUAL("Annual"),
-    
-    BALANCETRANSFER("BalanceTransfer"),
-    
-    CASHADVANCE("CashAdvance"),
-    
-    CASHTRANSACTION("CashTransaction"),
-    
-    FOREIGNTRANSACTION("ForeignTransaction"),
-    
-    GAMBLING("Gambling"),
-    
-    LATEPAYMENT("LatePayment"),
-    
-    MONEYTRANSFER("MoneyTransfer"),
-    
-    MONTHLY("Monthly"),
-    
-    OVERLIMIT("Overlimit"),
-    
-    POSTALORDER("PostalOrder"),
-    
-    PRIZEENTRY("PrizeEntry"),
-    
-    STATEMENTCOPY("StatementCopy"),
-    
-    TOTAL("Total");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TypeEnum fromValue(String text) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBCreditDebitCode creditDebitIndicator = null;
 
   @JsonProperty("Type")
-  private TypeEnum type = null;
+  private OBExternalStatementFeeType1Code type = null;
 
-  public OBStatementFee1 amount(OBStatement1Amount1 amount) {
+  public OBStatementFee1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -145,15 +60,15 @@ public class OBStatementFee1   {
 
   @Valid
 
-  public OBStatement1Amount1 getAmount() {
+  public ActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(OBStatement1Amount1 amount) {
+  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 
-  public OBStatementFee1 creditDebitIndicator(CreditDebitIndicatorEnum creditDebitIndicator) {
+  public OBStatementFee1 creditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
     this.creditDebitIndicator = creditDebitIndicator;
     return this;
   }
@@ -166,15 +81,15 @@ public class OBStatementFee1   {
   @NotNull
 
 
-  public CreditDebitIndicatorEnum getCreditDebitIndicator() {
+  public OBCreditDebitCode getCreditDebitIndicator() {
     return creditDebitIndicator;
   }
 
-  public void setCreditDebitIndicator(CreditDebitIndicatorEnum creditDebitIndicator) {
+  public void setCreditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
     this.creditDebitIndicator = creditDebitIndicator;
   }
 
-  public OBStatementFee1 type(TypeEnum type) {
+  public OBStatementFee1 type(OBExternalStatementFeeType1Code type) {
     this.type = type;
     return this;
   }
@@ -187,11 +102,11 @@ public class OBStatementFee1   {
   @NotNull
 
 
-  public TypeEnum getType() {
+  public OBExternalStatementFeeType1Code getType() {
     return type;
   }
 
-  public void setType(TypeEnum type) {
+  public void setType(OBExternalStatementFeeType1Code type) {
     this.type = type;
   }
 
