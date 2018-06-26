@@ -17,12 +17,11 @@
 
 package uk.org.openbanking.datamodel.account;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
+import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -43,53 +42,22 @@ public class OBScheduledPayment1   {
   private String scheduledPaymentId = null;
 
   @JsonProperty("ScheduledPaymentDateTime")
-  private OffsetDateTime scheduledPaymentDateTime = null;
-
-  /**
-   * Specifies the scheduled payment date type requested
-   */
-  public enum ScheduledTypeEnum {
-    ARRIVAL("Arrival"),
-    
-    EXECUTION("Execution");
-
-    private String value;
-
-    ScheduledTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static ScheduledTypeEnum fromValue(String text) {
-      for (ScheduledTypeEnum b : ScheduledTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private DateTime scheduledPaymentDateTime = null;
 
   @JsonProperty("ScheduledType")
-  private ScheduledTypeEnum scheduledType = null;
+  private OBExternalScheduleType1Code scheduledType = null;
 
   @JsonProperty("InstructedAmount")
-  private OBScheduledPayment1InstructedAmount instructedAmount = null;
+  private ActiveOrHistoricCurrencyAndAmount instructedAmount = null;
 
   @JsonProperty("Reference")
   private String reference = null;
 
   @JsonProperty("CreditorAgent")
-  private OBScheduledPayment1CreditorAgent creditorAgent = null;
+  private OBBranchAndFinancialInstitutionIdentification2 creditorAgent = null;
 
   @JsonProperty("CreditorAccount")
-  private OBScheduledPayment1CreditorAccount creditorAccount = null;
+  private OBCashAccount1 creditorAccount = null;
 
   public OBScheduledPayment1 accountId(String accountId) {
     this.accountId = accountId;
@@ -132,7 +100,7 @@ public class OBScheduledPayment1   {
     this.scheduledPaymentId = scheduledPaymentId;
   }
 
-  public OBScheduledPayment1 scheduledPaymentDateTime(OffsetDateTime scheduledPaymentDateTime) {
+  public OBScheduledPayment1 scheduledPaymentDateTime(DateTime scheduledPaymentDateTime) {
     this.scheduledPaymentDateTime = scheduledPaymentDateTime;
     return this;
   }
@@ -146,15 +114,15 @@ public class OBScheduledPayment1   {
 
   @Valid
 
-  public OffsetDateTime getScheduledPaymentDateTime() {
+  public DateTime getScheduledPaymentDateTime() {
     return scheduledPaymentDateTime;
   }
 
-  public void setScheduledPaymentDateTime(OffsetDateTime scheduledPaymentDateTime) {
+  public void setScheduledPaymentDateTime(DateTime scheduledPaymentDateTime) {
     this.scheduledPaymentDateTime = scheduledPaymentDateTime;
   }
 
-  public OBScheduledPayment1 scheduledType(ScheduledTypeEnum scheduledType) {
+  public OBScheduledPayment1 scheduledType(OBExternalScheduleType1Code scheduledType) {
     this.scheduledType = scheduledType;
     return this;
   }
@@ -167,15 +135,15 @@ public class OBScheduledPayment1   {
   @NotNull
 
 
-  public ScheduledTypeEnum getScheduledType() {
+  public OBExternalScheduleType1Code getScheduledType() {
     return scheduledType;
   }
 
-  public void setScheduledType(ScheduledTypeEnum scheduledType) {
+  public void setScheduledType(OBExternalScheduleType1Code scheduledType) {
     this.scheduledType = scheduledType;
   }
 
-  public OBScheduledPayment1 instructedAmount(OBScheduledPayment1InstructedAmount instructedAmount) {
+  public OBScheduledPayment1 instructedAmount(ActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
     return this;
   }
@@ -189,11 +157,11 @@ public class OBScheduledPayment1   {
 
   @Valid
 
-  public OBScheduledPayment1InstructedAmount getInstructedAmount() {
+  public ActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
     return instructedAmount;
   }
 
-  public void setInstructedAmount(OBScheduledPayment1InstructedAmount instructedAmount) {
+  public void setInstructedAmount(ActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
   }
 
@@ -217,7 +185,7 @@ public class OBScheduledPayment1   {
     this.reference = reference;
   }
 
-  public OBScheduledPayment1 creditorAgent(OBScheduledPayment1CreditorAgent creditorAgent) {
+  public OBScheduledPayment1 creditorAgent(OBBranchAndFinancialInstitutionIdentification2 creditorAgent) {
     this.creditorAgent = creditorAgent;
     return this;
   }
@@ -230,15 +198,15 @@ public class OBScheduledPayment1   {
 
   @Valid
 
-  public OBScheduledPayment1CreditorAgent getCreditorAgent() {
+  public OBBranchAndFinancialInstitutionIdentification2 getCreditorAgent() {
     return creditorAgent;
   }
 
-  public void setCreditorAgent(OBScheduledPayment1CreditorAgent creditorAgent) {
+  public void setCreditorAgent(OBBranchAndFinancialInstitutionIdentification2 creditorAgent) {
     this.creditorAgent = creditorAgent;
   }
 
-  public OBScheduledPayment1 creditorAccount(OBScheduledPayment1CreditorAccount creditorAccount) {
+  public OBScheduledPayment1 creditorAccount(OBCashAccount1 creditorAccount) {
     this.creditorAccount = creditorAccount;
     return this;
   }
@@ -251,11 +219,11 @@ public class OBScheduledPayment1   {
 
   @Valid
 
-  public OBScheduledPayment1CreditorAccount getCreditorAccount() {
+  public OBCashAccount1 getCreditorAccount() {
     return creditorAccount;
   }
 
-  public void setCreditorAccount(OBScheduledPayment1CreditorAccount creditorAccount) {
+  public void setCreditorAccount(OBCashAccount1 creditorAccount) {
     this.creditorAccount = creditorAccount;
   }
 
