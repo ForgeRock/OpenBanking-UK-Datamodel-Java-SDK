@@ -22,8 +22,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
+import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -52,62 +53,31 @@ public class OBStandingOrder2   {
   private String reference = null;
 
   @JsonProperty("FirstPaymentDateTime")
-  private OffsetDateTime firstPaymentDateTime = null;
+  private DateTime firstPaymentDateTime = null;
 
   @JsonProperty("FirstPaymentAmount")
-  private OBStandingOrder2FirstPaymentAmount firstPaymentAmount = null;
+  private ActiveOrHistoricCurrencyAndAmount firstPaymentAmount = null;
 
   @JsonProperty("NextPaymentDateTime")
-  private OffsetDateTime nextPaymentDateTime = null;
+  private DateTime nextPaymentDateTime = null;
 
   @JsonProperty("NextPaymentAmount")
-  private OBStandingOrder2NextPaymentAmount nextPaymentAmount = null;
+  private ActiveOrHistoricCurrencyAndAmount nextPaymentAmount = null;
 
   @JsonProperty("FinalPaymentDateTime")
-  private OffsetDateTime finalPaymentDateTime = null;
+  private DateTime finalPaymentDateTime = null;
 
   @JsonProperty("FinalPaymentAmount")
-  private OBStandingOrder2FinalPaymentAmount finalPaymentAmount = null;
-
-  /**
-   * Specifies the status of the standing order in code form.
-   */
-  public enum StandingOrderStatusCodeEnum {
-    ACTIVE("Active"),
-    
-    INACTIVE("Inactive");
-
-    private String value;
-
-    StandingOrderStatusCodeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static StandingOrderStatusCodeEnum fromValue(String text) {
-      for (StandingOrderStatusCodeEnum b : StandingOrderStatusCodeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private ActiveOrHistoricCurrencyAndAmount finalPaymentAmount = null;
 
   @JsonProperty("StandingOrderStatusCode")
-  private StandingOrderStatusCodeEnum standingOrderStatusCode = null;
+  private OBExternalStandingOrderStatus1Code standingOrderStatusCode = null;
 
   @JsonProperty("CreditorAgent")
-  private OBScheduledPayment1CreditorAgent creditorAgent = null;
+  private OBBranchAndFinancialInstitutionIdentification2 creditorAgent = null;
 
   @JsonProperty("CreditorAccount")
-  private OBScheduledPayment1CreditorAccount creditorAccount = null;
+  private OBCashAccount1 creditorAccount = null;
 
   public OBStandingOrder2 accountId(String accountId) {
     this.accountId = accountId;
@@ -191,7 +161,7 @@ public class OBStandingOrder2   {
     this.reference = reference;
   }
 
-  public OBStandingOrder2 firstPaymentDateTime(OffsetDateTime firstPaymentDateTime) {
+  public OBStandingOrder2 firstPaymentDateTime(DateTime firstPaymentDateTime) {
     this.firstPaymentDateTime = firstPaymentDateTime;
     return this;
   }
@@ -204,15 +174,15 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public OffsetDateTime getFirstPaymentDateTime() {
+  public DateTime getFirstPaymentDateTime() {
     return firstPaymentDateTime;
   }
 
-  public void setFirstPaymentDateTime(OffsetDateTime firstPaymentDateTime) {
+  public void setFirstPaymentDateTime(DateTime firstPaymentDateTime) {
     this.firstPaymentDateTime = firstPaymentDateTime;
   }
 
-  public OBStandingOrder2 firstPaymentAmount(OBStandingOrder2FirstPaymentAmount firstPaymentAmount) {
+  public OBStandingOrder2 firstPaymentAmount(ActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
     this.firstPaymentAmount = firstPaymentAmount;
     return this;
   }
@@ -225,15 +195,15 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public OBStandingOrder2FirstPaymentAmount getFirstPaymentAmount() {
+  public ActiveOrHistoricCurrencyAndAmount getFirstPaymentAmount() {
     return firstPaymentAmount;
   }
 
-  public void setFirstPaymentAmount(OBStandingOrder2FirstPaymentAmount firstPaymentAmount) {
+  public void setFirstPaymentAmount(ActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
     this.firstPaymentAmount = firstPaymentAmount;
   }
 
-  public OBStandingOrder2 nextPaymentDateTime(OffsetDateTime nextPaymentDateTime) {
+  public OBStandingOrder2 nextPaymentDateTime(DateTime nextPaymentDateTime) {
     this.nextPaymentDateTime = nextPaymentDateTime;
     return this;
   }
@@ -247,15 +217,15 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public OffsetDateTime getNextPaymentDateTime() {
+  public DateTime getNextPaymentDateTime() {
     return nextPaymentDateTime;
   }
 
-  public void setNextPaymentDateTime(OffsetDateTime nextPaymentDateTime) {
+  public void setNextPaymentDateTime(DateTime nextPaymentDateTime) {
     this.nextPaymentDateTime = nextPaymentDateTime;
   }
 
-  public OBStandingOrder2 nextPaymentAmount(OBStandingOrder2NextPaymentAmount nextPaymentAmount) {
+  public OBStandingOrder2 nextPaymentAmount(ActiveOrHistoricCurrencyAndAmount nextPaymentAmount) {
     this.nextPaymentAmount = nextPaymentAmount;
     return this;
   }
@@ -269,15 +239,15 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public OBStandingOrder2NextPaymentAmount getNextPaymentAmount() {
+  public ActiveOrHistoricCurrencyAndAmount getNextPaymentAmount() {
     return nextPaymentAmount;
   }
 
-  public void setNextPaymentAmount(OBStandingOrder2NextPaymentAmount nextPaymentAmount) {
+  public void setNextPaymentAmount(ActiveOrHistoricCurrencyAndAmount nextPaymentAmount) {
     this.nextPaymentAmount = nextPaymentAmount;
   }
 
-  public OBStandingOrder2 finalPaymentDateTime(OffsetDateTime finalPaymentDateTime) {
+  public OBStandingOrder2 finalPaymentDateTime(DateTime finalPaymentDateTime) {
     this.finalPaymentDateTime = finalPaymentDateTime;
     return this;
   }
@@ -290,15 +260,15 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public OffsetDateTime getFinalPaymentDateTime() {
+  public DateTime getFinalPaymentDateTime() {
     return finalPaymentDateTime;
   }
 
-  public void setFinalPaymentDateTime(OffsetDateTime finalPaymentDateTime) {
+  public void setFinalPaymentDateTime(DateTime finalPaymentDateTime) {
     this.finalPaymentDateTime = finalPaymentDateTime;
   }
 
-  public OBStandingOrder2 finalPaymentAmount(OBStandingOrder2FinalPaymentAmount finalPaymentAmount) {
+  public OBStandingOrder2 finalPaymentAmount(ActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
     this.finalPaymentAmount = finalPaymentAmount;
     return this;
   }
@@ -311,15 +281,15 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public OBStandingOrder2FinalPaymentAmount getFinalPaymentAmount() {
+  public ActiveOrHistoricCurrencyAndAmount getFinalPaymentAmount() {
     return finalPaymentAmount;
   }
 
-  public void setFinalPaymentAmount(OBStandingOrder2FinalPaymentAmount finalPaymentAmount) {
+  public void setFinalPaymentAmount(ActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
     this.finalPaymentAmount = finalPaymentAmount;
   }
 
-  public OBStandingOrder2 standingOrderStatusCode(StandingOrderStatusCodeEnum standingOrderStatusCode) {
+  public OBStandingOrder2 standingOrderStatusCode(OBExternalStandingOrderStatus1Code standingOrderStatusCode) {
     this.standingOrderStatusCode = standingOrderStatusCode;
     return this;
   }
@@ -331,15 +301,15 @@ public class OBStandingOrder2   {
   @ApiModelProperty(value = "Specifies the status of the standing order in code form.")
 
 
-  public StandingOrderStatusCodeEnum getStandingOrderStatusCode() {
+  public OBExternalStandingOrderStatus1Code getStandingOrderStatusCode() {
     return standingOrderStatusCode;
   }
 
-  public void setStandingOrderStatusCode(StandingOrderStatusCodeEnum standingOrderStatusCode) {
+  public void setStandingOrderStatusCode(OBExternalStandingOrderStatus1Code standingOrderStatusCode) {
     this.standingOrderStatusCode = standingOrderStatusCode;
   }
 
-  public OBStandingOrder2 creditorAgent(OBScheduledPayment1CreditorAgent creditorAgent) {
+  public OBStandingOrder2 creditorAgent(OBBranchAndFinancialInstitutionIdentification2 creditorAgent) {
     this.creditorAgent = creditorAgent;
     return this;
   }
@@ -352,15 +322,15 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public OBScheduledPayment1CreditorAgent getCreditorAgent() {
+  public OBBranchAndFinancialInstitutionIdentification2 getCreditorAgent() {
     return creditorAgent;
   }
 
-  public void setCreditorAgent(OBScheduledPayment1CreditorAgent creditorAgent) {
+  public void setCreditorAgent(OBBranchAndFinancialInstitutionIdentification2 creditorAgent) {
     this.creditorAgent = creditorAgent;
   }
 
-  public OBStandingOrder2 creditorAccount(OBScheduledPayment1CreditorAccount creditorAccount) {
+  public OBStandingOrder2 creditorAccount(OBCashAccount1 creditorAccount) {
     this.creditorAccount = creditorAccount;
     return this;
   }
@@ -373,11 +343,11 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public OBScheduledPayment1CreditorAccount getCreditorAccount() {
+  public OBCashAccount1 getCreditorAccount() {
     return creditorAccount;
   }
 
-  public void setCreditorAccount(OBScheduledPayment1CreditorAccount creditorAccount) {
+  public void setCreditorAccount(OBCashAccount1 creditorAccount) {
     this.creditorAccount = creditorAccount;
   }
 
