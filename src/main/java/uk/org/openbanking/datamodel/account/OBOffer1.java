@@ -19,8 +19,9 @@ package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
+import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -48,16 +49,16 @@ public class OBOffer1   {
   private String description = null;
 
   @JsonProperty("StartDateTime")
-  private OffsetDateTime startDateTime = null;
+  private DateTime startDateTime = null;
 
   @JsonProperty("EndDateTime")
-  private OffsetDateTime endDateTime = null;
+  private DateTime endDateTime = null;
 
   @JsonProperty("Amount")
-  private OBOffer1Amount amount = null;
+  private ActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("Fee")
-  private OBOffer1Fee fee = null;
+  private ActiveOrHistoricCurrencyAndAmount fee = null;
 
   @JsonProperty("Rate")
   private String rate = null;
@@ -153,7 +154,7 @@ public class OBOffer1   {
     this.description = description;
   }
 
-  public OBOffer1 startDateTime(OffsetDateTime startDateTime) {
+  public OBOffer1 startDateTime(DateTime startDateTime) {
     this.startDateTime = startDateTime;
     return this;
   }
@@ -166,15 +167,15 @@ public class OBOffer1   {
 
   @Valid
 
-  public OffsetDateTime getStartDateTime() {
+  public DateTime getStartDateTime() {
     return startDateTime;
   }
 
-  public void setStartDateTime(OffsetDateTime startDateTime) {
+  public void setStartDateTime(DateTime startDateTime) {
     this.startDateTime = startDateTime;
   }
 
-  public OBOffer1 endDateTime(OffsetDateTime endDateTime) {
+  public OBOffer1 endDateTime(DateTime endDateTime) {
     this.endDateTime = endDateTime;
     return this;
   }
@@ -187,15 +188,15 @@ public class OBOffer1   {
 
   @Valid
 
-  public OffsetDateTime getEndDateTime() {
+  public DateTime getEndDateTime() {
     return endDateTime;
   }
 
-  public void setEndDateTime(OffsetDateTime endDateTime) {
+  public void setEndDateTime(DateTime endDateTime) {
     this.endDateTime = endDateTime;
   }
 
-  public OBOffer1 amount(OBOffer1Amount amount) {
+  public OBOffer1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -208,15 +209,15 @@ public class OBOffer1   {
 
   @Valid
 
-  public OBOffer1Amount getAmount() {
+  public ActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(OBOffer1Amount amount) {
+  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 
-  public OBOffer1 fee(OBOffer1Fee fee) {
+  public OBOffer1 fee(ActiveOrHistoricCurrencyAndAmount fee) {
     this.fee = fee;
     return this;
   }
@@ -229,11 +230,11 @@ public class OBOffer1   {
 
   @Valid
 
-  public OBOffer1Fee getFee() {
+  public ActiveOrHistoricCurrencyAndAmount getFee() {
     return fee;
   }
 
-  public void setFee(OBOffer1Fee fee) {
+  public void setFee(ActiveOrHistoricCurrencyAndAmount fee) {
     this.fee = fee;
   }
 
