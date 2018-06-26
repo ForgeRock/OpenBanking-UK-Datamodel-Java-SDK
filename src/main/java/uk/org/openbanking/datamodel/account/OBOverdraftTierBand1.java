@@ -39,7 +39,7 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class Overdraft1OverdraftTierBand   {
+public class OBOverdraftTierBand1 {
   @JsonProperty("Identification")
   private String identification = null;
 
@@ -58,83 +58,11 @@ public class Overdraft1OverdraftTierBand   {
   @JsonProperty("AgreementLengthMax")
   private Float agreementLengthMax = null;
 
-  /**
-   * Specifies the period of a fixed length overdraft agreement
-   */
-  public enum AgreementPeriodEnum {
-    DAY("Day"),
-    
-    HALF_YEAR("Half Year"),
-    
-    MONTH("Month"),
-    
-    QUARTER("Quarter"),
-    
-    WEEK("Week"),
-    
-    YEAR("Year");
-
-    private String value;
-
-    AgreementPeriodEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static AgreementPeriodEnum fromValue(String text) {
-      for (AgreementPeriodEnum b : AgreementPeriodEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
   @JsonProperty("AgreementPeriod")
-  private AgreementPeriodEnum agreementPeriod = null;
-
-  /**
-   * Refers to which interest rate is applied when interests are tiered. For example, if an overdraft balance is £2k and the interest tiers are:- 0-£500 0.1%, 500-1000 0.2%, 1000-10000 0.5%, then the applicable interest rate could either be 0.5% of the entire balance (since the account balance sits in the top interest tier) or (0.1%*500)+(0.2%*500)+(0.5%*1000). In the 1st situation, we say the interest is applied to the ‘Whole’ of the account balance,  and in the 2nd that it is ‘Tiered’.
-   */
-  public enum OverdraftInterestChargingCoverageEnum {
-    BANDED("Banded"),
-    
-    TIERED("Tiered"),
-    
-    WHOLE("Whole");
-
-    private String value;
-
-    OverdraftInterestChargingCoverageEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static OverdraftInterestChargingCoverageEnum fromValue(String text) {
-      for (OverdraftInterestChargingCoverageEnum b : OverdraftInterestChargingCoverageEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBPeriod1Code agreementPeriod = null;
 
   @JsonProperty("OverdraftInterestChargingCoverage")
-  private OverdraftInterestChargingCoverageEnum overdraftInterestChargingCoverage = null;
+  private OBTierBandType1Code overdraftInterestChargingCoverage = null;
 
   @JsonProperty("BankGuaranteedIndicator")
   private Boolean bankGuaranteedIndicator = null;
@@ -145,9 +73,9 @@ public class Overdraft1OverdraftTierBand   {
 
   @JsonProperty("OverdraftFeesCharges")
   @Valid
-  private List<Overdraft1OverdraftFeesCharges> overdraftFeesCharges = null;
+  private List<OBOverdraftFeesCharges1> overdraftFeesCharges = null;
 
-  public Overdraft1OverdraftTierBand identification(String identification) {
+  public OBOverdraftTierBand1 identification(String identification) {
     this.identification = identification;
     return this;
   }
@@ -167,7 +95,7 @@ public class Overdraft1OverdraftTierBand   {
     this.identification = identification;
   }
 
-  public Overdraft1OverdraftTierBand tierValueMin(String tierValueMin) {
+  public OBOverdraftTierBand1 tierValueMin(String tierValueMin) {
     this.tierValueMin = tierValueMin;
     return this;
   }
@@ -188,7 +116,7 @@ public class Overdraft1OverdraftTierBand   {
     this.tierValueMin = tierValueMin;
   }
 
-  public Overdraft1OverdraftTierBand tierValueMax(String tierValueMax) {
+  public OBOverdraftTierBand1 tierValueMax(String tierValueMax) {
     this.tierValueMax = tierValueMax;
     return this;
   }
@@ -208,7 +136,7 @@ public class Overdraft1OverdraftTierBand   {
     this.tierValueMax = tierValueMax;
   }
 
-  public Overdraft1OverdraftTierBand EAR(String EAR) {
+  public OBOverdraftTierBand1 EAR(String EAR) {
     this.EAR = EAR;
     return this;
   }
@@ -228,7 +156,7 @@ public class Overdraft1OverdraftTierBand   {
     this.EAR = EAR;
   }
 
-  public Overdraft1OverdraftTierBand agreementLengthMin(Float agreementLengthMin) {
+  public OBOverdraftTierBand1 agreementLengthMin(Float agreementLengthMin) {
     this.agreementLengthMin = agreementLengthMin;
     return this;
   }
@@ -248,7 +176,7 @@ public class Overdraft1OverdraftTierBand   {
     this.agreementLengthMin = agreementLengthMin;
   }
 
-  public Overdraft1OverdraftTierBand agreementLengthMax(Float agreementLengthMax) {
+  public OBOverdraftTierBand1 agreementLengthMax(Float agreementLengthMax) {
     this.agreementLengthMax = agreementLengthMax;
     return this;
   }
@@ -268,7 +196,7 @@ public class Overdraft1OverdraftTierBand   {
     this.agreementLengthMax = agreementLengthMax;
   }
 
-  public Overdraft1OverdraftTierBand agreementPeriod(AgreementPeriodEnum agreementPeriod) {
+  public OBOverdraftTierBand1 agreementPeriod(OBPeriod1Code agreementPeriod) {
     this.agreementPeriod = agreementPeriod;
     return this;
   }
@@ -280,15 +208,15 @@ public class Overdraft1OverdraftTierBand   {
   @ApiModelProperty(value = "Specifies the period of a fixed length overdraft agreement")
 
 
-  public AgreementPeriodEnum getAgreementPeriod() {
+  public OBPeriod1Code getAgreementPeriod() {
     return agreementPeriod;
   }
 
-  public void setAgreementPeriod(AgreementPeriodEnum agreementPeriod) {
+  public void setAgreementPeriod(OBPeriod1Code agreementPeriod) {
     this.agreementPeriod = agreementPeriod;
   }
 
-  public Overdraft1OverdraftTierBand overdraftInterestChargingCoverage(OverdraftInterestChargingCoverageEnum overdraftInterestChargingCoverage) {
+  public OBOverdraftTierBand1 overdraftInterestChargingCoverage(OBTierBandType1Code overdraftInterestChargingCoverage) {
     this.overdraftInterestChargingCoverage = overdraftInterestChargingCoverage;
     return this;
   }
@@ -300,15 +228,15 @@ public class Overdraft1OverdraftTierBand   {
   @ApiModelProperty(value = "Refers to which interest rate is applied when interests are tiered. For example, if an overdraft balance is £2k and the interest tiers are:- 0-£500 0.1%, 500-1000 0.2%, 1000-10000 0.5%, then the applicable interest rate could either be 0.5% of the entire balance (since the account balance sits in the top interest tier) or (0.1%*500)+(0.2%*500)+(0.5%*1000). In the 1st situation, we say the interest is applied to the ‘Whole’ of the account balance,  and in the 2nd that it is ‘Tiered’.")
 
 
-  public OverdraftInterestChargingCoverageEnum getOverdraftInterestChargingCoverage() {
+  public OBTierBandType1Code getOverdraftInterestChargingCoverage() {
     return overdraftInterestChargingCoverage;
   }
 
-  public void setOverdraftInterestChargingCoverage(OverdraftInterestChargingCoverageEnum overdraftInterestChargingCoverage) {
+  public void setOverdraftInterestChargingCoverage(OBTierBandType1Code overdraftInterestChargingCoverage) {
     this.overdraftInterestChargingCoverage = overdraftInterestChargingCoverage;
   }
 
-  public Overdraft1OverdraftTierBand bankGuaranteedIndicator(Boolean bankGuaranteedIndicator) {
+  public OBOverdraftTierBand1 bankGuaranteedIndicator(Boolean bankGuaranteedIndicator) {
     this.bankGuaranteedIndicator = bankGuaranteedIndicator;
     return this;
   }
@@ -328,12 +256,12 @@ public class Overdraft1OverdraftTierBand   {
     this.bankGuaranteedIndicator = bankGuaranteedIndicator;
   }
 
-  public Overdraft1OverdraftTierBand notes(List<String> notes) {
+  public OBOverdraftTierBand1 notes(List<String> notes) {
     this.notes = notes;
     return this;
   }
 
-  public Overdraft1OverdraftTierBand addNotesItem(String notesItem) {
+  public OBOverdraftTierBand1 addNotesItem(String notesItem) {
     if (this.notes == null) {
       this.notes = new ArrayList<String>();
     }
@@ -356,14 +284,14 @@ public class Overdraft1OverdraftTierBand   {
     this.notes = notes;
   }
 
-  public Overdraft1OverdraftTierBand overdraftFeesCharges(List<Overdraft1OverdraftFeesCharges> overdraftFeesCharges) {
+  public OBOverdraftTierBand1 overdraftFeesCharges(List<OBOverdraftFeesCharges1> overdraftFeesCharges) {
     this.overdraftFeesCharges = overdraftFeesCharges;
     return this;
   }
 
-  public Overdraft1OverdraftTierBand addOverdraftFeesChargesItem(Overdraft1OverdraftFeesCharges overdraftFeesChargesItem) {
+  public OBOverdraftTierBand1 addOverdraftFeesChargesItem(OBOverdraftFeesCharges1 overdraftFeesChargesItem) {
     if (this.overdraftFeesCharges == null) {
-      this.overdraftFeesCharges = new ArrayList<Overdraft1OverdraftFeesCharges>();
+      this.overdraftFeesCharges = new ArrayList<OBOverdraftFeesCharges1>();
     }
     this.overdraftFeesCharges.add(overdraftFeesChargesItem);
     return this;
@@ -377,11 +305,11 @@ public class Overdraft1OverdraftTierBand   {
 
   @Valid
 
-  public List<Overdraft1OverdraftFeesCharges> getOverdraftFeesCharges() {
+  public List<OBOverdraftFeesCharges1> getOverdraftFeesCharges() {
     return overdraftFeesCharges;
   }
 
-  public void setOverdraftFeesCharges(List<Overdraft1OverdraftFeesCharges> overdraftFeesCharges) {
+  public void setOverdraftFeesCharges(List<OBOverdraftFeesCharges1> overdraftFeesCharges) {
     this.overdraftFeesCharges = overdraftFeesCharges;
   }
 
@@ -394,7 +322,7 @@ public class Overdraft1OverdraftTierBand   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Overdraft1OverdraftTierBand overdraft1OverdraftTierBand = (Overdraft1OverdraftTierBand) o;
+    OBOverdraftTierBand1 overdraft1OverdraftTierBand = (OBOverdraftTierBand1) o;
     return Objects.equals(this.identification, overdraft1OverdraftTierBand.identification) &&
         Objects.equals(this.tierValueMin, overdraft1OverdraftTierBand.tierValueMin) &&
         Objects.equals(this.tierValueMax, overdraft1OverdraftTierBand.tierValueMax) &&
@@ -416,7 +344,7 @@ public class Overdraft1OverdraftTierBand   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Overdraft1OverdraftTierBand {\n");
+    sb.append("class OBOverdraftTierBand1 {\n");
 
     sb.append("    identification: ").append(toIndentedString(identification)).append("\n");
     sb.append("    tierValueMin: ").append(toIndentedString(tierValueMin)).append("\n");

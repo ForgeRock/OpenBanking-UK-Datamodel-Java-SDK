@@ -17,9 +17,7 @@
 
 package uk.org.openbanking.datamodel.account;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
@@ -38,48 +36,16 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class OBBCAData1OtherFeesCharges   {
-  /**
-   * TariffType which defines the fee and charges.
-   */
-  public enum TariffTypeEnum {
-    ELECTRONIC("Electronic"),
-    
-    MIXED("Mixed"),
-    
-    OTHER("Other");
-
-    private String value;
-
-    TariffTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TariffTypeEnum fromValue(String text) {
-      for (TariffTypeEnum b : TariffTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+public class OBOtherFeesAndCharges1 {
 
   @JsonProperty("TariffType")
-  private TariffTypeEnum tariffType = null;
+  private OBTariffType1Code tariffType = null;
 
   @JsonProperty("TariffName")
   private String tariffName = null;
 
   @JsonProperty("OtherTariffType")
-  private OtherTariffType otherTariffType = null;
+  private OBOtherCodeType1 otherTariffType = null;
 
   @JsonProperty("FeeChargeDetail")
   @Valid
@@ -87,9 +53,9 @@ public class OBBCAData1OtherFeesCharges   {
 
   @JsonProperty("FeeChargeCap")
   @Valid
-  private List<OBBCAData1FeeChargeCap> feeChargeCap = null;
+  private List<OBFeeChargeCap1> feeChargeCap = null;
 
-  public OBBCAData1OtherFeesCharges tariffType(TariffTypeEnum tariffType) {
+  public OBOtherFeesAndCharges1 tariffType(OBTariffType1Code tariffType) {
     this.tariffType = tariffType;
     return this;
   }
@@ -101,15 +67,15 @@ public class OBBCAData1OtherFeesCharges   {
   @ApiModelProperty(value = "TariffType which defines the fee and charges.")
 
 
-  public TariffTypeEnum getTariffType() {
+  public OBTariffType1Code getTariffType() {
     return tariffType;
   }
 
-  public void setTariffType(TariffTypeEnum tariffType) {
+  public void setTariffType(OBTariffType1Code tariffType) {
     this.tariffType = tariffType;
   }
 
-  public OBBCAData1OtherFeesCharges tariffName(String tariffName) {
+  public OBOtherFeesAndCharges1 tariffName(String tariffName) {
     this.tariffName = tariffName;
     return this;
   }
@@ -129,7 +95,7 @@ public class OBBCAData1OtherFeesCharges   {
     this.tariffName = tariffName;
   }
 
-  public OBBCAData1OtherFeesCharges otherTariffType(OtherTariffType otherTariffType) {
+  public OBOtherFeesAndCharges1 otherTariffType(OBOtherCodeType1 otherTariffType) {
     this.otherTariffType = otherTariffType;
     return this;
   }
@@ -142,20 +108,20 @@ public class OBBCAData1OtherFeesCharges   {
 
   @Valid
 
-  public OtherTariffType getOtherTariffType() {
+  public OBOtherCodeType1 getOtherTariffType() {
     return otherTariffType;
   }
 
-  public void setOtherTariffType(OtherTariffType otherTariffType) {
+  public void setOtherTariffType(OBOtherCodeType1 otherTariffType) {
     this.otherTariffType = otherTariffType;
   }
 
-  public OBBCAData1OtherFeesCharges feeChargeDetail(List<OBBCAData1FeeChargeDetail> feeChargeDetail) {
+  public OBOtherFeesAndCharges1 feeChargeDetail(List<OBBCAData1FeeChargeDetail> feeChargeDetail) {
     this.feeChargeDetail = feeChargeDetail;
     return this;
   }
 
-  public OBBCAData1OtherFeesCharges addFeeChargeDetailItem(OBBCAData1FeeChargeDetail feeChargeDetailItem) {
+  public OBOtherFeesAndCharges1 addFeeChargeDetailItem(OBBCAData1FeeChargeDetail feeChargeDetailItem) {
     this.feeChargeDetail.add(feeChargeDetailItem);
     return this;
   }
@@ -177,14 +143,14 @@ public class OBBCAData1OtherFeesCharges   {
     this.feeChargeDetail = feeChargeDetail;
   }
 
-  public OBBCAData1OtherFeesCharges feeChargeCap(List<OBBCAData1FeeChargeCap> feeChargeCap) {
+  public OBOtherFeesAndCharges1 feeChargeCap(List<OBFeeChargeCap1> feeChargeCap) {
     this.feeChargeCap = feeChargeCap;
     return this;
   }
 
-  public OBBCAData1OtherFeesCharges addFeeChargeCapItem(OBBCAData1FeeChargeCap feeChargeCapItem) {
+  public OBOtherFeesAndCharges1 addFeeChargeCapItem(OBFeeChargeCap1 feeChargeCapItem) {
     if (this.feeChargeCap == null) {
-      this.feeChargeCap = new ArrayList<OBBCAData1FeeChargeCap>();
+      this.feeChargeCap = new ArrayList<OBFeeChargeCap1>();
     }
     this.feeChargeCap.add(feeChargeCapItem);
     return this;
@@ -198,11 +164,11 @@ public class OBBCAData1OtherFeesCharges   {
 
   @Valid
 
-  public List<OBBCAData1FeeChargeCap> getFeeChargeCap() {
+  public List<OBFeeChargeCap1> getFeeChargeCap() {
     return feeChargeCap;
   }
 
-  public void setFeeChargeCap(List<OBBCAData1FeeChargeCap> feeChargeCap) {
+  public void setFeeChargeCap(List<OBFeeChargeCap1> feeChargeCap) {
     this.feeChargeCap = feeChargeCap;
   }
 
@@ -215,7 +181,7 @@ public class OBBCAData1OtherFeesCharges   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBBCAData1OtherFeesCharges obBCAData1OtherFeesCharges = (OBBCAData1OtherFeesCharges) o;
+    OBOtherFeesAndCharges1 obBCAData1OtherFeesCharges = (OBOtherFeesAndCharges1) o;
     return Objects.equals(this.tariffType, obBCAData1OtherFeesCharges.tariffType) &&
         Objects.equals(this.tariffName, obBCAData1OtherFeesCharges.tariffName) &&
         Objects.equals(this.otherTariffType, obBCAData1OtherFeesCharges.otherTariffType) &&
@@ -231,7 +197,7 @@ public class OBBCAData1OtherFeesCharges   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBBCAData1OtherFeesCharges {\n");
+    sb.append("class OBOtherFeesAndCharges1 {\n");
 
     sb.append("    tariffType: ").append(toIndentedString(tariffType)).append("\n");
     sb.append("    tariffName: ").append(toIndentedString(tariffName)).append("\n");

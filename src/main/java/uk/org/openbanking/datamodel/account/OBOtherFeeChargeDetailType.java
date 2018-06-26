@@ -36,43 +36,12 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class OtherFeeType1   {
+public class OBOtherFeeChargeDetailType {
   @JsonProperty("Code")
   private String code = null;
 
-  /**
-   * Categorisation of fees and charges into standard categories.
-   */
-  public enum FeeCategoryEnum {
-    OTHER("Other"),
-    
-    SERVICING("Servicing");
-
-    private String value;
-
-    FeeCategoryEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static FeeCategoryEnum fromValue(String text) {
-      for (FeeCategoryEnum b : FeeCategoryEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
   @JsonProperty("FeeCategory")
-  private FeeCategoryEnum feeCategory = null;
+  private OBFeeCategory1Code feeCategory = null;
 
   @JsonProperty("Name")
   private String name = null;
@@ -80,7 +49,7 @@ public class OtherFeeType1   {
   @JsonProperty("Description")
   private String description = null;
 
-  public OtherFeeType1 code(String code) {
+  public OBOtherFeeChargeDetailType code(String code) {
     this.code = code;
     return this;
   }
@@ -100,7 +69,7 @@ public class OtherFeeType1   {
     this.code = code;
   }
 
-  public OtherFeeType1 feeCategory(FeeCategoryEnum feeCategory) {
+  public OBOtherFeeChargeDetailType feeCategory(OBFeeCategory1Code feeCategory) {
     this.feeCategory = feeCategory;
     return this;
   }
@@ -113,15 +82,15 @@ public class OtherFeeType1   {
   @NotNull
 
 
-  public FeeCategoryEnum getFeeCategory() {
+  public OBFeeCategory1Code getFeeCategory() {
     return feeCategory;
   }
 
-  public void setFeeCategory(FeeCategoryEnum feeCategory) {
+  public void setFeeCategory(OBFeeCategory1Code feeCategory) {
     this.feeCategory = feeCategory;
   }
 
-  public OtherFeeType1 name(String name) {
+  public OBOtherFeeChargeDetailType name(String name) {
     this.name = name;
     return this;
   }
@@ -142,7 +111,7 @@ public class OtherFeeType1   {
     this.name = name;
   }
 
-  public OtherFeeType1 description(String description) {
+  public OBOtherFeeChargeDetailType description(String description) {
     this.description = description;
     return this;
   }
@@ -172,7 +141,7 @@ public class OtherFeeType1   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OtherFeeType1 otherFeeType1 = (OtherFeeType1) o;
+    OBOtherFeeChargeDetailType otherFeeType1 = (OBOtherFeeChargeDetailType) o;
     return Objects.equals(this.code, otherFeeType1.code) &&
         Objects.equals(this.feeCategory, otherFeeType1.feeCategory) &&
         Objects.equals(this.name, otherFeeType1.name) &&
@@ -187,7 +156,7 @@ public class OtherFeeType1   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OtherFeeType1 {\n");
+    sb.append("class OBOtherFeeChargeDetailType {\n");
 
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    feeCategory: ").append(toIndentedString(feeCategory)).append("\n");

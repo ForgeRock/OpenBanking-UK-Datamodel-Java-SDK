@@ -17,9 +17,7 @@
 
 package uk.org.openbanking.datamodel.account;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
@@ -39,76 +37,13 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class Overdraft1OverdraftTierBandSet   {
-  /**
-   * The methodology of how overdraft is charged. It can be: 'Whole'  Where the same charge/rate is applied to the entirety of the overdraft balance (where charges are applicable).  'Tiered' Where different charges/rates are applied dependent on overdraft maximum and minimum balance amount tiers defined by the lending financial organisation 'Banded' Where different charges/rates are applied dependent on overdraft maximum and minimum balance amount bands defined by a government organisation.
-   */
-  public enum TierBandMethodEnum {
-    BANDED("Banded"),
-    
-    TIERED("Tiered"),
-    
-    WHOLE("Whole");
-
-    private String value;
-
-    TierBandMethodEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TierBandMethodEnum fromValue(String text) {
-      for (TierBandMethodEnum b : TierBandMethodEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+public class OBOverdraftTierbandSet1 {
 
   @JsonProperty("TierBandMethod")
-  private TierBandMethodEnum tierBandMethod = null;
-
-  /**
-   * An overdraft can either be 'committed' which means that the facility cannot be withdrawn without reasonable notification before it's agreed end date, or 'on demand' which means that the financial institution can demand repayment at any point in time.
-   */
-  public enum OverdraftTypeEnum {
-    COMMITTED("Committed"),
-    
-    ONDEMAND("OnDemand");
-
-    private String value;
-
-    OverdraftTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static OverdraftTypeEnum fromValue(String text) {
-      for (OverdraftTypeEnum b : OverdraftTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBTierBandType1Code tierBandMethod = null;
 
   @JsonProperty("OverdraftType")
-  private OverdraftTypeEnum overdraftType = null;
+  private OBOverdraftType1Code overdraftType = null;
 
   @JsonProperty("Identification")
   private String identification = null;
@@ -125,13 +60,13 @@ public class Overdraft1OverdraftTierBandSet   {
 
   @JsonProperty("OverdraftTierBand")
   @Valid
-  private List<Overdraft1OverdraftTierBand> overdraftTierBand = new ArrayList<Overdraft1OverdraftTierBand>();
+  private List<OBOverdraftTierBand1> overdraftTierBand = new ArrayList<OBOverdraftTierBand1>();
 
   @JsonProperty("OverdraftFeesCharges")
   @Valid
-  private List<Overdraft1OverdraftFeesCharges1> overdraftFeesCharges = null;
+  private List<OBOverdraftFeesCharges1> overdraftFeesCharges = null;
 
-  public Overdraft1OverdraftTierBandSet tierBandMethod(TierBandMethodEnum tierBandMethod) {
+  public OBOverdraftTierbandSet1 tierBandMethod(OBTierBandType1Code tierBandMethod) {
     this.tierBandMethod = tierBandMethod;
     return this;
   }
@@ -144,15 +79,15 @@ public class Overdraft1OverdraftTierBandSet   {
   @NotNull
 
 
-  public TierBandMethodEnum getTierBandMethod() {
+  public OBTierBandType1Code getTierBandMethod() {
     return tierBandMethod;
   }
 
-  public void setTierBandMethod(TierBandMethodEnum tierBandMethod) {
+  public void setTierBandMethod(OBTierBandType1Code tierBandMethod) {
     this.tierBandMethod = tierBandMethod;
   }
 
-  public Overdraft1OverdraftTierBandSet overdraftType(OverdraftTypeEnum overdraftType) {
+  public OBOverdraftTierbandSet1 overdraftType(OBOverdraftType1Code overdraftType) {
     this.overdraftType = overdraftType;
     return this;
   }
@@ -164,15 +99,15 @@ public class Overdraft1OverdraftTierBandSet   {
   @ApiModelProperty(value = "An overdraft can either be 'committed' which means that the facility cannot be withdrawn without reasonable notification before it's agreed end date, or 'on demand' which means that the financial institution can demand repayment at any point in time.")
 
 
-  public OverdraftTypeEnum getOverdraftType() {
+  public OBOverdraftType1Code getOverdraftType() {
     return overdraftType;
   }
 
-  public void setOverdraftType(OverdraftTypeEnum overdraftType) {
+  public void setOverdraftType(OBOverdraftType1Code overdraftType) {
     this.overdraftType = overdraftType;
   }
 
-  public Overdraft1OverdraftTierBandSet identification(String identification) {
+  public OBOverdraftTierbandSet1 identification(String identification) {
     this.identification = identification;
     return this;
   }
@@ -192,7 +127,7 @@ public class Overdraft1OverdraftTierBandSet   {
     this.identification = identification;
   }
 
-  public Overdraft1OverdraftTierBandSet authorisedIndicator(Boolean authorisedIndicator) {
+  public OBOverdraftTierbandSet1 authorisedIndicator(Boolean authorisedIndicator) {
     this.authorisedIndicator = authorisedIndicator;
     return this;
   }
@@ -212,7 +147,7 @@ public class Overdraft1OverdraftTierBandSet   {
     this.authorisedIndicator = authorisedIndicator;
   }
 
-  public Overdraft1OverdraftTierBandSet bufferAmount(String bufferAmount) {
+  public OBOverdraftTierbandSet1 bufferAmount(String bufferAmount) {
     this.bufferAmount = bufferAmount;
     return this;
   }
@@ -232,12 +167,12 @@ public class Overdraft1OverdraftTierBandSet   {
     this.bufferAmount = bufferAmount;
   }
 
-  public Overdraft1OverdraftTierBandSet notes(List<String> notes) {
+  public OBOverdraftTierbandSet1 notes(List<String> notes) {
     this.notes = notes;
     return this;
   }
 
-  public Overdraft1OverdraftTierBandSet addNotesItem(String notesItem) {
+  public OBOverdraftTierbandSet1 addNotesItem(String notesItem) {
     if (this.notes == null) {
       this.notes = new ArrayList<String>();
     }
@@ -260,12 +195,12 @@ public class Overdraft1OverdraftTierBandSet   {
     this.notes = notes;
   }
 
-  public Overdraft1OverdraftTierBandSet overdraftTierBand(List<Overdraft1OverdraftTierBand> overdraftTierBand) {
+  public OBOverdraftTierbandSet1 overdraftTierBand(List<OBOverdraftTierBand1> overdraftTierBand) {
     this.overdraftTierBand = overdraftTierBand;
     return this;
   }
 
-  public Overdraft1OverdraftTierBandSet addOverdraftTierBandItem(Overdraft1OverdraftTierBand overdraftTierBandItem) {
+  public OBOverdraftTierbandSet1 addOverdraftTierBandItem(OBOverdraftTierBand1 overdraftTierBandItem) {
     this.overdraftTierBand.add(overdraftTierBandItem);
     return this;
   }
@@ -279,22 +214,22 @@ public class Overdraft1OverdraftTierBandSet   {
 
   @Valid
 @Size(min=1) 
-  public List<Overdraft1OverdraftTierBand> getOverdraftTierBand() {
+  public List<OBOverdraftTierBand1> getOverdraftTierBand() {
     return overdraftTierBand;
   }
 
-  public void setOverdraftTierBand(List<Overdraft1OverdraftTierBand> overdraftTierBand) {
+  public void setOverdraftTierBand(List<OBOverdraftTierBand1> overdraftTierBand) {
     this.overdraftTierBand = overdraftTierBand;
   }
 
-  public Overdraft1OverdraftTierBandSet overdraftFeesCharges(List<Overdraft1OverdraftFeesCharges1> overdraftFeesCharges) {
+  public OBOverdraftTierbandSet1 overdraftFeesCharges(List<OBOverdraftFeesCharges1> overdraftFeesCharges) {
     this.overdraftFeesCharges = overdraftFeesCharges;
     return this;
   }
 
-  public Overdraft1OverdraftTierBandSet addOverdraftFeesChargesItem(Overdraft1OverdraftFeesCharges1 overdraftFeesChargesItem) {
+  public OBOverdraftTierbandSet1 addOverdraftFeesChargesItem(OBOverdraftFeesCharges1 overdraftFeesChargesItem) {
     if (this.overdraftFeesCharges == null) {
-      this.overdraftFeesCharges = new ArrayList<Overdraft1OverdraftFeesCharges1>();
+      this.overdraftFeesCharges = new ArrayList<OBOverdraftFeesCharges1>();
     }
     this.overdraftFeesCharges.add(overdraftFeesChargesItem);
     return this;
@@ -308,11 +243,11 @@ public class Overdraft1OverdraftTierBandSet   {
 
   @Valid
 
-  public List<Overdraft1OverdraftFeesCharges1> getOverdraftFeesCharges() {
+  public List<OBOverdraftFeesCharges1> getOverdraftFeesCharges() {
     return overdraftFeesCharges;
   }
 
-  public void setOverdraftFeesCharges(List<Overdraft1OverdraftFeesCharges1> overdraftFeesCharges) {
+  public void setOverdraftFeesCharges(List<OBOverdraftFeesCharges1> overdraftFeesCharges) {
     this.overdraftFeesCharges = overdraftFeesCharges;
   }
 
@@ -325,7 +260,7 @@ public class Overdraft1OverdraftTierBandSet   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Overdraft1OverdraftTierBandSet overdraft1OverdraftTierBandSet = (Overdraft1OverdraftTierBandSet) o;
+    OBOverdraftTierbandSet1 overdraft1OverdraftTierBandSet = (OBOverdraftTierbandSet1) o;
     return Objects.equals(this.tierBandMethod, overdraft1OverdraftTierBandSet.tierBandMethod) &&
         Objects.equals(this.overdraftType, overdraft1OverdraftTierBandSet.overdraftType) &&
         Objects.equals(this.identification, overdraft1OverdraftTierBandSet.identification) &&
@@ -344,7 +279,7 @@ public class Overdraft1OverdraftTierBandSet   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Overdraft1OverdraftTierBandSet {\n");
+    sb.append("class OBOverdraftTierbandSet1 {\n");
 
     sb.append("    tierBandMethod: ").append(toIndentedString(tierBandMethod)).append("\n");
     sb.append("    overdraftType: ").append(toIndentedString(overdraftType)).append("\n");

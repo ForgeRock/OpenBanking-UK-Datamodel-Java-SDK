@@ -30,12 +30,12 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * ProductDetails
+ * OBPCAProductDetails1
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class ProductDetails   {
+public class OBPCAProductDetails1 {
   /**
    * Market segmentation is a marketing term referring to the aggregating of prospective buyers into groups, or segments, that have common needs and respond similarly to a marketing action. Market segmentation enables companies to target different categories of consumers who perceive the full value of certain products and services differently from one another.  Read more: Market Segmentation http://www.investopedia.com/terms/m/marketsegmentation.asp#ixzz4gfEEalTd  With respect to PCA products, they are segmented in relation to different markets that they wish to focus on. 
    */
@@ -102,12 +102,12 @@ public class ProductDetails   {
   @Valid
   private List<String> notes = null;
 
-  public ProductDetails segment(List<SegmentEnum> segment) {
+  public OBPCAProductDetails1 segment(List<SegmentEnum> segment) {
     this.segment = segment;
     return this;
   }
 
-  public ProductDetails addSegmentItem(SegmentEnum segmentItem) {
+  public OBPCAProductDetails1 addSegmentItem(SegmentEnum segmentItem) {
     if (this.segment == null) {
       this.segment = new ArrayList<SegmentEnum>();
     }
@@ -130,7 +130,7 @@ public class ProductDetails   {
     this.segment = segment;
   }
 
-  public ProductDetails monthlyMaximumCharge(String monthlyMaximumCharge) {
+  public OBPCAProductDetails1 monthlyMaximumCharge(String monthlyMaximumCharge) {
     this.monthlyMaximumCharge = monthlyMaximumCharge;
     return this;
   }
@@ -150,12 +150,12 @@ public class ProductDetails   {
     this.monthlyMaximumCharge = monthlyMaximumCharge;
   }
 
-  public ProductDetails notes(List<String> notes) {
+  public OBPCAProductDetails1 notes(List<String> notes) {
     this.notes = notes;
     return this;
   }
 
-  public ProductDetails addNotesItem(String notesItem) {
+  public OBPCAProductDetails1 addNotesItem(String notesItem) {
     if (this.notes == null) {
       this.notes = new ArrayList<String>();
     }
@@ -187,7 +187,7 @@ public class ProductDetails   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProductDetails productDetails = (ProductDetails) o;
+    OBPCAProductDetails1 productDetails = (OBPCAProductDetails1) o;
     return Objects.equals(this.segment, productDetails.segment) &&
         Objects.equals(this.monthlyMaximumCharge, productDetails.monthlyMaximumCharge) &&
         Objects.equals(this.notes, productDetails.notes);
@@ -201,7 +201,7 @@ public class ProductDetails   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ProductDetails {\n");
+    sb.append("class OBPCAProductDetails1 {\n");
 
     sb.append("    segment: ").append(toIndentedString(segment)).append("\n");
     sb.append("    monthlyMaximumCharge: ").append(toIndentedString(monthlyMaximumCharge)).append("\n");

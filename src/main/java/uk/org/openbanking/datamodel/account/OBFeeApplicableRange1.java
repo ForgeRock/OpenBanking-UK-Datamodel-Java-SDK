@@ -32,7 +32,7 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class FeeApplicableRange   {
+public class OBFeeApplicableRange1 {
   @JsonProperty("MinimumAmount")
   private String minimumAmount = null;
 
@@ -45,7 +45,7 @@ public class FeeApplicableRange   {
   @JsonProperty("MaximumRate")
   private String maximumRate = null;
 
-  public FeeApplicableRange minimumAmount(String minimumAmount) {
+  public OBFeeApplicableRange1 minimumAmount(String minimumAmount) {
     this.minimumAmount = minimumAmount;
     return this;
   }
@@ -65,7 +65,7 @@ public class FeeApplicableRange   {
     this.minimumAmount = minimumAmount;
   }
 
-  public FeeApplicableRange maximumAmount(String maximumAmount) {
+  public OBFeeApplicableRange1 maximumAmount(String maximumAmount) {
     this.maximumAmount = maximumAmount;
     return this;
   }
@@ -85,7 +85,7 @@ public class FeeApplicableRange   {
     this.maximumAmount = maximumAmount;
   }
 
-  public FeeApplicableRange minimumRate(String minimumRate) {
+  public OBFeeApplicableRange1 minimumRate(String minimumRate) {
     this.minimumRate = minimumRate;
     return this;
   }
@@ -105,7 +105,7 @@ public class FeeApplicableRange   {
     this.minimumRate = minimumRate;
   }
 
-  public FeeApplicableRange maximumRate(String maximumRate) {
+  public OBFeeApplicableRange1 maximumRate(String maximumRate) {
     this.maximumRate = maximumRate;
     return this;
   }
@@ -134,7 +134,7 @@ public class FeeApplicableRange   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    FeeApplicableRange feeApplicableRange = (FeeApplicableRange) o;
+    OBFeeApplicableRange1 feeApplicableRange = (OBFeeApplicableRange1) o;
     return Objects.equals(this.minimumAmount, feeApplicableRange.minimumAmount) &&
         Objects.equals(this.maximumAmount, feeApplicableRange.maximumAmount) &&
         Objects.equals(this.minimumRate, feeApplicableRange.minimumRate) &&
@@ -149,7 +149,7 @@ public class FeeApplicableRange   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class FeeApplicableRange {\n");
+    sb.append("class OBFeeApplicableRange1 {\n");
 
     sb.append("    minimumAmount: ").append(toIndentedString(minimumAmount)).append("\n");
     sb.append("    maximumAmount: ").append(toIndentedString(maximumAmount)).append("\n");

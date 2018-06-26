@@ -17,9 +17,7 @@
 
 package uk.org.openbanking.datamodel.account;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
@@ -38,110 +36,16 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class CreditInterest1TierBandSet   {
-  /**
-   * The methodology of how credit interest is paid/applied. It can be:-  1. Banded Interest rates are banded. i.e. Increasing rate on whole balance as balance increases.  2. Tiered Interest rates are tiered. i.e. increasing rate for each tier as balance increases, but interest paid on tier fixed for that tier and not on whole balance.  3. Whole The same interest rate is applied irrespective of the BCA balance
-   */
-  public enum TierBandMethodEnum {
-    BANDED("Banded"),
-    
-    TIERED("Tiered"),
-    
-    WHOLE("Whole");
-
-    private String value;
-
-    TierBandMethodEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static TierBandMethodEnum fromValue(String text) {
-      for (TierBandMethodEnum b : TierBandMethodEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+public class OBTierBandSet1 {
 
   @JsonProperty("TierBandMethod")
-  private TierBandMethodEnum tierBandMethod = null;
-
-  /**
-   * Methods of calculating interest
-   */
-  public enum CalculationMethodEnum {
-    COMPOUND("Compound"),
-    
-    SIMPLEINTEREST("SimpleInterest");
-
-    private String value;
-
-    CalculationMethodEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static CalculationMethodEnum fromValue(String text) {
-      for (CalculationMethodEnum b : CalculationMethodEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBTierBandType1Code tierBandMethod = null;
 
   @JsonProperty("CalculationMethod")
-  private CalculationMethodEnum calculationMethod = null;
-
-  /**
-   * Describes whether accrued interest is payable only to the BCA or to another bank account
-   */
-  public enum DestinationEnum {
-    PAYAWAY("PayAway"),
-    
-    SELFCREDIT("SelfCredit");
-
-    private String value;
-
-    DestinationEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static DestinationEnum fromValue(String text) {
-      for (DestinationEnum b : DestinationEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBInterestCalculationMethod1Code calculationMethod = null;
 
   @JsonProperty("Destination")
-  private DestinationEnum destination = null;
+  private OBInterestDestination1Code destination = null;
 
   @JsonProperty("Notes")
   @Valid
@@ -149,9 +53,9 @@ public class CreditInterest1TierBandSet   {
 
   @JsonProperty("TierBand")
   @Valid
-  private List<CreditInterest1TierBand> tierBand = new ArrayList<CreditInterest1TierBand>();
+  private List<OBTierBand1> tierBand = new ArrayList<OBTierBand1>();
 
-  public CreditInterest1TierBandSet tierBandMethod(TierBandMethodEnum tierBandMethod) {
+  public OBTierBandSet1 tierBandMethod(OBTierBandType1Code tierBandMethod) {
     this.tierBandMethod = tierBandMethod;
     return this;
   }
@@ -164,15 +68,15 @@ public class CreditInterest1TierBandSet   {
   @NotNull
 
 
-  public TierBandMethodEnum getTierBandMethod() {
+  public OBTierBandType1Code getTierBandMethod() {
     return tierBandMethod;
   }
 
-  public void setTierBandMethod(TierBandMethodEnum tierBandMethod) {
+  public void setTierBandMethod(OBTierBandType1Code tierBandMethod) {
     this.tierBandMethod = tierBandMethod;
   }
 
-  public CreditInterest1TierBandSet calculationMethod(CalculationMethodEnum calculationMethod) {
+  public OBTierBandSet1 calculationMethod(OBInterestCalculationMethod1Code calculationMethod) {
     this.calculationMethod = calculationMethod;
     return this;
   }
@@ -184,15 +88,15 @@ public class CreditInterest1TierBandSet   {
   @ApiModelProperty(value = "Methods of calculating interest")
 
 
-  public CalculationMethodEnum getCalculationMethod() {
+  public OBInterestCalculationMethod1Code getCalculationMethod() {
     return calculationMethod;
   }
 
-  public void setCalculationMethod(CalculationMethodEnum calculationMethod) {
+  public void setCalculationMethod(OBInterestCalculationMethod1Code calculationMethod) {
     this.calculationMethod = calculationMethod;
   }
 
-  public CreditInterest1TierBandSet destination(DestinationEnum destination) {
+  public OBTierBandSet1 destination(OBInterestDestination1Code destination) {
     this.destination = destination;
     return this;
   }
@@ -205,20 +109,20 @@ public class CreditInterest1TierBandSet   {
   @NotNull
 
 
-  public DestinationEnum getDestination() {
+  public OBInterestDestination1Code getDestination() {
     return destination;
   }
 
-  public void setDestination(DestinationEnum destination) {
+  public void setDestination(OBInterestDestination1Code destination) {
     this.destination = destination;
   }
 
-  public CreditInterest1TierBandSet notes(List<String> notes) {
+  public OBTierBandSet1 notes(List<String> notes) {
     this.notes = notes;
     return this;
   }
 
-  public CreditInterest1TierBandSet addNotesItem(String notesItem) {
+  public OBTierBandSet1 addNotesItem(String notesItem) {
     if (this.notes == null) {
       this.notes = new ArrayList<String>();
     }
@@ -241,12 +145,12 @@ public class CreditInterest1TierBandSet   {
     this.notes = notes;
   }
 
-  public CreditInterest1TierBandSet tierBand(List<CreditInterest1TierBand> tierBand) {
+  public OBTierBandSet1 tierBand(List<OBTierBand1> tierBand) {
     this.tierBand = tierBand;
     return this;
   }
 
-  public CreditInterest1TierBandSet addTierBandItem(CreditInterest1TierBand tierBandItem) {
+  public OBTierBandSet1 addTierBandItem(OBTierBand1 tierBandItem) {
     this.tierBand.add(tierBandItem);
     return this;
   }
@@ -260,11 +164,11 @@ public class CreditInterest1TierBandSet   {
 
   @Valid
 @Size(min=1) 
-  public List<CreditInterest1TierBand> getTierBand() {
+  public List<OBTierBand1> getTierBand() {
     return tierBand;
   }
 
-  public void setTierBand(List<CreditInterest1TierBand> tierBand) {
+  public void setTierBand(List<OBTierBand1> tierBand) {
     this.tierBand = tierBand;
   }
 
@@ -277,7 +181,7 @@ public class CreditInterest1TierBandSet   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreditInterest1TierBandSet creditInterest1TierBandSet = (CreditInterest1TierBandSet) o;
+    OBTierBandSet1 creditInterest1TierBandSet = (OBTierBandSet1) o;
     return Objects.equals(this.tierBandMethod, creditInterest1TierBandSet.tierBandMethod) &&
         Objects.equals(this.calculationMethod, creditInterest1TierBandSet.calculationMethod) &&
         Objects.equals(this.destination, creditInterest1TierBandSet.destination) &&
@@ -293,7 +197,7 @@ public class CreditInterest1TierBandSet   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreditInterest1TierBandSet {\n");
+    sb.append("class OBTierBandSet1 {\n");
 
     sb.append("    tierBandMethod: ").append(toIndentedString(tierBandMethod)).append("\n");
     sb.append("    calculationMethod: ").append(toIndentedString(calculationMethod)).append("\n");

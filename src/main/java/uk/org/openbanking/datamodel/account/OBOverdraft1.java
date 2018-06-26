@@ -20,7 +20,6 @@ package uk.org.openbanking.datamodel.account;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.model.CreditInterest1TierBandSet;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
@@ -31,42 +30,74 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Details about the interest that may be payable to the BCA account holders
+ * Borrowing details
  */
-@ApiModel(description = "Details about the interest that may be payable to the BCA account holders")
+@ApiModel(description = "Borrowing details")
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class CreditInterest1   {
-  @JsonProperty("TierBandSet")
+public class OBOverdraft1 {
+  @JsonProperty("Notes")
   @Valid
-  private List<CreditInterest1TierBandSet> tierBandSet = new ArrayList<CreditInterest1TierBandSet>();
+  private List<String> notes = null;
 
-  public CreditInterest1 tierBandSet(List<CreditInterest1TierBandSet> tierBandSet) {
-    this.tierBandSet = tierBandSet;
+  @JsonProperty("OverdraftTierBandSet")
+  @Valid
+  private List<OBOverdraftTierbandSet1> overdraftTierBandSet = new ArrayList<OBOverdraftTierbandSet1>();
+
+  public OBOverdraft1 notes(List<String> notes) {
+    this.notes = notes;
     return this;
   }
 
-  public CreditInterest1 addTierBandSetItem(CreditInterest1TierBandSet tierBandSetItem) {
-    this.tierBandSet.add(tierBandSetItem);
+  public OBOverdraft1 addNotesItem(String notesItem) {
+    if (this.notes == null) {
+      this.notes = new ArrayList<String>();
+    }
+    this.notes.add(notesItem);
     return this;
   }
 
   /**
-   * The group of tiers or bands for which credit interest can be applied.
-   * @return tierBandSet
+   * Associated Notes about the overdraft rates
+   * @return notes
   **/
-  @ApiModelProperty(required = true, value = "The group of tiers or bands for which credit interest can be applied.")
+  @ApiModelProperty(value = "Associated Notes about the overdraft rates")
+
+
+  public List<String> getNotes() {
+    return notes;
+  }
+
+  public void setNotes(List<String> notes) {
+    this.notes = notes;
+  }
+
+  public OBOverdraft1 overdraftTierBandSet(List<OBOverdraftTierbandSet1> overdraftTierBandSet) {
+    this.overdraftTierBandSet = overdraftTierBandSet;
+    return this;
+  }
+
+  public OBOverdraft1 addOverdraftTierBandSetItem(OBOverdraftTierbandSet1 overdraftTierBandSetItem) {
+    this.overdraftTierBandSet.add(overdraftTierBandSetItem);
+    return this;
+  }
+
+  /**
+   * Tier band set details
+   * @return overdraftTierBandSet
+  **/
+  @ApiModelProperty(required = true, value = "Tier band set details")
   @NotNull
 
   @Valid
 @Size(min=1) 
-  public List<CreditInterest1TierBandSet> getTierBandSet() {
-    return tierBandSet;
+  public List<OBOverdraftTierbandSet1> getOverdraftTierBandSet() {
+    return overdraftTierBandSet;
   }
 
-  public void setTierBandSet(List<CreditInterest1TierBandSet> tierBandSet) {
-    this.tierBandSet = tierBandSet;
+  public void setOverdraftTierBandSet(List<OBOverdraftTierbandSet1> overdraftTierBandSet) {
+    this.overdraftTierBandSet = overdraftTierBandSet;
   }
 
 
@@ -78,21 +109,23 @@ public class CreditInterest1   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreditInterest1 creditInterest1 = (CreditInterest1) o;
-    return Objects.equals(this.tierBandSet, creditInterest1.tierBandSet);
+    OBOverdraft1 overdraft1 = (OBOverdraft1) o;
+    return Objects.equals(this.notes, overdraft1.notes) &&
+        Objects.equals(this.overdraftTierBandSet, overdraft1.overdraftTierBandSet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(tierBandSet);
+    return Objects.hash(notes, overdraftTierBandSet);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreditInterest1 {\n");
+    sb.append("class OBOverdraft1 {\n");
 
-    sb.append("    tierBandSet: ").append(toIndentedString(tierBandSet)).append("\n");
+    sb.append("    notes: ").append(toIndentedString(notes)).append("\n");
+    sb.append("    overdraftTierBandSet: ").append(toIndentedString(overdraftTierBandSet)).append("\n");
     sb.append("}");
     return sb.toString();
   }

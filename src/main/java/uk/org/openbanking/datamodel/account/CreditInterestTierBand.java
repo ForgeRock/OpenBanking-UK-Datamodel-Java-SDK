@@ -261,8 +261,8 @@ public class CreditInterestTierBand   {
   @Valid
   private List<String> notes = null;
 
-  @JsonProperty("OtherBankInterestType")
-  private OtherBankInterestType otherBankInterestType = null;
+  @JsonProperty("OBOtherCodeType1")
+  private OBOtherCodeType1 otherBankInterestType = null;
 
   @JsonProperty("OtherApplicationFrequency")
   private OtherApplicationFrequency otherApplicationFrequency = null;
@@ -502,7 +502,7 @@ public class CreditInterestTierBand   {
     this.notes = notes;
   }
 
-  public CreditInterestTierBand otherBankInterestType(OtherBankInterestType otherBankInterestType) {
+  public CreditInterestTierBand otherBankInterestType(OBOtherCodeType1 otherBankInterestType) {
     this.otherBankInterestType = otherBankInterestType;
     return this;
   }
@@ -515,11 +515,11 @@ public class CreditInterestTierBand   {
 
   @Valid
 
-  public OtherBankInterestType getOtherBankInterestType() {
+  public OBOtherCodeType1 getOtherBankInterestType() {
     return otherBankInterestType;
   }
 
-  public void setOtherBankInterestType(OtherBankInterestType otherBankInterestType) {
+  public void setOtherBankInterestType(OBOtherCodeType1 otherBankInterestType) {
     this.otherBankInterestType = otherBankInterestType;
   }
 

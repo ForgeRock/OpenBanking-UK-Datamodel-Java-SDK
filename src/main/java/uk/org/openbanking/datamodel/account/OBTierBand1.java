@@ -17,9 +17,7 @@
 
 package uk.org.openbanking.datamodel.account;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
@@ -39,7 +37,7 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class CreditInterest1TierBand   {
+public class OBTierBand1 {
   @JsonProperty("Identification")
   private String identification = null;
 
@@ -49,204 +47,23 @@ public class CreditInterest1TierBand   {
   @JsonProperty("TierValueMaximum")
   private String tierValueMaximum = null;
 
-  /**
-   * How often is credit interest calculated for the account.
-   */
-  public enum CalculationFrequencyEnum {
-    DAILY("Daily"),
-    
-    HALFYEARLY("HalfYearly"),
-    
-    MONTHLY("Monthly"),
-    
-    OTHER("Other"),
-    
-    QUARTERLY("Quarterly"),
-    
-    PERSTATEMENTDATE("PerStatementDate"),
-    
-    WEEKLY("Weekly"),
-    
-    YEARLY("Yearly");
-
-    private String value;
-
-    CalculationFrequencyEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static CalculationFrequencyEnum fromValue(String text) {
-      for (CalculationFrequencyEnum b : CalculationFrequencyEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
   @JsonProperty("CalculationFrequency")
-  private CalculationFrequencyEnum calculationFrequency = null;
-
-  /**
-   * How often is interest applied to the BCA for this tier/band i.e. how often the financial institution pays accumulated interest to the customer's BCA.
-   */
-  public enum ApplicationFrequencyEnum {
-    DAILY("Daily"),
-    
-    HALFYEARLY("HalfYearly"),
-    
-    MONTHLY("Monthly"),
-    
-    OTHER("Other"),
-    
-    QUARTERLY("Quarterly"),
-    
-    PERSTATEMENTDATE("PerStatementDate"),
-    
-    WEEKLY("Weekly"),
-    
-    YEARLY("Yearly");
-
-    private String value;
-
-    ApplicationFrequencyEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static ApplicationFrequencyEnum fromValue(String text) {
-      for (ApplicationFrequencyEnum b : ApplicationFrequencyEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBFrequency1Code calculationFrequency = null;
 
   @JsonProperty("ApplicationFrequency")
-  private ApplicationFrequencyEnum applicationFrequency = null;
-
-  /**
-   * Amount on which Interest applied.
-   */
-  public enum DepositInterestAppliedCoverageEnum {
-    BANDED("Banded"),
-    
-    TIERED("Tiered"),
-    
-    WHOLE("Whole");
-
-    private String value;
-
-    DepositInterestAppliedCoverageEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static DepositInterestAppliedCoverageEnum fromValue(String text) {
-      for (DepositInterestAppliedCoverageEnum b : DepositInterestAppliedCoverageEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBFrequency1Code applicationFrequency = null;
 
   @JsonProperty("DepositInterestAppliedCoverage")
-  private DepositInterestAppliedCoverageEnum depositInterestAppliedCoverage = null;
-
-  /**
-   * Type of interest rate, Fixed or Variable
-   */
-  public enum FixedVariableInterestRateTypeEnum {
-    FIXED("Fixed"),
-    
-    VARIABLE("Variable");
-
-    private String value;
-
-    FixedVariableInterestRateTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static FixedVariableInterestRateTypeEnum fromValue(String text) {
-      for (FixedVariableInterestRateTypeEnum b : FixedVariableInterestRateTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBTierBandType1Code depositInterestAppliedCoverage = null;
 
   @JsonProperty("FixedVariableInterestRateType")
-  private FixedVariableInterestRateTypeEnum fixedVariableInterestRateType = null;
+  private OBInterestFixedVariableType1Code fixedVariableInterestRateType = null;
 
   @JsonProperty("AER")
   private String AER = null;
 
-  /**
-   * Interest rate types, other than AER, which financial institutions may use to describe the annual interest rate payable to the BCA.
-   */
-  public enum BankInterestRateTypeEnum {
-    GROSS("Gross"),
-    
-    OTHER("Other");
-
-    private String value;
-
-    BankInterestRateTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static BankInterestRateTypeEnum fromValue(String text) {
-      for (BankInterestRateTypeEnum b : BankInterestRateTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
   @JsonProperty("BankInterestRateType")
-  private BankInterestRateTypeEnum bankInterestRateType = null;
+  private OBInterestRateType1Code bankInterestRateType = null;
 
   @JsonProperty("BankInterestRate")
   private String bankInterestRate = null;
@@ -255,16 +72,16 @@ public class CreditInterest1TierBand   {
   @Valid
   private List<String> notes = null;
 
-  @JsonProperty("OtherBankInterestType")
-  private OtherBankInterestType otherBankInterestType = null;
+  @JsonProperty("OBOtherCodeType1")
+  private OBOtherCodeType1 otherBankInterestType = null;
 
   @JsonProperty("OtherApplicationFrequency")
-  private OtherApplicationFrequency otherApplicationFrequency = null;
+  private OBOtherCodeType1 otherApplicationFrequency = null;
 
   @JsonProperty("OtherCalculationFrequency")
-  private OtherCalculationFrequency otherCalculationFrequency = null;
+  private OBOtherCodeType1 otherCalculationFrequency = null;
 
-  public CreditInterest1TierBand identification(String identification) {
+  public OBTierBand1 identification(String identification) {
     this.identification = identification;
     return this;
   }
@@ -284,7 +101,7 @@ public class CreditInterest1TierBand   {
     this.identification = identification;
   }
 
-  public CreditInterest1TierBand tierValueMinimum(String tierValueMinimum) {
+  public OBTierBand1 tierValueMinimum(String tierValueMinimum) {
     this.tierValueMinimum = tierValueMinimum;
     return this;
   }
@@ -305,7 +122,7 @@ public class CreditInterest1TierBand   {
     this.tierValueMinimum = tierValueMinimum;
   }
 
-  public CreditInterest1TierBand tierValueMaximum(String tierValueMaximum) {
+  public OBTierBand1 tierValueMaximum(String tierValueMaximum) {
     this.tierValueMaximum = tierValueMaximum;
     return this;
   }
@@ -325,7 +142,7 @@ public class CreditInterest1TierBand   {
     this.tierValueMaximum = tierValueMaximum;
   }
 
-  public CreditInterest1TierBand calculationFrequency(CalculationFrequencyEnum calculationFrequency) {
+  public OBTierBand1 calculationFrequency(OBFrequency1Code calculationFrequency) {
     this.calculationFrequency = calculationFrequency;
     return this;
   }
@@ -337,15 +154,15 @@ public class CreditInterest1TierBand   {
   @ApiModelProperty(value = "How often is credit interest calculated for the account.")
 
 
-  public CalculationFrequencyEnum getCalculationFrequency() {
+  public OBFrequency1Code getCalculationFrequency() {
     return calculationFrequency;
   }
 
-  public void setCalculationFrequency(CalculationFrequencyEnum calculationFrequency) {
+  public void setCalculationFrequency(OBFrequency1Code calculationFrequency) {
     this.calculationFrequency = calculationFrequency;
   }
 
-  public CreditInterest1TierBand applicationFrequency(ApplicationFrequencyEnum applicationFrequency) {
+  public OBTierBand1 applicationFrequency(OBFrequency1Code applicationFrequency) {
     this.applicationFrequency = applicationFrequency;
     return this;
   }
@@ -358,15 +175,15 @@ public class CreditInterest1TierBand   {
   @NotNull
 
 
-  public ApplicationFrequencyEnum getApplicationFrequency() {
+  public OBFrequency1Code getApplicationFrequency() {
     return applicationFrequency;
   }
 
-  public void setApplicationFrequency(ApplicationFrequencyEnum applicationFrequency) {
+  public void setApplicationFrequency(OBFrequency1Code applicationFrequency) {
     this.applicationFrequency = applicationFrequency;
   }
 
-  public CreditInterest1TierBand depositInterestAppliedCoverage(DepositInterestAppliedCoverageEnum depositInterestAppliedCoverage) {
+  public OBTierBand1 depositInterestAppliedCoverage(OBTierBandType1Code depositInterestAppliedCoverage) {
     this.depositInterestAppliedCoverage = depositInterestAppliedCoverage;
     return this;
   }
@@ -378,15 +195,15 @@ public class CreditInterest1TierBand   {
   @ApiModelProperty(value = "Amount on which Interest applied.")
 
 
-  public DepositInterestAppliedCoverageEnum getDepositInterestAppliedCoverage() {
+  public OBTierBandType1Code getDepositInterestAppliedCoverage() {
     return depositInterestAppliedCoverage;
   }
 
-  public void setDepositInterestAppliedCoverage(DepositInterestAppliedCoverageEnum depositInterestAppliedCoverage) {
+  public void setDepositInterestAppliedCoverage(OBTierBandType1Code depositInterestAppliedCoverage) {
     this.depositInterestAppliedCoverage = depositInterestAppliedCoverage;
   }
 
-  public CreditInterest1TierBand fixedVariableInterestRateType(FixedVariableInterestRateTypeEnum fixedVariableInterestRateType) {
+  public OBTierBand1 fixedVariableInterestRateType(OBInterestFixedVariableType1Code fixedVariableInterestRateType) {
     this.fixedVariableInterestRateType = fixedVariableInterestRateType;
     return this;
   }
@@ -399,15 +216,15 @@ public class CreditInterest1TierBand   {
   @NotNull
 
 
-  public FixedVariableInterestRateTypeEnum getFixedVariableInterestRateType() {
+  public OBInterestFixedVariableType1Code getFixedVariableInterestRateType() {
     return fixedVariableInterestRateType;
   }
 
-  public void setFixedVariableInterestRateType(FixedVariableInterestRateTypeEnum fixedVariableInterestRateType) {
+  public void setFixedVariableInterestRateType(OBInterestFixedVariableType1Code fixedVariableInterestRateType) {
     this.fixedVariableInterestRateType = fixedVariableInterestRateType;
   }
 
-  public CreditInterest1TierBand AER(String AER) {
+  public OBTierBand1 AER(String AER) {
     this.AER = AER;
     return this;
   }
@@ -428,7 +245,7 @@ public class CreditInterest1TierBand   {
     this.AER = AER;
   }
 
-  public CreditInterest1TierBand bankInterestRateType(BankInterestRateTypeEnum bankInterestRateType) {
+  public OBTierBand1 bankInterestRateType(OBInterestRateType1Code bankInterestRateType) {
     this.bankInterestRateType = bankInterestRateType;
     return this;
   }
@@ -440,15 +257,15 @@ public class CreditInterest1TierBand   {
   @ApiModelProperty(value = "Interest rate types, other than AER, which financial institutions may use to describe the annual interest rate payable to the BCA.")
 
 
-  public BankInterestRateTypeEnum getBankInterestRateType() {
+  public OBInterestRateType1Code getBankInterestRateType() {
     return bankInterestRateType;
   }
 
-  public void setBankInterestRateType(BankInterestRateTypeEnum bankInterestRateType) {
+  public void setBankInterestRateType(OBInterestRateType1Code bankInterestRateType) {
     this.bankInterestRateType = bankInterestRateType;
   }
 
-  public CreditInterest1TierBand bankInterestRate(String bankInterestRate) {
+  public OBTierBand1 bankInterestRate(String bankInterestRate) {
     this.bankInterestRate = bankInterestRate;
     return this;
   }
@@ -468,12 +285,12 @@ public class CreditInterest1TierBand   {
     this.bankInterestRate = bankInterestRate;
   }
 
-  public CreditInterest1TierBand notes(List<String> notes) {
+  public OBTierBand1 notes(List<String> notes) {
     this.notes = notes;
     return this;
   }
 
-  public CreditInterest1TierBand addNotesItem(String notesItem) {
+  public OBTierBand1 addNotesItem(String notesItem) {
     if (this.notes == null) {
       this.notes = new ArrayList<String>();
     }
@@ -496,7 +313,7 @@ public class CreditInterest1TierBand   {
     this.notes = notes;
   }
 
-  public CreditInterest1TierBand otherBankInterestType(OtherBankInterestType otherBankInterestType) {
+  public OBTierBand1 otherBankInterestType(OBOtherCodeType1 otherBankInterestType) {
     this.otherBankInterestType = otherBankInterestType;
     return this;
   }
@@ -509,15 +326,15 @@ public class CreditInterest1TierBand   {
 
   @Valid
 
-  public OtherBankInterestType getOtherBankInterestType() {
+  public OBOtherCodeType1 getOtherBankInterestType() {
     return otherBankInterestType;
   }
 
-  public void setOtherBankInterestType(OtherBankInterestType otherBankInterestType) {
+  public void setOtherBankInterestType(OBOtherCodeType1 otherBankInterestType) {
     this.otherBankInterestType = otherBankInterestType;
   }
 
-  public CreditInterest1TierBand otherApplicationFrequency(OtherApplicationFrequency otherApplicationFrequency) {
+  public OBTierBand1 otherApplicationFrequency(OBOtherCodeType1 otherApplicationFrequency) {
     this.otherApplicationFrequency = otherApplicationFrequency;
     return this;
   }
@@ -530,15 +347,15 @@ public class CreditInterest1TierBand   {
 
   @Valid
 
-  public OtherApplicationFrequency getOtherApplicationFrequency() {
+  public OBOtherCodeType1 getOtherApplicationFrequency() {
     return otherApplicationFrequency;
   }
 
-  public void setOtherApplicationFrequency(OtherApplicationFrequency otherApplicationFrequency) {
+  public void setOtherApplicationFrequency(OBOtherCodeType1 otherApplicationFrequency) {
     this.otherApplicationFrequency = otherApplicationFrequency;
   }
 
-  public CreditInterest1TierBand otherCalculationFrequency(OtherCalculationFrequency otherCalculationFrequency) {
+  public OBTierBand1 otherCalculationFrequency(OBOtherCodeType1 otherCalculationFrequency) {
     this.otherCalculationFrequency = otherCalculationFrequency;
     return this;
   }
@@ -551,11 +368,11 @@ public class CreditInterest1TierBand   {
 
   @Valid
 
-  public OtherCalculationFrequency getOtherCalculationFrequency() {
+  public OBOtherCodeType1 getOtherCalculationFrequency() {
     return otherCalculationFrequency;
   }
 
-  public void setOtherCalculationFrequency(OtherCalculationFrequency otherCalculationFrequency) {
+  public void setOtherCalculationFrequency(OBOtherCodeType1 otherCalculationFrequency) {
     this.otherCalculationFrequency = otherCalculationFrequency;
   }
 
@@ -568,7 +385,7 @@ public class CreditInterest1TierBand   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreditInterest1TierBand creditInterest1TierBand = (CreditInterest1TierBand) o;
+    OBTierBand1 creditInterest1TierBand = (OBTierBand1) o;
     return Objects.equals(this.identification, creditInterest1TierBand.identification) &&
         Objects.equals(this.tierValueMinimum, creditInterest1TierBand.tierValueMinimum) &&
         Objects.equals(this.tierValueMaximum, creditInterest1TierBand.tierValueMaximum) &&
@@ -593,7 +410,7 @@ public class CreditInterest1TierBand   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreditInterest1TierBand {\n");
+    sb.append("class OBTierBand1 {\n");
 
     sb.append("    identification: ").append(toIndentedString(identification)).append("\n");
     sb.append("    tierValueMinimum: ").append(toIndentedString(tierValueMinimum)).append("\n");

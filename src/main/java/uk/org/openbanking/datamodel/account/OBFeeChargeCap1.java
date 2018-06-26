@@ -39,87 +39,14 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class OBBCAData1FeeChargeCap   {
-  /**
-   * Fee/charge type which is being capped
-   */
-  public enum FeeTypeEnum {
-    OTHER("Other"),
-    
-    SERVICECACCOUNTFEE("ServiceCAccountFee"),
-    
-    SERVICECACCOUNTFEEMONTHLY("ServiceCAccountFeeMonthly"),
-    
-    SERVICECACCOUNTFEEQUARTERLY("ServiceCAccountFeeQuarterly"),
-    
-    SERVICECFIXEDTARIFF("ServiceCFixedTariff"),
-    
-    SERVICECBUSIDEPACCBREAKAGE("ServiceCBusiDepAccBreakage"),
-    
-    SERVICECMINIMUMMONTHLYFEE("ServiceCMinimumMonthlyFee"),
-    
-    SERVICECOTHER("ServiceCOther");
-
-    private String value;
-
-    FeeTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static FeeTypeEnum fromValue(String text) {
-      for (FeeTypeEnum b : FeeTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+public class OBFeeChargeCap1 {
 
   @JsonProperty("FeeType")
   @Valid
-  private List<FeeTypeEnum> feeType = new ArrayList<FeeTypeEnum>();
-
-  /**
-   * Min Max type
-   */
-  public enum MinMaxTypeEnum {
-    MINIMUM("Minimum"),
-    
-    MAXIMUM("Maximum");
-
-    private String value;
-
-    MinMaxTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static MinMaxTypeEnum fromValue(String text) {
-      for (MinMaxTypeEnum b : MinMaxTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private List<OBFeeType1Code> feeType = new ArrayList<OBFeeType1Code>();
 
   @JsonProperty("MinMaxType")
-  private MinMaxTypeEnum minMaxType = null;
+  private OBMinMaxType1Code minMaxType = null;
 
   @JsonProperty("FeeCapOccurrence")
   private Float feeCapOccurrence = null;
@@ -127,47 +54,8 @@ public class OBBCAData1FeeChargeCap   {
   @JsonProperty("FeeCapAmount")
   private String feeCapAmount = null;
 
-  /**
-   * Period e.g. day, week, month etc. for which the fee/charge is capped
-   */
-  public enum CappingPeriodEnum {
-    DAY("Day"),
-    
-    HALF_YEAR("Half Year"),
-    
-    MONTH("Month"),
-    
-    QUARTER("Quarter"),
-    
-    WEEK("Week"),
-    
-    YEAR("Year");
-
-    private String value;
-
-    CappingPeriodEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static CappingPeriodEnum fromValue(String text) {
-      for (CappingPeriodEnum b : CappingPeriodEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
   @JsonProperty("CappingPeriod")
-  private CappingPeriodEnum cappingPeriod = null;
+  private OBPeriod1Code cappingPeriod = null;
 
   @JsonProperty("Notes")
   @Valid
@@ -175,14 +63,14 @@ public class OBBCAData1FeeChargeCap   {
 
   @JsonProperty("OtherFeeType")
   @Valid
-  private List<OverdraftOtherFeeType> otherFeeType = null;
+  private List<OBOtherCodeType1> otherFeeType = null;
 
-  public OBBCAData1FeeChargeCap feeType(List<FeeTypeEnum> feeType) {
+  public OBFeeChargeCap1 feeType(List<OBFeeType1Code> feeType) {
     this.feeType = feeType;
     return this;
   }
 
-  public OBBCAData1FeeChargeCap addFeeTypeItem(FeeTypeEnum feeTypeItem) {
+  public OBFeeChargeCap1 addFeeTypeItem(OBFeeType1Code feeTypeItem) {
     this.feeType.add(feeTypeItem);
     return this;
   }
@@ -195,15 +83,15 @@ public class OBBCAData1FeeChargeCap   {
   @NotNull
 
 @Size(min=1) 
-  public List<FeeTypeEnum> getFeeType() {
+  public List<OBFeeType1Code> getFeeType() {
     return feeType;
   }
 
-  public void setFeeType(List<FeeTypeEnum> feeType) {
+  public void setFeeType(List<OBFeeType1Code> feeType) {
     this.feeType = feeType;
   }
 
-  public OBBCAData1FeeChargeCap minMaxType(MinMaxTypeEnum minMaxType) {
+  public OBFeeChargeCap1 minMaxType(OBMinMaxType1Code minMaxType) {
     this.minMaxType = minMaxType;
     return this;
   }
@@ -216,15 +104,15 @@ public class OBBCAData1FeeChargeCap   {
   @NotNull
 
 
-  public MinMaxTypeEnum getMinMaxType() {
+  public OBMinMaxType1Code getMinMaxType() {
     return minMaxType;
   }
 
-  public void setMinMaxType(MinMaxTypeEnum minMaxType) {
+  public void setMinMaxType(OBMinMaxType1Code minMaxType) {
     this.minMaxType = minMaxType;
   }
 
-  public OBBCAData1FeeChargeCap feeCapOccurrence(Float feeCapOccurrence) {
+  public OBFeeChargeCap1 feeCapOccurrence(Float feeCapOccurrence) {
     this.feeCapOccurrence = feeCapOccurrence;
     return this;
   }
@@ -244,7 +132,7 @@ public class OBBCAData1FeeChargeCap   {
     this.feeCapOccurrence = feeCapOccurrence;
   }
 
-  public OBBCAData1FeeChargeCap feeCapAmount(String feeCapAmount) {
+  public OBFeeChargeCap1 feeCapAmount(String feeCapAmount) {
     this.feeCapAmount = feeCapAmount;
     return this;
   }
@@ -264,7 +152,7 @@ public class OBBCAData1FeeChargeCap   {
     this.feeCapAmount = feeCapAmount;
   }
 
-  public OBBCAData1FeeChargeCap cappingPeriod(CappingPeriodEnum cappingPeriod) {
+  public OBFeeChargeCap1 cappingPeriod(OBPeriod1Code cappingPeriod) {
     this.cappingPeriod = cappingPeriod;
     return this;
   }
@@ -276,20 +164,20 @@ public class OBBCAData1FeeChargeCap   {
   @ApiModelProperty(value = "Period e.g. day, week, month etc. for which the fee/charge is capped")
 
 
-  public CappingPeriodEnum getCappingPeriod() {
+  public OBPeriod1Code getCappingPeriod() {
     return cappingPeriod;
   }
 
-  public void setCappingPeriod(CappingPeriodEnum cappingPeriod) {
+  public void setCappingPeriod(OBPeriod1Code cappingPeriod) {
     this.cappingPeriod = cappingPeriod;
   }
 
-  public OBBCAData1FeeChargeCap notes(List<String> notes) {
+  public OBFeeChargeCap1 notes(List<String> notes) {
     this.notes = notes;
     return this;
   }
 
-  public OBBCAData1FeeChargeCap addNotesItem(String notesItem) {
+  public OBFeeChargeCap1 addNotesItem(String notesItem) {
     if (this.notes == null) {
       this.notes = new ArrayList<String>();
     }
@@ -312,14 +200,14 @@ public class OBBCAData1FeeChargeCap   {
     this.notes = notes;
   }
 
-  public OBBCAData1FeeChargeCap otherFeeType(List<OverdraftOtherFeeType> otherFeeType) {
+  public OBFeeChargeCap1 otherFeeType(List<OBOtherCodeType1> otherFeeType) {
     this.otherFeeType = otherFeeType;
     return this;
   }
 
-  public OBBCAData1FeeChargeCap addOtherFeeTypeItem(OverdraftOtherFeeType otherFeeTypeItem) {
+  public OBFeeChargeCap1 addOtherFeeTypeItem(OBOtherCodeType1 otherFeeTypeItem) {
     if (this.otherFeeType == null) {
-      this.otherFeeType = new ArrayList<OverdraftOtherFeeType>();
+      this.otherFeeType = new ArrayList<OBOtherCodeType1>();
     }
     this.otherFeeType.add(otherFeeTypeItem);
     return this;
@@ -333,11 +221,11 @@ public class OBBCAData1FeeChargeCap   {
 
   @Valid
 
-  public List<OverdraftOtherFeeType> getOtherFeeType() {
+  public List<OBOtherCodeType1> getOtherFeeType() {
     return otherFeeType;
   }
 
-  public void setOtherFeeType(List<OverdraftOtherFeeType> otherFeeType) {
+  public void setOtherFeeType(List<OBOtherCodeType1> otherFeeType) {
     this.otherFeeType = otherFeeType;
   }
 
@@ -350,7 +238,7 @@ public class OBBCAData1FeeChargeCap   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBBCAData1FeeChargeCap obBCAData1FeeChargeCap = (OBBCAData1FeeChargeCap) o;
+    OBFeeChargeCap1 obBCAData1FeeChargeCap = (OBFeeChargeCap1) o;
     return Objects.equals(this.feeType, obBCAData1FeeChargeCap.feeType) &&
         Objects.equals(this.minMaxType, obBCAData1FeeChargeCap.minMaxType) &&
         Objects.equals(this.feeCapOccurrence, obBCAData1FeeChargeCap.feeCapOccurrence) &&
@@ -368,7 +256,7 @@ public class OBBCAData1FeeChargeCap   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBBCAData1FeeChargeCap {\n");
+    sb.append("class OBFeeChargeCap1 {\n");
 
     sb.append("    feeType: ").append(toIndentedString(feeType)).append("\n");
     sb.append("    minMaxType: ").append(toIndentedString(minMaxType)).append("\n");

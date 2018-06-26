@@ -36,23 +36,23 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class Overdraft1OverdraftFeesCharges1   {
+public class OBOverdraftFeesCharges1 {
   @JsonProperty("OverdraftFeeChargeCap")
   @Valid
-  private List<Overdraft1OverdraftFeeChargeCap> overdraftFeeChargeCap = null;
+  private List<OBOverdraftFeeChargeCap1> overdraftFeeChargeCap = null;
 
   @JsonProperty("OverdraftFeeChargeDetail")
   @Valid
-  private List<Overdraft1OverdraftFeeChargeDetail> overdraftFeeChargeDetail = new ArrayList<Overdraft1OverdraftFeeChargeDetail>();
+  private List<OBOverdraftFeesChargeDetails1> overdraftFeeChargeDetail = new ArrayList<OBOverdraftFeesChargeDetails1>();
 
-  public Overdraft1OverdraftFeesCharges1 overdraftFeeChargeCap(List<Overdraft1OverdraftFeeChargeCap> overdraftFeeChargeCap) {
+  public OBOverdraftFeesCharges1 overdraftFeeChargeCap(List<OBOverdraftFeeChargeCap1> overdraftFeeChargeCap) {
     this.overdraftFeeChargeCap = overdraftFeeChargeCap;
     return this;
   }
 
-  public Overdraft1OverdraftFeesCharges1 addOverdraftFeeChargeCapItem(Overdraft1OverdraftFeeChargeCap overdraftFeeChargeCapItem) {
+  public OBOverdraftFeesCharges1 addOverdraftFeeChargeCapItem(OBOverdraftFeeChargeCap1 overdraftFeeChargeCapItem) {
     if (this.overdraftFeeChargeCap == null) {
-      this.overdraftFeeChargeCap = new ArrayList<Overdraft1OverdraftFeeChargeCap>();
+      this.overdraftFeeChargeCap = new ArrayList<OBOverdraftFeeChargeCap1>();
     }
     this.overdraftFeeChargeCap.add(overdraftFeeChargeCapItem);
     return this;
@@ -66,20 +66,20 @@ public class Overdraft1OverdraftFeesCharges1   {
 
   @Valid
 
-  public List<Overdraft1OverdraftFeeChargeCap> getOverdraftFeeChargeCap() {
+  public List<OBOverdraftFeeChargeCap1> getOverdraftFeeChargeCap() {
     return overdraftFeeChargeCap;
   }
 
-  public void setOverdraftFeeChargeCap(List<Overdraft1OverdraftFeeChargeCap> overdraftFeeChargeCap) {
+  public void setOverdraftFeeChargeCap(List<OBOverdraftFeeChargeCap1> overdraftFeeChargeCap) {
     this.overdraftFeeChargeCap = overdraftFeeChargeCap;
   }
 
-  public Overdraft1OverdraftFeesCharges1 overdraftFeeChargeDetail(List<Overdraft1OverdraftFeeChargeDetail> overdraftFeeChargeDetail) {
+  public OBOverdraftFeesCharges1 overdraftFeeChargeDetail(List<OBOverdraftFeesChargeDetails1> overdraftFeeChargeDetail) {
     this.overdraftFeeChargeDetail = overdraftFeeChargeDetail;
     return this;
   }
 
-  public Overdraft1OverdraftFeesCharges1 addOverdraftFeeChargeDetailItem(Overdraft1OverdraftFeeChargeDetail overdraftFeeChargeDetailItem) {
+  public OBOverdraftFeesCharges1 addOverdraftFeeChargeDetailItem(OBOverdraftFeesChargeDetails1 overdraftFeeChargeDetailItem) {
     this.overdraftFeeChargeDetail.add(overdraftFeeChargeDetailItem);
     return this;
   }
@@ -93,11 +93,11 @@ public class Overdraft1OverdraftFeesCharges1   {
 
   @Valid
 @Size(min=1) 
-  public List<Overdraft1OverdraftFeeChargeDetail> getOverdraftFeeChargeDetail() {
+  public List<OBOverdraftFeesChargeDetails1> getOverdraftFeeChargeDetail() {
     return overdraftFeeChargeDetail;
   }
 
-  public void setOverdraftFeeChargeDetail(List<Overdraft1OverdraftFeeChargeDetail> overdraftFeeChargeDetail) {
+  public void setOverdraftFeeChargeDetail(List<OBOverdraftFeesChargeDetails1> overdraftFeeChargeDetail) {
     this.overdraftFeeChargeDetail = overdraftFeeChargeDetail;
   }
 
@@ -110,7 +110,7 @@ public class Overdraft1OverdraftFeesCharges1   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Overdraft1OverdraftFeesCharges1 overdraft1OverdraftFeesCharges1 = (Overdraft1OverdraftFeesCharges1) o;
+    OBOverdraftFeesCharges1 overdraft1OverdraftFeesCharges1 = (OBOverdraftFeesCharges1) o;
     return Objects.equals(this.overdraftFeeChargeCap, overdraft1OverdraftFeesCharges1.overdraftFeeChargeCap) &&
         Objects.equals(this.overdraftFeeChargeDetail, overdraft1OverdraftFeesCharges1.overdraftFeeChargeDetail);
   }
@@ -123,7 +123,7 @@ public class Overdraft1OverdraftFeesCharges1   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Overdraft1OverdraftFeesCharges1 {\n");
+    sb.append("class OBOverdraftFeesCharges1 {\n");
 
     sb.append("    overdraftFeeChargeCap: ").append(toIndentedString(overdraftFeeChargeCap)).append("\n");
     sb.append("    overdraftFeeChargeDetail: ").append(toIndentedString(overdraftFeeChargeDetail)).append("\n");

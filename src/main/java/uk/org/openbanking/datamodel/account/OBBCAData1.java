@@ -33,20 +33,20 @@ import java.util.Objects;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
 public class OBBCAData1   {
-  @JsonProperty("ProductDetails")
-  private ProductDetails1 productDetails = null;
+  @JsonProperty("OBPCAProductDetails1")
+  private OBBCAProductDetails1 productDetails = null;
 
   @JsonProperty("CreditInterest")
-  private CreditInterest1 creditInterest = null;
+  private OBCreditInterest1 creditInterest = null;
 
   @JsonProperty("Overdraft")
-  private Overdraft1 overdraft = null;
+  private OBOverdraft1 overdraft = null;
 
   @JsonProperty("OtherFeesCharges")
   @Valid
-  private List<OBBCAData1OtherFeesCharges> otherFeesCharges = null;
+  private List<OBOtherFeesAndCharges1> otherFeesCharges = null;
 
-  public OBBCAData1 productDetails(ProductDetails1 productDetails) {
+  public OBBCAData1 productDetails(OBBCAProductDetails1 productDetails) {
     this.productDetails = productDetails;
     return this;
   }
@@ -59,15 +59,15 @@ public class OBBCAData1   {
 
   @Valid
 
-  public ProductDetails1 getProductDetails() {
+  public OBBCAProductDetails1 getProductDetails() {
     return productDetails;
   }
 
-  public void setProductDetails(ProductDetails1 productDetails) {
+  public void setProductDetails(OBBCAProductDetails1 productDetails) {
     this.productDetails = productDetails;
   }
 
-  public OBBCAData1 creditInterest(CreditInterest1 creditInterest) {
+  public OBBCAData1 creditInterest(OBCreditInterest1 creditInterest) {
     this.creditInterest = creditInterest;
     return this;
   }
@@ -80,15 +80,15 @@ public class OBBCAData1   {
 
   @Valid
 
-  public CreditInterest1 getCreditInterest() {
+  public OBCreditInterest1 getCreditInterest() {
     return creditInterest;
   }
 
-  public void setCreditInterest(CreditInterest1 creditInterest) {
+  public void setCreditInterest(OBCreditInterest1 creditInterest) {
     this.creditInterest = creditInterest;
   }
 
-  public OBBCAData1 overdraft(Overdraft1 overdraft) {
+  public OBBCAData1 overdraft(OBOverdraft1 overdraft) {
     this.overdraft = overdraft;
     return this;
   }
@@ -101,22 +101,22 @@ public class OBBCAData1   {
 
   @Valid
 
-  public Overdraft1 getOverdraft() {
+  public OBOverdraft1 getOverdraft() {
     return overdraft;
   }
 
-  public void setOverdraft(Overdraft1 overdraft) {
+  public void setOverdraft(OBOverdraft1 overdraft) {
     this.overdraft = overdraft;
   }
 
-  public OBBCAData1 otherFeesCharges(List<OBBCAData1OtherFeesCharges> otherFeesCharges) {
+  public OBBCAData1 otherFeesCharges(List<OBOtherFeesAndCharges1> otherFeesCharges) {
     this.otherFeesCharges = otherFeesCharges;
     return this;
   }
 
-  public OBBCAData1 addOtherFeesChargesItem(OBBCAData1OtherFeesCharges otherFeesChargesItem) {
+  public OBBCAData1 addOtherFeesChargesItem(OBOtherFeesAndCharges1 otherFeesChargesItem) {
     if (this.otherFeesCharges == null) {
-      this.otherFeesCharges = new ArrayList<OBBCAData1OtherFeesCharges>();
+      this.otherFeesCharges = new ArrayList<OBOtherFeesAndCharges1>();
     }
     this.otherFeesCharges.add(otherFeesChargesItem);
     return this;
@@ -130,11 +130,11 @@ public class OBBCAData1   {
 
   @Valid
 
-  public List<OBBCAData1OtherFeesCharges> getOtherFeesCharges() {
+  public List<OBOtherFeesAndCharges1> getOtherFeesCharges() {
     return otherFeesCharges;
   }
 
-  public void setOtherFeesCharges(List<OBBCAData1OtherFeesCharges> otherFeesCharges) {
+  public void setOtherFeesCharges(List<OBOtherFeesAndCharges1> otherFeesCharges) {
     this.otherFeesCharges = otherFeesCharges;
   }
 

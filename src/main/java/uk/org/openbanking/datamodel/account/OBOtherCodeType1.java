@@ -34,7 +34,7 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class OtherBankInterestType   {
+public class OBOtherCodeType1 {
   @JsonProperty("Code")
   private String code = null;
 
@@ -44,7 +44,7 @@ public class OtherBankInterestType   {
   @JsonProperty("Description")
   private String description = null;
 
-  public OtherBankInterestType code(String code) {
+  public OBOtherCodeType1 code(String code) {
     this.code = code;
     return this;
   }
@@ -64,7 +64,7 @@ public class OtherBankInterestType   {
     this.code = code;
   }
 
-  public OtherBankInterestType name(String name) {
+  public OBOtherCodeType1 name(String name) {
     this.name = name;
     return this;
   }
@@ -85,7 +85,7 @@ public class OtherBankInterestType   {
     this.name = name;
   }
 
-  public OtherBankInterestType description(String description) {
+  public OBOtherCodeType1 description(String description) {
     this.description = description;
     return this;
   }
@@ -115,7 +115,7 @@ public class OtherBankInterestType   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OtherBankInterestType otherBankInterestType = (OtherBankInterestType) o;
+    OBOtherCodeType1 otherBankInterestType = (OBOtherCodeType1) o;
     return Objects.equals(this.code, otherBankInterestType.code) &&
         Objects.equals(this.name, otherBankInterestType.name) &&
         Objects.equals(this.description, otherBankInterestType.description);
@@ -129,7 +129,7 @@ public class OtherBankInterestType   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OtherBankInterestType {\n");
+    sb.append("class OBOtherCodeType1 {\n");
 
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

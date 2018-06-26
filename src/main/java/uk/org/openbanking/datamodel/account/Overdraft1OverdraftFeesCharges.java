@@ -39,20 +39,20 @@ import java.util.Objects;
 public class Overdraft1OverdraftFeesCharges   {
   @JsonProperty("OverdraftFeeChargeCap")
   @Valid
-  private List<Overdraft1OverdraftFeeChargeCap> overdraftFeeChargeCap = null;
+  private List<OBOverdraftFeeChargeCap1> overdraftFeeChargeCap = null;
 
   @JsonProperty("OverdraftFeeChargeDetail")
   @Valid
-  private List<Overdraft1OverdraftFeeChargeDetail> overdraftFeeChargeDetail = new ArrayList<Overdraft1OverdraftFeeChargeDetail>();
+  private List<OBOverdraftFeesChargeDetails1> overdraftFeeChargeDetail = new ArrayList<OBOverdraftFeesChargeDetails1>();
 
-  public Overdraft1OverdraftFeesCharges overdraftFeeChargeCap(List<Overdraft1OverdraftFeeChargeCap> overdraftFeeChargeCap) {
+  public Overdraft1OverdraftFeesCharges overdraftFeeChargeCap(List<OBOverdraftFeeChargeCap1> overdraftFeeChargeCap) {
     this.overdraftFeeChargeCap = overdraftFeeChargeCap;
     return this;
   }
 
-  public Overdraft1OverdraftFeesCharges addOverdraftFeeChargeCapItem(Overdraft1OverdraftFeeChargeCap overdraftFeeChargeCapItem) {
+  public Overdraft1OverdraftFeesCharges addOverdraftFeeChargeCapItem(OBOverdraftFeeChargeCap1 overdraftFeeChargeCapItem) {
     if (this.overdraftFeeChargeCap == null) {
-      this.overdraftFeeChargeCap = new ArrayList<Overdraft1OverdraftFeeChargeCap>();
+      this.overdraftFeeChargeCap = new ArrayList<OBOverdraftFeeChargeCap1>();
     }
     this.overdraftFeeChargeCap.add(overdraftFeeChargeCapItem);
     return this;
@@ -66,20 +66,20 @@ public class Overdraft1OverdraftFeesCharges   {
 
   @Valid
 
-  public List<Overdraft1OverdraftFeeChargeCap> getOverdraftFeeChargeCap() {
+  public List<OBOverdraftFeeChargeCap1> getOverdraftFeeChargeCap() {
     return overdraftFeeChargeCap;
   }
 
-  public void setOverdraftFeeChargeCap(List<Overdraft1OverdraftFeeChargeCap> overdraftFeeChargeCap) {
+  public void setOverdraftFeeChargeCap(List<OBOverdraftFeeChargeCap1> overdraftFeeChargeCap) {
     this.overdraftFeeChargeCap = overdraftFeeChargeCap;
   }
 
-  public Overdraft1OverdraftFeesCharges overdraftFeeChargeDetail(List<Overdraft1OverdraftFeeChargeDetail> overdraftFeeChargeDetail) {
+  public Overdraft1OverdraftFeesCharges overdraftFeeChargeDetail(List<OBOverdraftFeesChargeDetails1> overdraftFeeChargeDetail) {
     this.overdraftFeeChargeDetail = overdraftFeeChargeDetail;
     return this;
   }
 
-  public Overdraft1OverdraftFeesCharges addOverdraftFeeChargeDetailItem(Overdraft1OverdraftFeeChargeDetail overdraftFeeChargeDetailItem) {
+  public Overdraft1OverdraftFeesCharges addOverdraftFeeChargeDetailItem(OBOverdraftFeesChargeDetails1 overdraftFeeChargeDetailItem) {
     this.overdraftFeeChargeDetail.add(overdraftFeeChargeDetailItem);
     return this;
   }
@@ -93,11 +93,11 @@ public class Overdraft1OverdraftFeesCharges   {
 
   @Valid
 @Size(min=1) 
-  public List<Overdraft1OverdraftFeeChargeDetail> getOverdraftFeeChargeDetail() {
+  public List<OBOverdraftFeesChargeDetails1> getOverdraftFeeChargeDetail() {
     return overdraftFeeChargeDetail;
   }
 
-  public void setOverdraftFeeChargeDetail(List<Overdraft1OverdraftFeeChargeDetail> overdraftFeeChargeDetail) {
+  public void setOverdraftFeeChargeDetail(List<OBOverdraftFeesChargeDetails1> overdraftFeeChargeDetail) {
     this.overdraftFeeChargeDetail = overdraftFeeChargeDetail;
   }
 

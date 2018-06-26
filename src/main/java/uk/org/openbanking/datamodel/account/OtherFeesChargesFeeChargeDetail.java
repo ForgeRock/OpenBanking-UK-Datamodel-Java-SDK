@@ -303,7 +303,7 @@ public class OtherFeesChargesFeeChargeDetail   {
   private OtherFeeCategoryType otherFeeCategoryType = null;
 
   @JsonProperty("OtherFeeType")
-  private OtherFeeType1 otherFeeType = null;
+  private OBOtherFeeChargeDetailType otherFeeType = null;
 
   @JsonProperty("OtherFeeRateType")
   private OtherFeeRateType1 otherFeeRateType = null;
@@ -318,8 +318,8 @@ public class OtherFeesChargesFeeChargeDetail   {
   @Valid
   private List<OtherFeesChargesFeeChargeCap> feeChargeCap = null;
 
-  @JsonProperty("FeeApplicableRange")
-  private FeeApplicableRange feeApplicableRange = null;
+  @JsonProperty("OBFeeApplicableRange1")
+  private OBFeeApplicableRange1 feeApplicableRange = null;
 
   public OtherFeesChargesFeeChargeDetail feeCategory(FeeCategoryEnum feeCategory) {
     this.feeCategory = feeCategory;
@@ -513,7 +513,7 @@ public class OtherFeesChargesFeeChargeDetail   {
     this.otherFeeCategoryType = otherFeeCategoryType;
   }
 
-  public OtherFeesChargesFeeChargeDetail otherFeeType(OtherFeeType1 otherFeeType) {
+  public OtherFeesChargesFeeChargeDetail otherFeeType(OBOtherFeeChargeDetailType otherFeeType) {
     this.otherFeeType = otherFeeType;
     return this;
   }
@@ -526,11 +526,11 @@ public class OtherFeesChargesFeeChargeDetail   {
 
   @Valid
 
-  public OtherFeeType1 getOtherFeeType() {
+  public OBOtherFeeChargeDetailType getOtherFeeType() {
     return otherFeeType;
   }
 
-  public void setOtherFeeType(OtherFeeType1 otherFeeType) {
+  public void setOtherFeeType(OBOtherFeeChargeDetailType otherFeeType) {
     this.otherFeeType = otherFeeType;
   }
 
@@ -626,7 +626,7 @@ public class OtherFeesChargesFeeChargeDetail   {
     this.feeChargeCap = feeChargeCap;
   }
 
-  public OtherFeesChargesFeeChargeDetail feeApplicableRange(FeeApplicableRange feeApplicableRange) {
+  public OtherFeesChargesFeeChargeDetail feeApplicableRange(OBFeeApplicableRange1 feeApplicableRange) {
     this.feeApplicableRange = feeApplicableRange;
     return this;
   }
@@ -639,11 +639,11 @@ public class OtherFeesChargesFeeChargeDetail   {
 
   @Valid
 
-  public FeeApplicableRange getFeeApplicableRange() {
+  public OBFeeApplicableRange1 getFeeApplicableRange() {
     return feeApplicableRange;
   }
 
-  public void setFeeApplicableRange(FeeApplicableRange feeApplicableRange) {
+  public void setFeeApplicableRange(OBFeeApplicableRange1 feeApplicableRange) {
     this.feeApplicableRange = feeApplicableRange;
   }
 

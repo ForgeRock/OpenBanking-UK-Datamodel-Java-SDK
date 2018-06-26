@@ -17,9 +17,7 @@
 
 package uk.org.openbanking.datamodel.account;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
@@ -39,85 +37,12 @@ import java.util.Objects;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
 public class OBBCAData1FeeChargeDetail   {
-  /**
-   * Categorisation of fees and charges into standard categories.
-   */
-  public enum FeeCategoryEnum {
-    OTHER("Other"),
-    
-    SERVICING("Servicing");
-
-    private String value;
-
-    FeeCategoryEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static FeeCategoryEnum fromValue(String text) {
-      for (FeeCategoryEnum b : FeeCategoryEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
 
   @JsonProperty("FeeCategory")
-  private FeeCategoryEnum feeCategory = null;
-
-  /**
-   * Fee/Charge Type
-   */
-  public enum FeeTypeEnum {
-    OTHER("Other"),
-    
-    SERVICECACCOUNTFEE("ServiceCAccountFee"),
-    
-    SERVICECACCOUNTFEEMONTHLY("ServiceCAccountFeeMonthly"),
-    
-    SERVICECACCOUNTFEEQUARTERLY("ServiceCAccountFeeQuarterly"),
-    
-    SERVICECFIXEDTARIFF("ServiceCFixedTariff"),
-    
-    SERVICECBUSIDEPACCBREAKAGE("ServiceCBusiDepAccBreakage"),
-    
-    SERVICECMINIMUMMONTHLYFEE("ServiceCMinimumMonthlyFee"),
-    
-    SERVICECOTHER("ServiceCOther");
-
-    private String value;
-
-    FeeTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static FeeTypeEnum fromValue(String text) {
-      for (FeeTypeEnum b : FeeTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBFeeCategory1Code feeCategory = null;
 
   @JsonProperty("FeeType")
-  private FeeTypeEnum feeType = null;
+  private OBFeeType1Code feeType = null;
 
   @JsonProperty("NegotiableIndicator")
   private Boolean negotiableIndicator = null;
@@ -128,179 +53,14 @@ public class OBBCAData1FeeChargeDetail   {
   @JsonProperty("FeeRate")
   private String feeRate = null;
 
-  /**
-   * Rate type for Fee/Charge (where it is charged in terms of a rate rather than an amount)
-   */
-  public enum FeeRateTypeEnum {
-    GROSS("Gross"),
-    
-    OTHER("Other");
-
-    private String value;
-
-    FeeRateTypeEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static FeeRateTypeEnum fromValue(String text) {
-      for (FeeRateTypeEnum b : FeeRateTypeEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
   @JsonProperty("FeeRateType")
-  private FeeRateTypeEnum feeRateType = null;
-
-  /**
-   * How frequently the fee/charge is applied to the account
-   */
-  public enum ApplicationFrequencyEnum {
-    ONCLOSING("OnClosing"),
-    
-    ONOPENING("OnOpening"),
-    
-    CHARGINGPERIOD("ChargingPeriod"),
-    
-    DAILY("Daily"),
-    
-    PERITEM("PerItem"),
-    
-    MONTHLY("Monthly"),
-    
-    ONANNIVERSARY("OnAnniversary"),
-    
-    OTHER("Other"),
-    
-    PERHUNDREDPOUNDS("PerHundredPounds"),
-    
-    PERHOUR("PerHour"),
-    
-    PEROCCURRENCE("PerOccurrence"),
-    
-    PERSHEET("PerSheet"),
-    
-    PERTRANSACTION("PerTransaction"),
-    
-    PERTRANSACTIONAMOUNT("PerTransactionAmount"),
-    
-    PERTRANSACTIONPERCENTAGE("PerTransactionPercentage"),
-    
-    QUARTERLY("Quarterly"),
-    
-    SIXMONTHLY("SixMonthly"),
-    
-    STATEMENTMONTHLY("StatementMonthly"),
-    
-    WEEKLY("Weekly"),
-    
-    YEARLY("Yearly");
-
-    private String value;
-
-    ApplicationFrequencyEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static ApplicationFrequencyEnum fromValue(String text) {
-      for (ApplicationFrequencyEnum b : ApplicationFrequencyEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private FeeRateType feeRateType = null;
 
   @JsonProperty("ApplicationFrequency")
-  private ApplicationFrequencyEnum applicationFrequency = null;
-
-  /**
-   * How frequently the fee/charge is calculated
-   */
-  public enum CalculationFrequencyEnum {
-    ONCLOSING("OnClosing"),
-    
-    ONOPENING("OnOpening"),
-    
-    CHARGINGPERIOD("ChargingPeriod"),
-    
-    DAILY("Daily"),
-    
-    PERITEM("PerItem"),
-    
-    MONTHLY("Monthly"),
-    
-    ONANNIVERSARY("OnAnniversary"),
-    
-    OTHER("Other"),
-    
-    PERHUNDREDPOUNDS("PerHundredPounds"),
-    
-    PERHOUR("PerHour"),
-    
-    PEROCCURRENCE("PerOccurrence"),
-    
-    PERSHEET("PerSheet"),
-    
-    PERTRANSACTION("PerTransaction"),
-    
-    PERTRANSACTIONAMOUNT("PerTransactionAmount"),
-    
-    PERTRANSACTIONPERCENTAGE("PerTransactionPercentage"),
-    
-    QUARTERLY("Quarterly"),
-    
-    SIXMONTHLY("SixMonthly"),
-    
-    STATEMENTMONTHLY("StatementMonthly"),
-    
-    WEEKLY("Weekly"),
-    
-    YEARLY("Yearly");
-
-    private String value;
-
-    CalculationFrequencyEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static CalculationFrequencyEnum fromValue(String text) {
-      for (CalculationFrequencyEnum b : CalculationFrequencyEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBFeeFrequency1Code applicationFrequency = null;
 
   @JsonProperty("CalculationFrequency")
-  private CalculationFrequencyEnum calculationFrequency = null;
+  private OBFeeFrequency1Code calculationFrequency = null;
 
   @JsonProperty("Notes")
   @Valid
@@ -308,27 +68,27 @@ public class OBBCAData1FeeChargeDetail   {
 
   @JsonProperty("FeeChargeCap")
   @Valid
-  private List<OBBCAData1FeeChargeCap> feeChargeCap = null;
+  private List<OBFeeChargeCap1> feeChargeCap = null;
 
   @JsonProperty("OtherFeeCategoryType")
-  private OtherFeeCategoryType otherFeeCategoryType = null;
+  private OBOtherCodeType1 otherFeeCategoryType = null;
 
   @JsonProperty("OtherFeeType")
-  private OtherFeeType1 otherFeeType = null;
+  private OBOtherFeeChargeDetailType otherFeeType = null;
 
   @JsonProperty("OtherFeeRateType")
-  private OtherFeeRateType1 otherFeeRateType = null;
+  private OBOtherCodeType1 otherFeeRateType = null;
 
   @JsonProperty("OtherApplicationFrequency")
-  private OtherApplicationFrequency1 otherApplicationFrequency = null;
+  private OBOtherCodeType1 otherApplicationFrequency = null;
 
   @JsonProperty("OtherCalculationFrequency")
-  private OtherCalculationFrequency1 otherCalculationFrequency = null;
+  private OBOtherCodeType1 otherCalculationFrequency = null;
 
-  @JsonProperty("FeeApplicableRange")
-  private FeeApplicableRange feeApplicableRange = null;
+  @JsonProperty("OBFeeApplicableRange1")
+  private OBFeeApplicableRange1 feeApplicableRange = null;
 
-  public OBBCAData1FeeChargeDetail feeCategory(FeeCategoryEnum feeCategory) {
+  public OBBCAData1FeeChargeDetail feeCategory(OBFeeCategory1Code feeCategory) {
     this.feeCategory = feeCategory;
     return this;
   }
@@ -341,15 +101,15 @@ public class OBBCAData1FeeChargeDetail   {
   @NotNull
 
 
-  public FeeCategoryEnum getFeeCategory() {
+  public OBFeeCategory1Code getFeeCategory() {
     return feeCategory;
   }
 
-  public void setFeeCategory(FeeCategoryEnum feeCategory) {
+  public void setFeeCategory(OBFeeCategory1Code feeCategory) {
     this.feeCategory = feeCategory;
   }
 
-  public OBBCAData1FeeChargeDetail feeType(FeeTypeEnum feeType) {
+  public OBBCAData1FeeChargeDetail feeType(OBFeeType1Code feeType) {
     this.feeType = feeType;
     return this;
   }
@@ -362,11 +122,11 @@ public class OBBCAData1FeeChargeDetail   {
   @NotNull
 
 
-  public FeeTypeEnum getFeeType() {
+  public OBFeeType1Code getFeeType() {
     return feeType;
   }
 
-  public void setFeeType(FeeTypeEnum feeType) {
+  public void setFeeType(OBFeeType1Code feeType) {
     this.feeType = feeType;
   }
 
@@ -430,7 +190,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.feeRate = feeRate;
   }
 
-  public OBBCAData1FeeChargeDetail feeRateType(FeeRateTypeEnum feeRateType) {
+  public OBBCAData1FeeChargeDetail feeRateType(FeeRateType feeRateType) {
     this.feeRateType = feeRateType;
     return this;
   }
@@ -442,15 +202,15 @@ public class OBBCAData1FeeChargeDetail   {
   @ApiModelProperty(value = "Rate type for Fee/Charge (where it is charged in terms of a rate rather than an amount)")
 
 
-  public FeeRateTypeEnum getFeeRateType() {
+  public FeeRateType getFeeRateType() {
     return feeRateType;
   }
 
-  public void setFeeRateType(FeeRateTypeEnum feeRateType) {
+  public void setFeeRateType(FeeRateType feeRateType) {
     this.feeRateType = feeRateType;
   }
 
-  public OBBCAData1FeeChargeDetail applicationFrequency(ApplicationFrequencyEnum applicationFrequency) {
+  public OBBCAData1FeeChargeDetail applicationFrequency(OBFeeFrequency1Code applicationFrequency) {
     this.applicationFrequency = applicationFrequency;
     return this;
   }
@@ -463,15 +223,15 @@ public class OBBCAData1FeeChargeDetail   {
   @NotNull
 
 
-  public ApplicationFrequencyEnum getApplicationFrequency() {
+  public OBFeeFrequency1Code getApplicationFrequency() {
     return applicationFrequency;
   }
 
-  public void setApplicationFrequency(ApplicationFrequencyEnum applicationFrequency) {
+  public void setApplicationFrequency(OBFeeFrequency1Code applicationFrequency) {
     this.applicationFrequency = applicationFrequency;
   }
 
-  public OBBCAData1FeeChargeDetail calculationFrequency(CalculationFrequencyEnum calculationFrequency) {
+  public OBBCAData1FeeChargeDetail calculationFrequency(OBFeeFrequency1Code calculationFrequency) {
     this.calculationFrequency = calculationFrequency;
     return this;
   }
@@ -483,11 +243,11 @@ public class OBBCAData1FeeChargeDetail   {
   @ApiModelProperty(value = "How frequently the fee/charge is calculated")
 
 
-  public CalculationFrequencyEnum getCalculationFrequency() {
+  public OBFeeFrequency1Code getCalculationFrequency() {
     return calculationFrequency;
   }
 
-  public void setCalculationFrequency(CalculationFrequencyEnum calculationFrequency) {
+  public void setCalculationFrequency(OBFeeFrequency1Code calculationFrequency) {
     this.calculationFrequency = calculationFrequency;
   }
 
@@ -519,14 +279,14 @@ public class OBBCAData1FeeChargeDetail   {
     this.notes = notes;
   }
 
-  public OBBCAData1FeeChargeDetail feeChargeCap(List<OBBCAData1FeeChargeCap> feeChargeCap) {
+  public OBBCAData1FeeChargeDetail feeChargeCap(List<OBFeeChargeCap1> feeChargeCap) {
     this.feeChargeCap = feeChargeCap;
     return this;
   }
 
-  public OBBCAData1FeeChargeDetail addFeeChargeCapItem(OBBCAData1FeeChargeCap feeChargeCapItem) {
+  public OBBCAData1FeeChargeDetail addFeeChargeCapItem(OBFeeChargeCap1 feeChargeCapItem) {
     if (this.feeChargeCap == null) {
-      this.feeChargeCap = new ArrayList<OBBCAData1FeeChargeCap>();
+      this.feeChargeCap = new ArrayList<OBFeeChargeCap1>();
     }
     this.feeChargeCap.add(feeChargeCapItem);
     return this;
@@ -540,15 +300,15 @@ public class OBBCAData1FeeChargeDetail   {
 
   @Valid
 
-  public List<OBBCAData1FeeChargeCap> getFeeChargeCap() {
+  public List<OBFeeChargeCap1> getFeeChargeCap() {
     return feeChargeCap;
   }
 
-  public void setFeeChargeCap(List<OBBCAData1FeeChargeCap> feeChargeCap) {
+  public void setFeeChargeCap(List<OBFeeChargeCap1> feeChargeCap) {
     this.feeChargeCap = feeChargeCap;
   }
 
-  public OBBCAData1FeeChargeDetail otherFeeCategoryType(OtherFeeCategoryType otherFeeCategoryType) {
+  public OBBCAData1FeeChargeDetail otherFeeCategoryType(OBOtherCodeType1 otherFeeCategoryType) {
     this.otherFeeCategoryType = otherFeeCategoryType;
     return this;
   }
@@ -561,15 +321,15 @@ public class OBBCAData1FeeChargeDetail   {
 
   @Valid
 
-  public OtherFeeCategoryType getOtherFeeCategoryType() {
+  public OBOtherCodeType1 getOtherFeeCategoryType() {
     return otherFeeCategoryType;
   }
 
-  public void setOtherFeeCategoryType(OtherFeeCategoryType otherFeeCategoryType) {
+  public void setOtherFeeCategoryType(OBOtherCodeType1 otherFeeCategoryType) {
     this.otherFeeCategoryType = otherFeeCategoryType;
   }
 
-  public OBBCAData1FeeChargeDetail otherFeeType(OtherFeeType1 otherFeeType) {
+  public OBBCAData1FeeChargeDetail otherFeeType(OBOtherFeeChargeDetailType otherFeeType) {
     this.otherFeeType = otherFeeType;
     return this;
   }
@@ -582,15 +342,15 @@ public class OBBCAData1FeeChargeDetail   {
 
   @Valid
 
-  public OtherFeeType1 getOtherFeeType() {
+  public OBOtherFeeChargeDetailType getOtherFeeType() {
     return otherFeeType;
   }
 
-  public void setOtherFeeType(OtherFeeType1 otherFeeType) {
+  public void setOtherFeeType(OBOtherFeeChargeDetailType otherFeeType) {
     this.otherFeeType = otherFeeType;
   }
 
-  public OBBCAData1FeeChargeDetail otherFeeRateType(OtherFeeRateType1 otherFeeRateType) {
+  public OBBCAData1FeeChargeDetail otherFeeRateType(OBOtherCodeType1 otherFeeRateType) {
     this.otherFeeRateType = otherFeeRateType;
     return this;
   }
@@ -603,15 +363,15 @@ public class OBBCAData1FeeChargeDetail   {
 
   @Valid
 
-  public OtherFeeRateType1 getOtherFeeRateType() {
+  public OBOtherCodeType1 getOtherFeeRateType() {
     return otherFeeRateType;
   }
 
-  public void setOtherFeeRateType(OtherFeeRateType1 otherFeeRateType) {
+  public void setOtherFeeRateType(OBOtherCodeType1 otherFeeRateType) {
     this.otherFeeRateType = otherFeeRateType;
   }
 
-  public OBBCAData1FeeChargeDetail otherApplicationFrequency(OtherApplicationFrequency1 otherApplicationFrequency) {
+  public OBBCAData1FeeChargeDetail otherApplicationFrequency(OBOtherCodeType1 otherApplicationFrequency) {
     this.otherApplicationFrequency = otherApplicationFrequency;
     return this;
   }
@@ -624,15 +384,15 @@ public class OBBCAData1FeeChargeDetail   {
 
   @Valid
 
-  public OtherApplicationFrequency1 getOtherApplicationFrequency() {
+  public OBOtherCodeType1 getOtherApplicationFrequency() {
     return otherApplicationFrequency;
   }
 
-  public void setOtherApplicationFrequency(OtherApplicationFrequency1 otherApplicationFrequency) {
+  public void setOtherApplicationFrequency(OBOtherCodeType1 otherApplicationFrequency) {
     this.otherApplicationFrequency = otherApplicationFrequency;
   }
 
-  public OBBCAData1FeeChargeDetail otherCalculationFrequency(OtherCalculationFrequency1 otherCalculationFrequency) {
+  public OBBCAData1FeeChargeDetail otherCalculationFrequency(OBOtherCodeType1 otherCalculationFrequency) {
     this.otherCalculationFrequency = otherCalculationFrequency;
     return this;
   }
@@ -645,15 +405,15 @@ public class OBBCAData1FeeChargeDetail   {
 
   @Valid
 
-  public OtherCalculationFrequency1 getOtherCalculationFrequency() {
+  public OBOtherCodeType1 getOtherCalculationFrequency() {
     return otherCalculationFrequency;
   }
 
-  public void setOtherCalculationFrequency(OtherCalculationFrequency1 otherCalculationFrequency) {
+  public void setOtherCalculationFrequency(OBOtherCodeType1 otherCalculationFrequency) {
     this.otherCalculationFrequency = otherCalculationFrequency;
   }
 
-  public OBBCAData1FeeChargeDetail feeApplicableRange(FeeApplicableRange feeApplicableRange) {
+  public OBBCAData1FeeChargeDetail feeApplicableRange(OBFeeApplicableRange1 feeApplicableRange) {
     this.feeApplicableRange = feeApplicableRange;
     return this;
   }
@@ -666,11 +426,11 @@ public class OBBCAData1FeeChargeDetail   {
 
   @Valid
 
-  public FeeApplicableRange getFeeApplicableRange() {
+  public OBFeeApplicableRange1 getFeeApplicableRange() {
     return feeApplicableRange;
   }
 
-  public void setFeeApplicableRange(FeeApplicableRange feeApplicableRange) {
+  public void setFeeApplicableRange(OBFeeApplicableRange1 feeApplicableRange) {
     this.feeApplicableRange = feeApplicableRange;
   }
 

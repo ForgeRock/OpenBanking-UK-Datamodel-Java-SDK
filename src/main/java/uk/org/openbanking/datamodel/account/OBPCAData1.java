@@ -31,8 +31,8 @@ import java.util.Objects;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
 public class OBPCAData1   {
-  @JsonProperty("ProductDetails")
-  private ProductDetails productDetails = null;
+  @JsonProperty("OBPCAProductDetails1")
+  private OBPCAProductDetails1 productDetails = null;
 
   @JsonProperty("CreditInterest")
   private CreditInterest creditInterest = null;
@@ -43,7 +43,7 @@ public class OBPCAData1   {
   @JsonProperty("OtherFeesCharges")
   private OtherFeesCharges otherFeesCharges = null;
 
-  public OBPCAData1 productDetails(ProductDetails productDetails) {
+  public OBPCAData1 productDetails(OBPCAProductDetails1 productDetails) {
     this.productDetails = productDetails;
     return this;
   }
@@ -56,11 +56,11 @@ public class OBPCAData1   {
 
   @Valid
 
-  public ProductDetails getProductDetails() {
+  public OBPCAProductDetails1 getProductDetails() {
     return productDetails;
   }
 
-  public void setProductDetails(ProductDetails productDetails) {
+  public void setProductDetails(OBPCAProductDetails1 productDetails) {
     this.productDetails = productDetails;
   }
 
