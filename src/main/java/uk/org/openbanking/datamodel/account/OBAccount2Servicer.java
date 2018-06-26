@@ -36,42 +36,14 @@ import java.util.Objects;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
 public class OBAccount2Servicer   {
-  /**
-   * Name of the identification scheme, in a coded form as published in an external list.
-   */
-  public enum SchemeNameEnum {
-    BICFI("BICFI");
-
-    private String value;
-
-    SchemeNameEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static SchemeNameEnum fromValue(String text) {
-      for (SchemeNameEnum b : SchemeNameEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
 
   @JsonProperty("SchemeName")
-  private SchemeNameEnum schemeName = null;
+  private OBExternalFinancialInstitutionIdentification2Code schemeName = null;
 
   @JsonProperty("Identification")
   private String identification = null;
 
-  public OBAccount2Servicer schemeName(SchemeNameEnum schemeName) {
+  public OBAccount2Servicer schemeName(OBExternalFinancialInstitutionIdentification2Code schemeName) {
     this.schemeName = schemeName;
     return this;
   }
@@ -84,11 +56,11 @@ public class OBAccount2Servicer   {
   @NotNull
 
 
-  public SchemeNameEnum getSchemeName() {
+  public OBExternalFinancialInstitutionIdentification2Code getSchemeName() {
     return schemeName;
   }
 
-  public void setSchemeName(SchemeNameEnum schemeName) {
+  public void setSchemeName(OBExternalFinancialInstitutionIdentification2Code schemeName) {
     this.schemeName = schemeName;
   }
 

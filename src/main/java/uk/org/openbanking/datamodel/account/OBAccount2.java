@@ -46,7 +46,6 @@ public class OBAccount2   {
   @JsonProperty("Currency")
   private String currency = null;
 
-
   @JsonProperty("AccountType")
   private OBExternalAccountType1Code accountType = null;
 

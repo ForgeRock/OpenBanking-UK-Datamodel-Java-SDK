@@ -36,41 +36,9 @@ import java.util.Objects;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
 public class OBAccount2Account   {
-  /**
-   * Name of the identification scheme, in a coded form as published in an external list.
-   */
-  public enum SchemeNameEnum {
-    IBAN("IBAN"),
-    
-    PAN("PAN"),
-    
-    SORTCODEACCOUNTNUMBER("SortCodeAccountNumber");
-
-    private String value;
-
-    SchemeNameEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static SchemeNameEnum fromValue(String text) {
-      for (SchemeNameEnum b : SchemeNameEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
 
   @JsonProperty("SchemeName")
-  private SchemeNameEnum schemeName = null;
+  private OBExternalAccountIdentification3Code schemeName = null;
 
   @JsonProperty("Identification")
   private String identification = null;
@@ -81,7 +49,7 @@ public class OBAccount2Account   {
   @JsonProperty("SecondaryIdentification")
   private String secondaryIdentification = null;
 
-  public OBAccount2Account schemeName(SchemeNameEnum schemeName) {
+  public OBAccount2Account schemeName(OBExternalAccountIdentification3Code schemeName) {
     this.schemeName = schemeName;
     return this;
   }
@@ -92,13 +60,11 @@ public class OBAccount2Account   {
   **/
   @ApiModelProperty(required = true, value = "Name of the identification scheme, in a coded form as published in an external list.")
   @NotNull
-
-
-  public SchemeNameEnum getSchemeName() {
+  public OBExternalAccountIdentification3Code getSchemeName() {
     return schemeName;
   }
 
-  public void setSchemeName(SchemeNameEnum schemeName) {
+  public void setSchemeName(OBExternalAccountIdentification3Code schemeName) {
     this.schemeName = schemeName;
   }
 
@@ -114,7 +80,7 @@ public class OBAccount2Account   {
   @ApiModelProperty(required = true, value = "Identification assigned by an institution to identify an account. This identification is known by the account owner.")
   @NotNull
 
-@Size(min=1,max=34) 
+  @Size(min=1,max=34)
   public String getIdentification() {
     return identification;
   }
