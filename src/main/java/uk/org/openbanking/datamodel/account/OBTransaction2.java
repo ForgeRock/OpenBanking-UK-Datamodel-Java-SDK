@@ -82,10 +82,10 @@ public class OBTransaction2   {
   private OBBranchAndFinancialInstitutionIdentification2 creditorAgent = null;
 
   @JsonProperty("DebtorAgent")
-  private OBTransaction2DebtorAgent debtorAgent = null;
+  private OBBranchAndFinancialInstitutionIdentification2 debtorAgent = null;
 
   @JsonProperty("CardInstrument")
-  private OBTransaction2CardInstrument cardInstrument = null;
+  private OBTransactionCardInstrument1 cardInstrument = null;
 
   @JsonProperty("TransactionInformation")
   private String transactionInformation = null;
@@ -402,7 +402,7 @@ public class OBTransaction2   {
     this.creditorAgent = creditorAgent;
   }
 
-  public OBTransaction2 debtorAgent(OBTransaction2DebtorAgent debtorAgent) {
+  public OBTransaction2 debtorAgent(OBBranchAndFinancialInstitutionIdentification2 debtorAgent) {
     this.debtorAgent = debtorAgent;
     return this;
   }
@@ -415,15 +415,15 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2DebtorAgent getDebtorAgent() {
+  public OBBranchAndFinancialInstitutionIdentification2 getDebtorAgent() {
     return debtorAgent;
   }
 
-  public void setDebtorAgent(OBTransaction2DebtorAgent debtorAgent) {
+  public void setDebtorAgent(OBBranchAndFinancialInstitutionIdentification2 debtorAgent) {
     this.debtorAgent = debtorAgent;
   }
 
-  public OBTransaction2 cardInstrument(OBTransaction2CardInstrument cardInstrument) {
+  public OBTransaction2 cardInstrument(OBTransactionCardInstrument1 cardInstrument) {
     this.cardInstrument = cardInstrument;
     return this;
   }
@@ -436,11 +436,11 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2CardInstrument getCardInstrument() {
+  public OBTransactionCardInstrument1 getCardInstrument() {
     return cardInstrument;
   }
 
-  public void setCardInstrument(OBTransaction2CardInstrument cardInstrument) {
+  public void setCardInstrument(OBTransactionCardInstrument1 cardInstrument) {
     this.cardInstrument = cardInstrument;
   }
 
