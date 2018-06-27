@@ -22,6 +22,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -52,7 +53,7 @@ public class OBTransaction2   {
   private List<String> statementReference = null;
 
   @JsonProperty("Amount")
-  private OBTransaction2Amount amount = null;
+  private ActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("CreditDebitIndicator")
   private OBCreditDebitCode creditDebitIndicator = null;
@@ -191,7 +192,7 @@ public class OBTransaction2   {
     this.statementReference = statementReference;
   }
 
-  public OBTransaction2 amount(OBTransaction2Amount amount) {
+  public OBTransaction2 amount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -205,11 +206,11 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2Amount getAmount() {
+  public ActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(OBTransaction2Amount amount) {
+  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 
