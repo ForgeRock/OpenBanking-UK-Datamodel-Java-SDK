@@ -49,7 +49,7 @@ public class OBOtherFeesAndCharges1 {
 
   @JsonProperty("FeeChargeDetail")
   @Valid
-  private List<OBBCAData1FeeChargeDetail> feeChargeDetail = new ArrayList<OBBCAData1FeeChargeDetail>();
+  private List<OBFeeChargeDetail1> feeChargeDetail = new ArrayList<OBFeeChargeDetail1>();
 
   @JsonProperty("FeeChargeCap")
   @Valid
@@ -116,12 +116,12 @@ public class OBOtherFeesAndCharges1 {
     this.otherTariffType = otherTariffType;
   }
 
-  public OBOtherFeesAndCharges1 feeChargeDetail(List<OBBCAData1FeeChargeDetail> feeChargeDetail) {
+  public OBOtherFeesAndCharges1 feeChargeDetail(List<OBFeeChargeDetail1> feeChargeDetail) {
     this.feeChargeDetail = feeChargeDetail;
     return this;
   }
 
-  public OBOtherFeesAndCharges1 addFeeChargeDetailItem(OBBCAData1FeeChargeDetail feeChargeDetailItem) {
+  public OBOtherFeesAndCharges1 addFeeChargeDetailItem(OBFeeChargeDetail1 feeChargeDetailItem) {
     this.feeChargeDetail.add(feeChargeDetailItem);
     return this;
   }
@@ -135,11 +135,11 @@ public class OBOtherFeesAndCharges1 {
 
   @Valid
 @Size(min=1) 
-  public List<OBBCAData1FeeChargeDetail> getFeeChargeDetail() {
+  public List<OBFeeChargeDetail1> getFeeChargeDetail() {
     return feeChargeDetail;
   }
 
-  public void setFeeChargeDetail(List<OBBCAData1FeeChargeDetail> feeChargeDetail) {
+  public void setFeeChargeDetail(List<OBFeeChargeDetail1> feeChargeDetail) {
     this.feeChargeDetail = feeChargeDetail;
   }
 

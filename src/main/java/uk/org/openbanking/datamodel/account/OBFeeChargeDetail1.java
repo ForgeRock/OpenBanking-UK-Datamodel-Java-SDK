@@ -36,7 +36,7 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class OBBCAData1FeeChargeDetail   {
+public class OBFeeChargeDetail1 {
 
   @JsonProperty("FeeCategory")
   private OBFeeCategory1Code feeCategory = null;
@@ -54,7 +54,7 @@ public class OBBCAData1FeeChargeDetail   {
   private String feeRate = null;
 
   @JsonProperty("FeeRateType")
-  private FeeRateType feeRateType = null;
+  private OBInterestRateType1Code feeRateType = null;
 
   @JsonProperty("ApplicationFrequency")
   private OBFeeFrequency1Code applicationFrequency = null;
@@ -88,7 +88,7 @@ public class OBBCAData1FeeChargeDetail   {
   @JsonProperty("OBFeeApplicableRange1")
   private OBFeeApplicableRange1 feeApplicableRange = null;
 
-  public OBBCAData1FeeChargeDetail feeCategory(OBFeeCategory1Code feeCategory) {
+  public OBFeeChargeDetail1 feeCategory(OBFeeCategory1Code feeCategory) {
     this.feeCategory = feeCategory;
     return this;
   }
@@ -109,7 +109,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.feeCategory = feeCategory;
   }
 
-  public OBBCAData1FeeChargeDetail feeType(OBFeeType1Code feeType) {
+  public OBFeeChargeDetail1 feeType(OBFeeType1Code feeType) {
     this.feeType = feeType;
     return this;
   }
@@ -130,7 +130,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.feeType = feeType;
   }
 
-  public OBBCAData1FeeChargeDetail negotiableIndicator(Boolean negotiableIndicator) {
+  public OBFeeChargeDetail1 negotiableIndicator(Boolean negotiableIndicator) {
     this.negotiableIndicator = negotiableIndicator;
     return this;
   }
@@ -150,7 +150,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.negotiableIndicator = negotiableIndicator;
   }
 
-  public OBBCAData1FeeChargeDetail feeAmount(String feeAmount) {
+  public OBFeeChargeDetail1 feeAmount(String feeAmount) {
     this.feeAmount = feeAmount;
     return this;
   }
@@ -170,7 +170,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.feeAmount = feeAmount;
   }
 
-  public OBBCAData1FeeChargeDetail feeRate(String feeRate) {
+  public OBFeeChargeDetail1 feeRate(String feeRate) {
     this.feeRate = feeRate;
     return this;
   }
@@ -190,7 +190,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.feeRate = feeRate;
   }
 
-  public OBBCAData1FeeChargeDetail feeRateType(FeeRateType feeRateType) {
+  public OBFeeChargeDetail1 feeRateType(OBInterestRateType1Code feeRateType) {
     this.feeRateType = feeRateType;
     return this;
   }
@@ -202,15 +202,15 @@ public class OBBCAData1FeeChargeDetail   {
   @ApiModelProperty(value = "Rate type for Fee/Charge (where it is charged in terms of a rate rather than an amount)")
 
 
-  public FeeRateType getFeeRateType() {
+  public OBInterestRateType1Code getFeeRateType() {
     return feeRateType;
   }
 
-  public void setFeeRateType(FeeRateType feeRateType) {
+  public void setFeeRateType(OBInterestRateType1Code feeRateType) {
     this.feeRateType = feeRateType;
   }
 
-  public OBBCAData1FeeChargeDetail applicationFrequency(OBFeeFrequency1Code applicationFrequency) {
+  public OBFeeChargeDetail1 applicationFrequency(OBFeeFrequency1Code applicationFrequency) {
     this.applicationFrequency = applicationFrequency;
     return this;
   }
@@ -231,7 +231,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.applicationFrequency = applicationFrequency;
   }
 
-  public OBBCAData1FeeChargeDetail calculationFrequency(OBFeeFrequency1Code calculationFrequency) {
+  public OBFeeChargeDetail1 calculationFrequency(OBFeeFrequency1Code calculationFrequency) {
     this.calculationFrequency = calculationFrequency;
     return this;
   }
@@ -251,12 +251,12 @@ public class OBBCAData1FeeChargeDetail   {
     this.calculationFrequency = calculationFrequency;
   }
 
-  public OBBCAData1FeeChargeDetail notes(List<String> notes) {
+  public OBFeeChargeDetail1 notes(List<String> notes) {
     this.notes = notes;
     return this;
   }
 
-  public OBBCAData1FeeChargeDetail addNotesItem(String notesItem) {
+  public OBFeeChargeDetail1 addNotesItem(String notesItem) {
     if (this.notes == null) {
       this.notes = new ArrayList<String>();
     }
@@ -279,12 +279,12 @@ public class OBBCAData1FeeChargeDetail   {
     this.notes = notes;
   }
 
-  public OBBCAData1FeeChargeDetail feeChargeCap(List<OBFeeChargeCap1> feeChargeCap) {
+  public OBFeeChargeDetail1 feeChargeCap(List<OBFeeChargeCap1> feeChargeCap) {
     this.feeChargeCap = feeChargeCap;
     return this;
   }
 
-  public OBBCAData1FeeChargeDetail addFeeChargeCapItem(OBFeeChargeCap1 feeChargeCapItem) {
+  public OBFeeChargeDetail1 addFeeChargeCapItem(OBFeeChargeCap1 feeChargeCapItem) {
     if (this.feeChargeCap == null) {
       this.feeChargeCap = new ArrayList<OBFeeChargeCap1>();
     }
@@ -308,7 +308,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.feeChargeCap = feeChargeCap;
   }
 
-  public OBBCAData1FeeChargeDetail otherFeeCategoryType(OBOtherCodeType1 otherFeeCategoryType) {
+  public OBFeeChargeDetail1 otherFeeCategoryType(OBOtherCodeType1 otherFeeCategoryType) {
     this.otherFeeCategoryType = otherFeeCategoryType;
     return this;
   }
@@ -329,7 +329,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.otherFeeCategoryType = otherFeeCategoryType;
   }
 
-  public OBBCAData1FeeChargeDetail otherFeeType(OBOtherFeeChargeDetailType otherFeeType) {
+  public OBFeeChargeDetail1 otherFeeType(OBOtherFeeChargeDetailType otherFeeType) {
     this.otherFeeType = otherFeeType;
     return this;
   }
@@ -350,7 +350,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.otherFeeType = otherFeeType;
   }
 
-  public OBBCAData1FeeChargeDetail otherFeeRateType(OBOtherCodeType1 otherFeeRateType) {
+  public OBFeeChargeDetail1 otherFeeRateType(OBOtherCodeType1 otherFeeRateType) {
     this.otherFeeRateType = otherFeeRateType;
     return this;
   }
@@ -371,7 +371,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.otherFeeRateType = otherFeeRateType;
   }
 
-  public OBBCAData1FeeChargeDetail otherApplicationFrequency(OBOtherCodeType1 otherApplicationFrequency) {
+  public OBFeeChargeDetail1 otherApplicationFrequency(OBOtherCodeType1 otherApplicationFrequency) {
     this.otherApplicationFrequency = otherApplicationFrequency;
     return this;
   }
@@ -392,7 +392,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.otherApplicationFrequency = otherApplicationFrequency;
   }
 
-  public OBBCAData1FeeChargeDetail otherCalculationFrequency(OBOtherCodeType1 otherCalculationFrequency) {
+  public OBFeeChargeDetail1 otherCalculationFrequency(OBOtherCodeType1 otherCalculationFrequency) {
     this.otherCalculationFrequency = otherCalculationFrequency;
     return this;
   }
@@ -413,7 +413,7 @@ public class OBBCAData1FeeChargeDetail   {
     this.otherCalculationFrequency = otherCalculationFrequency;
   }
 
-  public OBBCAData1FeeChargeDetail feeApplicableRange(OBFeeApplicableRange1 feeApplicableRange) {
+  public OBFeeChargeDetail1 feeApplicableRange(OBFeeApplicableRange1 feeApplicableRange) {
     this.feeApplicableRange = feeApplicableRange;
     return this;
   }
@@ -443,7 +443,7 @@ public class OBBCAData1FeeChargeDetail   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBBCAData1FeeChargeDetail obBCAData1FeeChargeDetail = (OBBCAData1FeeChargeDetail) o;
+    OBFeeChargeDetail1 obBCAData1FeeChargeDetail = (OBFeeChargeDetail1) o;
     return Objects.equals(this.feeCategory, obBCAData1FeeChargeDetail.feeCategory) &&
         Objects.equals(this.feeType, obBCAData1FeeChargeDetail.feeType) &&
         Objects.equals(this.negotiableIndicator, obBCAData1FeeChargeDetail.negotiableIndicator) &&
@@ -470,7 +470,7 @@ public class OBBCAData1FeeChargeDetail   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBBCAData1FeeChargeDetail {\n");
+    sb.append("class OBFeeChargeDetail1 {\n");
 
     sb.append("    feeCategory: ").append(toIndentedString(feeCategory)).append("\n");
     sb.append("    feeType: ").append(toIndentedString(feeType)).append("\n");
