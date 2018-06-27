@@ -77,7 +77,7 @@ public class OBTransaction2   {
   private ProprietaryBankTransactionCodeStructure1 proprietaryBankTransactionCode = null;
 
   @JsonProperty("EquivalentAmount")
-  private OBTransaction2EquivalentAmount equivalentAmount = null;
+  private OBEquivalentAmount equivalentAmount = null;
 
   @JsonProperty("CreditorAgent")
   private OBBranchAndFinancialInstitutionIdentification2 creditorAgent = null;
@@ -361,7 +361,7 @@ public class OBTransaction2   {
     this.proprietaryBankTransactionCode = proprietaryBankTransactionCode;
   }
 
-  public OBTransaction2 equivalentAmount(OBTransaction2EquivalentAmount equivalentAmount) {
+  public OBTransaction2 equivalentAmount(OBEquivalentAmount equivalentAmount) {
     this.equivalentAmount = equivalentAmount;
     return this;
   }
@@ -374,11 +374,11 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2EquivalentAmount getEquivalentAmount() {
+  public OBEquivalentAmount getEquivalentAmount() {
     return equivalentAmount;
   }
 
-  public void setEquivalentAmount(OBTransaction2EquivalentAmount equivalentAmount) {
+  public void setEquivalentAmount(OBEquivalentAmount equivalentAmount) {
     this.equivalentAmount = equivalentAmount;
   }
 

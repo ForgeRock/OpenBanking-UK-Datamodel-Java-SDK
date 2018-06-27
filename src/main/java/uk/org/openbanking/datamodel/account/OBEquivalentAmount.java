@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -34,14 +35,14 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
 
-public class OBTransaction2EquivalentAmount   {
+public class OBEquivalentAmount {
   @JsonProperty("Amount")
-  private OBTransaction2EquivalentAmountAmount amount = null;
+  private ActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("CurrencyOfTransfer")
   private String currencyOfTransfer = null;
 
-  public OBTransaction2EquivalentAmount amount(OBTransaction2EquivalentAmountAmount amount) {
+  public OBEquivalentAmount amount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -55,15 +56,15 @@ public class OBTransaction2EquivalentAmount   {
 
   @Valid
 
-  public OBTransaction2EquivalentAmountAmount getAmount() {
+  public ActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(OBTransaction2EquivalentAmountAmount amount) {
+  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 
-  public OBTransaction2EquivalentAmount currencyOfTransfer(String currencyOfTransfer) {
+  public OBEquivalentAmount currencyOfTransfer(String currencyOfTransfer) {
     this.currencyOfTransfer = currencyOfTransfer;
     return this;
   }
@@ -93,7 +94,7 @@ public class OBTransaction2EquivalentAmount   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBTransaction2EquivalentAmount obTransaction2EquivalentAmount = (OBTransaction2EquivalentAmount) o;
+    OBEquivalentAmount obTransaction2EquivalentAmount = (OBEquivalentAmount) o;
     return Objects.equals(this.amount, obTransaction2EquivalentAmount.amount) &&
         Objects.equals(this.currencyOfTransfer, obTransaction2EquivalentAmount.currencyOfTransfer);
   }
@@ -106,7 +107,7 @@ public class OBTransaction2EquivalentAmount   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBTransaction2EquivalentAmount {\n");
+    sb.append("class OBEquivalentAmount {\n");
 
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    currencyOfTransfer: ").append(toIndentedString(currencyOfTransfer)).append("\n");
