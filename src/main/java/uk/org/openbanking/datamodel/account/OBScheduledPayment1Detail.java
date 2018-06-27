@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
+import org.joda.time.DateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -43,7 +43,7 @@ public class OBScheduledPayment1Detail   {
   private String scheduledPaymentId = null;
 
   @JsonProperty("ScheduledPaymentDateTime")
-  private OffsetDateTime scheduledPaymentDateTime = null;
+  private DateTime scheduledPaymentDateTime = null;
 
   /**
    * Specifies the scheduled payment date type requested
@@ -132,7 +132,7 @@ public class OBScheduledPayment1Detail   {
     this.scheduledPaymentId = scheduledPaymentId;
   }
 
-  public OBScheduledPayment1Detail scheduledPaymentDateTime(OffsetDateTime scheduledPaymentDateTime) {
+  public OBScheduledPayment1Detail scheduledPaymentDateTime(DateTime scheduledPaymentDateTime) {
     this.scheduledPaymentDateTime = scheduledPaymentDateTime;
     return this;
   }
@@ -146,11 +146,11 @@ public class OBScheduledPayment1Detail   {
 
   @Valid
 
-  public OffsetDateTime getScheduledPaymentDateTime() {
+  public DateTime getScheduledPaymentDateTime() {
     return scheduledPaymentDateTime;
   }
 
-  public void setScheduledPaymentDateTime(OffsetDateTime scheduledPaymentDateTime) {
+  public void setScheduledPaymentDateTime(DateTime scheduledPaymentDateTime) {
     this.scheduledPaymentDateTime = scheduledPaymentDateTime;
   }
 

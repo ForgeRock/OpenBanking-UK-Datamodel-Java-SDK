@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
+import org.joda.time.DateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -94,10 +94,10 @@ public class OBTransaction2Basic   {
   private OBEntryStatus1Code status = null;
 
   @JsonProperty("BookingDateTime")
-  private OffsetDateTime bookingDateTime = null;
+  private DateTime bookingDateTime = null;
 
   @JsonProperty("ValueDateTime")
-  private OffsetDateTime valueDateTime = null;
+  private DateTime valueDateTime = null;
 
   @JsonProperty("AddressLine")
   private String addressLine = null;
@@ -268,7 +268,7 @@ public class OBTransaction2Basic   {
     this.status = status;
   }
 
-  public OBTransaction2Basic bookingDateTime(OffsetDateTime bookingDateTime) {
+  public OBTransaction2Basic bookingDateTime(DateTime bookingDateTime) {
     this.bookingDateTime = bookingDateTime;
     return this;
   }
@@ -282,15 +282,15 @@ public class OBTransaction2Basic   {
 
   @Valid
 
-  public OffsetDateTime getBookingDateTime() {
+  public DateTime getBookingDateTime() {
     return bookingDateTime;
   }
 
-  public void setBookingDateTime(OffsetDateTime bookingDateTime) {
+  public void setBookingDateTime(DateTime bookingDateTime) {
     this.bookingDateTime = bookingDateTime;
   }
 
-  public OBTransaction2Basic valueDateTime(OffsetDateTime valueDateTime) {
+  public OBTransaction2Basic valueDateTime(DateTime valueDateTime) {
     this.valueDateTime = valueDateTime;
     return this;
   }
@@ -303,11 +303,11 @@ public class OBTransaction2Basic   {
 
   @Valid
 
-  public OffsetDateTime getValueDateTime() {
+  public DateTime getValueDateTime() {
     return valueDateTime;
   }
 
-  public void setValueDateTime(OffsetDateTime valueDateTime) {
+  public void setValueDateTime(DateTime valueDateTime) {
     this.valueDateTime = valueDateTime;
   }
 

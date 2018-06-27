@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
+import org.joda.time.DateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -50,19 +50,19 @@ public class OBStandingOrder2Detail   {
   private String reference = null;
 
   @JsonProperty("FirstPaymentDateTime")
-  private OffsetDateTime firstPaymentDateTime = null;
+  private DateTime firstPaymentDateTime = null;
 
   @JsonProperty("FirstPaymentAmount")
   private OBStandingOrder2FirstPaymentAmount firstPaymentAmount = null;
 
   @JsonProperty("NextPaymentDateTime")
-  private OffsetDateTime nextPaymentDateTime = null;
+  private DateTime nextPaymentDateTime = null;
 
   @JsonProperty("NextPaymentAmount")
   private OBStandingOrder2NextPaymentAmount nextPaymentAmount = null;
 
   @JsonProperty("FinalPaymentDateTime")
-  private OffsetDateTime finalPaymentDateTime = null;
+  private DateTime finalPaymentDateTime = null;
 
   @JsonProperty("FinalPaymentAmount")
   private OBStandingOrder2FinalPaymentAmount finalPaymentAmount = null;
@@ -189,7 +189,7 @@ public class OBStandingOrder2Detail   {
     this.reference = reference;
   }
 
-  public OBStandingOrder2Detail firstPaymentDateTime(OffsetDateTime firstPaymentDateTime) {
+  public OBStandingOrder2Detail firstPaymentDateTime(DateTime firstPaymentDateTime) {
     this.firstPaymentDateTime = firstPaymentDateTime;
     return this;
   }
@@ -202,11 +202,11 @@ public class OBStandingOrder2Detail   {
 
   @Valid
 
-  public OffsetDateTime getFirstPaymentDateTime() {
+  public DateTime getFirstPaymentDateTime() {
     return firstPaymentDateTime;
   }
 
-  public void setFirstPaymentDateTime(OffsetDateTime firstPaymentDateTime) {
+  public void setFirstPaymentDateTime(DateTime firstPaymentDateTime) {
     this.firstPaymentDateTime = firstPaymentDateTime;
   }
 
@@ -231,7 +231,7 @@ public class OBStandingOrder2Detail   {
     this.firstPaymentAmount = firstPaymentAmount;
   }
 
-  public OBStandingOrder2Detail nextPaymentDateTime(OffsetDateTime nextPaymentDateTime) {
+  public OBStandingOrder2Detail nextPaymentDateTime(DateTime nextPaymentDateTime) {
     this.nextPaymentDateTime = nextPaymentDateTime;
     return this;
   }
@@ -245,11 +245,11 @@ public class OBStandingOrder2Detail   {
 
   @Valid
 
-  public OffsetDateTime getNextPaymentDateTime() {
+  public DateTime getNextPaymentDateTime() {
     return nextPaymentDateTime;
   }
 
-  public void setNextPaymentDateTime(OffsetDateTime nextPaymentDateTime) {
+  public void setNextPaymentDateTime(DateTime nextPaymentDateTime) {
     this.nextPaymentDateTime = nextPaymentDateTime;
   }
 
@@ -275,7 +275,7 @@ public class OBStandingOrder2Detail   {
     this.nextPaymentAmount = nextPaymentAmount;
   }
 
-  public OBStandingOrder2Detail finalPaymentDateTime(OffsetDateTime finalPaymentDateTime) {
+  public OBStandingOrder2Detail finalPaymentDateTime(DateTime finalPaymentDateTime) {
     this.finalPaymentDateTime = finalPaymentDateTime;
     return this;
   }
@@ -288,11 +288,11 @@ public class OBStandingOrder2Detail   {
 
   @Valid
 
-  public OffsetDateTime getFinalPaymentDateTime() {
+  public DateTime getFinalPaymentDateTime() {
     return finalPaymentDateTime;
   }
 
-  public void setFinalPaymentDateTime(OffsetDateTime finalPaymentDateTime) {
+  public void setFinalPaymentDateTime(DateTime finalPaymentDateTime) {
     this.finalPaymentDateTime = finalPaymentDateTime;
   }
 

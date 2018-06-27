@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
+import org.joda.time.DateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -38,7 +38,7 @@ import java.util.Objects;
 
 public class OBStatement1StatementDateTime   {
   @JsonProperty("DateTime")
-  private OffsetDateTime dateTime = null;
+  private DateTime dateTime = null;
 
   /**
    * Date time type, in a coded form.
@@ -86,7 +86,7 @@ public class OBStatement1StatementDateTime   {
   @JsonProperty("Type")
   private TypeEnum type = null;
 
-  public OBStatement1StatementDateTime dateTime(OffsetDateTime dateTime) {
+  public OBStatement1StatementDateTime dateTime(DateTime dateTime) {
     this.dateTime = dateTime;
     return this;
   }
@@ -100,11 +100,11 @@ public class OBStatement1StatementDateTime   {
 
   @Valid
 
-  public OffsetDateTime getDateTime() {
+  public DateTime getDateTime() {
     return dateTime;
   }
 
-  public void setDateTime(OffsetDateTime dateTime) {
+  public void setDateTime(DateTime dateTime) {
     this.dateTime = dateTime;
   }
 

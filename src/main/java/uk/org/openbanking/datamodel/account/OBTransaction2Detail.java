@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
+import org.joda.time.DateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -123,10 +123,10 @@ public class OBTransaction2Detail   {
   private StatusEnum status = null;
 
   @JsonProperty("BookingDateTime")
-  private OffsetDateTime bookingDateTime = null;
+  private DateTime bookingDateTime = null;
 
   @JsonProperty("ValueDateTime")
-  private OffsetDateTime valueDateTime = null;
+  private DateTime valueDateTime = null;
 
   @JsonProperty("AddressLine")
   private String addressLine = null;
@@ -317,7 +317,7 @@ public class OBTransaction2Detail   {
     this.status = status;
   }
 
-  public OBTransaction2Detail bookingDateTime(OffsetDateTime bookingDateTime) {
+  public OBTransaction2Detail bookingDateTime(DateTime bookingDateTime) {
     this.bookingDateTime = bookingDateTime;
     return this;
   }
@@ -331,15 +331,15 @@ public class OBTransaction2Detail   {
 
   @Valid
 
-  public OffsetDateTime getBookingDateTime() {
+  public DateTime getBookingDateTime() {
     return bookingDateTime;
   }
 
-  public void setBookingDateTime(OffsetDateTime bookingDateTime) {
+  public void setBookingDateTime(DateTime bookingDateTime) {
     this.bookingDateTime = bookingDateTime;
   }
 
-  public OBTransaction2Detail valueDateTime(OffsetDateTime valueDateTime) {
+  public OBTransaction2Detail valueDateTime(DateTime valueDateTime) {
     this.valueDateTime = valueDateTime;
     return this;
   }
@@ -352,11 +352,11 @@ public class OBTransaction2Detail   {
 
   @Valid
 
-  public OffsetDateTime getValueDateTime() {
+  public DateTime getValueDateTime() {
     return valueDateTime;
   }
 
-  public void setValueDateTime(OffsetDateTime valueDateTime) {
+  public void setValueDateTime(DateTime valueDateTime) {
     this.valueDateTime = valueDateTime;
   }
 

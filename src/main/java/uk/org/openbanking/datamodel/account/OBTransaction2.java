@@ -17,13 +17,11 @@
 
 package uk.org.openbanking.datamodel.account;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -56,94 +54,32 @@ public class OBTransaction2   {
   @JsonProperty("Amount")
   private OBTransaction2Amount amount = null;
 
-  /**
-   * Indicates whether the transaction is a credit or a debit entry.
-   */
-  public enum CreditDebitIndicatorEnum {
-    CREDIT("Credit"),
-    
-    DEBIT("Debit");
-
-    private String value;
-
-    CreditDebitIndicatorEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static CreditDebitIndicatorEnum fromValue(String text) {
-      for (CreditDebitIndicatorEnum b : CreditDebitIndicatorEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
   @JsonProperty("CreditDebitIndicator")
-  private CreditDebitIndicatorEnum creditDebitIndicator = null;
-
-  /**
-   * Status of a transaction entry on the books of the account servicer.
-   */
-  public enum StatusEnum {
-    BOOKED("Booked"),
-    
-    PENDING("Pending");
-
-    private String value;
-
-    StatusEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    @JsonValue
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static StatusEnum fromValue(String text) {
-      for (StatusEnum b : StatusEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
+  private OBCreditDebitCode creditDebitIndicator = null;
 
   @JsonProperty("Status")
-  private StatusEnum status = null;
+  private OBEntryStatus1Code status = null;
 
   @JsonProperty("BookingDateTime")
-  private OffsetDateTime bookingDateTime = null;
+  private DateTime bookingDateTime = null;
 
   @JsonProperty("ValueDateTime")
-  private OffsetDateTime valueDateTime = null;
+  private DateTime valueDateTime = null;
 
   @JsonProperty("AddressLine")
   private String addressLine = null;
 
   @JsonProperty("BankTransactionCode")
-  private OBTransaction2BankTransactionCode bankTransactionCode = null;
+  private OBBankTransactionCodeStructure1 bankTransactionCode = null;
 
   @JsonProperty("ProprietaryBankTransactionCode")
-  private OBTransaction2ProprietaryBankTransactionCode proprietaryBankTransactionCode = null;
+  private ProprietaryBankTransactionCodeStructure1 proprietaryBankTransactionCode = null;
 
   @JsonProperty("EquivalentAmount")
   private OBTransaction2EquivalentAmount equivalentAmount = null;
 
   @JsonProperty("CreditorAgent")
-  private OBTransaction2CreditorAgent creditorAgent = null;
+  private OBBranchAndFinancialInstitutionIdentification2 creditorAgent = null;
 
   @JsonProperty("DebtorAgent")
   private OBTransaction2DebtorAgent debtorAgent = null;
@@ -155,16 +91,16 @@ public class OBTransaction2   {
   private String transactionInformation = null;
 
   @JsonProperty("Balance")
-  private OBTransaction2Balance balance = null;
+  private OBTransactionCashBalance balance = null;
 
   @JsonProperty("MerchantDetails")
-  private OBTransaction2MerchantDetails merchantDetails = null;
+  private OBMerchantDetails1 merchantDetails = null;
 
   @JsonProperty("CreditorAccount")
-  private OBTransaction2CreditorAccount creditorAccount = null;
+  private OBCashAccount2 creditorAccount = null;
 
   @JsonProperty("DebtorAccount")
-  private OBTransaction2DebtorAccount debtorAccount = null;
+  private OBBranchAndFinancialInstitutionIdentification2 debtorAccount = null;
 
   public OBTransaction2 accountId(String accountId) {
     this.accountId = accountId;
@@ -277,7 +213,7 @@ public class OBTransaction2   {
     this.amount = amount;
   }
 
-  public OBTransaction2 creditDebitIndicator(CreditDebitIndicatorEnum creditDebitIndicator) {
+  public OBTransaction2 creditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
     this.creditDebitIndicator = creditDebitIndicator;
     return this;
   }
@@ -290,15 +226,15 @@ public class OBTransaction2   {
   @NotNull
 
 
-  public CreditDebitIndicatorEnum getCreditDebitIndicator() {
+  public OBCreditDebitCode getCreditDebitIndicator() {
     return creditDebitIndicator;
   }
 
-  public void setCreditDebitIndicator(CreditDebitIndicatorEnum creditDebitIndicator) {
+  public void setCreditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
     this.creditDebitIndicator = creditDebitIndicator;
   }
 
-  public OBTransaction2 status(StatusEnum status) {
+  public OBTransaction2 status(OBEntryStatus1Code status) {
     this.status = status;
     return this;
   }
@@ -311,15 +247,15 @@ public class OBTransaction2   {
   @NotNull
 
 
-  public StatusEnum getStatus() {
+  public OBEntryStatus1Code getStatus() {
     return status;
   }
 
-  public void setStatus(StatusEnum status) {
+  public void setStatus(OBEntryStatus1Code status) {
     this.status = status;
   }
 
-  public OBTransaction2 bookingDateTime(OffsetDateTime bookingDateTime) {
+  public OBTransaction2 bookingDateTime(DateTime bookingDateTime) {
     this.bookingDateTime = bookingDateTime;
     return this;
   }
@@ -333,15 +269,15 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OffsetDateTime getBookingDateTime() {
+  public DateTime getBookingDateTime() {
     return bookingDateTime;
   }
 
-  public void setBookingDateTime(OffsetDateTime bookingDateTime) {
+  public void setBookingDateTime(DateTime bookingDateTime) {
     this.bookingDateTime = bookingDateTime;
   }
 
-  public OBTransaction2 valueDateTime(OffsetDateTime valueDateTime) {
+  public OBTransaction2 valueDateTime(DateTime valueDateTime) {
     this.valueDateTime = valueDateTime;
     return this;
   }
@@ -354,11 +290,11 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OffsetDateTime getValueDateTime() {
+  public DateTime getValueDateTime() {
     return valueDateTime;
   }
 
-  public void setValueDateTime(OffsetDateTime valueDateTime) {
+  public void setValueDateTime(DateTime valueDateTime) {
     this.valueDateTime = valueDateTime;
   }
 
@@ -382,7 +318,7 @@ public class OBTransaction2   {
     this.addressLine = addressLine;
   }
 
-  public OBTransaction2 bankTransactionCode(OBTransaction2BankTransactionCode bankTransactionCode) {
+  public OBTransaction2 bankTransactionCode(OBBankTransactionCodeStructure1 bankTransactionCode) {
     this.bankTransactionCode = bankTransactionCode;
     return this;
   }
@@ -395,15 +331,15 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2BankTransactionCode getBankTransactionCode() {
+  public OBBankTransactionCodeStructure1 getBankTransactionCode() {
     return bankTransactionCode;
   }
 
-  public void setBankTransactionCode(OBTransaction2BankTransactionCode bankTransactionCode) {
+  public void setBankTransactionCode(OBBankTransactionCodeStructure1 bankTransactionCode) {
     this.bankTransactionCode = bankTransactionCode;
   }
 
-  public OBTransaction2 proprietaryBankTransactionCode(OBTransaction2ProprietaryBankTransactionCode proprietaryBankTransactionCode) {
+  public OBTransaction2 proprietaryBankTransactionCode(ProprietaryBankTransactionCodeStructure1 proprietaryBankTransactionCode) {
     this.proprietaryBankTransactionCode = proprietaryBankTransactionCode;
     return this;
   }
@@ -416,11 +352,11 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2ProprietaryBankTransactionCode getProprietaryBankTransactionCode() {
+  public ProprietaryBankTransactionCodeStructure1 getProprietaryBankTransactionCode() {
     return proprietaryBankTransactionCode;
   }
 
-  public void setProprietaryBankTransactionCode(OBTransaction2ProprietaryBankTransactionCode proprietaryBankTransactionCode) {
+  public void setProprietaryBankTransactionCode(ProprietaryBankTransactionCodeStructure1 proprietaryBankTransactionCode) {
     this.proprietaryBankTransactionCode = proprietaryBankTransactionCode;
   }
 
@@ -445,7 +381,7 @@ public class OBTransaction2   {
     this.equivalentAmount = equivalentAmount;
   }
 
-  public OBTransaction2 creditorAgent(OBTransaction2CreditorAgent creditorAgent) {
+  public OBTransaction2 creditorAgent(OBBranchAndFinancialInstitutionIdentification2 creditorAgent) {
     this.creditorAgent = creditorAgent;
     return this;
   }
@@ -458,11 +394,11 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2CreditorAgent getCreditorAgent() {
+  public OBBranchAndFinancialInstitutionIdentification2 getCreditorAgent() {
     return creditorAgent;
   }
 
-  public void setCreditorAgent(OBTransaction2CreditorAgent creditorAgent) {
+  public void setCreditorAgent(OBBranchAndFinancialInstitutionIdentification2 creditorAgent) {
     this.creditorAgent = creditorAgent;
   }
 
@@ -528,7 +464,7 @@ public class OBTransaction2   {
     this.transactionInformation = transactionInformation;
   }
 
-  public OBTransaction2 balance(OBTransaction2Balance balance) {
+  public OBTransaction2 balance(OBTransactionCashBalance balance) {
     this.balance = balance;
     return this;
   }
@@ -541,15 +477,15 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2Balance getBalance() {
+  public OBTransactionCashBalance getBalance() {
     return balance;
   }
 
-  public void setBalance(OBTransaction2Balance balance) {
+  public void setBalance(OBTransactionCashBalance balance) {
     this.balance = balance;
   }
 
-  public OBTransaction2 merchantDetails(OBTransaction2MerchantDetails merchantDetails) {
+  public OBTransaction2 merchantDetails(OBMerchantDetails1 merchantDetails) {
     this.merchantDetails = merchantDetails;
     return this;
   }
@@ -562,15 +498,15 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2MerchantDetails getMerchantDetails() {
+  public OBMerchantDetails1 getMerchantDetails() {
     return merchantDetails;
   }
 
-  public void setMerchantDetails(OBTransaction2MerchantDetails merchantDetails) {
+  public void setMerchantDetails(OBMerchantDetails1 merchantDetails) {
     this.merchantDetails = merchantDetails;
   }
 
-  public OBTransaction2 creditorAccount(OBTransaction2CreditorAccount creditorAccount) {
+  public OBTransaction2 creditorAccount(OBCashAccount2 creditorAccount) {
     this.creditorAccount = creditorAccount;
     return this;
   }
@@ -583,15 +519,15 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2CreditorAccount getCreditorAccount() {
+  public OBCashAccount2 getCreditorAccount() {
     return creditorAccount;
   }
 
-  public void setCreditorAccount(OBTransaction2CreditorAccount creditorAccount) {
+  public void setCreditorAccount(OBCashAccount2 creditorAccount) {
     this.creditorAccount = creditorAccount;
   }
 
-  public OBTransaction2 debtorAccount(OBTransaction2DebtorAccount debtorAccount) {
+  public OBTransaction2 debtorAccount(OBBranchAndFinancialInstitutionIdentification2 debtorAccount) {
     this.debtorAccount = debtorAccount;
     return this;
   }
@@ -604,11 +540,11 @@ public class OBTransaction2   {
 
   @Valid
 
-  public OBTransaction2DebtorAccount getDebtorAccount() {
+  public OBBranchAndFinancialInstitutionIdentification2 getDebtorAccount() {
     return debtorAccount;
   }
 
-  public void setDebtorAccount(OBTransaction2DebtorAccount debtorAccount) {
+  public void setDebtorAccount(OBBranchAndFinancialInstitutionIdentification2 debtorAccount) {
     this.debtorAccount = debtorAccount;
   }
 
