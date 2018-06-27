@@ -17,23 +17,20 @@
 
 package uk.org.openbanking.datamodel.account;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
-
-import org.joda.time.DateTime;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
 import uk.org.openbanking.jackson.DateTimeDeserializer;
 import uk.org.openbanking.jackson.DateTimeSerializer;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Allows setup of an account access request

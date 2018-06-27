@@ -17,15 +17,13 @@
 
 package uk.org.openbanking.datamodel.account;
 
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import java.util.Objects;
 
 /**
  * Product

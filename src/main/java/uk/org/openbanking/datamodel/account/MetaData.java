@@ -17,20 +17,17 @@
 
 package uk.org.openbanking.datamodel.account;
 
-import java.util.Objects;
-
-import javax.validation.Valid;
-
-import org.joda.time.DateTime;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
 import uk.org.openbanking.jackson.DateTimeDeserializer;
 import uk.org.openbanking.jackson.DateTimeSerializer;
+
+import javax.validation.Valid;
+import java.util.Objects;
 
 /**
  * Meta Data relevant to the payload
