@@ -17,18 +17,72 @@
 
 package uk.org.openbanking.datamodel.account;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 public enum OBExternalPermissions1Code {
-    ReadAccountsBasic,
-    ReadAccountsDetail,
-    ReadBalances,
-    ReadBeneficiariesBasic,
-    ReadBeneficiariesDetail,
-    ReadDirectDebits,
-    ReadProducts,
-    ReadStandingOrdersBasic,
-    ReadStandingOrdersDetail,
-    ReadTransactionsBasic,
-    ReadTransactionsCredits,
-    ReadTransactionsDebits,
-    ReadTransactionsDetail
+    READACCOUNTSBASIC("ReadAccountsBasic"),
+
+    READACCOUNTSDETAIL("ReadAccountsDetail"),
+
+    READBALANCES("ReadBalances"),
+
+    READBENEFICIARIESBASIC("ReadBeneficiariesBasic"),
+
+    READBENEFICIARIESDETAIL("ReadBeneficiariesDetail"),
+
+    READDIRECTDEBITS("ReadDirectDebits"),
+
+    READOFFERS("ReadOffers"),
+
+    READPAN("ReadPAN"),
+
+    READPARTY("ReadParty"),
+
+    READPARTYPSU("ReadPartyPSU"),
+
+    READPRODUCTS("ReadProducts"),
+
+    READSCHEDULEDPAYMENTSBASIC("ReadScheduledPaymentsBasic"),
+
+    READSCHEDULEDPAYMENTSDETAIL("ReadScheduledPaymentsDetail"),
+
+    READSTANDINGORDERSBASIC("ReadStandingOrdersBasic"),
+
+    READSTANDINGORDERSDETAIL("ReadStandingOrdersDetail"),
+
+    READSTATEMENTSBASIC("ReadStatementsBasic"),
+
+    READSTATEMENTSDETAIL("ReadStatementsDetail"),
+
+    READTRANSACTIONSBASIC("ReadTransactionsBasic"),
+
+    READTRANSACTIONSCREDITS("ReadTransactionsCredits"),
+
+    READTRANSACTIONSDEBITS("ReadTransactionsDebits"),
+
+    READTRANSACTIONSDETAIL("ReadTransactionsDetail");
+
+    private String value;
+
+    OBExternalPermissions1Code(String value) {
+        this.value = value;
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+        return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static OBExternalPermissions1Code fromValue(String text) {
+        for (OBExternalPermissions1Code b : OBExternalPermissions1Code.values()) {
+            if (String.valueOf(b.value).equals(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
+
 }
