@@ -39,7 +39,7 @@ public class OBReadStandingOrder2   {
   private Links links = null;
 
   @JsonProperty("Meta")
-  private Meta meta = null;
+  private MetaData meta = null;
 
   public OBReadStandingOrder2 data(OBReadStandingOrder2Data data) {
     this.data = data;
@@ -85,7 +85,7 @@ public class OBReadStandingOrder2   {
     this.links = links;
   }
 
-  public OBReadStandingOrder2 meta(Meta meta) {
+  public OBReadStandingOrder2 meta(MetaData meta) {
     this.meta = meta;
     return this;
   }
@@ -99,11 +99,11 @@ public class OBReadStandingOrder2   {
 
   @Valid
 
-  public Meta getMeta() {
+  public MetaData getMeta() {
     return meta;
   }
 
-  public void setMeta(Meta meta) {
+  public void setMeta(MetaData meta) {
     this.meta = meta;
   }
 

@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum OBExternalPermissions1Code {
+
     READACCOUNTSBASIC("ReadAccountsBasic"),
 
     READACCOUNTSDETAIL("ReadAccountsDetail"),
@@ -63,14 +64,13 @@ public enum OBExternalPermissions1Code {
 
     READTRANSACTIONSDETAIL("ReadTransactionsDetail");
 
-    private String value;
+    private final String value;
 
     OBExternalPermissions1Code(String value) {
         this.value = value;
     }
 
     @Override
-    @JsonValue
     public String toString() {
         return String.valueOf(value);
     }

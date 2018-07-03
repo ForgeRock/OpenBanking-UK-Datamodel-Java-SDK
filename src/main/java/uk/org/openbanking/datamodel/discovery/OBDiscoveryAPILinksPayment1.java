@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModel;
 import java.util.Objects;
 
 @ApiModel(description = "Payment endpoints corresponding to a specific version")
-public class OBDiscoveryAPILinksPayment implements OBDiscoveryAPILinks{
+public class OBDiscoveryAPILinksPayment1 implements OBDiscoveryAPILinks{
 
     @JsonProperty("CreateSingleImmediatePayment")
     private String createSingleImmediatePayment;
@@ -42,7 +42,7 @@ public class OBDiscoveryAPILinksPayment implements OBDiscoveryAPILinks{
         this.createSingleImmediatePayment = createSingleImmediatePayment;
     }
 
-    public OBDiscoveryAPILinksPayment createSingleImmediatePayment(String createSingleImmediatePayment) {
+    public OBDiscoveryAPILinksPayment1 createSingleImmediatePayment(String createSingleImmediatePayment) {
         this.createSingleImmediatePayment = createSingleImmediatePayment;
         return this;
     }
@@ -55,7 +55,7 @@ public class OBDiscoveryAPILinksPayment implements OBDiscoveryAPILinks{
         this.getSingleImmediatePayment = getSingleImmediatePayment;
     }
 
-    public OBDiscoveryAPILinksPayment getSingleImmediatePayment(String getSingleImmediatePayment) {
+    public OBDiscoveryAPILinksPayment1 getSingleImmediatePayment(String getSingleImmediatePayment) {
         this.getSingleImmediatePayment = getSingleImmediatePayment;
         return this;
     }
@@ -68,7 +68,7 @@ public class OBDiscoveryAPILinksPayment implements OBDiscoveryAPILinks{
         this.createPaymentSubmission = createPaymentSubmission;
     }
 
-    public OBDiscoveryAPILinksPayment createPaymentSubmission(String createPaymentSubmission) {
+    public OBDiscoveryAPILinksPayment1 createPaymentSubmission(String createPaymentSubmission) {
         this.createPaymentSubmission = createPaymentSubmission;
         return this;
     }
@@ -81,7 +81,7 @@ public class OBDiscoveryAPILinksPayment implements OBDiscoveryAPILinks{
         this.getPaymentSubmission = getPaymentSubmission;
     }
 
-    public OBDiscoveryAPILinksPayment getPaymentSubmission(String getPaymentSubmission) {
+    public OBDiscoveryAPILinksPayment1 getPaymentSubmission(String getPaymentSubmission) {
         this.getPaymentSubmission = getPaymentSubmission;
         return this;
     }
@@ -90,7 +90,7 @@ public class OBDiscoveryAPILinksPayment implements OBDiscoveryAPILinks{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OBDiscoveryAPILinksPayment that = (OBDiscoveryAPILinksPayment) o;
+        OBDiscoveryAPILinksPayment1 that = (OBDiscoveryAPILinksPayment1) o;
         return Objects.equals(createSingleImmediatePayment, that.createSingleImmediatePayment) &&
                 Objects.equals(getSingleImmediatePayment, that.getSingleImmediatePayment) &&
                 Objects.equals(createPaymentSubmission, that.createPaymentSubmission) &&

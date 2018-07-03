@@ -32,17 +32,17 @@ import java.util.Optional;
 public class OBDiscovery {
 
     @JsonProperty("PaymentInitiationAPI")
-    private List<OBDiscoveryAPI<OBDiscoveryAPILinksPayment>> paymentInitiationAPIs;
+    private List<OBDiscoveryAPI<OBDiscoveryAPILinksPayment1>> paymentInitiationAPIs;
 
     @JsonProperty("AccountAndTransactionAPI")
-    private List<OBDiscoveryAPI<OBDiscoveryAPILinksAccount>> accountAndTransactionAPIs;
+    private List<OBDiscoveryAPI<OBDiscoveryAPILinksAccount1>> accountAndTransactionAPIs;
 
-    public OBDiscovery paymentInitiationAPI(List<OBDiscoveryAPI<OBDiscoveryAPILinksPayment>> paymentInitiationAPIs) {
+    public OBDiscovery paymentInitiationAPI(List<OBDiscoveryAPI<OBDiscoveryAPILinksPayment1>> paymentInitiationAPIs) {
         this.paymentInitiationAPIs = paymentInitiationAPIs;
         return this;
     }
 
-    public OBDiscovery addPaymentInitiationAPI(OBDiscoveryAPI<OBDiscoveryAPILinksPayment> paymentInitiationAPI) {
+    public OBDiscovery addPaymentInitiationAPI(OBDiscoveryAPI<OBDiscoveryAPILinksPayment1> paymentInitiationAPI) {
         if (this.paymentInitiationAPIs == null) {
             this.paymentInitiationAPIs = new ArrayList<>();
         }
@@ -50,24 +50,24 @@ public class OBDiscovery {
         return this;
     }
 
-    public List<OBDiscoveryAPI<OBDiscoveryAPILinksPayment>> getPaymentInitiationAPIs() {
+    public List<OBDiscoveryAPI<OBDiscoveryAPILinksPayment1>> getPaymentInitiationAPIs() {
         return paymentInitiationAPIs;
     }
 
-    public void setPaymentInitiationAPIs(List<OBDiscoveryAPI<OBDiscoveryAPILinksPayment>> paymentInitiationAPIs) {
+    public void setPaymentInitiationAPIs(List<OBDiscoveryAPI<OBDiscoveryAPILinksPayment1>> paymentInitiationAPIs) {
         this.paymentInitiationAPIs = paymentInitiationAPIs;
     }
 
-    public Optional<OBDiscoveryAPI<OBDiscoveryAPILinksPayment>> getPaymentInitiationAPI(String version) {
+    public Optional<OBDiscoveryAPI<OBDiscoveryAPILinksPayment1>> getPaymentInitiationAPI(String version) {
         return paymentInitiationAPIs.stream().filter(apis -> apis.getVersion().equals(version)).findFirst();
     }
 
-    public OBDiscovery accountAndTransactionAPIs(List<OBDiscoveryAPI<OBDiscoveryAPILinksAccount>> accountAndTransactionAPIs) {
+    public OBDiscovery accountAndTransactionAPIs(List<OBDiscoveryAPI<OBDiscoveryAPILinksAccount1>> accountAndTransactionAPIs) {
         this.accountAndTransactionAPIs = accountAndTransactionAPIs;
         return this;
     }
 
-    public OBDiscovery addAccountAndTransactionAPI(OBDiscoveryAPI<OBDiscoveryAPILinksAccount> accountAndTransactionAPI) {
+    public OBDiscovery addAccountAndTransactionAPI(OBDiscoveryAPI<OBDiscoveryAPILinksAccount1> accountAndTransactionAPI) {
         if (this.accountAndTransactionAPIs == null) {
             this.accountAndTransactionAPIs = new ArrayList<>();
         }
@@ -75,15 +75,15 @@ public class OBDiscovery {
         return this;
     }
 
-    public List<OBDiscoveryAPI<OBDiscoveryAPILinksAccount>> getAccountAndTransactionAPIs() {
+    public List<OBDiscoveryAPI<OBDiscoveryAPILinksAccount1>> getAccountAndTransactionAPIs() {
         return accountAndTransactionAPIs;
     }
 
-    public void setAccountAndTransactionAPIs(List<OBDiscoveryAPI<OBDiscoveryAPILinksAccount>> accountAndTransactionAPIs) {
+    public void setAccountAndTransactionAPIs(List<OBDiscoveryAPI<OBDiscoveryAPILinksAccount1>> accountAndTransactionAPIs) {
         this.accountAndTransactionAPIs = accountAndTransactionAPIs;
     }
 
-    public Optional<OBDiscoveryAPI<OBDiscoveryAPILinksAccount>> getAccountAndTransactionAPI(String version) {
+    public Optional<OBDiscoveryAPI<OBDiscoveryAPILinksAccount1>> getAccountAndTransactionAPI(String version) {
         return accountAndTransactionAPIs.stream().filter(apis -> apis.getVersion().equals(version)).findFirst();
     }
 

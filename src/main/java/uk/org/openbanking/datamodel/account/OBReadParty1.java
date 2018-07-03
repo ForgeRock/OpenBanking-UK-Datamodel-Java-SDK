@@ -39,7 +39,7 @@ public class OBReadParty1   {
   private Links links = null;
 
   @JsonProperty("Meta")
-  private Meta meta = null;
+  private MetaData meta = null;
 
   public OBReadParty1 data(OBReadParty1Data data) {
     this.data = data;
@@ -85,7 +85,7 @@ public class OBReadParty1   {
     this.links = links;
   }
 
-  public OBReadParty1 meta(Meta meta) {
+  public OBReadParty1 meta(MetaData meta) {
     this.meta = meta;
     return this;
   }
@@ -99,11 +99,11 @@ public class OBReadParty1   {
 
   @Valid
 
-  public Meta getMeta() {
+  public MetaData getMeta() {
     return meta;
   }
 
-  public void setMeta(Meta meta) {
+  public void setMeta(MetaData meta) {
     this.meta = meta;
   }
 

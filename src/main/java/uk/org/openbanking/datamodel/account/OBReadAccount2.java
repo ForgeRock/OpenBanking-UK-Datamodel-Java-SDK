@@ -39,7 +39,7 @@ public class OBReadAccount2   {
   private Links links = null;
 
   @JsonProperty("Meta")
-  private Meta meta = null;
+  private MetaData meta = null;
 
   public OBReadAccount2 data(OBReadAccount2Data data) {
     this.data = data;
@@ -85,7 +85,7 @@ public class OBReadAccount2   {
     this.links = links;
   }
 
-  public OBReadAccount2 meta(Meta meta) {
+  public OBReadAccount2 meta(MetaData meta) {
     this.meta = meta;
     return this;
   }
@@ -99,11 +99,11 @@ public class OBReadAccount2   {
 
   @Valid
 
-  public Meta getMeta() {
+  public MetaData getMeta() {
     return meta;
   }
 
-  public void setMeta(Meta meta) {
+  public void setMeta(MetaData meta) {
     this.meta = meta;
   }
 

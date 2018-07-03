@@ -20,7 +20,6 @@ package uk.org.openbanking.datamodel.account;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import uk.org.openbanking.datamodel.payment.OBBranchAndFinancialInstitutionIdentification2;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Size;

@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModel;
 import java.util.Objects;
 
 @ApiModel(description = "Account and transaction endpoints corresponding to a specific version")
-public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
+public class OBDiscoveryAPILinksAccount1 implements OBDiscoveryAPILinks {
 
     @JsonProperty("CreateAccountRequest")
     private String createAccountRequest;
@@ -68,7 +68,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.createAccountRequest = createAccountRequest;
     }
 
-    public OBDiscoveryAPILinksAccount createAccountRequest(String createAccountRequest) {
+    public OBDiscoveryAPILinksAccount1 createAccountRequest(String createAccountRequest) {
         this.createAccountRequest = createAccountRequest;
         return this;
     }
@@ -81,7 +81,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getAccountRequest = getAccountRequest;
     }
 
-    public OBDiscoveryAPILinksAccount getAccountRequest(String getAccountRequest) {
+    public OBDiscoveryAPILinksAccount1 getAccountRequest(String getAccountRequest) {
         this.getAccountRequest = getAccountRequest;
         return this;
     }
@@ -94,7 +94,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.deleteAccountRequest = deleteAccountRequest;
     }
 
-    public OBDiscoveryAPILinksAccount deleteAccountRequest(String deleteAccountRequest) {
+    public OBDiscoveryAPILinksAccount1 deleteAccountRequest(String deleteAccountRequest) {
         this.deleteAccountRequest = deleteAccountRequest;
         return this;
     }
@@ -107,7 +107,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getAccounts = getAccounts;
     }
 
-    public OBDiscoveryAPILinksAccount getAccounts(String getAccounts) {
+    public OBDiscoveryAPILinksAccount1 getAccounts(String getAccounts) {
         this.getAccounts = getAccounts;
         return this;
     }
@@ -120,7 +120,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getAccount = getAccount;
     }
 
-    public OBDiscoveryAPILinksAccount getAccount(String getAccount) {
+    public OBDiscoveryAPILinksAccount1 getAccount(String getAccount) {
         this.getAccount = getAccount;
         return this;
     }
@@ -133,7 +133,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getAccountTransactions = getAccountTransactions;
     }
 
-    public OBDiscoveryAPILinksAccount getAccountTransactions(String getAccountTransactions) {
+    public OBDiscoveryAPILinksAccount1 getAccountTransactions(String getAccountTransactions) {
         this.getAccountTransactions = getAccountTransactions;
         return this;
     }
@@ -146,7 +146,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getAccountBeneficiaries = getAccountBeneficiaries;
     }
 
-    public OBDiscoveryAPILinksAccount getAccountBeneficiaries(String getAccountBeneficiaries) {
+    public OBDiscoveryAPILinksAccount1 getAccountBeneficiaries(String getAccountBeneficiaries) {
         this.getAccountBeneficiaries = getAccountBeneficiaries;
         return this;
     }
@@ -159,7 +159,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getAccountBalances = getAccountBalances;
     }
 
-    public OBDiscoveryAPILinksAccount getAccountBalances(String getAccountBalances) {
+    public OBDiscoveryAPILinksAccount1 getAccountBalances(String getAccountBalances) {
         this.getAccountBalances = getAccountBalances;
         return this;
     }
@@ -172,7 +172,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getAccountDirectDebits = getAccountDirectDebits;
     }
 
-    public OBDiscoveryAPILinksAccount getAccountDirectDebits(String getAccountDirectDebits) {
+    public OBDiscoveryAPILinksAccount1 getAccountDirectDebits(String getAccountDirectDebits) {
         this.getAccountDirectDebits = getAccountDirectDebits;
         return this;
     }
@@ -185,7 +185,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getAccountStandingOrders = getAccountStandingOrders;
     }
 
-    public OBDiscoveryAPILinksAccount getAccountStandingOrders(String getAccountStandingOrders) {
+    public OBDiscoveryAPILinksAccount1 getAccountStandingOrders(String getAccountStandingOrders) {
         this.getAccountStandingOrders = getAccountStandingOrders;
         return this;
     }
@@ -198,7 +198,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getAccountProduct = getAccountProduct;
     }
 
-    public OBDiscoveryAPILinksAccount getAccountProduct(String getAccountProduct) {
+    public OBDiscoveryAPILinksAccount1 getAccountProduct(String getAccountProduct) {
         this.getAccountProduct = getAccountProduct;
         return this;
     }
@@ -211,7 +211,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getStandingOrders = getStandingOrders;
     }
 
-    public OBDiscoveryAPILinksAccount getStandingOrders(String getStandingOrders) {
+    public OBDiscoveryAPILinksAccount1 getStandingOrders(String getStandingOrders) {
         this.getStandingOrders = getStandingOrders;
         return this;
     }
@@ -224,7 +224,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getDirectDebits = getDirectDebits;
     }
 
-    public OBDiscoveryAPILinksAccount getDirectDebits(String getDirectDebits) {
+    public OBDiscoveryAPILinksAccount1 getDirectDebits(String getDirectDebits) {
         this.getDirectDebits = getDirectDebits;
         return this;
     }
@@ -237,7 +237,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getBeneficiaries = getBeneficiaries;
     }
 
-    public OBDiscoveryAPILinksAccount getBeneficiaries(String getBeneficiaries) {
+    public OBDiscoveryAPILinksAccount1 getBeneficiaries(String getBeneficiaries) {
         this.getBeneficiaries = getBeneficiaries;
         return this;
     }
@@ -250,7 +250,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getTransactions = getTransactions;
     }
 
-    public OBDiscoveryAPILinksAccount getTransactions(String getTransactions) {
+    public OBDiscoveryAPILinksAccount1 getTransactions(String getTransactions) {
         this.getTransactions = getTransactions;
         return this;
     }
@@ -263,7 +263,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getBalances = getBalances;
     }
 
-    public OBDiscoveryAPILinksAccount getBalances(String getBalances) {
+    public OBDiscoveryAPILinksAccount1 getBalances(String getBalances) {
         this.getBalances = getBalances;
         return this;
     }
@@ -276,7 +276,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
         this.getProducts = getProducts;
     }
 
-    public OBDiscoveryAPILinksAccount getProducts(String getProducts) {
+    public OBDiscoveryAPILinksAccount1 getProducts(String getProducts) {
         this.getProducts = getProducts;
         return this;
     }
@@ -285,7 +285,7 @@ public class OBDiscoveryAPILinksAccount implements OBDiscoveryAPILinks{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        OBDiscoveryAPILinksAccount that = (OBDiscoveryAPILinksAccount) o;
+        OBDiscoveryAPILinksAccount1 that = (OBDiscoveryAPILinksAccount1) o;
         return Objects.equals(createAccountRequest, that.createAccountRequest) &&
                 Objects.equals(getAccountRequest, that.getAccountRequest) &&
                 Objects.equals(deleteAccountRequest, that.deleteAccountRequest) &&
