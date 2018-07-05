@@ -35,6 +35,7 @@ public class OBProductConverter {
                 .accountId(obProduct2.getAccountId())
                 .productType(obProduct2.getProductType());
 
+
         if (obProduct2.getProductId() == null) {
             product1.productIdentifier(obProduct2.getProductId());
         }

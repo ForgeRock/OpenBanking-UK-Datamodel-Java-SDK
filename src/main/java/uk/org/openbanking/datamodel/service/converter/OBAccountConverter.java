@@ -42,18 +42,17 @@ public class OBAccountConverter {
         }
 
         //account
-        if (account2.getAccount() != null && account2.getAccount().size() > 0) {
-            OBAccount2Account obAccount2Account = account2.getAccount().get(0);
+        if (account2.getAccount() != null) {
 
             OBCashAccount1 obCashAccount1 = new OBCashAccount1()
-                    .schemeName(toOBExternalAccountIdentification2Code(obAccount2Account.getSchemeName()))
-                    .identification(obAccount2Account.getIdentification());
+                    .schemeName(toOBExternalAccountIdentification2Code(account2.getAccount().getSchemeName()))
+                    .identification(account2.getAccount().getIdentification());
 
-            if (obAccount2Account.getName() != null) {
-                obCashAccount1.name(obAccount2Account.getName());
+            if (account2.getAccount().getName() != null) {
+                obCashAccount1.name(account2.getAccount().getName());
             }
-            if (obAccount2Account.getSecondaryIdentification() != null) {
-                obCashAccount1.secondaryIdentification(obAccount2Account.getSecondaryIdentification());
+            if (account2.getAccount().getSecondaryIdentification() != null) {
+                obCashAccount1.secondaryIdentification(account2.getAccount().getSecondaryIdentification());
             }
             account1.account(obCashAccount1);
         }
@@ -98,7 +97,7 @@ public class OBAccountConverter {
         if (account1.getAccount().getSecondaryIdentification() == null) {
             account2Account.secondaryIdentification(account1.getAccount().getSecondaryIdentification());
         }
-        account2.account(Arrays.asList(account2Account));
+        account2.account(account2Account);
 
         //servicer
         if (account2.getServicer() != null) {
