@@ -58,7 +58,7 @@ public class OBAccount2   {
 
   @JsonProperty("Account")
   @Valid
-  private List<OBAccount2Account> account = null;
+  private OBAccount2Account account = null;
 
   @JsonProperty("Servicer")
   private OBAccount2Servicer servicer = null;
@@ -187,16 +187,8 @@ public class OBAccount2   {
     this.nickname = nickname;
   }
 
-  public OBAccount2 account(List<OBAccount2Account> account) {
+  public OBAccount2 account(OBAccount2Account account) {
     this.account = account;
-    return this;
-  }
-
-  public OBAccount2 addAccountItem(OBAccount2Account accountItem) {
-    if (this.account == null) {
-      this.account = new ArrayList<OBAccount2Account>();
-    }
-    this.account.add(accountItem);
     return this;
   }
 
@@ -208,11 +200,11 @@ public class OBAccount2   {
 
   @Valid
 
-  public List<OBAccount2Account> getAccount() {
+  public OBAccount2Account getAccount() {
     return account;
   }
 
-  public void setAccount(List<OBAccount2Account> account) {
+  public void setAccount(OBAccount2Account account) {
     this.account = account;
   }
 

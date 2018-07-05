@@ -42,7 +42,7 @@ public class OBStatementAmount1   {
   private OBCreditDebitCode creditDebitIndicator = null;
 
   @JsonProperty("Type")
-  private OBExternalStatementDateTimeType1Code type = null;
+  private OBExternalStatementAmountType1Code type = null;
 
   public OBStatementAmount1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
@@ -87,7 +87,7 @@ public class OBStatementAmount1   {
     this.creditDebitIndicator = creditDebitIndicator;
   }
 
-  public OBStatementAmount1 type(OBExternalStatementDateTimeType1Code type) {
+  public OBStatementAmount1 type(OBExternalStatementAmountType1Code type) {
     this.type = type;
     return this;
   }
@@ -100,11 +100,11 @@ public class OBStatementAmount1   {
   @NotNull
 
 
-  public OBExternalStatementDateTimeType1Code getType() {
+  public OBExternalStatementAmountType1Code getType() {
     return type;
   }
 
-  public void setType(OBExternalStatementDateTimeType1Code type) {
+  public void setType(OBExternalStatementAmountType1Code type) {
     this.type = type;
   }
 
