@@ -18,10 +18,14 @@
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
 import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.jackson.DateTimeDeserializer;
+import uk.org.openbanking.jackson.DateTimeSerializer;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -42,6 +46,8 @@ public class OBScheduledPayment1   {
   private String scheduledPaymentId = null;
 
   @JsonProperty("ScheduledPaymentDateTime")
+  @JsonDeserialize(using = DateTimeDeserializer.class)
+  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime scheduledPaymentDateTime = null;
 
   @JsonProperty("ScheduledType")

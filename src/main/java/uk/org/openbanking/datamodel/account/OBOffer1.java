@@ -18,10 +18,14 @@
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
 import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.jackson.DateTimeDeserializer;
+import uk.org.openbanking.jackson.DateTimeSerializer;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -49,9 +53,13 @@ public class OBOffer1   {
   private String description = null;
 
   @JsonProperty("StartDateTime")
+  @JsonDeserialize(using = DateTimeDeserializer.class)
+  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime startDateTime = null;
 
   @JsonProperty("EndDateTime")
+  @JsonDeserialize(using = DateTimeDeserializer.class)
+  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime endDateTime = null;
 
   @JsonProperty("Amount")

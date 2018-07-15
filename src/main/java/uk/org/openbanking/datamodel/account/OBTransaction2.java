@@ -18,11 +18,15 @@
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
 import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.jackson.DateTimeDeserializer;
+import uk.org.openbanking.jackson.DateTimeSerializer;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -62,9 +66,13 @@ public class OBTransaction2   {
   private OBEntryStatus1Code status = null;
 
   @JsonProperty("BookingDateTime")
+  @JsonDeserialize(using = DateTimeDeserializer.class)
+  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime bookingDateTime = null;
 
   @JsonProperty("ValueDateTime")
+  @JsonDeserialize(using = DateTimeDeserializer.class)
+  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime valueDateTime = null;
 
   @JsonProperty("AddressLine")
