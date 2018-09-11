@@ -1,2 +1,15 @@
 language: java
 
+deploy:
+  - provider: script
+    script: bash release.sh
+    on:
+      branch: master
+
+cache:
+  directories:
+  - $HOME/.m2
+
+branches:
+  only:
+  - master

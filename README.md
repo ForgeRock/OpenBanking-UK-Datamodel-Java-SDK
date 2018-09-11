@@ -13,6 +13,7 @@
  *
  * Copyright 2017 ForgeRock AS.
 -->
+[![Build Status](https://travis-ci.org/ForgeRock/OpenBanking-Java-SDK.svg?branch=master)](https://travis-ci.org/ForgeRock/OpenBanking-Java-SDK)
 # OpenBanking-Java-SDK
 A Java SDK to help implementing the Open Banking standard : https://www.openbanking.org.uk/read-write-apis/
 
