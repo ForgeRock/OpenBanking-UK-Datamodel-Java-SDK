@@ -36,13 +36,13 @@ public class OBProductConverter {
                 .productType(obProduct2.getProductType());
 
 
-        if (obProduct2.getProductId() == null) {
+        if (obProduct2.getProductId() != null) {
             product1.productIdentifier(obProduct2.getProductId());
         }
-        if (obProduct2.getProductName() == null) {
+        if (obProduct2.getProductName() != null) {
             product1.productName(obProduct2.getProductName());
         }
-        if (obProduct2.getSecondaryProductId() == null) {
+        if (obProduct2.getSecondaryProductId() != null) {
             product1.secondaryProductIdentifier(obProduct2.getSecondaryProductId());
         }
 
@@ -59,13 +59,13 @@ public class OBProductConverter {
                 .accountId(obProduct1.getAccountId())
                 .productType(obProduct1.getProductType());
 
-        if (obProduct1.getProductIdentifier() == null) {
+        if (obProduct1.getProductIdentifier() != null) {
             product2.productId(obProduct1.getProductIdentifier());
         }
-        if (obProduct1.getProductName() == null) {
+        if (obProduct1.getProductName() != null) {
             product2.productName(obProduct1.getProductName());
         }
-        if (obProduct1.getSecondaryProductIdentifier() == null) {
+        if (obProduct1.getSecondaryProductIdentifier() != null) {
             product2.secondaryProductId(obProduct1.getSecondaryProductIdentifier());
         }
 

@@ -92,10 +92,10 @@ public class OBAccountConverter {
         OBAccount2Account account2Account = new OBAccount2Account()
                 .schemeName(toOBExternalAccountIdentification3Code(account1.getAccount().getSchemeName()))
                 .identification(account1.getAccount().getIdentification());
-        if (account1.getAccount().getName() == null) {
+        if (account1.getAccount().getName() != null) {
             account2Account.name(account1.getAccount().getName());
         }
-        if (account1.getAccount().getSecondaryIdentification() == null) {
+        if (account1.getAccount().getSecondaryIdentification() != null) {
             account2Account.secondaryIdentification(account1.getAccount().getSecondaryIdentification());
         }
         account2.account(Arrays.asList(account2Account));
