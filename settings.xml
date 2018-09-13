@@ -5,8 +5,8 @@
     <servers>
         <server>
             <id>bintray-repo</id>
-            <username>benjefferies</username>
-            <password>${env.BINTRAY_PASSWORD}</password>
+            <username>${env.BINTRAY_USERNAME}</username>
+            <password>${env.BINTRAY_API_KEY}</password>
         </server>
     </servers>
 </settings>
