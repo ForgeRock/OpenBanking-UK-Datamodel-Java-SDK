@@ -110,7 +110,7 @@
     <distributionManagement>
         <repository>
             <id>bintray-repo</id>
-            <url>https://api.bintray.com/maven/forgerock/ORBI/OpenBanking-Java-SDK/;publish=1</url>
+            <url>https://api.bintray.com/maven/forgerock/ORBI/openbanking-sdk/;publish=1</url>
         </repository>
     </distributionManagement>
 </project>
