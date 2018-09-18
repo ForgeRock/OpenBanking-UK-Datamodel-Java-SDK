@@ -19,4 +19,4 @@ A Java SDK to help implementing the Open Banking standard : https://www.openbank
 
 ## Licence
 License:	CDDLv1.0 \
-License URL	: http://forgerock.org/cddlv1-0/
+License URL	: https://opensource.org/licenses/CDDL-1.0
