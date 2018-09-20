@@ -18,4 +18,17 @@
 package uk.org.openbanking.datamodel.account;
 
 public class OBRisk2 {
+
+    public String emptyField;
+
+    public String getEmptyField() {
+        return emptyField;
+    }
+
+    public void setEmptyField(String emptyField) {
+        this.emptyField = emptyField;
+    }
+
+    public OBRisk2() {
+    }
 }
