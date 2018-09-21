@@ -2,7 +2,7 @@ language: java
 
 deploy:
   - provider: script
-    script: bash release.sh
+    script: travis_wait 20 bash release.sh
     on:
       branch: master
 
