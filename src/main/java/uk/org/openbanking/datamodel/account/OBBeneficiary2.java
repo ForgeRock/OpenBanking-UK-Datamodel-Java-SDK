@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -29,7 +28,7 @@ import java.util.Objects;
  * OBBeneficiary2
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBBeneficiary2   {
   @JsonProperty("AccountId")
@@ -45,7 +44,7 @@ public class OBBeneficiary2   {
   private OBBranchAndFinancialInstitutionIdentification3 creditorAgent = null;
 
   @JsonProperty("CreditorAccount")
-  private OBCashAccount1 creditorAccount = null;
+  private OBCashAccount3 creditorAccount = null;
 
   public OBBeneficiary2 accountId(String accountId) {
     this.accountId = accountId;
@@ -53,12 +52,12 @@ public class OBBeneficiary2   {
   }
 
   /**
-   * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
+   * Get accountId
    * @return accountId
   **/
-  @ApiModelProperty(value = "A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.")
+  @ApiModelProperty(value = "")
 
-@Size(min=1,max=40) 
+
   public String getAccountId() {
     return accountId;
   }
@@ -128,7 +127,7 @@ public class OBBeneficiary2   {
     this.creditorAgent = creditorAgent;
   }
 
-  public OBBeneficiary2 creditorAccount(OBCashAccount1 creditorAccount) {
+  public OBBeneficiary2 creditorAccount(OBCashAccount3 creditorAccount) {
     this.creditorAccount = creditorAccount;
     return this;
   }
@@ -141,17 +140,17 @@ public class OBBeneficiary2   {
 
   @Valid
 
-  public OBCashAccount1 getCreditorAccount() {
+  public OBCashAccount3 getCreditorAccount() {
     return creditorAccount;
   }
 
-  public void setCreditorAccount(OBCashAccount1 creditorAccount) {
+  public void setCreditorAccount(OBCashAccount3 creditorAccount) {
     this.creditorAccount = creditorAccount;
   }
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -175,7 +174,7 @@ public class OBBeneficiary2   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBBeneficiary2 {\n");
-
+    
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    beneficiaryId: ").append(toIndentedString(beneficiaryId)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
@@ -189,7 +188,7 @@ public class OBBeneficiary2   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -23,13 +22,14 @@ import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
  * OBProduct2
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBProduct2   {
   @JsonProperty("ProductName")
@@ -45,7 +45,7 @@ public class OBProduct2   {
   private String secondaryProductId = null;
 
   @JsonProperty("ProductType")
-  private OBExternalProductType1Code productType = null;
+  private OBExternalProductType2Code productType = null;
 
   @JsonProperty("MarketingStateId")
   private String marketingStateId = null;
@@ -70,7 +70,7 @@ public class OBProduct2   {
   **/
   @ApiModelProperty(value = "The name of the product used for marketing purposes from a customer perspective. I.e. what the customer would recognise.")
 
-
+@Size(min=1,max=350) 
   public String getProductName() {
     return productName;
   }
@@ -90,7 +90,7 @@ public class OBProduct2   {
   **/
   @ApiModelProperty(value = "Identifier within the parent organisation for the product. Must be unique in the organisation.")
 
-
+@Size(min=1,max=40) 
   public String getProductId() {
     return productId;
   }
@@ -131,7 +131,7 @@ public class OBProduct2   {
   **/
   @ApiModelProperty(value = "Identifier within the parent organisation for the product. Must be unique in the organisation.")
 
-
+@Size(min=1,max=70) 
   public String getSecondaryProductId() {
     return secondaryProductId;
   }
@@ -140,7 +140,7 @@ public class OBProduct2   {
     this.secondaryProductId = secondaryProductId;
   }
 
-  public OBProduct2 productType(OBExternalProductType1Code productType) {
+  public OBProduct2 productType(OBExternalProductType2Code productType) {
     this.productType = productType;
     return this;
   }
@@ -149,16 +149,15 @@ public class OBProduct2   {
    * Get productType
    * @return productType
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "")
 
   @Valid
 
-  public OBExternalProductType1Code getProductType() {
+  public OBExternalProductType2Code getProductType() {
     return productType;
   }
 
-  public void setProductType(OBExternalProductType1Code productType) {
+  public void setProductType(OBExternalProductType2Code productType) {
     this.productType = productType;
   }
 
@@ -173,7 +172,7 @@ public class OBProduct2   {
   **/
   @ApiModelProperty(value = "Unique and unambiguous identification of a Product Marketing State.")
 
-
+@Size(min=1,max=35) 
   public String getMarketingStateId() {
     return marketingStateId;
   }
@@ -203,27 +202,6 @@ public class OBProduct2   {
     this.otherProductType = otherProductType;
   }
 
-  public OBProduct2 PCA(OBPCAData1 PCA) {
-    this.PCA = PCA;
-    return this;
-  }
-
-  /**
-   * Get PCA
-   * @return PCA
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public OBPCAData1 getPCA() {
-    return PCA;
-  }
-
-  public void setPCA(OBPCAData1 PCA) {
-    this.PCA = PCA;
-  }
-
   public OBProduct2 BCA(OBBCAData1 BCA) {
     this.BCA = BCA;
     return this;
@@ -245,9 +223,30 @@ public class OBProduct2   {
     this.BCA = BCA;
   }
 
+  public OBProduct2 PCA(OBPCAData1 PCA) {
+    this.PCA = PCA;
+    return this;
+  }
+
+  /**
+   * Get PCA
+   * @return PCA
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public OBPCAData1 getPCA() {
+    return PCA;
+  }
+
+  public void setPCA(OBPCAData1 PCA) {
+    this.PCA = PCA;
+  }
+
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -262,20 +261,20 @@ public class OBProduct2   {
         Objects.equals(this.productType, obProduct2.productType) &&
         Objects.equals(this.marketingStateId, obProduct2.marketingStateId) &&
         Objects.equals(this.otherProductType, obProduct2.otherProductType) &&
-        Objects.equals(this.PCA, obProduct2.PCA) &&
-        Objects.equals(this.BCA, obProduct2.BCA);
+        Objects.equals(this.BCA, obProduct2.BCA) &&
+        Objects.equals(this.PCA, obProduct2.PCA);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productName, productId, accountId, secondaryProductId, productType, marketingStateId, otherProductType, PCA, BCA);
+    return Objects.hash(productName, productId, accountId, secondaryProductId, productType, marketingStateId, otherProductType, BCA, PCA);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBProduct2 {\n");
-
+    
     sb.append("    productName: ").append(toIndentedString(productName)).append("\n");
     sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
@@ -283,8 +282,8 @@ public class OBProduct2   {
     sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
     sb.append("    marketingStateId: ").append(toIndentedString(marketingStateId)).append("\n");
     sb.append("    otherProductType: ").append(toIndentedString(otherProductType)).append("\n");
-    sb.append("    PCA: ").append(toIndentedString(PCA)).append("\n");
     sb.append("    BCA: ").append(toIndentedString(BCA)).append("\n");
+    sb.append("    PCA: ").append(toIndentedString(PCA)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -293,7 +292,7 @@ public class OBProduct2   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

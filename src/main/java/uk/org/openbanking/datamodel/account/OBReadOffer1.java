@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -29,7 +28,7 @@ import java.util.Objects;
  * OBReadOffer1
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBReadOffer1   {
   @JsonProperty("Data")
@@ -39,7 +38,7 @@ public class OBReadOffer1   {
   private Links links = null;
 
   @JsonProperty("Meta")
-  private MetaData meta = null;
+  private Meta meta = null;
 
   public OBReadOffer1 data(OBReadOffer1Data data) {
     this.data = data;
@@ -85,7 +84,7 @@ public class OBReadOffer1   {
     this.links = links;
   }
 
-  public OBReadOffer1 meta(MetaData meta) {
+  public OBReadOffer1 meta(Meta meta) {
     this.meta = meta;
     return this;
   }
@@ -99,17 +98,17 @@ public class OBReadOffer1   {
 
   @Valid
 
-  public MetaData getMeta() {
+  public Meta getMeta() {
     return meta;
   }
 
-  public void setMeta(MetaData meta) {
+  public void setMeta(Meta meta) {
     this.meta = meta;
   }
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -131,7 +130,7 @@ public class OBReadOffer1   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBReadOffer1 {\n");
-
+    
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    links: ").append(toIndentedString(links)).append("\n");
     sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
@@ -143,7 +142,7 @@ public class OBReadOffer1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

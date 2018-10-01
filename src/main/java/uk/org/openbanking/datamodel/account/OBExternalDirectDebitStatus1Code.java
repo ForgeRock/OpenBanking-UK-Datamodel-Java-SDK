@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -11,39 +12,42 @@
  *  Header, with the fields enclosed by brackets [] replaced by your own identifying
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
- *  Copyright 2017 ForgeRock AS.
- *
+ *  Copyright 2018 ForgeRock AS.
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+/**
+ * Specifies the status of the direct debit in code form.
+ */
 public enum OBExternalDirectDebitStatus1Code {
-    ACTIVE("Active"),
+  
+  ACTIVE("Active"),
+  
+  INACTIVE("Inactive");
 
-    INACTIVE("Inactive");
+  private String value;
 
-    private String value;
+  OBExternalDirectDebitStatus1Code(String value) {
+    this.value = value;
+  }
 
-    OBExternalDirectDebitStatus1Code(String value) {
-        this.value = value;
+  @Override
+  @JsonValue
+  public String toString() {
+    return String.valueOf(value);
+  }
+
+  @JsonCreator
+  public static OBExternalDirectDebitStatus1Code fromValue(String text) {
+    for (OBExternalDirectDebitStatus1Code b : OBExternalDirectDebitStatus1Code.values()) {
+      if (String.valueOf(b.value).equals(text)) {
+        return b;
+      }
     }
-
-    @Override
-    @JsonValue
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static OBExternalDirectDebitStatus1Code fromValue(String text) {
-        for (OBExternalDirectDebitStatus1Code b : OBExternalDirectDebitStatus1Code.values()) {
-            if (String.valueOf(b.value).equals(text)) {
-                return b;
-            }
-        }
-        return null;
-    }
+    return null;
+  }
 }
+

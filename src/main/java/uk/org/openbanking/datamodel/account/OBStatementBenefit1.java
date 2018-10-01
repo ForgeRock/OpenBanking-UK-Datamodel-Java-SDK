@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -25,6 +24,7 @@ import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
@@ -32,14 +32,35 @@ import java.util.Objects;
  */
 @ApiModel(description = "Set of elements used to provide details of a benefit or reward amount for the statement resource.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBStatementBenefit1   {
+  @JsonProperty("Type")
+  private String type = null;
+
   @JsonProperty("Amount")
   private ActiveOrHistoricCurrencyAndAmount amount = null;
 
-  @JsonProperty("Type")
-  private OBExternalStatementBenefitType1Code type = null;
+  public OBStatementBenefit1 type(String type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Benefit type, in a coded form.
+   * @return type
+  **/
+  @ApiModelProperty(required = true, value = "Benefit type, in a coded form.")
+  @NotNull
+
+@Size(min=1,max=40) 
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
 
   public OBStatementBenefit1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
@@ -63,31 +84,9 @@ public class OBStatementBenefit1   {
     this.amount = amount;
   }
 
-  public OBStatementBenefit1 type(OBExternalStatementBenefitType1Code type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * Get type
-   * @return type
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-  @Valid
-
-  public OBExternalStatementBenefitType1Code getType() {
-    return type;
-  }
-
-  public void setType(OBExternalStatementBenefitType1Code type) {
-    this.type = type;
-  }
-
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -95,22 +94,22 @@ public class OBStatementBenefit1   {
       return false;
     }
     OBStatementBenefit1 obStatementBenefit1 = (OBStatementBenefit1) o;
-    return Objects.equals(this.amount, obStatementBenefit1.amount) &&
-        Objects.equals(this.type, obStatementBenefit1.type);
+    return Objects.equals(this.type, obStatementBenefit1.type) &&
+        Objects.equals(this.amount, obStatementBenefit1.amount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, type);
+    return Objects.hash(type, amount);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBStatementBenefit1 {\n");
-
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -119,7 +118,7 @@ public class OBStatementBenefit1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

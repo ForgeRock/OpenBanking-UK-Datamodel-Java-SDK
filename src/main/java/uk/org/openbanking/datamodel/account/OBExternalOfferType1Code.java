@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonCreator;

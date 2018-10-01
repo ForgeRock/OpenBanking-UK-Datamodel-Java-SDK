@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -25,6 +24,7 @@ import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
@@ -32,17 +32,60 @@ import java.util.Objects;
  */
 @ApiModel(description = "Set of elements used to provide details of a fee for the statement resource.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBStatementFee1   {
-  @JsonProperty("Amount")
-  private ActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("CreditDebitIndicator")
   private OBCreditDebitCode creditDebitIndicator = null;
 
   @JsonProperty("Type")
-  private OBExternalStatementFeeType1Code type = null;
+  private String type = null;
+
+  @JsonProperty("Amount")
+  private ActiveOrHistoricCurrencyAndAmount amount = null;
+
+  public OBStatementFee1 creditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
+    this.creditDebitIndicator = creditDebitIndicator;
+    return this;
+  }
+
+  /**
+   * Indicates whether the amount is a credit or a debit.  Usage: A zero amount is considered to be a credit amount.
+   * @return creditDebitIndicator
+  **/
+  @ApiModelProperty(required = true, value = "Indicates whether the amount is a credit or a debit.  Usage: A zero amount is considered to be a credit amount.")
+  @NotNull
+
+
+  public OBCreditDebitCode getCreditDebitIndicator() {
+    return creditDebitIndicator;
+  }
+
+  public void setCreditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
+    this.creditDebitIndicator = creditDebitIndicator;
+  }
+
+  public OBStatementFee1 type(String type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Fee type, in a coded form.
+   * @return type
+  **/
+  @ApiModelProperty(required = true, value = "Fee type, in a coded form.")
+  @NotNull
+
+@Size(min=1,max=40) 
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
 
   public OBStatementFee1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
@@ -66,51 +109,9 @@ public class OBStatementFee1   {
     this.amount = amount;
   }
 
-  public OBStatementFee1 creditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
-    this.creditDebitIndicator = creditDebitIndicator;
-    return this;
-  }
-
-  /**
-   * Indicates whether the amount is a credit or a debit.  Usage: A zero amount is considered to be a credit amount.
-   * @return creditDebitIndicator
-  **/
-  @ApiModelProperty(required = true, value = "Indicates whether the amount is a credit or a debit.  Usage: A zero amount is considered to be a credit amount.")
-  @NotNull
-
-
-  public OBCreditDebitCode getCreditDebitIndicator() {
-    return creditDebitIndicator;
-  }
-
-  public void setCreditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
-    this.creditDebitIndicator = creditDebitIndicator;
-  }
-
-  public OBStatementFee1 type(OBExternalStatementFeeType1Code type) {
-    this.type = type;
-    return this;
-  }
-
-  /**
-   * Fee type, in a coded form.
-   * @return type
-  **/
-  @ApiModelProperty(required = true, value = "Fee type, in a coded form.")
-  @NotNull
-
-
-  public OBExternalStatementFeeType1Code getType() {
-    return type;
-  }
-
-  public void setType(OBExternalStatementFeeType1Code type) {
-    this.type = type;
-  }
-
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -118,24 +119,24 @@ public class OBStatementFee1   {
       return false;
     }
     OBStatementFee1 obStatementFee1 = (OBStatementFee1) o;
-    return Objects.equals(this.amount, obStatementFee1.amount) &&
-        Objects.equals(this.creditDebitIndicator, obStatementFee1.creditDebitIndicator) &&
-        Objects.equals(this.type, obStatementFee1.type);
+    return Objects.equals(this.creditDebitIndicator, obStatementFee1.creditDebitIndicator) &&
+        Objects.equals(this.type, obStatementFee1.type) &&
+        Objects.equals(this.amount, obStatementFee1.amount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, creditDebitIndicator, type);
+    return Objects.hash(creditDebitIndicator, type, amount);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBStatementFee1 {\n");
-
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    
     sb.append("    creditDebitIndicator: ").append(toIndentedString(creditDebitIndicator)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -144,7 +145,7 @@ public class OBStatementFee1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -39,7 +38,7 @@ public class OBReadTransaction2   {
   private Links links = null;
 
   @JsonProperty("Meta")
-  private MetaData meta = null;
+  private Meta meta = null;
 
   public OBReadTransaction2 data(OBReadTransaction2Data data) {
     this.data = data;
@@ -85,7 +84,7 @@ public class OBReadTransaction2   {
     this.links = links;
   }
 
-  public OBReadTransaction2 meta(MetaData meta) {
+  public OBReadTransaction2 meta(Meta meta) {
     this.meta = meta;
     return this;
   }
@@ -99,11 +98,11 @@ public class OBReadTransaction2   {
 
   @Valid
 
-  public MetaData getMeta() {
+  public Meta getMeta() {
     return meta;
   }
 
-  public void setMeta(MetaData meta) {
+  public void setMeta(Meta meta) {
     this.meta = meta;
   }
 

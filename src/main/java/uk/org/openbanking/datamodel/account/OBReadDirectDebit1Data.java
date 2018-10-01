@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -30,7 +29,7 @@ import java.util.Objects;
  * OBReadDirectDebit1Data
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBReadDirectDebit1Data   {
   @JsonProperty("DirectDebit")
@@ -68,7 +67,7 @@ public class OBReadDirectDebit1Data   {
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -88,7 +87,7 @@ public class OBReadDirectDebit1Data   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBReadDirectDebit1Data {\n");
-
+    
     sb.append("    directDebit: ").append(toIndentedString(directDebit)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -98,7 +97,7 @@ public class OBReadDirectDebit1Data   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

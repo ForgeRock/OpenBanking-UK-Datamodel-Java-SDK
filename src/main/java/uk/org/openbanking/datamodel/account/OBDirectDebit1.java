@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -11,21 +12,16 @@
  *  Header, with the fields enclosed by brackets [] replaced by your own identifying
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
- *  Copyright 2017 ForgeRock AS.
- *
+ *  Copyright 2018 ForgeRock AS.
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
+import org.springframework.validation.annotation.Validated;
 import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
-import uk.org.openbanking.jackson.DateTimeDeserializer;
-import uk.org.openbanking.jackson.DateTimeSerializer;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -33,12 +29,13 @@ import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
- * Direct Debit
+ * Account to or from which a cash entry is made.
  */
-@ApiModel(description = "Direct Debit")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-10-16T08:37:28.078Z")
+@ApiModel(description = "Account to or from which a cash entry is made.")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
-public class OBDirectDebit1 {
+public class OBDirectDebit1   {
   @JsonProperty("AccountId")
   private String accountId = null;
 
@@ -55,8 +52,6 @@ public class OBDirectDebit1 {
   private String name = null;
 
   @JsonProperty("PreviousPaymentDateTime")
-  @JsonDeserialize(using = DateTimeDeserializer.class)
-  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime previousPaymentDateTime = null;
 
   @JsonProperty("PreviousPaymentAmount")
@@ -67,14 +62,14 @@ public class OBDirectDebit1 {
     return this;
   }
 
-   /**
-   * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
+  /**
+   * Get accountId
    * @return accountId
   **/
-  @ApiModelProperty(required = true, value = "A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.")
+  @ApiModelProperty(required = true, value = "")
   @NotNull
 
- @Size(min=1,max=40)
+
   public String getAccountId() {
     return accountId;
   }
@@ -88,13 +83,13 @@ public class OBDirectDebit1 {
     return this;
   }
 
-   /**
+  /**
    * A unique and immutable identifier used to identify the direct debit resource. This identifier has no meaning to the account owner.
    * @return directDebitId
   **/
   @ApiModelProperty(value = "A unique and immutable identifier used to identify the direct debit resource. This identifier has no meaning to the account owner.")
 
- @Size(min=1,max=40)
+@Size(min=1,max=40) 
   public String getDirectDebitId() {
     return directDebitId;
   }
@@ -108,14 +103,14 @@ public class OBDirectDebit1 {
     return this;
   }
 
-   /**
+  /**
    * Direct Debit reference. For AUDDIS service users provide Core Reference. For non AUDDIS service users provide Core reference if possible or last used reference.
    * @return mandateIdentification
   **/
   @ApiModelProperty(required = true, value = "Direct Debit reference. For AUDDIS service users provide Core Reference. For non AUDDIS service users provide Core reference if possible or last used reference.")
   @NotNull
 
- @Size(min=1,max=35)
+@Size(min=1,max=35) 
   public String getMandateIdentification() {
     return mandateIdentification;
   }
@@ -129,12 +124,13 @@ public class OBDirectDebit1 {
     return this;
   }
 
-   /**
-   * Specifies the status of the direct debit in code form.
+  /**
+   * Get directDebitStatusCode
    * @return directDebitStatusCode
   **/
-  @ApiModelProperty(value = "Specifies the status of the direct debit in code form.")
+  @ApiModelProperty(value = "")
 
+  @Valid
 
   public OBExternalDirectDebitStatus1Code getDirectDebitStatusCode() {
     return directDebitStatusCode;
@@ -149,14 +145,14 @@ public class OBDirectDebit1 {
     return this;
   }
 
-   /**
-   * Name of Service User
+  /**
+   * Name of Service User.
    * @return name
   **/
-  @ApiModelProperty(required = true, value = "Name of Service User")
+  @ApiModelProperty(required = true, value = "Name of Service User.")
   @NotNull
 
- @Size(min=1,max=70)
+@Size(min=1,max=70) 
   public String getName() {
     return name;
   }
@@ -170,11 +166,11 @@ public class OBDirectDebit1 {
     return this;
   }
 
-   /**
-   * Date of most recent direct debit collection.  All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00
+  /**
+   * Date of most recent direct debit collection. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00
    * @return previousPaymentDateTime
   **/
-  @ApiModelProperty(value = "Date of most recent direct debit collection.  All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
+  @ApiModelProperty(value = "Date of most recent direct debit collection. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
 
   @Valid
 
@@ -191,7 +187,7 @@ public class OBDirectDebit1 {
     return this;
   }
 
-   /**
+  /**
    * Get previousPaymentAmount
    * @return previousPaymentAmount
   **/
@@ -209,21 +205,21 @@ public class OBDirectDebit1 {
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBDirectDebit1 directDebit = (OBDirectDebit1) o;
-    return Objects.equals(this.accountId, directDebit.accountId) &&
-        Objects.equals(this.directDebitId, directDebit.directDebitId) &&
-        Objects.equals(this.mandateIdentification, directDebit.mandateIdentification) &&
-        Objects.equals(this.directDebitStatusCode, directDebit.directDebitStatusCode) &&
-        Objects.equals(this.name, directDebit.name) &&
-        Objects.equals(this.previousPaymentDateTime, directDebit.previousPaymentDateTime) &&
-        Objects.equals(this.previousPaymentAmount, directDebit.previousPaymentAmount);
+    OBDirectDebit1 obDirectDebit1 = (OBDirectDebit1) o;
+    return Objects.equals(this.accountId, obDirectDebit1.accountId) &&
+        Objects.equals(this.directDebitId, obDirectDebit1.directDebitId) &&
+        Objects.equals(this.mandateIdentification, obDirectDebit1.mandateIdentification) &&
+        Objects.equals(this.directDebitStatusCode, obDirectDebit1.directDebitStatusCode) &&
+        Objects.equals(this.name, obDirectDebit1.name) &&
+        Objects.equals(this.previousPaymentDateTime, obDirectDebit1.previousPaymentDateTime) &&
+        Objects.equals(this.previousPaymentAmount, obDirectDebit1.previousPaymentAmount);
   }
 
   @Override
@@ -234,8 +230,8 @@ public class OBDirectDebit1 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DirectDebit {\n");
-
+    sb.append("class OBDirectDebit1 {\n");
+    
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    directDebitId: ").append(toIndentedString(directDebitId)).append("\n");
     sb.append("    mandateIdentification: ").append(toIndentedString(mandateIdentification)).append("\n");
@@ -251,7 +247,7 @@ public class OBDirectDebit1 {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

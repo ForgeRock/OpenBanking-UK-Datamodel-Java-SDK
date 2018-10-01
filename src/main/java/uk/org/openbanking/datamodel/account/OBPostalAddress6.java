@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -25,6 +24,8 @@ import org.springframework.validation.annotation.Validated;
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -32,7 +33,7 @@ import java.util.Objects;
  */
 @ApiModel(description = "Information that locates and identifies a specific address, as defined by postal services.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBPostalAddress6   {
   @JsonProperty("AddressType")
@@ -63,7 +64,8 @@ public class OBPostalAddress6   {
   private String country = null;
 
   @JsonProperty("AddressLine")
-  private String addressLine = null;
+  @Valid
+  private List<String> addressLine = null;
 
   public OBPostalAddress6 addressType(OBAddressTypeCode addressType) {
     this.addressType = addressType;
@@ -246,8 +248,16 @@ public class OBPostalAddress6   {
     this.country = country;
   }
 
-  public OBPostalAddress6 addressLine(String addressLine) {
+  public OBPostalAddress6 addressLine(List<String> addressLine) {
     this.addressLine = addressLine;
+    return this;
+  }
+
+  public OBPostalAddress6 addAddressLineItem(String addressLineItem) {
+    if (this.addressLine == null) {
+      this.addressLine = new ArrayList<String>();
+    }
+    this.addressLine.add(addressLineItem);
     return this;
   }
 
@@ -257,18 +267,18 @@ public class OBPostalAddress6   {
   **/
   @ApiModelProperty(value = "Information that locates and identifies a specific address, as defined by postal services, presented in free format text.")
 
-@Size(min=1,max=70) 
-  public String getAddressLine() {
+@Size(min=0,max=7) 
+  public List<String> getAddressLine() {
     return addressLine;
   }
 
-  public void setAddressLine(String addressLine) {
+  public void setAddressLine(List<String> addressLine) {
     this.addressLine = addressLine;
   }
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -297,7 +307,7 @@ public class OBPostalAddress6   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBPostalAddress6 {\n");
-
+    
     sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
     sb.append("    department: ").append(toIndentedString(department)).append("\n");
     sb.append("    subDepartment: ").append(toIndentedString(subDepartment)).append("\n");
@@ -316,7 +326,7 @@ public class OBPostalAddress6   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

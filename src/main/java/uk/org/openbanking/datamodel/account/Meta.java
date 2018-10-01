@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -11,20 +12,14 @@
  *  Header, with the fields enclosed by brackets [] replaced by your own identifying
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
- *  Copyright 2017 ForgeRock AS.
- *
+ *  Copyright 2018 ForgeRock AS.
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
-import uk.org.openbanking.jackson.DateTimeDeserializer;
-import uk.org.openbanking.jackson.DateTimeSerializer;
 
 import javax.validation.Valid;
 import java.util.Objects;
@@ -35,21 +30,17 @@ import java.util.Objects;
 @ApiModel(description = "Meta Data relevant to the payload")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-10-16T08:37:28.078Z")
 
-public class MetaData   {
+public class Meta {
   @JsonProperty("TotalPages")
   private Integer totalPages = null;
 
   @JsonProperty("FirstAvailableDateTime")
-  @JsonDeserialize(using = DateTimeDeserializer.class)
-  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime firstAvailableDateTime = null;
 
   @JsonProperty("LastAvailableDateTime")
-  @JsonDeserialize(using = DateTimeDeserializer.class)
-  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime lastAvailableDateTime = null;
 
-  public MetaData totalPages(Integer totalPages) {
+  public Meta totalPages(Integer totalPages) {
     this.totalPages = totalPages;
     return this;
   }
@@ -69,7 +60,7 @@ public class MetaData   {
     this.totalPages = totalPages;
   }
 
-  public MetaData firstAvailableDateTime(DateTime firstAvailableDateTime) {
+  public Meta firstAvailableDateTime(DateTime firstAvailableDateTime) {
     this.firstAvailableDateTime = firstAvailableDateTime;
     return this;
   }
@@ -90,7 +81,7 @@ public class MetaData   {
     this.firstAvailableDateTime = firstAvailableDateTime;
   }
 
-  public MetaData lastAvailableDateTime(DateTime lastAvailableDateTime) {
+  public Meta lastAvailableDateTime(DateTime lastAvailableDateTime) {
     this.lastAvailableDateTime = lastAvailableDateTime;
     return this;
   }
@@ -120,7 +111,7 @@ public class MetaData   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MetaData metaData = (MetaData) o;
+    Meta metaData = (Meta) o;
     return Objects.equals(this.totalPages, metaData.totalPages) &&
         Objects.equals(this.firstAvailableDateTime, metaData.firstAvailableDateTime) &&
         Objects.equals(this.lastAvailableDateTime, metaData.lastAvailableDateTime);

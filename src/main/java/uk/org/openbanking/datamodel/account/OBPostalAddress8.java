@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -26,6 +25,8 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -33,14 +34,15 @@ import java.util.Objects;
  */
 @ApiModel(description = "Postal address of a party.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBPostalAddress8   {
   @JsonProperty("AddressType")
   private OBAddressTypeCode addressType = null;
 
   @JsonProperty("AddressLine")
-  private String addressLine = null;
+  @Valid
+  private List<String> addressLine = null;
 
   @JsonProperty("StreetName")
   private String streetName = null;
@@ -81,8 +83,16 @@ public class OBPostalAddress8   {
     this.addressType = addressType;
   }
 
-  public OBPostalAddress8 addressLine(String addressLine) {
+  public OBPostalAddress8 addressLine(List<String> addressLine) {
     this.addressLine = addressLine;
+    return this;
+  }
+
+  public OBPostalAddress8 addAddressLineItem(String addressLineItem) {
+    if (this.addressLine == null) {
+      this.addressLine = new ArrayList<String>();
+    }
+    this.addressLine.add(addressLineItem);
     return this;
   }
 
@@ -92,12 +102,12 @@ public class OBPostalAddress8   {
   **/
   @ApiModelProperty(value = "Information that locates and identifies a specific address, as defined by postal services, that is presented in free format text.")
 
-@Size(min=1,max=70) 
-  public String getAddressLine() {
+@Size(min=0,max=5) 
+  public List<String> getAddressLine() {
     return addressLine;
   }
 
-  public void setAddressLine(String addressLine) {
+  public void setAddressLine(List<String> addressLine) {
     this.addressLine = addressLine;
   }
 
@@ -224,7 +234,7 @@ public class OBPostalAddress8   {
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -251,7 +261,7 @@ public class OBPostalAddress8   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBPostalAddress8 {\n");
-
+    
     sb.append("    addressType: ").append(toIndentedString(addressType)).append("\n");
     sb.append("    addressLine: ").append(toIndentedString(addressLine)).append("\n");
     sb.append("    streetName: ").append(toIndentedString(streetName)).append("\n");
@@ -268,7 +278,7 @@ public class OBPostalAddress8   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

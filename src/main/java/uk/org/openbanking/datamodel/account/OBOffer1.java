@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,20 +13,14 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
 import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
-import uk.org.openbanking.jackson.DateTimeDeserializer;
-import uk.org.openbanking.jackson.DateTimeSerializer;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -37,7 +32,7 @@ import java.util.Objects;
  * OBOffer1
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBOffer1   {
   @JsonProperty("AccountId")
@@ -53,20 +48,10 @@ public class OBOffer1   {
   private String description = null;
 
   @JsonProperty("StartDateTime")
-  @JsonDeserialize(using = DateTimeDeserializer.class)
-  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime startDateTime = null;
 
   @JsonProperty("EndDateTime")
-  @JsonDeserialize(using = DateTimeDeserializer.class)
-  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime endDateTime = null;
-
-  @JsonProperty("Amount")
-  private ActiveOrHistoricCurrencyAndAmount amount = null;
-
-  @JsonProperty("Fee")
-  private ActiveOrHistoricCurrencyAndAmount fee = null;
 
   @JsonProperty("Rate")
   private String rate = null;
@@ -79,6 +64,12 @@ public class OBOffer1   {
 
   @JsonProperty("URL")
   private String URL = null;
+
+  @JsonProperty("Amount")
+  private ActiveOrHistoricCurrencyAndAmount amount = null;
+
+  @JsonProperty("Fee")
+  private ActiveOrHistoricCurrencyAndAmount fee = null;
 
   public OBOffer1 accountId(String accountId) {
     this.accountId = accountId;
@@ -204,48 +195,6 @@ public class OBOffer1   {
     this.endDateTime = endDateTime;
   }
 
-  public OBOffer1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
-    this.amount = amount;
-    return this;
-  }
-
-  /**
-   * Get amount
-   * @return amount
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ActiveOrHistoricCurrencyAndAmount getAmount() {
-    return amount;
-  }
-
-  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
-    this.amount = amount;
-  }
-
-  public OBOffer1 fee(ActiveOrHistoricCurrencyAndAmount fee) {
-    this.fee = fee;
-    return this;
-  }
-
-  /**
-   * Get fee
-   * @return fee
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ActiveOrHistoricCurrencyAndAmount getFee() {
-    return fee;
-  }
-
-  public void setFee(ActiveOrHistoricCurrencyAndAmount fee) {
-    this.fee = fee;
-  }
-
   public OBOffer1 rate(String rate) {
     this.rate = rate;
     return this;
@@ -312,10 +261,10 @@ public class OBOffer1   {
   }
 
   /**
-   * URL (Uniform Resource Locator) where the document can be found
+   * URL (Uniform Resource Locator) where documentation on the offer can be found
    * @return URL
   **/
-  @ApiModelProperty(value = "URL (Uniform Resource Locator) where the document can be found")
+  @ApiModelProperty(value = "URL (Uniform Resource Locator) where documentation on the offer can be found")
 
 @Size(min=1,max=256) 
   public String getURL() {
@@ -326,9 +275,51 @@ public class OBOffer1   {
     this.URL = URL;
   }
 
+  public OBOffer1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
+    this.amount = amount;
+    return this;
+  }
+
+  /**
+   * Get amount
+   * @return amount
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public ActiveOrHistoricCurrencyAndAmount getAmount() {
+    return amount;
+  }
+
+  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+    this.amount = amount;
+  }
+
+  public OBOffer1 fee(ActiveOrHistoricCurrencyAndAmount fee) {
+    this.fee = fee;
+    return this;
+  }
+
+  /**
+   * Get fee
+   * @return fee
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public ActiveOrHistoricCurrencyAndAmount getFee() {
+    return fee;
+  }
+
+  public void setFee(ActiveOrHistoricCurrencyAndAmount fee) {
+    this.fee = fee;
+  }
+
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -342,36 +333,36 @@ public class OBOffer1   {
         Objects.equals(this.description, obOffer1.description) &&
         Objects.equals(this.startDateTime, obOffer1.startDateTime) &&
         Objects.equals(this.endDateTime, obOffer1.endDateTime) &&
-        Objects.equals(this.amount, obOffer1.amount) &&
-        Objects.equals(this.fee, obOffer1.fee) &&
         Objects.equals(this.rate, obOffer1.rate) &&
         Objects.equals(this.value, obOffer1.value) &&
         Objects.equals(this.term, obOffer1.term) &&
-        Objects.equals(this.URL, obOffer1.URL);
+        Objects.equals(this.URL, obOffer1.URL) &&
+        Objects.equals(this.amount, obOffer1.amount) &&
+        Objects.equals(this.fee, obOffer1.fee);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, offerId, offerType, description, startDateTime, endDateTime, amount, fee, rate, value, term, URL);
+    return Objects.hash(accountId, offerId, offerType, description, startDateTime, endDateTime, rate, value, term, URL, amount, fee);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBOffer1 {\n");
-
+    
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    offerId: ").append(toIndentedString(offerId)).append("\n");
     sb.append("    offerType: ").append(toIndentedString(offerType)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    startDateTime: ").append(toIndentedString(startDateTime)).append("\n");
     sb.append("    endDateTime: ").append(toIndentedString(endDateTime)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
     sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    term: ").append(toIndentedString(term)).append("\n");
     sb.append("    URL: ").append(toIndentedString(URL)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -380,7 +371,7 @@ public class OBOffer1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -11,41 +12,48 @@
  *  Header, with the fields enclosed by brackets [] replaced by your own identifying
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
- *  Copyright 2017 ForgeRock AS.
- *
+ *  Copyright 2018 ForgeRock AS.
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+/**
+ * Limit type, in a coded form.
+ */
 public enum OBExternalLimitType1Code {
-    PRE_AGREED("Pre-Agreed"),
+  
+  AVAILABLE("Available"),
+  
+  CREDIT("Credit"),
+  
+  EMERGENCY("Emergency"),
+  
+  PRE_AGREED("Pre-Agreed"),
+  
+  TEMPORARY("Temporary");
 
-    EMERGENCY("Emergency"),
+  private String value;
 
-    TEMPORARY("Temporary");
+  OBExternalLimitType1Code(String value) {
+    this.value = value;
+  }
 
-    private String value;
+  @Override
+  @JsonValue
+  public String toString() {
+    return String.valueOf(value);
+  }
 
-    OBExternalLimitType1Code(String value) {
-        this.value = value;
+  @JsonCreator
+  public static OBExternalLimitType1Code fromValue(String text) {
+    for (OBExternalLimitType1Code b : OBExternalLimitType1Code.values()) {
+      if (String.valueOf(b.value).equals(text)) {
+        return b;
+      }
     }
-
-    @Override
-    @JsonValue
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static OBExternalLimitType1Code fromValue(String text) {
-        for (OBExternalLimitType1Code b :values()) {
-            if (String.valueOf(b.value).equals(text)) {
-                return b;
-            }
-        }
-        return null;
-    }
+    return null;
+  }
 }
+

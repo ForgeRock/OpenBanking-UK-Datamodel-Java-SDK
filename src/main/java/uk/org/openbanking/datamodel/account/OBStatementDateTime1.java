@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,23 +13,18 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.jackson.DateTimeDeserializer;
-import uk.org.openbanking.jackson.DateTimeSerializer;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
@@ -36,16 +32,14 @@ import java.util.Objects;
  */
 @ApiModel(description = "Set of elements used to provide details of a generic date time for the statement resource.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBStatementDateTime1   {
   @JsonProperty("DateTime")
-  @JsonDeserialize(using = DateTimeDeserializer.class)
-  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime dateTime = null;
 
   @JsonProperty("Type")
-  private OBExternalStatementDateTimeType1Code type = null;
+  private String type = null;
 
   public OBStatementDateTime1 dateTime(DateTime dateTime) {
     this.dateTime = dateTime;
@@ -69,31 +63,30 @@ public class OBStatementDateTime1   {
     this.dateTime = dateTime;
   }
 
-  public OBStatementDateTime1 type(OBExternalStatementDateTimeType1Code type) {
+  public OBStatementDateTime1 type(String type) {
     this.type = type;
     return this;
   }
 
   /**
-   * Get type
+   * Date time type, in a coded form.
    * @return type
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Date time type, in a coded form.")
   @NotNull
 
-  @Valid
-
-  public OBExternalStatementDateTimeType1Code getType() {
+@Size(min=1,max=40) 
+  public String getType() {
     return type;
   }
 
-  public void setType(OBExternalStatementDateTimeType1Code type) {
+  public void setType(String type) {
     this.type = type;
   }
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -114,7 +107,7 @@ public class OBStatementDateTime1   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBStatementDateTime1 {\n");
-
+    
     sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
@@ -125,7 +118,7 @@ public class OBStatementDateTime1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -11,24 +12,58 @@
  *  Header, with the fields enclosed by brackets [] replaced by your own identifying
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
- *  Copyright 2017 ForgeRock AS.
- *
+ *  Copyright 2018 ForgeRock AS.
  */
-
 package uk.org.openbanking.datamodel.account;
 
-public class OBRisk2 {
+import io.swagger.annotations.ApiModel;
+import org.springframework.validation.annotation.Validated;
 
-    public String emptyField;
+import java.util.Objects;
 
-    public String getEmptyField() {
-        return emptyField;
+/**
+ * The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Account Info.
+ */
+@ApiModel(description = "The Risk section is sent by the initiating party to the ASPSP. It is used to specify additional details for risk scoring for Account Info.")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
+
+public class OBRisk2   {
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
     }
-
-    public void setEmptyField(String emptyField) {
-        this.emptyField = emptyField;
+    if (o == null || getClass() != o.getClass()) {
+      return false;
     }
+    return true;
+  }
 
-    public OBRisk2() {
+  @Override
+  public int hashCode() {
+    return Objects.hash();
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class OBRisk2 {\n");
+    
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
     }
+    return o.toString().replace("\n", "\n    ");
+  }
 }
+

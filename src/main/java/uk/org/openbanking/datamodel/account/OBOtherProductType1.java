@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -23,14 +22,15 @@ import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
- * This field provides extension to the ProductType enumeration. If ProductType - \&quot;Other\&quot; is chosen, this field must be populated with name, and description for ASPSP specific product type
+ * This field provides extension to the ProductType enumeration. If ProductType - \&quot;Other\&quot; is chosen, this field must be populated with name, and description for ASPSP specific product type.
  */
-@ApiModel(description = "This field provides extension to the ProductType enumeration. If ProductType - \"Other\" is chosen, this field must be populated with name, and description for ASPSP specific product type")
+@ApiModel(description = "This field provides extension to the ProductType enumeration. If ProductType - \"Other\" is chosen, this field must be populated with name, and description for ASPSP specific product type.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBOtherProductType1   {
   @JsonProperty("Name")
@@ -45,13 +45,13 @@ public class OBOtherProductType1   {
   }
 
   /**
-   * Get name
+   * Name of \"Other\" product type.
    * @return name
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Name of \"Other\" product type.")
   @NotNull
 
-
+@Size(min=1,max=350) 
   public String getName() {
     return name;
   }
@@ -66,13 +66,13 @@ public class OBOtherProductType1   {
   }
 
   /**
-   * Get description
+   * Description of \"Other\" product type.
    * @return description
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Description of \"Other\" product type.")
   @NotNull
 
-
+@Size(min=1,max=350) 
   public String getDescription() {
     return description;
   }
@@ -83,7 +83,7 @@ public class OBOtherProductType1   {
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -104,7 +104,7 @@ public class OBOtherProductType1   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBOtherProductType1 {\n");
-
+    
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
@@ -115,7 +115,7 @@ public class OBOtherProductType1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

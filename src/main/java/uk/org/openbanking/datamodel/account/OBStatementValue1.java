@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -22,8 +21,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
@@ -31,14 +30,14 @@ import java.util.Objects;
  */
 @ApiModel(description = "Set of elements used to provide details of a generic number value related to the statement resource.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBStatementValue1   {
   @JsonProperty("Value")
   private Integer value = null;
 
   @JsonProperty("Type")
-  private OBExternalStatementValueType1Code type = null;
+  private String type = null;
 
   public OBStatementValue1 value(Integer value) {
     this.value = value;
@@ -61,31 +60,30 @@ public class OBStatementValue1   {
     this.value = value;
   }
 
-  public OBStatementValue1 type(OBExternalStatementValueType1Code type) {
+  public OBStatementValue1 type(String type) {
     this.type = type;
     return this;
   }
 
   /**
-   * Get type
+   * Statement value type, in a coded form.
    * @return type
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Statement value type, in a coded form.")
   @NotNull
 
-  @Valid
-
-  public OBExternalStatementValueType1Code getType() {
+@Size(min=1,max=40) 
+  public String getType() {
     return type;
   }
 
-  public void setType(OBExternalStatementValueType1Code type) {
+  public void setType(String type) {
     this.type = type;
   }
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -106,7 +104,7 @@ public class OBStatementValue1   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBStatementValue1 {\n");
-
+    
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
@@ -117,7 +115,7 @@ public class OBStatementValue1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

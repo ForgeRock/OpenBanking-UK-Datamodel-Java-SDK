@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -27,21 +26,20 @@ import javax.validation.constraints.Size;
 import java.util.Objects;
 
 /**
- * Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account.
+ * Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account. This is the servicer of the beneficiary account.
  */
-@ApiModel(description = "Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account.")
+@ApiModel(description = "Party that manages the account on behalf of the account owner, that is manages the registration and booking of entries on the account, calculates balances on the account and provides information about the account. This is the servicer of the beneficiary account.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
-public class OBAccount2Servicer   {
-
+public class OBBranchAndFinancialInstitutionIdentification4   {
   @JsonProperty("SchemeName")
-  private OBExternalFinancialInstitutionIdentification2Code schemeName = null;
+  private String schemeName = null;
 
   @JsonProperty("Identification")
   private String identification = null;
 
-  public OBAccount2Servicer schemeName(OBExternalFinancialInstitutionIdentification2Code schemeName) {
+  public OBBranchAndFinancialInstitutionIdentification4 schemeName(String schemeName) {
     this.schemeName = schemeName;
     return this;
   }
@@ -53,16 +51,16 @@ public class OBAccount2Servicer   {
   @ApiModelProperty(required = true, value = "Name of the identification scheme, in a coded form as published in an external list.")
   @NotNull
 
-
-  public OBExternalFinancialInstitutionIdentification2Code getSchemeName() {
+@Size(min=1,max=40) 
+  public String getSchemeName() {
     return schemeName;
   }
 
-  public void setSchemeName(OBExternalFinancialInstitutionIdentification2Code schemeName) {
+  public void setSchemeName(String schemeName) {
     this.schemeName = schemeName;
   }
 
-  public OBAccount2Servicer identification(String identification) {
+  public OBBranchAndFinancialInstitutionIdentification4 identification(String identification) {
     this.identification = identification;
     return this;
   }
@@ -85,16 +83,16 @@ public class OBAccount2Servicer   {
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBAccount2Servicer obAccount2Servicer = (OBAccount2Servicer) o;
-    return Objects.equals(this.schemeName, obAccount2Servicer.schemeName) &&
-        Objects.equals(this.identification, obAccount2Servicer.identification);
+    OBBranchAndFinancialInstitutionIdentification4 obBranchAndFinancialInstitutionIdentification4 = (OBBranchAndFinancialInstitutionIdentification4) o;
+    return Objects.equals(this.schemeName, obBranchAndFinancialInstitutionIdentification4.schemeName) &&
+        Objects.equals(this.identification, obBranchAndFinancialInstitutionIdentification4.identification);
   }
 
   @Override
@@ -105,8 +103,8 @@ public class OBAccount2Servicer   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBAccount2Servicer {\n");
-
+    sb.append("class OBBranchAndFinancialInstitutionIdentification4 {\n");
+    
     sb.append("    schemeName: ").append(toIndentedString(schemeName)).append("\n");
     sb.append("    identification: ").append(toIndentedString(identification)).append("\n");
     sb.append("}");
@@ -117,7 +115,7 @@ public class OBAccount2Servicer   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

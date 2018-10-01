@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -11,14 +12,14 @@
  *  Header, with the fields enclosed by brackets [] replaced by your own identifying
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
- *  Copyright 2017 ForgeRock AS.
- *
+ *  Copyright 2018 ForgeRock AS.
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.validation.annotation.Validated;
 import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
@@ -26,26 +27,28 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /**
- * Data5CreditLine
+ * Set of elements used to provide details on the credit line.
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-10-16T08:37:28.078Z")
+@ApiModel(description = "Set of elements used to provide details on the credit line.")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
-public class OBCreditLine1 {
+public class OBCreditLine1   {
   @JsonProperty("Included")
   private Boolean included = null;
 
-  @JsonProperty("Amount")
-  private ActiveOrHistoricCurrencyAndAmount amount = null;
-
   @JsonProperty("Type")
   private OBExternalLimitType1Code type = null;
+
+  @JsonProperty("Amount")
+  private ActiveOrHistoricCurrencyAndAmount amount = null;
 
   public OBCreditLine1 included(Boolean included) {
     this.included = included;
     return this;
   }
 
-   /**
+  /**
    * Indicates whether or not the credit line is included in the balance of the account. Usage: If not present, credit line is not included in the balance amount of the account.
    * @return included
   **/
@@ -53,7 +56,7 @@ public class OBCreditLine1 {
   @NotNull
 
 
-  public Boolean getIncluded() {
+  public Boolean isIncluded() {
     return included;
   }
 
@@ -61,12 +64,33 @@ public class OBCreditLine1 {
     this.included = included;
   }
 
+  public OBCreditLine1 type(OBExternalLimitType1Code type) {
+    this.type = type;
+    return this;
+  }
+
+  /**
+   * Get type
+   * @return type
+  **/
+  @ApiModelProperty(value = "")
+
+  @Valid
+
+  public OBExternalLimitType1Code getType() {
+    return type;
+  }
+
+  public void setType(OBExternalLimitType1Code type) {
+    this.type = type;
+  }
+
   public OBCreditLine1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Get amount
    * @return amount
   **/
@@ -82,54 +106,34 @@ public class OBCreditLine1 {
     this.amount = amount;
   }
 
-  public OBCreditLine1 type(OBExternalLimitType1Code type) {
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Limit type, in a coded form.
-   * @return type
-  **/
-  @ApiModelProperty(value = "Limit type, in a coded form.")
-
-
-  public OBExternalLimitType1Code getType() {
-    return type;
-  }
-
-  public void setType(OBExternalLimitType1Code type) {
-    this.type = type;
-  }
-
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBCreditLine1 data5CreditLine = (OBCreditLine1) o;
-    return Objects.equals(this.included, data5CreditLine.included) &&
-        Objects.equals(this.amount, data5CreditLine.amount) &&
-        Objects.equals(this.type, data5CreditLine.type);
+    OBCreditLine1 obCreditLine1 = (OBCreditLine1) o;
+    return Objects.equals(this.included, obCreditLine1.included) &&
+        Objects.equals(this.type, obCreditLine1.type) &&
+        Objects.equals(this.amount, obCreditLine1.amount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(included, amount, type);
+    return Objects.hash(included, type, amount);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Data5CreditLine {\n");
-
+    sb.append("class OBCreditLine1 {\n");
+    
     sb.append("    included: ").append(toIndentedString(included)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -138,7 +142,7 @@ public class OBCreditLine1 {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,11 +13,11 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.service.converter;
 
+import uk.org.openbanking.datamodel.account.OBExternalProductType1Code;
+import uk.org.openbanking.datamodel.account.OBExternalProductType2Code;
 import uk.org.openbanking.datamodel.account.OBProduct1;
 import uk.org.openbanking.datamodel.account.OBProduct2;
 
@@ -33,7 +34,7 @@ public class OBProductConverter {
     public static OBProduct1 toProduct1(OBProduct2 obProduct2) {
         OBProduct1 product1 = new OBProduct1()
                 .accountId(obProduct2.getAccountId())
-                .productType(obProduct2.getProductType());
+                .productType(OBExternalProductType1Code.valueOf(obProduct2.getProductType().toString()));
 
 
         if (obProduct2.getProductId() != null) {
@@ -57,7 +58,7 @@ public class OBProductConverter {
     public static OBProduct2 toProduct2(OBProduct1 obProduct1) {
         OBProduct2 product2 = new OBProduct2()
                 .accountId(obProduct1.getAccountId())
-                .productType(obProduct1.getProductType());
+                .productType(OBExternalProductType2Code.valueOf(obProduct1.getProductType().toString()));
 
         if (obProduct1.getProductIdentifier() != null) {
             product2.productId(obProduct1.getProductIdentifier());

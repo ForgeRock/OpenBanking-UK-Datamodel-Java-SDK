@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -22,7 +21,6 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -33,14 +31,14 @@ import java.util.Objects;
  */
 @ApiModel(description = "Set of elements used to provide details of a generic rate related to the statement resource.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBStatementRate1   {
   @JsonProperty("Rate")
   private String rate = null;
 
   @JsonProperty("Type")
-  private OBExternalStatementRateType1Code type = null;
+  private String type = null;
 
   public OBStatementRate1 rate(String rate) {
     this.rate = rate;
@@ -63,31 +61,30 @@ public class OBStatementRate1   {
     this.rate = rate;
   }
 
-  public OBStatementRate1 type(OBExternalStatementRateType1Code type) {
+  public OBStatementRate1 type(String type) {
     this.type = type;
     return this;
   }
 
   /**
-   * Get type
+   * Statement rate type, in a coded form.
    * @return type
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "Statement rate type, in a coded form.")
   @NotNull
 
-  @Valid
-
-  public OBExternalStatementRateType1Code getType() {
+@Size(min=1,max=40) 
+  public String getType() {
     return type;
   }
 
-  public void setType(OBExternalStatementRateType1Code type) {
+  public void setType(String type) {
     this.type = type;
   }
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -108,7 +105,7 @@ public class OBStatementRate1   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBStatementRate1 {\n");
-
+    
     sb.append("    rate: ").append(toIndentedString(rate)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
@@ -119,7 +116,7 @@ public class OBStatementRate1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

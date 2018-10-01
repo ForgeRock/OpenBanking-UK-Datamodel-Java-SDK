@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,20 +13,14 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.jackson.DateTimeDeserializer;
-import uk.org.openbanking.jackson.DateTimeSerializer;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -39,7 +34,7 @@ import java.util.Objects;
  */
 @ApiModel(description = "Provides further details on a statement resource.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBStatement1   {
   @JsonProperty("AccountId")
@@ -55,18 +50,12 @@ public class OBStatement1   {
   private OBExternalStatementType1Code type = null;
 
   @JsonProperty("StartDateTime")
-  @JsonDeserialize(using = DateTimeDeserializer.class)
-  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime startDateTime = null;
 
   @JsonProperty("EndDateTime")
-  @JsonDeserialize(using = DateTimeDeserializer.class)
-  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime endDateTime = null;
 
   @JsonProperty("CreationDateTime")
-  @JsonDeserialize(using = DateTimeDeserializer.class)
-  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime creationDateTime = null;
 
   @JsonProperty("StatementDescription")
@@ -107,13 +96,13 @@ public class OBStatement1   {
   }
 
   /**
-   * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
+   * Get accountId
    * @return accountId
   **/
-  @ApiModelProperty(required = true, value = "A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.")
+  @ApiModelProperty(required = true, value = "")
   @NotNull
 
-@Size(min=1,max=40) 
+
   public String getAccountId() {
     return accountId;
   }
@@ -168,12 +157,13 @@ public class OBStatement1   {
   }
 
   /**
-   * Statement type, in a coded form.
+   * Get type
    * @return type
   **/
-  @ApiModelProperty(required = true, value = "Statement type, in a coded form.")
+  @ApiModelProperty(required = true, value = "")
   @NotNull
 
+  @Valid
 
   public OBExternalStatementType1Code getType() {
     return type;
@@ -393,14 +383,14 @@ public class OBStatement1   {
     this.statementDateTime = statementDateTime;
   }
 
-  public OBStatement1 statementRate(List<OBStatementRate1	> statementRate) {
+  public OBStatement1 statementRate(List<OBStatementRate1> statementRate) {
     this.statementRate = statementRate;
     return this;
   }
 
-  public OBStatement1 addStatementRateItem(OBStatementRate1	 statementRateItem) {
+  public OBStatement1 addStatementRateItem(OBStatementRate1 statementRateItem) {
     if (this.statementRate == null) {
-      this.statementRate = new ArrayList<OBStatementRate1	>();
+      this.statementRate = new ArrayList<OBStatementRate1>();
     }
     this.statementRate.add(statementRateItem);
     return this;
@@ -414,11 +404,11 @@ public class OBStatement1   {
 
   @Valid
 
-  public List<OBStatementRate1	> getStatementRate() {
+  public List<OBStatementRate1> getStatementRate() {
     return statementRate;
   }
 
-  public void setStatementRate(List<OBStatementRate1	> statementRate) {
+  public void setStatementRate(List<OBStatementRate1> statementRate) {
     this.statementRate = statementRate;
   }
 
@@ -482,7 +472,7 @@ public class OBStatement1   {
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -516,7 +506,7 @@ public class OBStatement1   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBStatement1 {\n");
-
+    
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    statementId: ").append(toIndentedString(statementId)).append("\n");
     sb.append("    statementReference: ").append(toIndentedString(statementReference)).append("\n");
@@ -540,7 +530,7 @@ public class OBStatement1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

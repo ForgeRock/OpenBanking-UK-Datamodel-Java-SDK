@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -11,79 +12,80 @@
  *  Header, with the fields enclosed by brackets [] replaced by your own identifying
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
- *  Copyright 2017 ForgeRock AS.
- *
+ *  Copyright 2018 ForgeRock AS.
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+/**
+ * Specifies the Open Banking account access data types. This is a list of the data clusters being consented by the PSU, and requested for authorisation with the ASPSP.
+ */
 public enum OBExternalPermissions1Code {
+  
+  READACCOUNTSBASIC("ReadAccountsBasic"),
+  
+  READACCOUNTSDETAIL("ReadAccountsDetail"),
+  
+  READBALANCES("ReadBalances"),
+  
+  READBENEFICIARIESBASIC("ReadBeneficiariesBasic"),
+  
+  READBENEFICIARIESDETAIL("ReadBeneficiariesDetail"),
+  
+  READDIRECTDEBITS("ReadDirectDebits"),
+  
+  READOFFERS("ReadOffers"),
+  
+  READPAN("ReadPAN"),
+  
+  READPARTY("ReadParty"),
+  
+  READPARTYPSU("ReadPartyPSU"),
+  
+  READPRODUCTS("ReadProducts"),
+  
+  READSCHEDULEDPAYMENTSBASIC("ReadScheduledPaymentsBasic"),
+  
+  READSCHEDULEDPAYMENTSDETAIL("ReadScheduledPaymentsDetail"),
+  
+  READSTANDINGORDERSBASIC("ReadStandingOrdersBasic"),
+  
+  READSTANDINGORDERSDETAIL("ReadStandingOrdersDetail"),
+  
+  READSTATEMENTSBASIC("ReadStatementsBasic"),
+  
+  READSTATEMENTSDETAIL("ReadStatementsDetail"),
+  
+  READTRANSACTIONSBASIC("ReadTransactionsBasic"),
+  
+  READTRANSACTIONSCREDITS("ReadTransactionsCredits"),
+  
+  READTRANSACTIONSDEBITS("ReadTransactionsDebits"),
+  
+  READTRANSACTIONSDETAIL("ReadTransactionsDetail");
 
-    READACCOUNTSBASIC("ReadAccountsBasic"),
+  private String value;
 
-    READACCOUNTSDETAIL("ReadAccountsDetail"),
+  OBExternalPermissions1Code(String value) {
+    this.value = value;
+  }
 
-    READBALANCES("ReadBalances"),
+  @Override
+  @JsonValue
+  public String toString() {
+    return String.valueOf(value);
+  }
 
-    READBENEFICIARIESBASIC("ReadBeneficiariesBasic"),
-
-    READBENEFICIARIESDETAIL("ReadBeneficiariesDetail"),
-
-    READDIRECTDEBITS("ReadDirectDebits"),
-
-    READOFFERS("ReadOffers"),
-
-    READPAN("ReadPAN"),
-
-    READPARTY("ReadParty"),
-
-    READPARTYPSU("ReadPartyPSU"),
-
-    READPRODUCTS("ReadProducts"),
-
-    READSCHEDULEDPAYMENTSBASIC("ReadScheduledPaymentsBasic"),
-
-    READSCHEDULEDPAYMENTSDETAIL("ReadScheduledPaymentsDetail"),
-
-    READSTANDINGORDERSBASIC("ReadStandingOrdersBasic"),
-
-    READSTANDINGORDERSDETAIL("ReadStandingOrdersDetail"),
-
-    READSTATEMENTSBASIC("ReadStatementsBasic"),
-
-    READSTATEMENTSDETAIL("ReadStatementsDetail"),
-
-    READTRANSACTIONSBASIC("ReadTransactionsBasic"),
-
-    READTRANSACTIONSCREDITS("ReadTransactionsCredits"),
-
-    READTRANSACTIONSDEBITS("ReadTransactionsDebits"),
-
-    READTRANSACTIONSDETAIL("ReadTransactionsDetail");
-
-    private final String value;
-
-    OBExternalPermissions1Code(String value) {
-        this.value = value;
+  @JsonCreator
+  public static OBExternalPermissions1Code fromValue(String text) {
+    for (OBExternalPermissions1Code b : OBExternalPermissions1Code.values()) {
+      if (String.valueOf(b.value).equals(text)) {
+        return b;
+      }
     }
-
-    @Override
-    @JsonValue
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static OBExternalPermissions1Code fromValue(String text) {
-        for (OBExternalPermissions1Code b : OBExternalPermissions1Code.values()) {
-            if (String.valueOf(b.value).equals(text)) {
-                return b;
-            }
-        }
-        return null;
-    }
-
+    return null;
+  }
 }
+

@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -35,7 +34,7 @@ import java.util.Objects;
  */
 @ApiModel(description = "Unambiguous identification of the account to which credit and debit entries are made.")
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBAccount2   {
   @JsonProperty("AccountId")
@@ -58,10 +57,10 @@ public class OBAccount2   {
 
   @JsonProperty("Account")
   @Valid
-  private List<OBAccount2Account> account = null;
+  private List<OBCashAccount3> account = null;
 
   @JsonProperty("Servicer")
-  private OBAccount2Servicer servicer = null;
+  private OBBranchAndFinancialInstitutionIdentification4 servicer = null;
 
   public OBAccount2 accountId(String accountId) {
     this.accountId = accountId;
@@ -69,13 +68,13 @@ public class OBAccount2   {
   }
 
   /**
-   * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
+   * Get accountId
    * @return accountId
   **/
-  @ApiModelProperty(required = true, value = "A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.")
+  @ApiModelProperty(required = true, value = "")
   @NotNull
 
-@Size(min=1,max=40) 
+
   public String getAccountId() {
     return accountId;
   }
@@ -111,12 +110,13 @@ public class OBAccount2   {
   }
 
   /**
-   * Specifies the type of account (personal or business).
+   * Get accountType
    * @return accountType
   **/
-  @ApiModelProperty(required = true, value = "Specifies the type of account (personal or business).")
+  @ApiModelProperty(required = true, value = "")
   @NotNull
 
+  @Valid
 
   public OBExternalAccountType1Code getAccountType() {
     return accountType;
@@ -132,12 +132,13 @@ public class OBAccount2   {
   }
 
   /**
-   * Specifies the sub type of account (product family group).
+   * Get accountSubType
    * @return accountSubType
   **/
-  @ApiModelProperty(required = true, value = "Specifies the sub type of account (product family group).")
+  @ApiModelProperty(required = true, value = "")
   @NotNull
 
+  @Valid
 
   public OBExternalAccountSubType1Code getAccountSubType() {
     return accountSubType;
@@ -187,8 +188,16 @@ public class OBAccount2   {
     this.nickname = nickname;
   }
 
-  public OBAccount2 account(List<OBAccount2Account> account) {
+  public OBAccount2 account(List<OBCashAccount3> account) {
     this.account = account;
+    return this;
+  }
+
+  public OBAccount2 addAccountItem(OBCashAccount3 accountItem) {
+    if (this.account == null) {
+      this.account = new ArrayList<OBCashAccount3>();
+    }
+    this.account.add(accountItem);
     return this;
   }
 
@@ -200,15 +209,15 @@ public class OBAccount2   {
 
   @Valid
 
-  public List<OBAccount2Account> getAccount() {
+  public List<OBCashAccount3> getAccount() {
     return account;
   }
 
-  public void setAccount(List<OBAccount2Account> account) {
+  public void setAccount(List<OBCashAccount3> account) {
     this.account = account;
   }
 
-  public OBAccount2 servicer(OBAccount2Servicer servicer) {
+  public OBAccount2 servicer(OBBranchAndFinancialInstitutionIdentification4 servicer) {
     this.servicer = servicer;
     return this;
   }
@@ -221,17 +230,17 @@ public class OBAccount2   {
 
   @Valid
 
-  public OBAccount2Servicer getServicer() {
+  public OBBranchAndFinancialInstitutionIdentification4 getServicer() {
     return servicer;
   }
 
-  public void setServicer(OBAccount2Servicer servicer) {
+  public void setServicer(OBBranchAndFinancialInstitutionIdentification4 servicer) {
     this.servicer = servicer;
   }
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -258,7 +267,7 @@ public class OBAccount2   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBAccount2 {\n");
-
+    
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
@@ -275,7 +284,7 @@ public class OBAccount2   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

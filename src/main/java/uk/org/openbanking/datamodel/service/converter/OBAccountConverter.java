@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,11 +13,8 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.service.converter;
-
 import uk.org.openbanking.datamodel.account.*;
 import uk.org.openbanking.datamodel.payment.OBExternalAccountIdentification2Code;
 
@@ -43,7 +41,7 @@ public class OBAccountConverter {
 
         //account
         if (account2.getAccount() != null && account2.getAccount().size() > 0) {
-            OBAccount2Account obAccount2Account = account2.getAccount().get(0);
+            OBCashAccount3 obAccount2Account = account2.getAccount().get(0);
 
             OBCashAccount1 obCashAccount1 = new OBCashAccount1()
                     .schemeName(toOBExternalAccountIdentification2Code(obAccount2Account.getSchemeName()))
@@ -61,7 +59,7 @@ public class OBAccountConverter {
         //servicer
         if (account2.getServicer() != null) {
             account1.servicer(new OBBranchAndFinancialInstitutionIdentification2()
-                    .schemeName(account2.getServicer().getSchemeName())
+                    .schemeName(OBExternalFinancialInstitutionIdentification2Code.valueOf(account2.getServicer().getSchemeName()))
                     .identification(account2.getServicer().getIdentification())
             );
         }
@@ -89,8 +87,8 @@ public class OBAccountConverter {
         }
 
         //account
-        OBAccount2Account account2Account = new OBAccount2Account()
-                .schemeName(toOBExternalAccountIdentification3Code(account1.getAccount().getSchemeName()))
+        OBCashAccount3 account2Account = new OBCashAccount3()
+                .schemeName(account1.getAccount().getSchemeName().toString())
                 .identification(account1.getAccount().getIdentification());
         if (account1.getAccount().getName() != null) {
             account2Account.name(account1.getAccount().getName());
@@ -103,22 +101,15 @@ public class OBAccountConverter {
         //servicer
         if (account2.getServicer() != null) {
             account1.servicer(new OBBranchAndFinancialInstitutionIdentification2()
-                    .schemeName(account2.getServicer().getSchemeName())
+                    .schemeName(OBExternalFinancialInstitutionIdentification2Code.valueOf(account2.getServicer().getSchemeName()))
                     .identification(account2.getServicer().getIdentification())
             );
         }
         return account2;
     }
 
-    private static OBExternalAccountIdentification2Code toOBExternalAccountIdentification2Code(OBExternalAccountIdentification3Code obExternalAccountIdentification3Code) {
-        switch (obExternalAccountIdentification3Code) {
-            case IBAN:
-                return OBExternalAccountIdentification2Code.IBAN;
-            case SORTCODEACCOUNTNUMBER:
-                return OBExternalAccountIdentification2Code.SortCodeAccountNumber;
-            default:
-                return OBExternalAccountIdentification2Code.IBAN;
-        }
+    private static OBExternalAccountIdentification2Code toOBExternalAccountIdentification2Code(String obExternalAccountIdentification3Code) {
+        return OBExternalAccountIdentification2Code.valueOf(obExternalAccountIdentification3Code.toString());
     }
 
     private static OBExternalAccountIdentification3Code toOBExternalAccountIdentification3Code(OBExternalAccountIdentification2Code obExternalAccountIdentification2Code) {

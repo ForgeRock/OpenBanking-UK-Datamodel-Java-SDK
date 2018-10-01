@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,15 +13,11 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.service.converter;
 
-import uk.org.openbanking.datamodel.account.OBBeneficiary1;
-import uk.org.openbanking.datamodel.account.OBBeneficiary2;
-import uk.org.openbanking.datamodel.account.OBBranchAndFinancialInstitutionIdentification2;
-import uk.org.openbanking.datamodel.account.OBBranchAndFinancialInstitutionIdentification3;
+import uk.org.openbanking.datamodel.account.*;
+import uk.org.openbanking.datamodel.payment.OBExternalAccountIdentification2Code;
 
 /**
  * Convert OB beneficiary data-model in different version
@@ -45,12 +42,12 @@ public class OBBeneficiaryConverter {
         }
         if (obBeneficiary2.getCreditorAgent() != null) {
             obBeneficiary1.servicer(new OBBranchAndFinancialInstitutionIdentification2()
-                    .schemeName(obBeneficiary2.getCreditorAgent().getSchemeName())
+                    .schemeName(OBExternalFinancialInstitutionIdentification2Code.valueOf(obBeneficiary2.getCreditorAgent().getSchemeName()))
                     .identification(obBeneficiary2.getCreditorAgent().getIdentification())
             );
         }
         if (obBeneficiary2.getCreditorAccount() != null) {
-            obBeneficiary1.creditorAccount(obBeneficiary2.getCreditorAccount());
+            obBeneficiary1.creditorAccount(toCreditorAccount1(obBeneficiary2.getCreditorAccount()));
         }
 
 
@@ -76,13 +73,30 @@ public class OBBeneficiaryConverter {
         }
         if (obBeneficiary1.getServicer() != null) {
             obBeneficiary2.creditorAgent(new OBBranchAndFinancialInstitutionIdentification3()
-                    .schemeName(obBeneficiary1.getServicer().getSchemeName())
+                    .schemeName(obBeneficiary1.getServicer().getSchemeName().toString())
                     .identification(obBeneficiary1.getServicer().getIdentification())
             );
         }
         if (obBeneficiary1.getCreditorAccount() != null) {
-            obBeneficiary2.creditorAccount(obBeneficiary1.getCreditorAccount());
+            obBeneficiary2.creditorAccount(toCreditorAccount3(obBeneficiary1));
         }
         return obBeneficiary2;
+    }
+
+    private static OBCashAccount1 toCreditorAccount1(OBCashAccount3 creditorAccount) {
+        return new OBCashAccount1()
+                .identification(creditorAccount.getIdentification())
+                .name(creditorAccount.getName())
+                .schemeName(OBExternalAccountIdentification2Code.valueOf(creditorAccount.getSchemeName()))
+                .secondaryIdentification(creditorAccount.getSecondaryIdentification());
+    }
+
+    private static OBCashAccount3 toCreditorAccount3(OBBeneficiary1 obBeneficiary1) {
+        OBCashAccount1 creditorAccount = obBeneficiary1.getCreditorAccount();
+        return new OBCashAccount3()
+                .identification(creditorAccount.getIdentification())
+                .name(creditorAccount.getName())
+                .schemeName(creditorAccount.getSchemeName().toString())
+                .secondaryIdentification(creditorAccount.getSecondaryIdentification());
     }
 }

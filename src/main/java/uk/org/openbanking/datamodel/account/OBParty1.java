@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -12,9 +13,7 @@
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
  *  Copyright 2018 ForgeRock AS.
- *
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -33,7 +32,7 @@ import java.util.Objects;
  * OBParty1
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-25T23:06:46.214+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
 public class OBParty1   {
   @JsonProperty("PartyId")
@@ -234,7 +233,7 @@ public class OBParty1   {
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
@@ -261,7 +260,7 @@ public class OBParty1   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBParty1 {\n");
-
+    
     sb.append("    partyId: ").append(toIndentedString(partyId)).append("\n");
     sb.append("    partyNumber: ").append(toIndentedString(partyNumber)).append("\n");
     sb.append("    partyType: ").append(toIndentedString(partyType)).append("\n");
@@ -278,7 +277,7 @@ public class OBParty1   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

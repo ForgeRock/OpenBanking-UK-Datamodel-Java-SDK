@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -11,85 +12,101 @@
  *  Header, with the fields enclosed by brackets [] replaced by your own identifying
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
- *  Copyright 2017 ForgeRock AS.
- *
+ *  Copyright 2018 ForgeRock AS.
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
-import javax.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /**
- * Data
+ * OBReadConsent1
  */
-@ApiModel(description = "Data")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-10-16T08:37:28.078Z")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
-public class OBReadDataBalance1 {
-  @JsonProperty("Balance")
-  private List<OBCashBalance1> balance = null;
+public class OBReadConsent1   {
+  @JsonProperty("Data")
+  private OBReadData1 data = null;
 
-  public OBReadDataBalance1 balance(List<OBCashBalance1> balance) {
-    this.balance = balance;
+  @JsonProperty("Risk")
+  private OBRisk2 risk = null;
+
+  public OBReadConsent1 data(OBReadData1 data) {
+    this.data = data;
     return this;
   }
 
-  public OBReadDataBalance1 addBalanceItem(OBCashBalance1 balanceItem) {
-    if (this.balance == null) {
-      this.balance = new ArrayList<OBCashBalance1>();
-    }
-    this.balance.add(balanceItem);
-    return this;
-  }
-
-   /**
-   * Balance
-   * @return balance
+  /**
+   * Get data
+   * @return data
   **/
-  @ApiModelProperty(value = "Balance")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
   @Valid
- @Size(min=1)
-  public List<OBCashBalance1> getBalance() {
-    return balance;
+
+  public OBReadData1 getData() {
+    return data;
   }
 
-  public void setBalance(List<OBCashBalance1> balance) {
-    this.balance = balance;
+  public void setData(OBReadData1 data) {
+    this.data = data;
+  }
+
+  public OBReadConsent1 risk(OBRisk2 risk) {
+    this.risk = risk;
+    return this;
+  }
+
+  /**
+   * Get risk
+   * @return risk
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public OBRisk2 getRisk() {
+    return risk;
+  }
+
+  public void setRisk(OBRisk2 risk) {
+    this.risk = risk;
   }
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBReadDataBalance1 data5 = (OBReadDataBalance1) o;
-    return Objects.equals(this.balance, data5.balance);
+    OBReadConsent1 obReadConsent1 = (OBReadConsent1) o;
+    return Objects.equals(this.data, obReadConsent1.data) &&
+        Objects.equals(this.risk, obReadConsent1.risk);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(balance);
+    return Objects.hash(data, risk);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Data5 {\n");
-
-    sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
+    sb.append("class OBReadConsent1 {\n");
+    
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    risk: ").append(toIndentedString(risk)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -98,7 +115,7 @@ public class OBReadDataBalance1 {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }

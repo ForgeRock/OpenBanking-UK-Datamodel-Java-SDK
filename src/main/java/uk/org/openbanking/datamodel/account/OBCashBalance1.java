@@ -1,4 +1,5 @@
-/*
+/**
+ *
  * The contents of this file are subject to the terms of the Common Development and
  *  Distribution License (the License). You may not use this file except in compliance with the
  *  License.
@@ -11,42 +12,33 @@
  *  Header, with the fields enclosed by brackets [] replaced by your own identifying
  *  information: "Portions copyright [year] [name of copyright owner]".
  *
- *  Copyright 2017 ForgeRock AS.
- *
+ *  Copyright 2018 ForgeRock AS.
  */
-
 package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
+import org.springframework.validation.annotation.Validated;
 import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
-import uk.org.openbanking.jackson.DateTimeDeserializer;
-import uk.org.openbanking.jackson.DateTimeSerializer;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * Balance
+ * Set of elements used to define the balance details.
  */
-@ApiModel(description = "Balance")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-10-16T08:37:28.078Z")
+@ApiModel(description = "Set of elements used to define the balance details.")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
-public class OBCashBalance1 {
+public class OBCashBalance1   {
   @JsonProperty("AccountId")
   private String accountId = null;
-
-  @JsonProperty("Amount")
-  private ActiveOrHistoricCurrencyAndAmount amount = null;
-
 
   @JsonProperty("CreditDebitIndicator")
   private OBCreditDebitCode creditDebitIndicator = null;
@@ -55,11 +47,13 @@ public class OBCashBalance1 {
   private OBBalanceType1Code type = null;
 
   @JsonProperty("DateTime")
-  @JsonDeserialize(using = DateTimeDeserializer.class)
-  @JsonSerialize(using = DateTimeSerializer.class)
   private DateTime dateTime = null;
 
+  @JsonProperty("Amount")
+  private ActiveOrHistoricCurrencyAndAmount amount = null;
+
   @JsonProperty("CreditLine")
+  @Valid
   private List<OBCreditLine1> creditLine = null;
 
   public OBCashBalance1 accountId(String accountId) {
@@ -67,14 +61,14 @@ public class OBCashBalance1 {
     return this;
   }
 
-   /**
-   * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
+  /**
+   * Get accountId
    * @return accountId
   **/
-  @ApiModelProperty(required = true, value = "A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.")
+  @ApiModelProperty(required = true, value = "")
   @NotNull
 
- @Size(min=1,max=40)
+
   public String getAccountId() {
     return accountId;
   }
@@ -83,37 +77,16 @@ public class OBCashBalance1 {
     this.accountId = accountId;
   }
 
-  public OBCashBalance1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
-    this.amount = amount;
-    return this;
-  }
-
-   /**
-   * Get amount
-   * @return amount
-  **/
-  @ApiModelProperty(value = "")
-
-  @Valid
-
-  public ActiveOrHistoricCurrencyAndAmount getAmount() {
-    return amount;
-  }
-
-  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
-    this.amount = amount;
-  }
-
   public OBCashBalance1 creditDebitIndicator(OBCreditDebitCode creditDebitIndicator) {
     this.creditDebitIndicator = creditDebitIndicator;
     return this;
   }
 
-   /**
-   * Indicates whether the balance is a credit or a debit balance. Usage: A zero balance is considered to be a credit balance.
+  /**
+   * Indicates whether the balance is a credit or a debit balance.  Usage: A zero balance is considered to be a credit balance.
    * @return creditDebitIndicator
   **/
-  @ApiModelProperty(required = true, value = "Indicates whether the balance is a credit or a debit balance. Usage: A zero balance is considered to be a credit balance.")
+  @ApiModelProperty(required = true, value = "Indicates whether the balance is a credit or a debit balance.  Usage: A zero balance is considered to be a credit balance.")
   @NotNull
 
 
@@ -130,13 +103,14 @@ public class OBCashBalance1 {
     return this;
   }
 
-   /**
-   * Balance type, in a coded form.
+  /**
+   * Get type
    * @return type
   **/
-  @ApiModelProperty(required = true, value = "Balance type, in a coded form.")
+  @ApiModelProperty(required = true, value = "")
   @NotNull
 
+  @Valid
 
   public OBBalanceType1Code getType() {
     return type;
@@ -151,11 +125,11 @@ public class OBCashBalance1 {
     return this;
   }
 
-   /**
-   * Indicates the date (and time) of the balance.  All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00
+  /**
+   * Indicates the date (and time) of the balance. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00
    * @return dateTime
   **/
-  @ApiModelProperty(required = true, value = "Indicates the date (and time) of the balance.  All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
+  @ApiModelProperty(required = true, value = "Indicates the date (and time) of the balance. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
   @NotNull
 
   @Valid
@@ -166,6 +140,28 @@ public class OBCashBalance1 {
 
   public void setDateTime(DateTime dateTime) {
     this.dateTime = dateTime;
+  }
+
+  public OBCashBalance1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
+    this.amount = amount;
+    return this;
+  }
+
+  /**
+   * Get amount
+   * @return amount
+  **/
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
+
+  @Valid
+
+  public ActiveOrHistoricCurrencyAndAmount getAmount() {
+    return amount;
+  }
+
+  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+    this.amount = amount;
   }
 
   public OBCashBalance1 creditLine(List<OBCreditLine1> creditLine) {
@@ -181,11 +177,11 @@ public class OBCashBalance1 {
     return this;
   }
 
-   /**
-   * Get creditLine
+  /**
+   * Set of elements used to provide details on the credit line.
    * @return creditLine
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Set of elements used to provide details on the credit line.")
 
   @Valid
 
@@ -199,37 +195,37 @@ public class OBCashBalance1 {
 
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(java.lang.Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBCashBalance1 balance = (OBCashBalance1) o;
-    return Objects.equals(this.accountId, balance.accountId) &&
-        Objects.equals(this.amount, balance.amount) &&
-        Objects.equals(this.creditDebitIndicator, balance.creditDebitIndicator) &&
-        Objects.equals(this.type, balance.type) &&
-        Objects.equals(this.dateTime, balance.dateTime) &&
-        Objects.equals(this.creditLine, balance.creditLine);
+    OBCashBalance1 obCashBalance1 = (OBCashBalance1) o;
+    return Objects.equals(this.accountId, obCashBalance1.accountId) &&
+        Objects.equals(this.creditDebitIndicator, obCashBalance1.creditDebitIndicator) &&
+        Objects.equals(this.type, obCashBalance1.type) &&
+        Objects.equals(this.dateTime, obCashBalance1.dateTime) &&
+        Objects.equals(this.amount, obCashBalance1.amount) &&
+        Objects.equals(this.creditLine, obCashBalance1.creditLine);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, amount, creditDebitIndicator, type, dateTime, creditLine);
+    return Objects.hash(accountId, creditDebitIndicator, type, dateTime, amount, creditLine);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Balance {\n");
-
+    sb.append("class OBCashBalance1 {\n");
+    
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    creditDebitIndicator: ").append(toIndentedString(creditDebitIndicator)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    creditLine: ").append(toIndentedString(creditLine)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -239,7 +235,7 @@ public class OBCashBalance1 {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(Object o) {
+  private String toIndentedString(java.lang.Object o) {
     if (o == null) {
       return "null";
     }
