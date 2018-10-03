@@ -17,6 +17,12 @@
 # OpenBanking-Java-SDK
 A Java SDK to help implementing the Open Banking standard : https://www.openbanking.org.uk/read-write-apis/
 
+## Release to maven central
+1. Go to https://bintray.com/forgerock/ORBI/openbanking-sdk/
+1. Choose the version
+1. Click `Maven Central` tab
+1. Click `Sync`
+
 ## Licence
 License:	CDDLv1.0 \
 License URL	: https://opensource.org/licenses/CDDL-1.0
