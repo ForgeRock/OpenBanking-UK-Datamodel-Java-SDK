@@ -113,10 +113,6 @@
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>1.6</version>
                         <configuration>
-                            <gpgArguments>
-                                <arg>--pinentry-mode</arg>
-                                <arg>loopback</arg>
-                            </gpgArguments>
                             <passphrase>${env.GPG_PASSPHRASE}</passphrase>
                             <keyname>DA5A83E21839FB2F60811F8E56780DDF77F42B2C</keyname>
                         </configuration>
