@@ -51,6 +51,38 @@ public class OBProductConverter {
     }
 
     /**
+     * Convert a product in V2 to V1
+     * @param obProduct2V3 product in V2 format
+     * @return product in V1 format
+     */
+    public static OBProduct2 toProductBeforeV3(OBProduct2 obProduct2V3) {
+
+        OBProduct2 product2 = new OBProduct2()
+                .accountId(obProduct2V3.getAccountId());
+
+        switch (obProduct2V3.getProductType()) {
+            case BUSINESSCURRENTACCOUNT:
+                product2.setProductType(OBExternalProductType2Code.BCA);
+                break;
+            case PERSONALCURRENTACCOUNT:
+                product2.setProductType(OBExternalProductType2Code.PCA);
+                break;
+        }
+
+        if (obProduct2V3.getProductId() != null) {
+            product2.productId(obProduct2V3.getProductId());
+        }
+        if (obProduct2V3.getProductName() != null) {
+            product2.productName(obProduct2V3.getProductName());
+        }
+        if (obProduct2V3.getSecondaryProductId() != null) {
+            product2.secondaryProductId(obProduct2V3.getSecondaryProductId());
+        }
+
+        return product2;
+    }
+
+    /**
      * Convert a product in V1 to V2
      * @param obProduct1 product in V1 format
      * @return product in V2 format

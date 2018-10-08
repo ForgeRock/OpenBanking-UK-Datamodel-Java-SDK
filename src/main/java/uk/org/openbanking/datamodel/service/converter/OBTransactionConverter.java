@@ -16,8 +16,7 @@
  */
 package uk.org.openbanking.datamodel.service.converter;
 
-import uk.org.openbanking.datamodel.account.OBTransaction1;
-import uk.org.openbanking.datamodel.account.OBTransaction2;
+import uk.org.openbanking.datamodel.account.*;
 
 /**
  * Convert OB transaction data-model in different version
@@ -69,6 +68,102 @@ public class OBTransactionConverter {
     }
 
     /**
+     * Convert a transaction from V3 to V1
+     * @param obTransaction3 transaction in V3 format
+     * @return transaction in V1 format
+     */
+    public static OBTransaction1 toTransaction1(OBTransaction3 obTransaction3) {
+
+        OBTransaction1 transaction1 = new OBTransaction1()
+                .accountId(obTransaction3.getAccountId())
+                .amount(obTransaction3.getAmount())
+                .creditDebitIndicator(obTransaction3.getCreditDebitIndicator())
+                .status(obTransaction3.getStatus())
+                .bookingDateTime(obTransaction3.getBookingDateTime());
+
+        if (obTransaction3.getTransactionId() != null) {
+            transaction1.transactionId(obTransaction3.getTransactionId());
+        }
+        if (obTransaction3.getTransactionReference() != null) {
+            transaction1.transactionReference(obTransaction3.getTransactionReference());
+        }
+        if (obTransaction3.getValueDateTime() != null) {
+            transaction1.valueDateTime(obTransaction3.getValueDateTime());
+        }
+        if (obTransaction3.getTransactionInformation() != null) {
+            transaction1.transactionInformation(obTransaction3.getTransactionInformation());
+        }
+        if (obTransaction3.getAddressLine() != null) {
+            transaction1.addressLine(obTransaction3.getAddressLine());
+        }
+        if (obTransaction3.getBankTransactionCode() != null) {
+            transaction1.bankTransactionCode(obTransaction3.getBankTransactionCode());
+        }
+        if (obTransaction3.getProprietaryBankTransactionCode() != null) {
+            transaction1.proprietaryBankTransactionCode(
+                    new ProprietaryBankTransactionCodeStructure1()
+                            .code(obTransaction3.getProprietaryBankTransactionCode().getCode())
+                            .issuer(obTransaction3.getProprietaryBankTransactionCode().getIssuer())
+                    );
+        }
+        if (obTransaction3.getBalance() != null) {
+            transaction1.balance(obTransaction3.getBalance());
+        }
+        if (obTransaction3.getMerchantDetails() != null) {
+            transaction1.merchantDetails(obTransaction3.getMerchantDetails());
+        }
+        return transaction1;
+    }
+
+    /**
+     * Convert a transaction from V3 to V2
+     * @param obTransaction3 transaction in V3 format
+     * @return transaction in V2 format
+     */
+    public static OBTransaction2 toTransaction2(OBTransaction3 obTransaction3) {
+
+        OBTransaction2 transaction2 = new OBTransaction2()
+                .accountId(obTransaction3.getAccountId())
+                .amount(obTransaction3.getAmount())
+                .creditDebitIndicator(obTransaction3.getCreditDebitIndicator())
+                .status(obTransaction3.getStatus())
+                .bookingDateTime(obTransaction3.getBookingDateTime());
+
+        if (obTransaction3.getTransactionId() != null) {
+            transaction2.transactionId(obTransaction3.getTransactionId());
+        }
+        if (obTransaction3.getTransactionReference() != null) {
+            transaction2.transactionReference(obTransaction3.getTransactionReference());
+        }
+        if (obTransaction3.getValueDateTime() != null) {
+            transaction2.valueDateTime(obTransaction3.getValueDateTime());
+        }
+        if (obTransaction3.getTransactionInformation() != null) {
+            transaction2.transactionInformation(obTransaction3.getTransactionInformation());
+        }
+        if (obTransaction3.getAddressLine() != null) {
+            transaction2.addressLine(obTransaction3.getAddressLine());
+        }
+        if (obTransaction3.getBankTransactionCode() != null) {
+            transaction2.bankTransactionCode(obTransaction3.getBankTransactionCode());
+        }
+        if (obTransaction3.getProprietaryBankTransactionCode() != null) {
+            transaction2.proprietaryBankTransactionCode(
+                    new ProprietaryBankTransactionCodeStructure1()
+                            .code(obTransaction3.getProprietaryBankTransactionCode().getCode())
+                            .issuer(obTransaction3.getProprietaryBankTransactionCode().getIssuer())
+            );
+        }
+        if (obTransaction3.getBalance() != null) {
+            transaction2.balance(obTransaction3.getBalance());
+        }
+        if (obTransaction3.getMerchantDetails() != null) {
+            transaction2.merchantDetails(obTransaction3.getMerchantDetails());
+        }
+        return transaction2;
+    }
+
+    /**
      * Convert a transaction from V1 to V2
      * @param obTransaction1 transaction in V1 format
      * @return transaction in V2 format
@@ -109,5 +204,51 @@ public class OBTransactionConverter {
             OBTransaction2.merchantDetails(obTransaction1.getMerchantDetails());
         }
         return OBTransaction2;
+    }
+
+    /**
+     * Convert a transaction from V2 to V3
+     * @param obTransaction2 transaction in V2 format
+     * @return transaction in V3 format
+     */
+    public static OBTransaction3 toTransaction3(OBTransaction2 obTransaction2) {
+        OBTransaction3 OBTransaction3 = new OBTransaction3()
+                .accountId(obTransaction2.getAccountId())
+                .amount(obTransaction2.getAmount())
+                .creditDebitIndicator(obTransaction2.getCreditDebitIndicator())
+                .status(obTransaction2.getStatus())
+                .bookingDateTime(obTransaction2.getBookingDateTime());
+
+        if (obTransaction2.getTransactionId() != null) {
+            OBTransaction3.transactionId(obTransaction2.getTransactionId());
+        }
+        if (obTransaction2.getTransactionReference() != null) {
+            OBTransaction3.transactionReference(obTransaction2.getTransactionReference());
+        }
+        if (obTransaction2.getValueDateTime() != null) {
+            OBTransaction3.valueDateTime(obTransaction2.getValueDateTime());
+        }
+        if (obTransaction2.getTransactionInformation() != null) {
+            OBTransaction3.transactionInformation(obTransaction2.getTransactionInformation());
+        }
+        if (obTransaction2.getAddressLine() != null) {
+            OBTransaction3.addressLine(obTransaction2.getAddressLine());
+        }
+        if (obTransaction2.getBankTransactionCode() != null) {
+            OBTransaction3.bankTransactionCode(obTransaction2.getBankTransactionCode());
+        }
+        if (obTransaction2.getProprietaryBankTransactionCode() != null) {
+            OBTransaction3.proprietaryBankTransactionCode(
+                    new OBTransaction3ProprietaryBankTransactionCode()
+                            .code(obTransaction2.getProprietaryBankTransactionCode().getCode())
+                            .issuer(obTransaction2.getProprietaryBankTransactionCode().getIssuer()));
+        }
+        if (obTransaction2.getBalance() != null) {
+            OBTransaction3.balance(obTransaction2.getBalance());
+        }
+        if (obTransaction2.getMerchantDetails() != null) {
+            OBTransaction3.merchantDetails(obTransaction2.getMerchantDetails());
+        }
+        return OBTransaction3;
     }
 }
