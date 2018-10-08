@@ -32,7 +32,19 @@ public enum OBExternalProductType2Code {
 
   PERSONALCURRENTACCOUNT("PersonalCurrentAccount"),
 
-  SMELOAN("SMELoan");
+  SMELOAN("SMELoan"),
+
+  @Deprecated
+  /**
+   * Use BUSINESSCURRENTACCOUNT instead in V3
+   */
+  BCA("BCA"),
+
+  @Deprecated
+  /**
+   * Use PERSONALCURRENTACCOUNT instead in V3
+   */
+  PCA("PCA");
 
   private String value;
 
