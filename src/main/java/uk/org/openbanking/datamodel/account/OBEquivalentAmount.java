@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.datamodel.payment.OBActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -36,12 +36,12 @@ import java.util.Objects;
 
 public class OBEquivalentAmount {
   @JsonProperty("Amount")
-  private ActiveOrHistoricCurrencyAndAmount amount = null;
+  private OBActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("CurrencyOfTransfer")
   private String currencyOfTransfer = null;
 
-  public OBEquivalentAmount amount(ActiveOrHistoricCurrencyAndAmount amount) {
+  public OBEquivalentAmount amount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -55,11 +55,11 @@ public class OBEquivalentAmount {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+  public void setAmount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 

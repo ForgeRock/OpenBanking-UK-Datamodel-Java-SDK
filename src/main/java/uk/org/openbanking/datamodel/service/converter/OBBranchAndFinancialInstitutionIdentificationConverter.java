@@ -16,7 +16,9 @@
  */
 package uk.org.openbanking.datamodel.service.converter;
 
-import uk.org.openbanking.datamodel.account.*;
+import uk.org.openbanking.datamodel.account.OBBranchAndFinancialInstitutionIdentification2;
+import uk.org.openbanking.datamodel.account.OBBranchAndFinancialInstitutionIdentification4;
+import uk.org.openbanking.datamodel.account.OBExternalFinancialInstitutionIdentification2Code;
 
 public class OBBranchAndFinancialInstitutionIdentificationConverter {
 

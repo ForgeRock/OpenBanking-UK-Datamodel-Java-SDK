@@ -16,40 +16,42 @@
  */
 package uk.org.openbanking.datamodel.payment;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import java.util.Objects;
 
 /**
- * Amount of money to be moved between the debtor and creditor, before deduction of charges, expressed in the currency as ordered by the initiating party. Usage: This amount has to be transported unchanged through the transaction chain.
+ * Amount of money associated with the charge type.
  */
-@ApiModel(description = "Amount of money to be moved between the debtor and creditor, before deduction of charges, expressed in the currency as ordered by the initiating party. Usage: This amount has to be transported unchanged through the transaction chain.")
+@ApiModel(description = "Amount of money associated with the charge type.")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-10T14:05:22.993+01:00")
 
-
-public class ActiveOrHistoricCurrencyAndAmount {
+public class OBCharge1Amount   {
   @JsonProperty("Amount")
   private String amount = null;
 
   @JsonProperty("Currency")
   private String currency = null;
 
-  public ActiveOrHistoricCurrencyAndAmount amount(String amount) {
+  public OBCharge1Amount amount(String amount) {
     this.amount = amount;
     return this;
   }
 
-   /**
+  /**
    * Get amount
    * @return amount
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
- @Pattern(regexp="^\\d{1,13}\\.\\d{1,5}$")
+
   public String getAmount() {
     return amount;
   }
@@ -58,19 +60,19 @@ public class ActiveOrHistoricCurrencyAndAmount {
     this.amount = amount;
   }
 
-  public ActiveOrHistoricCurrencyAndAmount currency(String currency) {
+  public OBCharge1Amount currency(String currency) {
     this.currency = currency;
     return this;
   }
 
-   /**
-   * A code allocated to a currency by a Maintenance Agency under an international identification scheme, as described in the latest edition of the international standard ISO 4217 - Codes for the representation of currencies and funds.
+  /**
+   * Get currency
    * @return currency
   **/
-  @ApiModelProperty(required = true, value = "A code allocated to a currency by a Maintenance Agency under an international identification scheme, as described in the latest edition of the international standard ISO 4217 - Codes for the representation of currencies and funds.")
+  @ApiModelProperty(required = true, value = "")
   @NotNull
 
- @Pattern(regexp="^[A-Z]{3,3}$")
+@Pattern(regexp="^[A-Z]{3,3}$") 
   public String getCurrency() {
     return currency;
   }
@@ -81,16 +83,16 @@ public class ActiveOrHistoricCurrencyAndAmount {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ActiveOrHistoricCurrencyAndAmount paymentSetupInitiationInstructedAmount = (ActiveOrHistoricCurrencyAndAmount) o;
-    return Objects.equals(this.amount, paymentSetupInitiationInstructedAmount.amount) &&
-        Objects.equals(this.currency, paymentSetupInitiationInstructedAmount.currency);
+    OBCharge1Amount obCharge1Amount = (OBCharge1Amount) o;
+    return Objects.equals(this.amount, obCharge1Amount.amount) &&
+        Objects.equals(this.currency, obCharge1Amount.currency);
   }
 
   @Override
@@ -101,8 +103,8 @@ public class ActiveOrHistoricCurrencyAndAmount {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ActiveOrHistoricCurrencyAndAmount {\n");
-    
+    sb.append("class OBCharge1Amount {\n");
+
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("}");
@@ -113,7 +115,7 @@ public class ActiveOrHistoricCurrencyAndAmount {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

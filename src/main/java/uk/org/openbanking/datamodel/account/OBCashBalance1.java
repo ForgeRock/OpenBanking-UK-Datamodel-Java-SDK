@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.datamodel.payment.OBActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -50,7 +50,7 @@ public class OBCashBalance1   {
   private DateTime dateTime = null;
 
   @JsonProperty("Amount")
-  private ActiveOrHistoricCurrencyAndAmount amount = null;
+  private OBActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("CreditLine")
   @Valid
@@ -142,7 +142,7 @@ public class OBCashBalance1   {
     this.dateTime = dateTime;
   }
 
-  public OBCashBalance1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
+  public OBCashBalance1 amount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -156,11 +156,11 @@ public class OBCashBalance1   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+  public void setAmount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 

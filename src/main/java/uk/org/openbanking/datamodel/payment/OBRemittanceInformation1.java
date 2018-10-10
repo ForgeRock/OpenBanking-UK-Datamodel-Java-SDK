@@ -16,21 +16,22 @@
  */
 package uk.org.openbanking.datamodel.payment;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.Size;
+import java.util.Objects;
 
 /**
  * Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts&#39; receivable system.
  */
 @ApiModel(description = "Information supplied to enable the matching of an entry with the items that the transfer is intended to settle, such as commercial invoices in an accounts' receivable system.")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-10T14:05:22.993+01:00")
 
-
-public class OBRemittanceInformation1 {
+public class OBRemittanceInformation1   {
   @JsonProperty("Unstructured")
   private String unstructured = null;
 
@@ -42,13 +43,13 @@ public class OBRemittanceInformation1 {
     return this;
   }
 
-   /**
+  /**
    * Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.
    * @return unstructured
   **/
   @ApiModelProperty(value = "Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts' receivable system, in an unstructured form.")
 
- @Size(min=1,max=140)
+@Size(min=1,max=140) 
   public String getUnstructured() {
     return unstructured;
   }
@@ -62,13 +63,13 @@ public class OBRemittanceInformation1 {
     return this;
   }
 
-   /**
-   * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.  Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money. If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification. OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
+  /**
+   * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction. Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money. If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification. OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.
    * @return reference
   **/
-  @ApiModelProperty(value = "Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.  Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money. If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification. OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.")
+  @ApiModelProperty(value = "Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction. Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money. If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification. OB: The Faster Payments Scheme can only accept 18 characters for the ReferenceInformation field - which is where this ISO field will be mapped.")
 
- @Size(min=1,max=35)
+@Size(min=1,max=35) 
   public String getReference() {
     return reference;
   }
@@ -79,16 +80,16 @@ public class OBRemittanceInformation1 {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBRemittanceInformation1 remittanceInformation = (OBRemittanceInformation1) o;
-    return Objects.equals(this.unstructured, remittanceInformation.unstructured) &&
-        Objects.equals(this.reference, remittanceInformation.reference);
+    OBRemittanceInformation1 obRemittanceInformation1 = (OBRemittanceInformation1) o;
+    return Objects.equals(this.unstructured, obRemittanceInformation1.unstructured) &&
+        Objects.equals(this.reference, obRemittanceInformation1.reference);
   }
 
   @Override
@@ -99,8 +100,8 @@ public class OBRemittanceInformation1 {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RemittanceInformation {\n");
-    
+    sb.append("class OBRemittanceInformation1 {\n");
+
     sb.append("    unstructured: ").append(toIndentedString(unstructured)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
     sb.append("}");
@@ -111,7 +112,7 @@ public class OBRemittanceInformation1 {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

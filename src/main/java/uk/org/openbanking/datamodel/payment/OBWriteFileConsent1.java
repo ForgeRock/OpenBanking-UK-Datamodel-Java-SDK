@@ -16,66 +16,70 @@
  */
 package uk.org.openbanking.datamodel.payment;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /**
- * Meta Data Relevant to the payload
+ * OBWriteFileConsent1
  */
-@ApiModel(description = "Meta Data Relevant to the payload")
+@Validated
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-10T14:05:22.993+01:00")
 
+public class OBWriteFileConsent1   {
+  @JsonProperty("Data")
+  private OBWriteDataFileConsent1 data = null;
 
-public class PaymentSetupPOSTResponseMeta   {
-  @JsonProperty("TotalPages")
-  private Integer totalPages = null;
-
-  public PaymentSetupPOSTResponseMeta totalPages(Integer totalPages) {
-    this.totalPages = totalPages;
+  public OBWriteFileConsent1 data(OBWriteDataFileConsent1 data) {
+    this.data = data;
     return this;
   }
 
-   /**
-   * Get totalPages
-   * @return totalPages
+  /**
+   * Get data
+   * @return data
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
+  @NotNull
 
+  @Valid
 
-  public Integer getTotalPages() {
-    return totalPages;
+  public OBWriteDataFileConsent1 getData() {
+    return data;
   }
 
-  public void setTotalPages(Integer totalPages) {
-    this.totalPages = totalPages;
+  public void setData(OBWriteDataFileConsent1 data) {
+    this.data = data;
   }
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaymentSetupPOSTResponseMeta paymentSetupPOSTResponseMeta = (PaymentSetupPOSTResponseMeta) o;
-    return Objects.equals(this.totalPages, paymentSetupPOSTResponseMeta.totalPages);
+    OBWriteFileConsent1 obWriteFileConsent1 = (OBWriteFileConsent1) o;
+    return Objects.equals(this.data, obWriteFileConsent1.data);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(totalPages);
+    return Objects.hash(data);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaymentSetupPOSTResponseMeta {\n");
-    
-    sb.append("    totalPages: ").append(toIndentedString(totalPages)).append("\n");
+    sb.append("class OBWriteFileConsent1 {\n");
+
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -84,7 +88,7 @@ public class PaymentSetupPOSTResponseMeta   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

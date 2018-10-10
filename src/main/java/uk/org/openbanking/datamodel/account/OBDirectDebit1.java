@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.datamodel.payment.OBActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -55,7 +55,7 @@ public class OBDirectDebit1   {
   private DateTime previousPaymentDateTime = null;
 
   @JsonProperty("PreviousPaymentAmount")
-  private ActiveOrHistoricCurrencyAndAmount previousPaymentAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount previousPaymentAmount = null;
 
   public OBDirectDebit1 accountId(String accountId) {
     this.accountId = accountId;
@@ -182,7 +182,7 @@ public class OBDirectDebit1   {
     this.previousPaymentDateTime = previousPaymentDateTime;
   }
 
-  public OBDirectDebit1 previousPaymentAmount(ActiveOrHistoricCurrencyAndAmount previousPaymentAmount) {
+  public OBDirectDebit1 previousPaymentAmount(OBActiveOrHistoricCurrencyAndAmount previousPaymentAmount) {
     this.previousPaymentAmount = previousPaymentAmount;
     return this;
   }
@@ -195,11 +195,11 @@ public class OBDirectDebit1   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getPreviousPaymentAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getPreviousPaymentAmount() {
     return previousPaymentAmount;
   }
 
-  public void setPreviousPaymentAmount(ActiveOrHistoricCurrencyAndAmount previousPaymentAmount) {
+  public void setPreviousPaymentAmount(OBActiveOrHistoricCurrencyAndAmount previousPaymentAmount) {
     this.previousPaymentAmount = previousPaymentAmount;
   }
 

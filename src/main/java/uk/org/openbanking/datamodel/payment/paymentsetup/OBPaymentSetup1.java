@@ -16,15 +16,14 @@
  */
 package uk.org.openbanking.datamodel.payment.paymentsetup;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import uk.org.openbanking.datamodel.payment.OBPaymentDataSetup1;
 import uk.org.openbanking.datamodel.payment.OBRisk1;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
 import javax.validation.Valid;
+import java.util.Objects;
 
 /**
  * Allows setup of a payment

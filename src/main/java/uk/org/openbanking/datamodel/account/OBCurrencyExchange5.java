@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.datamodel.payment.OBActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -57,7 +57,7 @@ public class OBCurrencyExchange5   {
   private DateTime quotationDate = null;
 
   @JsonProperty("InstructedAmount")
-  private ActiveOrHistoricCurrencyAndAmount instructedAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount instructedAmount = null;
 
   public OBCurrencyExchange5 sourceCurrency(String sourceCurrency) {
     this.sourceCurrency = sourceCurrency;
@@ -183,7 +183,7 @@ public class OBCurrencyExchange5   {
     this.quotationDate = quotationDate;
   }
 
-  public OBCurrencyExchange5 instructedAmount(ActiveOrHistoricCurrencyAndAmount instructedAmount) {
+  public OBCurrencyExchange5 instructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
     return this;
   }
@@ -196,11 +196,11 @@ public class OBCurrencyExchange5   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
     return instructedAmount;
   }
 
-  public void setInstructedAmount(ActiveOrHistoricCurrencyAndAmount instructedAmount) {
+  public void setInstructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
   }
 

@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.datamodel.payment.OBActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -67,10 +67,10 @@ public class OBTransaction3   {
   private String addressLine = null;
 
   @JsonProperty("Amount")
-  private ActiveOrHistoricCurrencyAndAmount amount = null;
+  private OBActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("ChargeAmount")
-  private ActiveOrHistoricCurrencyAndAmount chargeAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount chargeAmount = null;
 
   @JsonProperty("CurrencyExchange")
   private OBCurrencyExchange5 currencyExchange = null;
@@ -300,7 +300,7 @@ public class OBTransaction3   {
     this.addressLine = addressLine;
   }
 
-  public OBTransaction3 amount(ActiveOrHistoricCurrencyAndAmount amount) {
+  public OBTransaction3 amount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -314,15 +314,15 @@ public class OBTransaction3   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+  public void setAmount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 
-  public OBTransaction3 chargeAmount(ActiveOrHistoricCurrencyAndAmount chargeAmount) {
+  public OBTransaction3 chargeAmount(OBActiveOrHistoricCurrencyAndAmount chargeAmount) {
     this.chargeAmount = chargeAmount;
     return this;
   }
@@ -335,11 +335,11 @@ public class OBTransaction3   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getChargeAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getChargeAmount() {
     return chargeAmount;
   }
 
-  public void setChargeAmount(ActiveOrHistoricCurrencyAndAmount chargeAmount) {
+  public void setChargeAmount(OBActiveOrHistoricCurrencyAndAmount chargeAmount) {
     this.chargeAmount = chargeAmount;
   }
 

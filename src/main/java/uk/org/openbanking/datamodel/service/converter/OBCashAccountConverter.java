@@ -16,7 +16,10 @@
  */
 package uk.org.openbanking.datamodel.service.converter;
 
-import uk.org.openbanking.datamodel.account.*;
+import uk.org.openbanking.datamodel.account.OBCashAccount1;
+import uk.org.openbanking.datamodel.account.OBCashAccount2;
+import uk.org.openbanking.datamodel.account.OBCashAccount3;
+import uk.org.openbanking.datamodel.account.OBExternalAccountIdentification3Code;
 import uk.org.openbanking.datamodel.payment.OBExternalAccountIdentification2Code;
 
 

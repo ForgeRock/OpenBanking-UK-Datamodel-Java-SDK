@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.datamodel.payment.OBActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -66,10 +66,10 @@ public class OBOffer1   {
   private String URL = null;
 
   @JsonProperty("Amount")
-  private ActiveOrHistoricCurrencyAndAmount amount = null;
+  private OBActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("Fee")
-  private ActiveOrHistoricCurrencyAndAmount fee = null;
+  private OBActiveOrHistoricCurrencyAndAmount fee = null;
 
   public OBOffer1 accountId(String accountId) {
     this.accountId = accountId;
@@ -275,7 +275,7 @@ public class OBOffer1   {
     this.URL = URL;
   }
 
-  public OBOffer1 amount(ActiveOrHistoricCurrencyAndAmount amount) {
+  public OBOffer1 amount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -288,15 +288,15 @@ public class OBOffer1   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+  public void setAmount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 
-  public OBOffer1 fee(ActiveOrHistoricCurrencyAndAmount fee) {
+  public OBOffer1 fee(OBActiveOrHistoricCurrencyAndAmount fee) {
     this.fee = fee;
     return this;
   }
@@ -309,11 +309,11 @@ public class OBOffer1   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getFee() {
+  public OBActiveOrHistoricCurrencyAndAmount getFee() {
     return fee;
   }
 
-  public void setFee(ActiveOrHistoricCurrencyAndAmount fee) {
+  public void setFee(OBActiveOrHistoricCurrencyAndAmount fee) {
     this.fee = fee;
   }
 

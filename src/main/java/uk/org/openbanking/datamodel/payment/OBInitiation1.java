@@ -16,15 +16,15 @@
  */
 package uk.org.openbanking.datamodel.payment;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import uk.org.openbanking.datamodel.account.OBBranchAndFinancialInstitutionIdentification2;
 
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.util.Objects;
 
 /**
  * 
@@ -40,7 +40,7 @@ public class OBInitiation1 {
   private String endToEndIdentification = null;
 
   @JsonProperty("InstructedAmount")
-  private ActiveOrHistoricCurrencyAndAmount instructedAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount instructedAmount = null;
 
   @JsonProperty("DebtorAgent")
   private OBBranchAndFinancialInstitutionIdentification2 debtorAgent = null;
@@ -99,7 +99,7 @@ public class OBInitiation1 {
     this.endToEndIdentification = endToEndIdentification;
   }
 
-  public OBInitiation1 instructedAmount(ActiveOrHistoricCurrencyAndAmount instructedAmount) {
+  public OBInitiation1 instructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
     return this;
   }
@@ -112,11 +112,11 @@ public class OBInitiation1 {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
     return instructedAmount;
   }
 
-  public void setInstructedAmount(ActiveOrHistoricCurrencyAndAmount instructedAmount) {
+  public void setInstructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
   }
 

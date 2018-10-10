@@ -16,15 +16,14 @@
  */
 package uk.org.openbanking.datamodel.payment.paymentsubmission;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import uk.org.openbanking.datamodel.payment.OBRisk1;
-import uk.org.openbanking.datamodel.payment.OBPaymentDataSubmission1;
-
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import uk.org.openbanking.datamodel.payment.OBPaymentDataSubmission1;
+import uk.org.openbanking.datamodel.payment.OBRisk1;
 
 import javax.validation.Valid;
+import java.util.Objects;
 
 /**
  * Allows Submission of a payment

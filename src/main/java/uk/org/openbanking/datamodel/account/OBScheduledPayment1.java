@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.datamodel.payment.OBActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -50,7 +50,7 @@ public class OBScheduledPayment1   {
   private String reference = null;
 
   @JsonProperty("InstructedAmount")
-  private ActiveOrHistoricCurrencyAndAmount instructedAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount instructedAmount = null;
 
   @JsonProperty("CreditorAgent")
   private OBBranchAndFinancialInstitutionIdentification4 creditorAgent = null;
@@ -163,7 +163,7 @@ public class OBScheduledPayment1   {
     this.reference = reference;
   }
 
-  public OBScheduledPayment1 instructedAmount(ActiveOrHistoricCurrencyAndAmount instructedAmount) {
+  public OBScheduledPayment1 instructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
     return this;
   }
@@ -177,11 +177,11 @@ public class OBScheduledPayment1   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
     return instructedAmount;
   }
 
-  public void setInstructedAmount(ActiveOrHistoricCurrencyAndAmount instructedAmount) {
+  public void setInstructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
   }
 

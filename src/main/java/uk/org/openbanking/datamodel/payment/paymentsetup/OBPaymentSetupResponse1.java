@@ -16,16 +16,15 @@
  */
 package uk.org.openbanking.datamodel.payment.paymentsetup;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import uk.org.openbanking.datamodel.payment.OBRisk1;
-import uk.org.openbanking.datamodel.payment.PaymentSetupPOSTResponseLinks;
-import uk.org.openbanking.datamodel.payment.PaymentSetupPOSTResponseMeta;
-import uk.org.openbanking.datamodel.payment.OBPaymentDataSetupResponse1;
-
 import io.swagger.annotations.ApiModelProperty;
+import uk.org.openbanking.datamodel.account.Links;
+import uk.org.openbanking.datamodel.account.Meta;
+import uk.org.openbanking.datamodel.payment.OBPaymentDataSetupResponse1;
+import uk.org.openbanking.datamodel.payment.OBRisk1;
 
 import javax.validation.Valid;
+import java.util.Objects;
 
 /**
  * PaymentSetupPOSTResponse
@@ -40,10 +39,10 @@ public class OBPaymentSetupResponse1 {
   private OBRisk1 risk = null;
 
   @JsonProperty("Links")
-  private PaymentSetupPOSTResponseLinks links = null;
+  private Links links = null;
 
   @JsonProperty("Meta")
-  private PaymentSetupPOSTResponseMeta meta = null;
+  private Meta meta = null;
 
   public OBPaymentSetupResponse1 data(OBPaymentDataSetupResponse1 data) {
     this.data = data;
@@ -87,7 +86,7 @@ public class OBPaymentSetupResponse1 {
     this.risk = risk;
   }
 
-  public OBPaymentSetupResponse1 links(PaymentSetupPOSTResponseLinks links) {
+  public OBPaymentSetupResponse1 links(Links links) {
     this.links = links;
     return this;
   }
@@ -100,15 +99,15 @@ public class OBPaymentSetupResponse1 {
 
   @Valid
 
-  public PaymentSetupPOSTResponseLinks getLinks() {
+  public Links getLinks() {
     return links;
   }
 
-  public void setLinks(PaymentSetupPOSTResponseLinks links) {
+  public void setLinks(Links links) {
     this.links = links;
   }
 
-  public OBPaymentSetupResponse1 meta(PaymentSetupPOSTResponseMeta meta) {
+  public OBPaymentSetupResponse1 meta(Meta meta) {
     this.meta = meta;
     return this;
   }
@@ -121,11 +120,11 @@ public class OBPaymentSetupResponse1 {
 
   @Valid
 
-  public PaymentSetupPOSTResponseMeta getMeta() {
+  public Meta getMeta() {
     return meta;
   }
 
-  public void setMeta(PaymentSetupPOSTResponseMeta meta) {
+  public void setMeta(Meta meta) {
     this.meta = meta;
   }
 

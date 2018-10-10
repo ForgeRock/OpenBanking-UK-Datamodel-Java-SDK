@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.datamodel.payment.OBActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -60,13 +60,13 @@ public class OBStandingOrder3   {
   private OBExternalStandingOrderStatus1Code standingOrderStatusCode = null;
 
   @JsonProperty("FirstPaymentAmount")
-  private ActiveOrHistoricCurrencyAndAmount firstPaymentAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount firstPaymentAmount = null;
 
   @JsonProperty("NextPaymentAmount")
-  private ActiveOrHistoricCurrencyAndAmount nextPaymentAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount nextPaymentAmount = null;
 
   @JsonProperty("FinalPaymentAmount")
-  private ActiveOrHistoricCurrencyAndAmount finalPaymentAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount finalPaymentAmount = null;
 
   @JsonProperty("CreditorAgent")
   private OBBranchAndFinancialInstitutionIdentification4 creditorAgent = null;
@@ -240,7 +240,7 @@ public class OBStandingOrder3   {
     this.standingOrderStatusCode = standingOrderStatusCode;
   }
 
-  public OBStandingOrder3 firstPaymentAmount(ActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
+  public OBStandingOrder3 firstPaymentAmount(OBActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
     this.firstPaymentAmount = firstPaymentAmount;
     return this;
   }
@@ -253,15 +253,15 @@ public class OBStandingOrder3   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getFirstPaymentAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getFirstPaymentAmount() {
     return firstPaymentAmount;
   }
 
-  public void setFirstPaymentAmount(ActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
+  public void setFirstPaymentAmount(OBActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
     this.firstPaymentAmount = firstPaymentAmount;
   }
 
-  public OBStandingOrder3 nextPaymentAmount(ActiveOrHistoricCurrencyAndAmount nextPaymentAmount) {
+  public OBStandingOrder3 nextPaymentAmount(OBActiveOrHistoricCurrencyAndAmount nextPaymentAmount) {
     this.nextPaymentAmount = nextPaymentAmount;
     return this;
   }
@@ -274,15 +274,15 @@ public class OBStandingOrder3   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getNextPaymentAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getNextPaymentAmount() {
     return nextPaymentAmount;
   }
 
-  public void setNextPaymentAmount(ActiveOrHistoricCurrencyAndAmount nextPaymentAmount) {
+  public void setNextPaymentAmount(OBActiveOrHistoricCurrencyAndAmount nextPaymentAmount) {
     this.nextPaymentAmount = nextPaymentAmount;
   }
 
-  public OBStandingOrder3 finalPaymentAmount(ActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
+  public OBStandingOrder3 finalPaymentAmount(OBActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
     this.finalPaymentAmount = finalPaymentAmount;
     return this;
   }
@@ -295,11 +295,11 @@ public class OBStandingOrder3   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getFinalPaymentAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getFinalPaymentAmount() {
     return finalPaymentAmount;
   }
 
-  public void setFinalPaymentAmount(ActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
+  public void setFinalPaymentAmount(OBActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
     this.finalPaymentAmount = finalPaymentAmount;
   }
 

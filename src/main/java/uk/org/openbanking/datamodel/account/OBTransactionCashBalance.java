@@ -19,7 +19,7 @@ package uk.org.openbanking.datamodel.account;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.datamodel.payment.OBActiveOrHistoricCurrencyAndAmount;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -33,7 +33,7 @@ import java.util.Objects;
 
 public class OBTransactionCashBalance {
   @JsonProperty("Amount")
-  private ActiveOrHistoricCurrencyAndAmount amount = null;
+  private OBActiveOrHistoricCurrencyAndAmount amount = null;
 
   @JsonProperty("CreditDebitIndicator")
   private OBCreditDebitCode creditDebitIndicator = null;
@@ -41,7 +41,7 @@ public class OBTransactionCashBalance {
   @JsonProperty("Type")
   private OBBalanceType1Code type = null;
 
-  public OBTransactionCashBalance amount(ActiveOrHistoricCurrencyAndAmount amount) {
+  public OBTransactionCashBalance amount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -54,11 +54,11 @@ public class OBTransactionCashBalance {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(ActiveOrHistoricCurrencyAndAmount amount) {
+  public void setAmount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 

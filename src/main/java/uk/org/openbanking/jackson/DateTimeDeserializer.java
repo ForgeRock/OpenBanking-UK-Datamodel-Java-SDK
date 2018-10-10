@@ -16,15 +16,14 @@
  */
 package uk.org.openbanking.jackson;
 
-import static uk.org.openbanking.jackson.DateTimeSerializer.DATE_TIME_FORMATTER;
-
-import java.io.IOException;
-
-import org.joda.time.DateTime;
-
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import org.joda.time.DateTime;
+
+import java.io.IOException;
+
+import static uk.org.openbanking.jackson.DateTimeSerializer.DATE_TIME_FORMATTER;
 
 public class DateTimeDeserializer extends StdDeserializer<DateTime> {
 

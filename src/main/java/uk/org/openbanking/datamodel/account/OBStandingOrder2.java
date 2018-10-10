@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
-import uk.org.openbanking.datamodel.payment.ActiveOrHistoricCurrencyAndAmount;
+import uk.org.openbanking.datamodel.payment.OBActiveOrHistoricCurrencyAndAmount;
 import uk.org.openbanking.jackson.DateTimeDeserializer;
 import uk.org.openbanking.jackson.DateTimeSerializer;
 
@@ -59,7 +59,7 @@ public class OBStandingOrder2   {
   private DateTime firstPaymentDateTime = null;
 
   @JsonProperty("FirstPaymentAmount")
-  private ActiveOrHistoricCurrencyAndAmount firstPaymentAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount firstPaymentAmount = null;
 
   @JsonProperty("NextPaymentDateTime")
   @JsonDeserialize(using = DateTimeDeserializer.class)
@@ -67,7 +67,7 @@ public class OBStandingOrder2   {
   private DateTime nextPaymentDateTime = null;
 
   @JsonProperty("NextPaymentAmount")
-  private ActiveOrHistoricCurrencyAndAmount nextPaymentAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount nextPaymentAmount = null;
 
   @JsonProperty("FinalPaymentDateTime")
   @JsonDeserialize(using = DateTimeDeserializer.class)
@@ -75,7 +75,7 @@ public class OBStandingOrder2   {
   private DateTime finalPaymentDateTime = null;
 
   @JsonProperty("FinalPaymentAmount")
-  private ActiveOrHistoricCurrencyAndAmount finalPaymentAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount finalPaymentAmount = null;
 
   @JsonProperty("StandingOrderStatusCode")
   private OBExternalStandingOrderStatus1Code standingOrderStatusCode = null;
@@ -189,7 +189,7 @@ public class OBStandingOrder2   {
     this.firstPaymentDateTime = firstPaymentDateTime;
   }
 
-  public OBStandingOrder2 firstPaymentAmount(ActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
+  public OBStandingOrder2 firstPaymentAmount(OBActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
     this.firstPaymentAmount = firstPaymentAmount;
     return this;
   }
@@ -202,11 +202,11 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getFirstPaymentAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getFirstPaymentAmount() {
     return firstPaymentAmount;
   }
 
-  public void setFirstPaymentAmount(ActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
+  public void setFirstPaymentAmount(OBActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
     this.firstPaymentAmount = firstPaymentAmount;
   }
 
@@ -232,7 +232,7 @@ public class OBStandingOrder2   {
     this.nextPaymentDateTime = nextPaymentDateTime;
   }
 
-  public OBStandingOrder2 nextPaymentAmount(ActiveOrHistoricCurrencyAndAmount nextPaymentAmount) {
+  public OBStandingOrder2 nextPaymentAmount(OBActiveOrHistoricCurrencyAndAmount nextPaymentAmount) {
     this.nextPaymentAmount = nextPaymentAmount;
     return this;
   }
@@ -246,11 +246,11 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getNextPaymentAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getNextPaymentAmount() {
     return nextPaymentAmount;
   }
 
-  public void setNextPaymentAmount(ActiveOrHistoricCurrencyAndAmount nextPaymentAmount) {
+  public void setNextPaymentAmount(OBActiveOrHistoricCurrencyAndAmount nextPaymentAmount) {
     this.nextPaymentAmount = nextPaymentAmount;
   }
 
@@ -275,7 +275,7 @@ public class OBStandingOrder2   {
     this.finalPaymentDateTime = finalPaymentDateTime;
   }
 
-  public OBStandingOrder2 finalPaymentAmount(ActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
+  public OBStandingOrder2 finalPaymentAmount(OBActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
     this.finalPaymentAmount = finalPaymentAmount;
     return this;
   }
@@ -288,11 +288,11 @@ public class OBStandingOrder2   {
 
   @Valid
 
-  public ActiveOrHistoricCurrencyAndAmount getFinalPaymentAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getFinalPaymentAmount() {
     return finalPaymentAmount;
   }
 
-  public void setFinalPaymentAmount(ActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
+  public void setFinalPaymentAmount(OBActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
     this.finalPaymentAmount = finalPaymentAmount;
   }
 

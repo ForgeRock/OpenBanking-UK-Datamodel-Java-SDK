@@ -19,65 +19,39 @@ package uk.org.openbanking.datamodel.payment;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-public enum  OBTransactionIndividualStatus1Code {
-    /**
-     * Preceding check of technical validation was successful. Customer profile check was also successful.
-     */
-    ACCEPTED_CUSTOMER_PROFILE("AcceptedCustomerProfile"),
+/**
+ * Specifies the status of the payment information group.
+ */
+public enum OBTransactionIndividualStatus1Code {
+  
+  ACCEPTEDSETTLEMENTCOMPLETED("AcceptedSettlementCompleted"),
+  
+  ACCEPTEDSETTLEMENTINPROCESS("AcceptedSettlementInProcess"),
+  
+  PENDING("Pending"),
+  
+  REJECTED("Rejected");
 
-    /**
-     * Settlement on the debtor’s account has been completed.
-     *
-     * Usage : this can be used by the first agent to report to the debtor that the transaction has been completed.
-     * Warning : this status is provided for transaction status reasons, not for financial information.
-     * It can only be used after bilateral agreement.
-     *
-     * PISPs must not use this status as confirmation that settlement is complete on the creditor’s account.
-     */
-    ACCEPTED_SETTLEMENT_COMPLETED("AcceptedSettlementCompleted"),
+  private String value;
 
-    /**
-     * All preceding checks such as technical validation and customer profile were successful and
-     * therefore the payment initiation has been accepted for execution.
-     */
-    ACCEPTED_SETTLEMENT_IN_PROCESS("AcceptedSettlementInProcess"),
+  OBTransactionIndividualStatus1Code(String value) {
+    this.value = value;
+  }
 
-    /**
-     * Authentication and syntactical and semantic validation are successful.
-     */
-    ACCEPTED_TECHNICAL_VALIDATION("AcceptedTechnicalValidation"),
+  @Override
+  @JsonValue
+  public String toString() {
+    return String.valueOf(value);
+  }
 
-    /**
-     * Payment initiation or individual transaction included in the payment initiation is pending.
-     * Further checks and status update will be performed.
-     */
-    PENDING("Pending"),
-
-    /**
-     * Payment initiation or individual transaction included in the payment initiation has been rejected.
-     */
-    REJECTED("Rejected");
-
-    private String value;
-
-
-    OBTransactionIndividualStatus1Code(String value) {
-        this.value = value;
+  @JsonCreator
+  public static OBTransactionIndividualStatus1Code fromValue(String text) {
+    for (OBTransactionIndividualStatus1Code b : OBTransactionIndividualStatus1Code.values()) {
+      if (String.valueOf(b.value).equals(text)) {
+        return b;
+      }
     }
-
-    @Override
-    @JsonValue
-    public String toString() {
-        return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static OBTransactionIndividualStatus1Code fromValue(String text) {
-        for (OBTransactionIndividualStatus1Code b : OBTransactionIndividualStatus1Code.values()) {
-            if (String.valueOf(b.value).equals(text)) {
-                return b;
-            }
-        }
-        return null;
-    }
+    return null;
+  }
 }
+
