@@ -23,11 +23,14 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Specifies the status of the payment information group.
  */
 public enum OBTransactionIndividualStatus1Code {
-  
+  ACCEPTEDCUSTOMERPROFILE("AcceptedCustomerProfile"),
+
   ACCEPTEDSETTLEMENTCOMPLETED("AcceptedSettlementCompleted"),
   
   ACCEPTEDSETTLEMENTINPROCESS("AcceptedSettlementInProcess"),
-  
+
+  ACCEPTEDTECHNICALVALIDATION("AcceptedTechnicalValidation"),
+
   PENDING("Pending"),
   
   REJECTED("Rejected");
