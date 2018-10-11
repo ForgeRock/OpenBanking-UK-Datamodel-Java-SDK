@@ -58,7 +58,7 @@ public class OBDomesticStandingOrder1   {
   private OBDomesticStandingOrder1FirstPaymentAmount firstPaymentAmount = null;
 
   @JsonProperty("RecurringPaymentAmount")
-  private OBDomesticStandingOrder1RecurringPaymentAmount recurringPaymentAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount recurringPaymentAmount = null;
 
   @JsonProperty("FinalPaymentAmount")
   private OBDomesticStandingOrder1FinalPaymentAmount finalPaymentAmount = null;
@@ -216,7 +216,7 @@ public class OBDomesticStandingOrder1   {
     this.firstPaymentAmount = firstPaymentAmount;
   }
 
-  public OBDomesticStandingOrder1 recurringPaymentAmount(OBDomesticStandingOrder1RecurringPaymentAmount recurringPaymentAmount) {
+  public OBDomesticStandingOrder1 recurringPaymentAmount(OBActiveOrHistoricCurrencyAndAmount recurringPaymentAmount) {
     this.recurringPaymentAmount = recurringPaymentAmount;
     return this;
   }
@@ -229,11 +229,11 @@ public class OBDomesticStandingOrder1   {
 
   @Valid
 
-  public OBDomesticStandingOrder1RecurringPaymentAmount getRecurringPaymentAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getRecurringPaymentAmount() {
     return recurringPaymentAmount;
   }
 
-  public void setRecurringPaymentAmount(OBDomesticStandingOrder1RecurringPaymentAmount recurringPaymentAmount) {
+  public void setRecurringPaymentAmount(OBActiveOrHistoricCurrencyAndAmount recurringPaymentAmount) {
     this.recurringPaymentAmount = recurringPaymentAmount;
   }
 
