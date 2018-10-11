@@ -61,7 +61,7 @@ public class OBInternationalScheduled1   {
   private String currencyOfTransfer = null;
 
   @JsonProperty("InstructedAmount")
-  private OBDomestic1InstructedAmount instructedAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount instructedAmount = null;
 
   @JsonProperty("ExchangeRateInformation")
   private OBExchangeRate1 exchangeRateInformation = null;
@@ -247,7 +247,7 @@ public class OBInternationalScheduled1   {
     this.currencyOfTransfer = currencyOfTransfer;
   }
 
-  public OBInternationalScheduled1 instructedAmount(OBDomestic1InstructedAmount instructedAmount) {
+  public OBInternationalScheduled1 instructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
     return this;
   }
@@ -261,11 +261,11 @@ public class OBInternationalScheduled1   {
 
   @Valid
 
-  public OBDomestic1InstructedAmount getInstructedAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
     return instructedAmount;
   }
 
-  public void setInstructedAmount(OBDomestic1InstructedAmount instructedAmount) {
+  public void setInstructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
   }
 

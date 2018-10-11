@@ -48,7 +48,7 @@ public class OBDomesticScheduled1   {
   private DateTime requestedExecutionDateTime = null;
 
   @JsonProperty("InstructedAmount")
-  private OBDomestic1InstructedAmount instructedAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount instructedAmount = null;
 
   @JsonProperty("DebtorAccount")
   private OBCashAccountDebtor3 debtorAccount = null;
@@ -145,7 +145,7 @@ public class OBDomesticScheduled1   {
     this.requestedExecutionDateTime = requestedExecutionDateTime;
   }
 
-  public OBDomesticScheduled1 instructedAmount(OBDomestic1InstructedAmount instructedAmount) {
+  public OBDomesticScheduled1 instructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
     return this;
   }
@@ -159,11 +159,11 @@ public class OBDomesticScheduled1   {
 
   @Valid
 
-  public OBDomestic1InstructedAmount getInstructedAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
     return instructedAmount;
   }
 
-  public void setInstructedAmount(OBDomestic1InstructedAmount instructedAmount) {
+  public void setInstructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
   }
 

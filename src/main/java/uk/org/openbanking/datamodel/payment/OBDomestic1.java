@@ -44,7 +44,7 @@ public class OBDomestic1   {
   private String localInstrument = null;
 
   @JsonProperty("InstructedAmount")
-  private OBDomestic1InstructedAmount instructedAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount instructedAmount = null;
 
   @JsonProperty("DebtorAccount")
   private OBCashAccountDebtor3 debtorAccount = null;
@@ -120,7 +120,7 @@ public class OBDomestic1   {
     this.localInstrument = localInstrument;
   }
 
-  public OBDomestic1 instructedAmount(OBDomestic1InstructedAmount instructedAmount) {
+  public OBDomestic1 instructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
     return this;
   }
@@ -134,11 +134,11 @@ public class OBDomestic1   {
 
   @Valid
 
-  public OBDomestic1InstructedAmount getInstructedAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
     return instructedAmount;
   }
 
-  public void setInstructedAmount(OBDomestic1InstructedAmount instructedAmount) {
+  public void setInstructedAmount(OBActiveOrHistoricCurrencyAndAmount instructedAmount) {
     this.instructedAmount = instructedAmount;
   }
 
