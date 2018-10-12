@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.datamodel.account.OBCashAccount3;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -63,7 +64,7 @@ public class OBInternational1   {
   private OBExchangeRate1 exchangeRateInformation = null;
 
   @JsonProperty("DebtorAccount")
-  private OBCashAccountDebtor3 debtorAccount = null;
+  private OBCashAccount3 debtorAccount = null;
 
   @JsonProperty("Creditor")
   private OBPartyIdentification43 creditor = null;
@@ -72,7 +73,7 @@ public class OBInternational1   {
   private OBBranchAndFinancialInstitutionIdentification3 creditorAgent = null;
 
   @JsonProperty("CreditorAccount")
-  private OBCashAccountCreditor2 creditorAccount = null;
+  private OBCashAccount3 creditorAccount = null;
 
   @JsonProperty("RemittanceInformation")
   private OBRemittanceInformation1 remittanceInformation = null;
@@ -265,7 +266,7 @@ public class OBInternational1   {
     this.exchangeRateInformation = exchangeRateInformation;
   }
 
-  public OBInternational1 debtorAccount(OBCashAccountDebtor3 debtorAccount) {
+  public OBInternational1 debtorAccount(OBCashAccount3 debtorAccount) {
     this.debtorAccount = debtorAccount;
     return this;
   }
@@ -278,11 +279,11 @@ public class OBInternational1   {
 
   @Valid
 
-  public OBCashAccountDebtor3 getDebtorAccount() {
+  public OBCashAccount3 getDebtorAccount() {
     return debtorAccount;
   }
 
-  public void setDebtorAccount(OBCashAccountDebtor3 debtorAccount) {
+  public void setDebtorAccount(OBCashAccount3 debtorAccount) {
     this.debtorAccount = debtorAccount;
   }
 
@@ -328,7 +329,7 @@ public class OBInternational1   {
     this.creditorAgent = creditorAgent;
   }
 
-  public OBInternational1 creditorAccount(OBCashAccountCreditor2 creditorAccount) {
+  public OBInternational1 creditorAccount(OBCashAccount3 creditorAccount) {
     this.creditorAccount = creditorAccount;
     return this;
   }
@@ -342,11 +343,11 @@ public class OBInternational1   {
 
   @Valid
 
-  public OBCashAccountCreditor2 getCreditorAccount() {
+  public OBCashAccount3 getCreditorAccount() {
     return creditorAccount;
   }
 
-  public void setCreditorAccount(OBCashAccountCreditor2 creditorAccount) {
+  public void setCreditorAccount(OBCashAccount3 creditorAccount) {
     this.creditorAccount = creditorAccount;
   }
 

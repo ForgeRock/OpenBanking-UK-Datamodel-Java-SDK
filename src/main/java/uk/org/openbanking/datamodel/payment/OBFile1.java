@@ -21,6 +21,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.datamodel.account.OBCashAccount3;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -59,7 +60,7 @@ public class OBFile1   {
   private String localInstrument = null;
 
   @JsonProperty("DebtorAccount")
-  private OBCashAccountDebtor3 debtorAccount = null;
+  private OBCashAccount3 debtorAccount = null;
 
   @JsonProperty("RemittanceInformation")
   private OBRemittanceInformation1 remittanceInformation = null;
@@ -208,7 +209,7 @@ public class OBFile1   {
     this.localInstrument = localInstrument;
   }
 
-  public OBFile1 debtorAccount(OBCashAccountDebtor3 debtorAccount) {
+  public OBFile1 debtorAccount(OBCashAccount3 debtorAccount) {
     this.debtorAccount = debtorAccount;
     return this;
   }
@@ -221,11 +222,11 @@ public class OBFile1   {
 
   @Valid
 
-  public OBCashAccountDebtor3 getDebtorAccount() {
+  public OBCashAccount3 getDebtorAccount() {
     return debtorAccount;
   }
 
-  public void setDebtorAccount(OBCashAccountDebtor3 debtorAccount) {
+  public void setDebtorAccount(OBCashAccount3 debtorAccount) {
     this.debtorAccount = debtorAccount;
   }
 

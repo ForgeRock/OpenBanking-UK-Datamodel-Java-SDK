@@ -21,6 +21,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.datamodel.account.OBCashAccount3;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -64,10 +65,10 @@ public class OBDomesticStandingOrder1   {
   private OBActiveOrHistoricCurrencyAndAmount finalPaymentAmount = null;
 
   @JsonProperty("DebtorAccount")
-  private OBCashAccountDebtor3 debtorAccount = null;
+  private OBCashAccount3 debtorAccount = null;
 
   @JsonProperty("CreditorAccount")
-  private OBCashAccountCreditor2 creditorAccount = null;
+  private OBCashAccount3 creditorAccount = null;
 
   public OBDomesticStandingOrder1 frequency(String frequency) {
     this.frequency = frequency;
@@ -258,7 +259,7 @@ public class OBDomesticStandingOrder1   {
     this.finalPaymentAmount = finalPaymentAmount;
   }
 
-  public OBDomesticStandingOrder1 debtorAccount(OBCashAccountDebtor3 debtorAccount) {
+  public OBDomesticStandingOrder1 debtorAccount(OBCashAccount3 debtorAccount) {
     this.debtorAccount = debtorAccount;
     return this;
   }
@@ -271,15 +272,15 @@ public class OBDomesticStandingOrder1   {
 
   @Valid
 
-  public OBCashAccountDebtor3 getDebtorAccount() {
+  public OBCashAccount3 getDebtorAccount() {
     return debtorAccount;
   }
 
-  public void setDebtorAccount(OBCashAccountDebtor3 debtorAccount) {
+  public void setDebtorAccount(OBCashAccount3 debtorAccount) {
     this.debtorAccount = debtorAccount;
   }
 
-  public OBDomesticStandingOrder1 creditorAccount(OBCashAccountCreditor2 creditorAccount) {
+  public OBDomesticStandingOrder1 creditorAccount(OBCashAccount3 creditorAccount) {
     this.creditorAccount = creditorAccount;
     return this;
   }
@@ -293,11 +294,11 @@ public class OBDomesticStandingOrder1   {
 
   @Valid
 
-  public OBCashAccountCreditor2 getCreditorAccount() {
+  public OBCashAccount3 getCreditorAccount() {
     return creditorAccount;
   }
 
-  public void setCreditorAccount(OBCashAccountCreditor2 creditorAccount) {
+  public void setCreditorAccount(OBCashAccount3 creditorAccount) {
     this.creditorAccount = creditorAccount;
   }
 
