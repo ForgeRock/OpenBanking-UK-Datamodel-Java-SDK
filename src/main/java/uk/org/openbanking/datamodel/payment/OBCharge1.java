@@ -41,7 +41,7 @@ public class OBCharge1   {
   private String type = null;
 
   @JsonProperty("Amount")
-  private OBCharge1Amount amount = null;
+  private OBActiveOrHistoricCurrencyAndAmount amount = null;
 
   public OBCharge1 chargeBearer(OBChargeBearerType1Code chargeBearer) {
     this.chargeBearer = chargeBearer;
@@ -86,7 +86,7 @@ public class OBCharge1   {
     this.type = type;
   }
 
-  public OBCharge1 amount(OBCharge1Amount amount) {
+  public OBCharge1 amount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
     return this;
   }
@@ -100,11 +100,11 @@ public class OBCharge1   {
 
   @Valid
 
-  public OBCharge1Amount getAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getAmount() {
     return amount;
   }
 
-  public void setAmount(OBCharge1Amount amount) {
+  public void setAmount(OBActiveOrHistoricCurrencyAndAmount amount) {
     this.amount = amount;
   }
 

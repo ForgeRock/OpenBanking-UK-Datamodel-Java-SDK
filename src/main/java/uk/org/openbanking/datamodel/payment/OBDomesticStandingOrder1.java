@@ -55,13 +55,13 @@ public class OBDomesticStandingOrder1   {
   private DateTime finalPaymentDateTime = null;
 
   @JsonProperty("FirstPaymentAmount")
-  private OBDomesticStandingOrder1FirstPaymentAmount firstPaymentAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount firstPaymentAmount = null;
 
   @JsonProperty("RecurringPaymentAmount")
   private OBActiveOrHistoricCurrencyAndAmount recurringPaymentAmount = null;
 
   @JsonProperty("FinalPaymentAmount")
-  private OBDomesticStandingOrder1FinalPaymentAmount finalPaymentAmount = null;
+  private OBActiveOrHistoricCurrencyAndAmount finalPaymentAmount = null;
 
   @JsonProperty("DebtorAccount")
   private OBCashAccountDebtor3 debtorAccount = null;
@@ -194,7 +194,7 @@ public class OBDomesticStandingOrder1   {
     this.finalPaymentDateTime = finalPaymentDateTime;
   }
 
-  public OBDomesticStandingOrder1 firstPaymentAmount(OBDomesticStandingOrder1FirstPaymentAmount firstPaymentAmount) {
+  public OBDomesticStandingOrder1 firstPaymentAmount(OBActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
     this.firstPaymentAmount = firstPaymentAmount;
     return this;
   }
@@ -208,11 +208,11 @@ public class OBDomesticStandingOrder1   {
 
   @Valid
 
-  public OBDomesticStandingOrder1FirstPaymentAmount getFirstPaymentAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getFirstPaymentAmount() {
     return firstPaymentAmount;
   }
 
-  public void setFirstPaymentAmount(OBDomesticStandingOrder1FirstPaymentAmount firstPaymentAmount) {
+  public void setFirstPaymentAmount(OBActiveOrHistoricCurrencyAndAmount firstPaymentAmount) {
     this.firstPaymentAmount = firstPaymentAmount;
   }
 
@@ -237,7 +237,7 @@ public class OBDomesticStandingOrder1   {
     this.recurringPaymentAmount = recurringPaymentAmount;
   }
 
-  public OBDomesticStandingOrder1 finalPaymentAmount(OBDomesticStandingOrder1FinalPaymentAmount finalPaymentAmount) {
+  public OBDomesticStandingOrder1 finalPaymentAmount(OBActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
     this.finalPaymentAmount = finalPaymentAmount;
     return this;
   }
@@ -250,11 +250,11 @@ public class OBDomesticStandingOrder1   {
 
   @Valid
 
-  public OBDomesticStandingOrder1FinalPaymentAmount getFinalPaymentAmount() {
+  public OBActiveOrHistoricCurrencyAndAmount getFinalPaymentAmount() {
     return finalPaymentAmount;
   }
 
-  public void setFinalPaymentAmount(OBDomesticStandingOrder1FinalPaymentAmount finalPaymentAmount) {
+  public void setFinalPaymentAmount(OBActiveOrHistoricCurrencyAndAmount finalPaymentAmount) {
     this.finalPaymentAmount = finalPaymentAmount;
   }
 
