@@ -1,3 +1,19 @@
+/**
+ *
+ * The contents of this file are subject to the terms of the Common Development and
+ *  Distribution License (the License). You may not use this file except in compliance with the
+ *  License.
+ *
+ *  You can obtain a copy of the License at https://forgerock.org/cddlv1-0/. See the License for the
+ *  specific language governing permission and limitations under the License.
+ *
+ *  When distributing Covered Software, include this CDDL Header Notice in each file and include
+ *  the License file at legal/CDDLv1.0.txt. If applicable, add the following below the CDDL
+ *  Header, with the fields enclosed by brackets [] replaced by your own identifying
+ *  information: "Portions copyright [year] [name of copyright owner]".
+ *
+ *  Copyright 2018 ForgeRock AS.
+ */
 /*
  * Confirmation of Funds API Specification
  * Swagger for Confirmation of Funds API Specification
@@ -16,6 +32,7 @@ package uk.org.openbanking.datamodel.fund;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
+import uk.org.openbanking.datamodel.account.OBCashAccount3;
 
 import java.util.Objects;
 
@@ -28,7 +45,7 @@ public class OBFundsConfirmationConsentData1 {
   private DateTime expirationDateTime = null;
 
   @JsonProperty("DebtorAccount")
-  private OBCashAccountDebtor3 debtorAccount = null;
+  private OBCashAccount3 debtorAccount = null;
 
   public OBFundsConfirmationConsentData1 expirationDateTime(DateTime expirationDateTime) {
     this.expirationDateTime = expirationDateTime;
@@ -48,7 +65,7 @@ public class OBFundsConfirmationConsentData1 {
     this.expirationDateTime = expirationDateTime;
   }
 
-  public OBFundsConfirmationConsentData1 debtorAccount(OBCashAccountDebtor3 debtorAccount) {
+  public OBFundsConfirmationConsentData1 debtorAccount(OBCashAccount3 debtorAccount) {
     this.debtorAccount = debtorAccount;
     return this;
   }
@@ -58,11 +75,11 @@ public class OBFundsConfirmationConsentData1 {
    * @return debtorAccount
   **/
   @ApiModelProperty(required = true, value = "")
-  public OBCashAccountDebtor3 getDebtorAccount() {
+  public OBCashAccount3 getDebtorAccount() {
     return debtorAccount;
   }
 
-  public void setDebtorAccount(OBCashAccountDebtor3 debtorAccount) {
+  public void setDebtorAccount(OBCashAccount3 debtorAccount) {
     this.debtorAccount = debtorAccount;
   }
 
