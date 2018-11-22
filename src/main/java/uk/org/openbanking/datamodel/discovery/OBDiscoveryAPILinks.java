@@ -16,8 +16,20 @@
  */
 package uk.org.openbanking.datamodel.discovery;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import io.swagger.annotations.ApiModel;
 
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME
+)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = OBDiscoveryAPILinksAccount1.class, name = "OBDiscoveryAPILinksAccount1"),
+        @JsonSubTypes.Type(value = OBDiscoveryAPILinksAccount2.class, name = "OBDiscoveryAPILinksAccount2"),
+        @JsonSubTypes.Type(value = OBDiscoveryAPILinksAccount3.class, name = "OBDiscoveryAPILinksAccount3"),
+        @JsonSubTypes.Type(value = OBDiscoveryAPILinksPayment1.class, name = "OBDiscoveryAPILinksPayment1"),
+        @JsonSubTypes.Type(value = OBDiscoveryAPILinksPayment3.class, name = "OBDiscoveryAPILinksPayment3"),
+})
 @ApiModel(description = "Endpoints corresponding to a specific version")
 public interface OBDiscoveryAPILinks {
 
