@@ -36,6 +36,9 @@ public class OBDiscovery {
     @JsonProperty("AccountAndTransactionAPI")
     private List<OBDiscoveryAPI<OBDiscoveryAPILinks>> accountAndTransactionAPIs;
 
+    @JsonProperty("FundsConfirmationAPI")
+    private List<OBDiscoveryAPI<OBDiscoveryAPILinks>> fundsConfirmationAPIs;
+
     public OBDiscovery paymentInitiationAPI(List<OBDiscoveryAPI<OBDiscoveryAPILinks>> paymentInitiationAPIs) {
         this.paymentInitiationAPIs = paymentInitiationAPIs;
         return this;
@@ -86,19 +89,45 @@ public class OBDiscovery {
         return accountAndTransactionAPIs.stream().filter(apis -> apis.getVersion().equals(version)).findFirst();
     }
 
+    public OBDiscovery fundsConfirmationAPI(List<OBDiscoveryAPI<OBDiscoveryAPILinks>> fundsConfirmationAPIs) {
+        this.fundsConfirmationAPIs = fundsConfirmationAPIs;
+        return this;
+    }
+
+    public OBDiscovery addFundsConfirmationAPI(OBDiscoveryAPI<OBDiscoveryAPILinks> fundsConfirmationAPI) {
+        if (this.fundsConfirmationAPIs == null) {
+            this.fundsConfirmationAPIs = new ArrayList<>();
+        }
+        this.fundsConfirmationAPIs.add(fundsConfirmationAPI);
+        return this;
+    }
+
+    public List<OBDiscoveryAPI<OBDiscoveryAPILinks>> getFundsConfirmationAPIs() {
+        return fundsConfirmationAPIs;
+    }
+
+    public void setFundsConfirmationAPIs(List<OBDiscoveryAPI<OBDiscoveryAPILinks>> fundsConfirmationAPIs) {
+        this.fundsConfirmationAPIs = fundsConfirmationAPIs;
+    }
+
+    public Optional<OBDiscoveryAPI<OBDiscoveryAPILinks>> getFundsConfirmationAPIs(String version) {
+        return fundsConfirmationAPIs.stream().filter(apis -> apis.getVersion().equals(version)).findFirst();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         OBDiscovery that = (OBDiscovery) o;
         return Objects.equals(paymentInitiationAPIs, that.paymentInitiationAPIs) &&
-                Objects.equals(accountAndTransactionAPIs, that.accountAndTransactionAPIs);
+                Objects.equals(accountAndTransactionAPIs, that.accountAndTransactionAPIs) &&
+                Objects.equals(fundsConfirmationAPIs, that.fundsConfirmationAPIs)
+                ;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(paymentInitiationAPIs, accountAndTransactionAPIs);
+        return Objects.hash(paymentInitiationAPIs, accountAndTransactionAPIs, fundsConfirmationAPIs);
     }
 
     @Override
@@ -107,6 +136,7 @@ public class OBDiscovery {
         sb.append("class OBDiscovery {\n");
         sb.append("    paymentInitiationAPIs: ").append(toIndentedString(paymentInitiationAPIs)).append("\n");
         sb.append("    accountAndTransactionAPIs: ").append(toIndentedString(accountAndTransactionAPIs)).append("\n");
+        sb.append("    fundsConfirmationAPIs: ").append(toIndentedString(fundsConfirmationAPIs)).append("\n");
         sb.append("}");
         return sb.toString();
     }
