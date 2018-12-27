@@ -39,6 +39,9 @@ public class OBDiscovery {
     @JsonProperty("FundsConfirmationAPI")
     private List<OBDiscoveryAPI<OBDiscoveryAPILinks>> fundsConfirmationAPIs;
 
+    @JsonProperty("EventNotificationAPI")
+    private List<OBDiscoveryAPI<OBDiscoveryAPILinks>> eventNotificationAPIs;
+
     public OBDiscovery paymentInitiationAPI(List<OBDiscoveryAPI<OBDiscoveryAPILinks>> paymentInitiationAPIs) {
         this.paymentInitiationAPIs = paymentInitiationAPIs;
         return this;
@@ -114,6 +117,31 @@ public class OBDiscovery {
         return fundsConfirmationAPIs.stream().filter(apis -> apis.getVersion().equals(version)).findFirst();
     }
 
+    public OBDiscovery eventNotificationAPI(List<OBDiscoveryAPI<OBDiscoveryAPILinks>> eventNotificationAPIs) {
+        this.eventNotificationAPIs = eventNotificationAPIs;
+        return this;
+    }
+
+    public OBDiscovery addEventNotificationAPI(OBDiscoveryAPI<OBDiscoveryAPILinks> eventNotificationAPI) {
+        if (this.eventNotificationAPIs == null) {
+            this.eventNotificationAPIs = new ArrayList<>();
+        }
+        this.eventNotificationAPIs.add(eventNotificationAPI);
+        return this;
+    }
+
+    public List<OBDiscoveryAPI<OBDiscoveryAPILinks>> getEventNotificationAPIs() {
+        return eventNotificationAPIs;
+    }
+
+    public void setEventNotificationAPIs(List<OBDiscoveryAPI<OBDiscoveryAPILinks>> eventNotificationAPIs) {
+        this.eventNotificationAPIs = eventNotificationAPIs;
+    }
+
+    public Optional<OBDiscoveryAPI<OBDiscoveryAPILinks>> getEventNotificationAPIs(String version) {
+        return eventNotificationAPIs.stream().filter(apis -> apis.getVersion().equals(version)).findFirst();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -121,7 +149,8 @@ public class OBDiscovery {
         OBDiscovery that = (OBDiscovery) o;
         return Objects.equals(paymentInitiationAPIs, that.paymentInitiationAPIs) &&
                 Objects.equals(accountAndTransactionAPIs, that.accountAndTransactionAPIs) &&
-                Objects.equals(fundsConfirmationAPIs, that.fundsConfirmationAPIs)
+                Objects.equals(fundsConfirmationAPIs, that.fundsConfirmationAPIs) &&
+                Objects.equals(eventNotificationAPIs, that.eventNotificationAPIs)
                 ;
     }
 
@@ -137,6 +166,7 @@ public class OBDiscovery {
         sb.append("    paymentInitiationAPIs: ").append(toIndentedString(paymentInitiationAPIs)).append("\n");
         sb.append("    accountAndTransactionAPIs: ").append(toIndentedString(accountAndTransactionAPIs)).append("\n");
         sb.append("    fundsConfirmationAPIs: ").append(toIndentedString(fundsConfirmationAPIs)).append("\n");
+        sb.append("    eventNotificationAPIs: ").append(toIndentedString(eventNotificationAPIs)).append("\n");
         sb.append("}");
         return sb.toString();
     }
