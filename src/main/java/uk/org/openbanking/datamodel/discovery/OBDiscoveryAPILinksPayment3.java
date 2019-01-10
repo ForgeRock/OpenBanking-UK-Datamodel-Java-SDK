@@ -84,6 +84,20 @@ public class OBDiscoveryAPILinksPayment3 implements OBDiscoveryAPILinks{
     @JsonProperty("GetInternationalStandingOrder")
     private String getInternationalStandingOrder;
 
+    // File payment
+    @JsonProperty("CreateFilePaymentConsent")
+    private String createFilePaymentConsent;
+    @JsonProperty("GetFilePaymentConsent")
+    private String getFilePaymentConsent;
+    @JsonProperty("CreateFilePaymentFile")
+    private String createFilePaymentFile;
+    @JsonProperty("GetFilePaymentFile")
+    private String getFilePaymentFile;
+    @JsonProperty("CreateFilePayment")
+    private String createFilePayment;
+    @JsonProperty("GetFilePayment")
+    private String getFilePayment;
+
     public String getCreateDomesticPaymentConsent() {
         return createDomesticPaymentConsent;
     }
@@ -397,6 +411,84 @@ public class OBDiscoveryAPILinksPayment3 implements OBDiscoveryAPILinks{
         return this;
     }
 
+    public String getCreateFilePaymentConsent() {
+        return createFilePaymentConsent;
+    }
+
+    public void setCreateFilePaymentConsent(String createFilePaymentConsent) {
+        this.createFilePaymentConsent = createFilePaymentConsent;
+    }
+
+    public OBDiscoveryAPILinksPayment3 createFilePaymentConsent(String createFilePaymentConsent) {
+        this.createFilePaymentConsent = createFilePaymentConsent;
+        return this;
+    }
+
+    public String getGetFilePaymentConsent() {
+        return getFilePaymentConsent;
+    }
+
+    public void setGetFilePaymentConsent(String getFilePaymentConsent) {
+        this.getFilePaymentConsent = getFilePaymentConsent;
+    }
+
+    public OBDiscoveryAPILinksPayment3 getFilePaymentConsent(String getFilePaymentConsent) {
+        this.getFilePaymentConsent = getFilePaymentConsent;
+        return this;
+    }
+
+    public String getCreateFilePaymentFile() {
+        return createFilePaymentFile;
+    }
+
+    public void setCreateFilePaymentFile(String createFilePaymentFile) {
+        this.createFilePaymentFile = createFilePaymentFile;
+    }
+
+    public OBDiscoveryAPILinksPayment3 createFilePaymentFile(String createFilePaymentFile) {
+        this.createFilePaymentFile = createFilePaymentFile;
+        return this;
+    }
+
+    public String getGetFilePaymentFile() {
+        return getFilePaymentFile;
+    }
+
+    public void setGetFilePaymentFile(String getFilePaymentFile) {
+        this.getFilePaymentFile = getFilePaymentFile;
+    }
+
+    public OBDiscoveryAPILinksPayment3 getFilePaymentFile(String getFilePaymentFile) {
+        this.getFilePaymentFile = getFilePaymentFile;
+        return this;
+    }
+
+    public String getCreateFilePayment() {
+        return createFilePayment;
+    }
+
+    public void setCreateFilePayment(String createFilePayment) {
+        this.createFilePayment = createFilePayment;
+    }
+
+    public OBDiscoveryAPILinksPayment3 createFilePayment(String createFilePayment) {
+        this.createFilePayment = createFilePayment;
+        return this;
+    }
+
+    public String getGetFilePayment() {
+        return getFilePayment;
+    }
+
+    public void setGetFilePayment(String getFilePayment) {
+        this.getFilePayment = getFilePayment;
+    }
+
+    public OBDiscoveryAPILinksPayment3 getFilePayment(String getFilePayment) {
+        this.getFilePayment = getFilePayment;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -425,12 +517,18 @@ public class OBDiscoveryAPILinksPayment3 implements OBDiscoveryAPILinks{
                 Objects.equal(createInternationalStandingOrderConsent, that.createInternationalStandingOrderConsent) &&
                 Objects.equal(getInternationalStandingOrderConsent, that.getInternationalStandingOrderConsent) &&
                 Objects.equal(createInternationalStandingOrder, that.createInternationalStandingOrder) &&
-                Objects.equal(getInternationalStandingOrder, that.getInternationalStandingOrder);
+                Objects.equal(getInternationalStandingOrder, that.getInternationalStandingOrder) &&
+                Objects.equal(createFilePaymentConsent, that.createFilePaymentConsent) &&
+                Objects.equal(getFilePaymentConsent, that.getFilePaymentConsent) &&
+                Objects.equal(createFilePaymentFile, that.createFilePaymentFile) &&
+                Objects.equal(getFilePaymentFile, that.getFilePaymentFile) &&
+                Objects.equal(createFilePayment, that.createFilePayment) &&
+                Objects.equal(getFilePayment, that.getFilePayment);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(createDomesticPaymentConsent, getDomesticPaymentConsent, createDomesticPayment, getDomesticPayment, createDomesticScheduledPaymentConsent, getDomesticScheduledPaymentConsent, createDomesticScheduledPayment, getDomesticScheduledPayment, createDomesticStandingOrderConsent, getDomesticStandingOrderConsent, createDomesticStandingOrder, getDomesticStandingOrder, createInternationalPaymentConsent, getInternationalPaymentConsent, createInternationalPayment, getInternationalPayment, createInternationalScheduledPaymentConsent, getInternationalScheduledPaymentConsent, createInternationalScheduledPayment, getInternationalScheduledPayment, createInternationalStandingOrderConsent, getInternationalStandingOrderConsent, createInternationalStandingOrder, getInternationalStandingOrder);
+        return Objects.hashCode(createDomesticPaymentConsent, getDomesticPaymentConsent, createDomesticPayment, getDomesticPayment, createDomesticScheduledPaymentConsent, getDomesticScheduledPaymentConsent, createDomesticScheduledPayment, getDomesticScheduledPayment, createDomesticStandingOrderConsent, getDomesticStandingOrderConsent, createDomesticStandingOrder, getDomesticStandingOrder, createInternationalPaymentConsent, getInternationalPaymentConsent, createInternationalPayment, getInternationalPayment, createInternationalScheduledPaymentConsent, getInternationalScheduledPaymentConsent, createInternationalScheduledPayment, getInternationalScheduledPayment, createInternationalStandingOrderConsent, getInternationalStandingOrderConsent, createInternationalStandingOrder, getInternationalStandingOrder, getFilePaymentConsent, createFilePaymentConsent, getFilePaymentFile, createFilePaymentFile, getFilePayment, createFilePayment);
     }
 
     @Override
@@ -460,6 +558,12 @@ public class OBDiscoveryAPILinksPayment3 implements OBDiscoveryAPILinks{
                 .add("getInternationalStandingOrderConsent", getInternationalStandingOrderConsent)
                 .add("createInternationalStandingOrder", createInternationalStandingOrder)
                 .add("getInternationalStandingOrder", getInternationalStandingOrder)
+                .add("createFilePaymentConsent", createFilePaymentConsent)
+                .add("getFilePaymentConsent", getFilePaymentConsent)
+                .add("createFilePaymentFile", createFilePaymentFile)
+                .add("getFilePaymentFile", getFilePaymentFile)
+                .add("createFilePayment", createFilePayment)
+                .add("getFilePayment", getFilePayment)
                 .toString();
     }
 
