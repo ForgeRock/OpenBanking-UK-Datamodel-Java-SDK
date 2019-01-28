@@ -20,63 +20,64 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
 /**
- * OBActiveOrHistoricCurrencyAndAmount
+ * OBWriteDataDomesticConsent2
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-28T11:15:38.268Z")
 
-public class OBActiveOrHistoricCurrencyAndAmount   {
-  @JsonProperty("Amount")
-  private String amount = null;
+public class OBWriteDataDomesticConsent2   {
+  @JsonProperty("Initiation")
+  private OBDomestic2 initiation = null;
 
-  @JsonProperty("Currency")
-  private String currency = null;
+  @JsonProperty("Authorisation")
+  private OBAuthorisation1 authorisation = null;
 
-  public OBActiveOrHistoricCurrencyAndAmount amount(String amount) {
-    this.amount = amount;
+  public OBWriteDataDomesticConsent2 initiation(OBDomestic2 initiation) {
+    this.initiation = initiation;
     return this;
   }
 
   /**
-   * Get amount
-   * @return amount
+   * Get initiation
+   * @return initiation
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
+  @Valid
 
-  public String getAmount() {
-    return amount;
+  public OBDomestic2 getInitiation() {
+    return initiation;
   }
 
-  public void setAmount(String amount) {
-    this.amount = amount;
+  public void setInitiation(OBDomestic2 initiation) {
+    this.initiation = initiation;
   }
 
-  public OBActiveOrHistoricCurrencyAndAmount currency(String currency) {
-    this.currency = currency;
+  public OBWriteDataDomesticConsent2 authorisation(OBAuthorisation1 authorisation) {
+    this.authorisation = authorisation;
     return this;
   }
 
   /**
-   * Get currency
-   * @return currency
+   * Get authorisation
+   * @return authorisation
   **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
+  @ApiModelProperty(value = "")
 
-@Pattern(regexp="^[A-Z]{3,3}$") 
-  public String getCurrency() {
-    return currency;
+  @Valid
+
+  public OBAuthorisation1 getAuthorisation() {
+    return authorisation;
   }
 
-  public void setCurrency(String currency) {
-    this.currency = currency;
+  public void setAuthorisation(OBAuthorisation1 authorisation) {
+    this.authorisation = authorisation;
   }
 
 
@@ -88,23 +89,23 @@ public class OBActiveOrHistoricCurrencyAndAmount   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBActiveOrHistoricCurrencyAndAmount obActiveOrHistoricCurrencyAndAmount = (OBActiveOrHistoricCurrencyAndAmount) o;
-    return Objects.equals(this.amount, obActiveOrHistoricCurrencyAndAmount.amount) &&
-        Objects.equals(this.currency, obActiveOrHistoricCurrencyAndAmount.currency);
+    OBWriteDataDomesticConsent2 obWriteDataDomesticConsent2 = (OBWriteDataDomesticConsent2) o;
+    return Objects.equals(this.initiation, obWriteDataDomesticConsent2.initiation) &&
+        Objects.equals(this.authorisation, obWriteDataDomesticConsent2.authorisation);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, currency);
+    return Objects.hash(initiation, authorisation);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBActiveOrHistoricCurrencyAndAmount {\n");
+    sb.append("class OBWriteDataDomesticConsent2 {\n");
 
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    initiation: ").append(toIndentedString(initiation)).append("\n");
+    sb.append("    authorisation: ").append(toIndentedString(authorisation)).append("\n");
     sb.append("}");
     return sb.toString();
   }

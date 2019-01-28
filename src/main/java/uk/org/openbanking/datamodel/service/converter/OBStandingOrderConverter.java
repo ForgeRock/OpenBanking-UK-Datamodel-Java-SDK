@@ -19,6 +19,7 @@ package uk.org.openbanking.datamodel.service.converter;
 import uk.org.openbanking.datamodel.account.OBStandingOrder1;
 import uk.org.openbanking.datamodel.account.OBStandingOrder2;
 import uk.org.openbanking.datamodel.account.OBStandingOrder3;
+import uk.org.openbanking.datamodel.account.OBStandingOrder4;
 
 /**
  * Convert OB standing order data-model in different version
@@ -223,4 +224,134 @@ public class OBStandingOrderConverter {
         }
         return standingOrder3;
     }
+
+    /**
+     * Convert standing order from V3 to V4
+     * @param obStandingOrder3 standing order in V3 format
+     * @return standing order in V4 format
+     */
+    public static OBStandingOrder4 toStandingOrder4(OBStandingOrder3 obStandingOrder3) {
+
+        return new OBStandingOrder4()
+                .accountId(obStandingOrder3.getAccountId())
+                .frequency(obStandingOrder3.getFrequency())
+                .nextPaymentDateTime(obStandingOrder3.getNextPaymentDateTime())
+                .nextPaymentAmount(obStandingOrder3.getNextPaymentAmount())
+                .standingOrderId(obStandingOrder3.getStandingOrderId())
+                .standingOrderStatusCode(obStandingOrder3.getStandingOrderStatusCode())
+                .creditorAccount(obStandingOrder3.getCreditorAccount())
+                .creditorAgent(obStandingOrder3.getCreditorAgent())
+                .finalPaymentAmount(obStandingOrder3.getFinalPaymentAmount())
+                .finalPaymentDateTime(obStandingOrder3.getFirstPaymentDateTime())
+                .firstPaymentAmount(obStandingOrder3.getFirstPaymentAmount())
+                .firstPaymentDateTime(obStandingOrder3.getFirstPaymentDateTime())
+                .nextPaymentAmount(obStandingOrder3.getNextPaymentAmount())
+                .nextPaymentDateTime(obStandingOrder3.getNextPaymentDateTime())
+                .reference(obStandingOrder3.getReference())
+                ;
+    }
+
+    /**
+     * Convert standing order from V4 to V3
+     * @param obStandingOrder4 standing order in V4 format
+     * @return standing order in V3 format
+     */
+    public static OBStandingOrder3 toStandingOrder3(OBStandingOrder4 obStandingOrder4) {
+        return new OBStandingOrder3()
+                .accountId(obStandingOrder4.getAccountId())
+                .frequency(obStandingOrder4.getFrequency())
+                .nextPaymentDateTime(obStandingOrder4.getNextPaymentDateTime())
+                .nextPaymentAmount(obStandingOrder4.getNextPaymentAmount())
+                .standingOrderId(obStandingOrder4.getStandingOrderId())
+                .standingOrderStatusCode(obStandingOrder4.getStandingOrderStatusCode())
+                .creditorAccount(obStandingOrder4.getCreditorAccount())
+                .creditorAgent(obStandingOrder4.getCreditorAgent())
+                .finalPaymentAmount(obStandingOrder4.getFinalPaymentAmount())
+                .finalPaymentDateTime(obStandingOrder4.getFirstPaymentDateTime())
+                .firstPaymentAmount(obStandingOrder4.getFirstPaymentAmount())
+                .firstPaymentDateTime(obStandingOrder4.getFirstPaymentDateTime())
+                .nextPaymentAmount(obStandingOrder4.getNextPaymentAmount())
+                .nextPaymentDateTime(obStandingOrder4.getNextPaymentDateTime())
+                .reference(obStandingOrder4.getReference())
+                ;
+    }
+
+    /**
+     * Convert standing order from V4 to V2
+     * @param obStandingOrder4 standing order in V4 format
+     * @return standing order in V4 format
+     */
+    public static OBStandingOrder2 toStandingOrder2(OBStandingOrder4 obStandingOrder4) {
+        OBStandingOrder2 standingOrder2 = new OBStandingOrder2()
+                .accountId(obStandingOrder4.getAccountId())
+                .frequency(obStandingOrder4.getFrequency())
+                .nextPaymentDateTime(obStandingOrder4.getNextPaymentDateTime())
+                .nextPaymentAmount(obStandingOrder4.getNextPaymentAmount());
+
+        if (obStandingOrder4.getStandingOrderId() != null) {
+            standingOrder2.standingOrderId(obStandingOrder4.getStandingOrderId());
+        }
+        if (obStandingOrder4.getReference() != null) {
+            standingOrder2.reference(obStandingOrder4.getReference());
+        }
+        if (obStandingOrder4.getFirstPaymentDateTime() != null) {
+            standingOrder2.firstPaymentDateTime(obStandingOrder4.getFirstPaymentDateTime());
+        }
+        if (obStandingOrder4.getFirstPaymentAmount() != null) {
+            standingOrder2.firstPaymentAmount(obStandingOrder4.getFirstPaymentAmount());
+        }
+        if (obStandingOrder4.getFinalPaymentDateTime() != null) {
+            standingOrder2.finalPaymentDateTime(obStandingOrder4.getFinalPaymentDateTime());
+        }
+        if (obStandingOrder4.getFinalPaymentAmount() != null) {
+            standingOrder2.finalPaymentAmount(obStandingOrder4.getFinalPaymentAmount());
+        }
+        if (obStandingOrder4.getCreditorAgent() != null) {
+            standingOrder2.setCreditorAgent(OBBranchAndFinancialInstitutionIdentificationConverter.toOBBranchAndFinancialInstitutionIdentification2(obStandingOrder4.getCreditorAgent()));
+        }
+        if (obStandingOrder4.getCreditorAccount() != null) {
+            standingOrder2.creditorAccount(OBCashAccountConverter.toOBCashAccount1(obStandingOrder4.getCreditorAccount()));
+        }
+        return standingOrder2;
+    }
+
+    /**
+     * Convert standing order from V4 to V1
+     * @param obStandingOrder4 standing order in V4 format
+     * @return standing order in V1 format
+     */
+    public static OBStandingOrder1 toStandingOrder1(OBStandingOrder4 obStandingOrder4) {
+        OBStandingOrder1 standingOrder1 = new OBStandingOrder1()
+                .accountId(obStandingOrder4.getAccountId())
+                .frequency(obStandingOrder4.getFrequency())
+                .nextPaymentDateTime(obStandingOrder4.getNextPaymentDateTime())
+                .nextPaymentAmount(obStandingOrder4.getNextPaymentAmount());
+
+        if (obStandingOrder4.getStandingOrderId() != null) {
+            standingOrder1.standingOrderId(obStandingOrder4.getStandingOrderId());
+        }
+        if (obStandingOrder4.getReference() != null) {
+            standingOrder1.reference(obStandingOrder4.getReference());
+        }
+        if (obStandingOrder4.getFirstPaymentDateTime() != null) {
+            standingOrder1.firstPaymentDateTime(obStandingOrder4.getFirstPaymentDateTime());
+        }
+        if (obStandingOrder4.getFirstPaymentAmount() != null) {
+            standingOrder1.firstPaymentAmount(obStandingOrder4.getFirstPaymentAmount());
+        }
+        if (obStandingOrder4.getFinalPaymentDateTime() != null) {
+            standingOrder1.finalPaymentDateTime(obStandingOrder4.getFinalPaymentDateTime());
+        }
+        if (obStandingOrder4.getFinalPaymentAmount() != null) {
+            standingOrder1.finalPaymentAmount(obStandingOrder4.getFinalPaymentAmount());
+        }
+        if (obStandingOrder4.getCreditorAgent() != null) {
+            standingOrder1.servicer(OBBranchAndFinancialInstitutionIdentificationConverter.toOBBranchAndFinancialInstitutionIdentification2(obStandingOrder4.getCreditorAgent()));
+        }
+        if (obStandingOrder4.getCreditorAccount() != null) {
+            standingOrder1.creditorAccount(OBCashAccountConverter.toOBCashAccount1(obStandingOrder4.getCreditorAccount()));
+        }
+        return standingOrder1;
+    }
+
 }

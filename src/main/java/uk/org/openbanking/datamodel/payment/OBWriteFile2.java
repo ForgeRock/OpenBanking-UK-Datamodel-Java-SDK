@@ -20,63 +20,40 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
 /**
- * OBActiveOrHistoricCurrencyAndAmount
+ * OBWriteFile2
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-28T11:15:38.268Z")
 
-public class OBActiveOrHistoricCurrencyAndAmount   {
-  @JsonProperty("Amount")
-  private String amount = null;
+public class OBWriteFile2   {
+  @JsonProperty("Data")
+  private OBWriteDataFile2 data = null;
 
-  @JsonProperty("Currency")
-  private String currency = null;
-
-  public OBActiveOrHistoricCurrencyAndAmount amount(String amount) {
-    this.amount = amount;
+  public OBWriteFile2 data(OBWriteDataFile2 data) {
+    this.data = data;
     return this;
   }
 
   /**
-   * Get amount
-   * @return amount
+   * Get data
+   * @return data
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
+  @Valid
 
-  public String getAmount() {
-    return amount;
+  public OBWriteDataFile2 getData() {
+    return data;
   }
 
-  public void setAmount(String amount) {
-    this.amount = amount;
-  }
-
-  public OBActiveOrHistoricCurrencyAndAmount currency(String currency) {
-    this.currency = currency;
-    return this;
-  }
-
-  /**
-   * Get currency
-   * @return currency
-  **/
-  @ApiModelProperty(required = true, value = "")
-  @NotNull
-
-@Pattern(regexp="^[A-Z]{3,3}$") 
-  public String getCurrency() {
-    return currency;
-  }
-
-  public void setCurrency(String currency) {
-    this.currency = currency;
+  public void setData(OBWriteDataFile2 data) {
+    this.data = data;
   }
 
 
@@ -88,23 +65,21 @@ public class OBActiveOrHistoricCurrencyAndAmount   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBActiveOrHistoricCurrencyAndAmount obActiveOrHistoricCurrencyAndAmount = (OBActiveOrHistoricCurrencyAndAmount) o;
-    return Objects.equals(this.amount, obActiveOrHistoricCurrencyAndAmount.amount) &&
-        Objects.equals(this.currency, obActiveOrHistoricCurrencyAndAmount.currency);
+    OBWriteFile2 obWriteFile2 = (OBWriteFile2) o;
+    return Objects.equals(this.data, obWriteFile2.data);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, currency);
+    return Objects.hash(data);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBActiveOrHistoricCurrencyAndAmount {\n");
+    sb.append("class OBWriteFile2 {\n");
 
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
     return sb.toString();
   }

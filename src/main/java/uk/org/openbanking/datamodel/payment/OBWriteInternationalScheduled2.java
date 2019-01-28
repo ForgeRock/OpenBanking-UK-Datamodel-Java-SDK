@@ -20,63 +20,65 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import java.util.Objects;
 
 /**
- * OBActiveOrHistoricCurrencyAndAmount
+ * OBWriteInternationalScheduled2
  */
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-28T11:15:38.268Z")
 
-public class OBActiveOrHistoricCurrencyAndAmount   {
-  @JsonProperty("Amount")
-  private String amount = null;
+public class OBWriteInternationalScheduled2   {
+  @JsonProperty("Data")
+  private OBWriteDataInternationalScheduled2 data = null;
 
-  @JsonProperty("Currency")
-  private String currency = null;
+  @JsonProperty("Risk")
+  private OBRisk1 risk = null;
 
-  public OBActiveOrHistoricCurrencyAndAmount amount(String amount) {
-    this.amount = amount;
+  public OBWriteInternationalScheduled2 data(OBWriteDataInternationalScheduled2 data) {
+    this.data = data;
     return this;
   }
 
   /**
-   * Get amount
-   * @return amount
+   * Get data
+   * @return data
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
+  @Valid
 
-  public String getAmount() {
-    return amount;
+  public OBWriteDataInternationalScheduled2 getData() {
+    return data;
   }
 
-  public void setAmount(String amount) {
-    this.amount = amount;
+  public void setData(OBWriteDataInternationalScheduled2 data) {
+    this.data = data;
   }
 
-  public OBActiveOrHistoricCurrencyAndAmount currency(String currency) {
-    this.currency = currency;
+  public OBWriteInternationalScheduled2 risk(OBRisk1 risk) {
+    this.risk = risk;
     return this;
   }
 
   /**
-   * Get currency
-   * @return currency
+   * Get risk
+   * @return risk
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
 
-@Pattern(regexp="^[A-Z]{3,3}$") 
-  public String getCurrency() {
-    return currency;
+  @Valid
+
+  public OBRisk1 getRisk() {
+    return risk;
   }
 
-  public void setCurrency(String currency) {
-    this.currency = currency;
+  public void setRisk(OBRisk1 risk) {
+    this.risk = risk;
   }
 
 
@@ -88,23 +90,23 @@ public class OBActiveOrHistoricCurrencyAndAmount   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OBActiveOrHistoricCurrencyAndAmount obActiveOrHistoricCurrencyAndAmount = (OBActiveOrHistoricCurrencyAndAmount) o;
-    return Objects.equals(this.amount, obActiveOrHistoricCurrencyAndAmount.amount) &&
-        Objects.equals(this.currency, obActiveOrHistoricCurrencyAndAmount.currency);
+    OBWriteInternationalScheduled2 obWriteInternationalScheduled2 = (OBWriteInternationalScheduled2) o;
+    return Objects.equals(this.data, obWriteInternationalScheduled2.data) &&
+        Objects.equals(this.risk, obWriteInternationalScheduled2.risk);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, currency);
+    return Objects.hash(data, risk);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OBActiveOrHistoricCurrencyAndAmount {\n");
+    sb.append("class OBWriteInternationalScheduled2 {\n");
 
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    risk: ").append(toIndentedString(risk)).append("\n");
     sb.append("}");
     return sb.toString();
   }

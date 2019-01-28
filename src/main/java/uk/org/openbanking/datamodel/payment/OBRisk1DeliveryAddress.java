@@ -54,7 +54,8 @@ public class OBRisk1DeliveryAddress   {
   private String townName = null;
 
   @JsonProperty("CountrySubDivision")
-  private String countrySubDivision = null;
+  @Valid
+  private List<String> countrySubDivision = null;
 
   @JsonProperty("Country")
   private String country = null;
@@ -168,8 +169,16 @@ public class OBRisk1DeliveryAddress   {
     this.townName = townName;
   }
 
-  public OBRisk1DeliveryAddress countrySubDivision(String countrySubDivision) {
+  public OBRisk1DeliveryAddress countrySubDivision(List<String> countrySubDivision) {
     this.countrySubDivision = countrySubDivision;
+    return this;
+  }
+
+  public OBRisk1DeliveryAddress addCountrySubDivisionItem(String countrySubDivisionItem) {
+    if (this.countrySubDivision == null) {
+      this.countrySubDivision = new ArrayList<String>();
+    }
+    this.countrySubDivision.add(countrySubDivisionItem);
     return this;
   }
 
@@ -179,12 +188,12 @@ public class OBRisk1DeliveryAddress   {
   **/
   @ApiModelProperty(value = "Identifies a subdivision of a country, for instance state, region, county.")
 
-@Size(min=1,max=35) 
-  public String getCountrySubDivision() {
+@Size(min=0,max=2) 
+  public List<String> getCountrySubDivision() {
     return countrySubDivision;
   }
 
-  public void setCountrySubDivision(String countrySubDivision) {
+  public void setCountrySubDivision(List<String> countrySubDivision) {
     this.countrySubDivision = countrySubDivision;
   }
 

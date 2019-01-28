@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Specifies the Open Banking service request types. 
+ * Specifies the Open Banking service request types.
  */
 public enum OBExternalPermissions2Code {
   

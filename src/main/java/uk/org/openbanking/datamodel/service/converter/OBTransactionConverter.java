@@ -251,4 +251,172 @@ public class OBTransactionConverter {
         }
         return OBTransaction3;
     }
+
+    /**
+     * Convert a transaction from V3 to V4
+     * @param obTransaction3 transaction in V3 format
+     * @return transaction in V4 format
+     */
+    public static OBTransaction4 toTransaction4(OBTransaction3 obTransaction3) {
+
+        return new OBTransaction4()
+                .accountId(obTransaction3.getAccountId())
+                .amount(obTransaction3.getAmount())
+                .creditDebitIndicator(obTransaction3.getCreditDebitIndicator())
+                .status(obTransaction3.getStatus())
+                .bookingDateTime(obTransaction3.getBookingDateTime())
+                .bankTransactionCode(obTransaction3.getBankTransactionCode())
+                .proprietaryBankTransactionCode(obTransaction3.getProprietaryBankTransactionCode())
+                .transactionId(obTransaction3.getTransactionId())
+                .transactionInformation(obTransaction3.getTransactionInformation())
+                .transactionReference(obTransaction3.getTransactionReference())
+                .addressLine(obTransaction3.getAddressLine())
+                .amount(obTransaction3.getAmount())
+                .balance(obTransaction3.getBalance())
+                .bookingDateTime(obTransaction3.getBookingDateTime())
+                .cardInstrument(obTransaction3.getCardInstrument())
+                .chargeAmount(obTransaction3.getChargeAmount())
+                .creditDebitIndicator(obTransaction3.getCreditDebitIndicator())
+                .creditorAccount(obTransaction3.getCreditorAccount())
+                .creditorAgent(obTransaction3.getCreditorAgent())
+                .currencyExchange(obTransaction3.getCurrencyExchange())
+                .debtorAccount(obTransaction3.getDebtorAccount())
+                .debtorAgent(obTransaction3.getDebtorAgent())
+                .merchantDetails(obTransaction3.getMerchantDetails())
+                .statementReference(obTransaction3.getStatementReference())
+                .status(obTransaction3.getStatus())
+                .valueDateTime(obTransaction3.getValueDateTime());
+    }
+
+    /**
+     * Convert a transaction from V4 to V3
+     * @param obTransaction4 transaction in V4 format
+     * @return transaction in V3 format
+     */
+    public static OBTransaction3 toTransaction3(OBTransaction4 obTransaction4) {
+
+        return new OBTransaction3()
+                .accountId(obTransaction4.getAccountId())
+                .amount(obTransaction4.getAmount())
+                .creditDebitIndicator(obTransaction4.getCreditDebitIndicator())
+                .status(obTransaction4.getStatus())
+                .bookingDateTime(obTransaction4.getBookingDateTime())
+                .bankTransactionCode(obTransaction4.getBankTransactionCode())
+                .proprietaryBankTransactionCode(obTransaction4.getProprietaryBankTransactionCode())
+                .transactionId(obTransaction4.getTransactionId())
+                .transactionInformation(obTransaction4.getTransactionInformation())
+                .transactionReference(obTransaction4.getTransactionReference())
+                .addressLine(obTransaction4.getAddressLine())
+                .amount(obTransaction4.getAmount())
+                .balance(obTransaction4.getBalance())
+                .bookingDateTime(obTransaction4.getBookingDateTime())
+                .cardInstrument(obTransaction4.getCardInstrument())
+                .chargeAmount(obTransaction4.getChargeAmount())
+                .creditDebitIndicator(obTransaction4.getCreditDebitIndicator())
+                .creditorAccount(obTransaction4.getCreditorAccount())
+                .creditorAgent(obTransaction4.getCreditorAgent())
+                .currencyExchange(obTransaction4.getCurrencyExchange())
+                .debtorAccount(obTransaction4.getDebtorAccount())
+                .debtorAgent(obTransaction4.getDebtorAgent())
+                .merchantDetails(obTransaction4.getMerchantDetails())
+                .statementReference(obTransaction4.getStatementReference())
+                .status(obTransaction4.getStatus())
+                .valueDateTime(obTransaction4.getValueDateTime());
+    }
+    /**
+     * Convert a transaction from V4 to V2
+     * @param obTransaction4 transaction in V4 format
+     * @return transaction in V2 format
+     */
+    public static OBTransaction2 toTransaction2(OBTransaction4 obTransaction4) {
+
+        OBTransaction2 transaction2 = new OBTransaction2()
+                .accountId(obTransaction4.getAccountId())
+                .amount(obTransaction4.getAmount())
+                .creditDebitIndicator(obTransaction4.getCreditDebitIndicator())
+                .status(obTransaction4.getStatus())
+                .bookingDateTime(obTransaction4.getBookingDateTime());
+
+        if (obTransaction4.getTransactionId() != null) {
+            transaction2.transactionId(obTransaction4.getTransactionId());
+        }
+        if (obTransaction4.getTransactionReference() != null) {
+            transaction2.transactionReference(obTransaction4.getTransactionReference());
+        }
+        if (obTransaction4.getValueDateTime() != null) {
+            transaction2.valueDateTime(obTransaction4.getValueDateTime());
+        }
+        if (obTransaction4.getTransactionInformation() != null) {
+            transaction2.transactionInformation(obTransaction4.getTransactionInformation());
+        }
+        if (obTransaction4.getAddressLine() != null) {
+            transaction2.addressLine(obTransaction4.getAddressLine());
+        }
+        if (obTransaction4.getBankTransactionCode() != null) {
+            transaction2.bankTransactionCode(obTransaction4.getBankTransactionCode());
+        }
+        if (obTransaction4.getProprietaryBankTransactionCode() != null) {
+            transaction2.proprietaryBankTransactionCode(
+                    new ProprietaryBankTransactionCodeStructure1()
+                            .code(obTransaction4.getProprietaryBankTransactionCode().getCode())
+                            .issuer(obTransaction4.getProprietaryBankTransactionCode().getIssuer())
+            );
+        }
+        if (obTransaction4.getBalance() != null) {
+            transaction2.balance(obTransaction4.getBalance());
+        }
+        if (obTransaction4.getMerchantDetails() != null) {
+            transaction2.merchantDetails(obTransaction4.getMerchantDetails());
+        }
+        return transaction2;
+    }
+
+    /**
+     * Convert a transaction from V4 to V1
+     * @param obTransaction4 transaction in V4 format
+     * @return transaction in V1 format
+     */
+    public static OBTransaction1 toTransaction1(OBTransaction4 obTransaction4) {
+
+        OBTransaction1 transaction1 = new OBTransaction1()
+                .accountId(obTransaction4.getAccountId())
+                .amount(obTransaction4.getAmount())
+                .creditDebitIndicator(obTransaction4.getCreditDebitIndicator())
+                .status(obTransaction4.getStatus())
+                .bookingDateTime(obTransaction4.getBookingDateTime());
+
+        if (obTransaction4.getTransactionId() != null) {
+            transaction1.transactionId(obTransaction4.getTransactionId());
+        }
+        if (obTransaction4.getTransactionReference() != null) {
+            transaction1.transactionReference(obTransaction4.getTransactionReference());
+        }
+        if (obTransaction4.getValueDateTime() != null) {
+            transaction1.valueDateTime(obTransaction4.getValueDateTime());
+        }
+        if (obTransaction4.getTransactionInformation() != null) {
+            transaction1.transactionInformation(obTransaction4.getTransactionInformation());
+        }
+        if (obTransaction4.getAddressLine() != null) {
+            transaction1.addressLine(obTransaction4.getAddressLine());
+        }
+        if (obTransaction4.getBankTransactionCode() != null) {
+            transaction1.bankTransactionCode(obTransaction4.getBankTransactionCode());
+        }
+        if (obTransaction4.getProprietaryBankTransactionCode() != null) {
+            transaction1.proprietaryBankTransactionCode(
+                    new ProprietaryBankTransactionCodeStructure1()
+                            .code(obTransaction4.getProprietaryBankTransactionCode().getCode())
+                            .issuer(obTransaction4.getProprietaryBankTransactionCode().getIssuer())
+            );
+        }
+        if (obTransaction4.getBalance() != null) {
+            transaction1.balance(obTransaction4.getBalance());
+        }
+        if (obTransaction4.getMerchantDetails() != null) {
+            transaction1.merchantDetails(obTransaction4.getMerchantDetails());
+        }
+        return transaction1;
+    }
+
 }

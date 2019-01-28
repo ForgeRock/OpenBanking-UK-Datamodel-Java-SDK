@@ -150,7 +150,7 @@ public class OBProduct2   {
    * @return productType
   **/
   @ApiModelProperty(value = "")
-
+  @NotNull
   @Valid
 
   public OBExternalProductType2Code getProductType() {
