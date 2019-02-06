@@ -29,6 +29,7 @@ import io.swagger.annotations.ApiModel;
         @JsonSubTypes.Type(value = OBDiscoveryAPILinksAccount3.class, name = "OBDiscoveryAPILinksAccount3"),
         @JsonSubTypes.Type(value = OBDiscoveryAPILinksPayment1.class, name = "OBDiscoveryAPILinksPayment1"),
         @JsonSubTypes.Type(value = OBDiscoveryAPILinksPayment3.class, name = "OBDiscoveryAPILinksPayment3"),
+        @JsonSubTypes.Type(value = OBDiscoveryAPILinksPayment3.class, name = "OBDiscoveryAPILinksPayment4"),
         @JsonSubTypes.Type(value = OBDiscoveryAPILinksFundsConfirmation3.class, name = "OBDiscoveryAPILinksFundsConfirmation3"),
         @JsonSubTypes.Type(value = OBDiscoveryAPILinksEventNotification3.class, name = "OBDiscoveryAPILinksEventNotification3"),
 })
