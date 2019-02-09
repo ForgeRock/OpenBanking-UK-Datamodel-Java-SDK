@@ -30,6 +30,9 @@ import java.util.Optional;
 @ApiModel(description = "Provides the endpoints details for payments and accounts API")
 public class OBDiscovery {
 
+    @JsonProperty("FinancialId")
+    private String financialId;
+
     @JsonProperty("PaymentInitiationAPI")
     private List<OBDiscoveryAPI<OBDiscoveryAPILinks>> paymentInitiationAPIs;
 
@@ -41,6 +44,14 @@ public class OBDiscovery {
 
     @JsonProperty("EventNotificationAPI")
     private List<OBDiscoveryAPI<OBDiscoveryAPILinks>> eventNotificationAPIs;
+
+    public String getFinancialId() {
+        return financialId;
+    }
+
+    public void setFinancialId(String financialId) {
+        this.financialId = financialId;
+    }
 
     public OBDiscovery paymentInitiationAPI(List<OBDiscoveryAPI<OBDiscoveryAPILinks>> paymentInitiationAPIs) {
         this.paymentInitiationAPIs = paymentInitiationAPIs;
@@ -156,13 +167,14 @@ public class OBDiscovery {
 
     @Override
     public int hashCode() {
-        return Objects.hash(paymentInitiationAPIs, accountAndTransactionAPIs, fundsConfirmationAPIs);
+        return Objects.hash(financialId, paymentInitiationAPIs, accountAndTransactionAPIs, fundsConfirmationAPIs);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class OBDiscovery {\n");
+        sb.append("    financialId: ").append(toIndentedString(financialId)).append("\n");
         sb.append("    paymentInitiationAPIs: ").append(toIndentedString(paymentInitiationAPIs)).append("\n");
         sb.append("    accountAndTransactionAPIs: ").append(toIndentedString(accountAndTransactionAPIs)).append("\n");
         sb.append("    fundsConfirmationAPIs: ").append(toIndentedString(fundsConfirmationAPIs)).append("\n");
