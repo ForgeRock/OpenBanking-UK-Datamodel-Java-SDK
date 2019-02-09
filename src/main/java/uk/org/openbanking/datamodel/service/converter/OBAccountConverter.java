@@ -109,7 +109,7 @@ public class OBAccountConverter {
     }
 
     private static OBExternalAccountIdentification2Code toOBExternalAccountIdentification2Code(String obExternalAccountIdentification3Code) {
-        return OBExternalAccountIdentification2Code.valueOf(obExternalAccountIdentification3Code.toString());
+        return OBExternalAccountIdentification2Code.valueOfReference(obExternalAccountIdentification3Code.toString());
     }
 
     private static OBExternalAccountIdentification3Code toOBExternalAccountIdentification3Code(OBExternalAccountIdentification2Code obExternalAccountIdentification2Code) {

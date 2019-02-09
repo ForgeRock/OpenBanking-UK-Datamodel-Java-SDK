@@ -34,7 +34,7 @@ public class OBCashAccountConverter {
         return new OBCashAccount1()
                 .identification(cashAccount3.getIdentification())
                 .name(cashAccount3.getName())
-                .schemeName(OBExternalAccountIdentification2Code.valueOf(cashAccount3.getSchemeName()))
+                .schemeName(OBExternalAccountIdentification2Code.valueOfReference(cashAccount3.getSchemeName()))
                 .secondaryIdentification(cashAccount3.getSecondaryIdentification());
     }
 

@@ -87,7 +87,7 @@ public class OBBeneficiaryConverter {
         return new OBCashAccount1()
                 .identification(creditorAccount.getIdentification())
                 .name(creditorAccount.getName())
-                .schemeName(OBExternalAccountIdentification2Code.valueOf(creditorAccount.getSchemeName()))
+                .schemeName(OBExternalAccountIdentification2Code.valueOfReference(creditorAccount.getSchemeName()))
                 .secondaryIdentification(creditorAccount.getSecondaryIdentification());
     }
 
