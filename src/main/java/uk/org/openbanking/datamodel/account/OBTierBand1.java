@@ -59,7 +59,7 @@ public class OBTierBand1 {
   private OBInterestFixedVariableType1Code fixedVariableInterestRateType = null;
 
   @JsonProperty("AER")
-  private String AER = null;
+  private String aer = null;
 
   @JsonProperty("BankInterestRateType")
   private OBInterestRateType1Code bankInterestRateType = null;
@@ -223,8 +223,8 @@ public class OBTierBand1 {
     this.fixedVariableInterestRateType = fixedVariableInterestRateType;
   }
 
-  public OBTierBand1 AER(String AER) {
-    this.AER = AER;
+  public OBTierBand1 aer(String aer) {
+    this.aer = aer;
     return this;
   }
 
@@ -236,12 +236,12 @@ public class OBTierBand1 {
   @NotNull
 
 @Pattern(regexp="^(-?\\d{1,3}){1}(\\.\\d{1,4}){0,1}$") 
-  public String getAER() {
-    return AER;
+  public String getAer() {
+    return aer;
   }
 
-  public void setAER(String AER) {
-    this.AER = AER;
+  public void setAer(String aer) {
+    this.aer = aer;
   }
 
   public OBTierBand1 bankInterestRateType(OBInterestRateType1Code bankInterestRateType) {
@@ -392,7 +392,7 @@ public class OBTierBand1 {
         Objects.equals(this.applicationFrequency, creditInterest1TierBand.applicationFrequency) &&
         Objects.equals(this.depositInterestAppliedCoverage, creditInterest1TierBand.depositInterestAppliedCoverage) &&
         Objects.equals(this.fixedVariableInterestRateType, creditInterest1TierBand.fixedVariableInterestRateType) &&
-        Objects.equals(this.AER, creditInterest1TierBand.AER) &&
+        Objects.equals(this.aer, creditInterest1TierBand.aer) &&
         Objects.equals(this.bankInterestRateType, creditInterest1TierBand.bankInterestRateType) &&
         Objects.equals(this.bankInterestRate, creditInterest1TierBand.bankInterestRate) &&
         Objects.equals(this.notes, creditInterest1TierBand.notes) &&
@@ -403,7 +403,7 @@ public class OBTierBand1 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(identification, tierValueMinimum, tierValueMaximum, calculationFrequency, applicationFrequency, depositInterestAppliedCoverage, fixedVariableInterestRateType, AER, bankInterestRateType, bankInterestRate, notes, otherBankInterestType, otherApplicationFrequency, otherCalculationFrequency);
+    return Objects.hash(identification, tierValueMinimum, tierValueMaximum, calculationFrequency, applicationFrequency, depositInterestAppliedCoverage, fixedVariableInterestRateType, aer, bankInterestRateType, bankInterestRate, notes, otherBankInterestType, otherApplicationFrequency, otherCalculationFrequency);
   }
 
   @Override
@@ -418,7 +418,7 @@ public class OBTierBand1 {
     sb.append("    applicationFrequency: ").append(toIndentedString(applicationFrequency)).append("\n");
     sb.append("    depositInterestAppliedCoverage: ").append(toIndentedString(depositInterestAppliedCoverage)).append("\n");
     sb.append("    fixedVariableInterestRateType: ").append(toIndentedString(fixedVariableInterestRateType)).append("\n");
-    sb.append("    AER: ").append(toIndentedString(AER)).append("\n");
+    sb.append("    AER: ").append(toIndentedString(aer)).append("\n");
     sb.append("    bankInterestRateType: ").append(toIndentedString(bankInterestRateType)).append("\n");
     sb.append("    bankInterestRate: ").append(toIndentedString(bankInterestRate)).append("\n");
     sb.append("    notes: ").append(toIndentedString(notes)).append("\n");

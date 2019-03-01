@@ -54,10 +54,10 @@ public class OBProduct2   {
   private OBOtherProductType1 otherProductType = null;
 
   @JsonProperty("BCA")
-  private OBBCAData1 BCA = null;
+  private OBBCAData1 bca = null;
 
   @JsonProperty("PCA")
-  private OBPCAData1 PCA = null;
+  private OBPCAData1 pca = null;
 
   public OBProduct2 productName(String productName) {
     this.productName = productName;
@@ -202,8 +202,8 @@ public class OBProduct2   {
     this.otherProductType = otherProductType;
   }
 
-  public OBProduct2 BCA(OBBCAData1 BCA) {
-    this.BCA = BCA;
+  public OBProduct2 bca(OBBCAData1 bca) {
+    this.bca = bca;
     return this;
   }
 
@@ -215,16 +215,16 @@ public class OBProduct2   {
 
   @Valid
 
-  public OBBCAData1 getBCA() {
-    return BCA;
+  public OBBCAData1 getBca() {
+    return bca;
   }
 
-  public void setBCA(OBBCAData1 BCA) {
-    this.BCA = BCA;
+  public void setBca(OBBCAData1 bca) {
+    this.bca = bca;
   }
 
-  public OBProduct2 PCA(OBPCAData1 PCA) {
-    this.PCA = PCA;
+  public OBProduct2 pca(OBPCAData1 pca) {
+    this.pca = pca;
     return this;
   }
 
@@ -236,12 +236,12 @@ public class OBProduct2   {
 
   @Valid
 
-  public OBPCAData1 getPCA() {
-    return PCA;
+  public OBPCAData1 getPca() {
+    return pca;
   }
 
-  public void setPCA(OBPCAData1 PCA) {
-    this.PCA = PCA;
+  public void setPca(OBPCAData1 pca) {
+    this.pca = pca;
   }
 
 
@@ -261,13 +261,13 @@ public class OBProduct2   {
         Objects.equals(this.productType, obProduct2.productType) &&
         Objects.equals(this.marketingStateId, obProduct2.marketingStateId) &&
         Objects.equals(this.otherProductType, obProduct2.otherProductType) &&
-        Objects.equals(this.BCA, obProduct2.BCA) &&
-        Objects.equals(this.PCA, obProduct2.PCA);
+        Objects.equals(this.bca, obProduct2.bca) &&
+        Objects.equals(this.pca, obProduct2.pca);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(productName, productId, accountId, secondaryProductId, productType, marketingStateId, otherProductType, BCA, PCA);
+    return Objects.hash(productName, productId, accountId, secondaryProductId, productType, marketingStateId, otherProductType, bca, pca);
   }
 
   @Override
@@ -282,8 +282,8 @@ public class OBProduct2   {
     sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
     sb.append("    marketingStateId: ").append(toIndentedString(marketingStateId)).append("\n");
     sb.append("    otherProductType: ").append(toIndentedString(otherProductType)).append("\n");
-    sb.append("    BCA: ").append(toIndentedString(BCA)).append("\n");
-    sb.append("    PCA: ").append(toIndentedString(PCA)).append("\n");
+    sb.append("    BCA: ").append(toIndentedString(bca)).append("\n");
+    sb.append("    PCA: ").append(toIndentedString(pca)).append("\n");
     sb.append("}");
     return sb.toString();
   }
