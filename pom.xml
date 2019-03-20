@@ -23,7 +23,7 @@
     <groupId>com.forgerock.openbanking</groupId>
     <artifactId>openbanking-sdk</artifactId>
     <packaging>jar</packaging>
-    <version>3.0.0.20-SNAPSHOT</version>
+    <version>3.0.0.20</version>
     <name>openbanking-sdk</name>
     <description>
         A Java SDK to help implementing the Open Banking standard : https://www.openbanking.org.uk/read-write-apis/
@@ -172,7 +172,7 @@
         <connection>scm:git:https://github.com/ForgeRock/OpenBanking-Java-SDK.git</connection>
         <developerConnection>scm:git:https://github.com/ForgeRock/OpenBanking-Java-SDK.git</developerConnection>
         <url>https://github.com/ForgeRock/OpenBanking-Java-SDK</url>
-        <tag>HEAD</tag>
+        <tag>openbanking-sdk-3.0.0.20</tag>
     </scm>
 
     <distributionManagement>
