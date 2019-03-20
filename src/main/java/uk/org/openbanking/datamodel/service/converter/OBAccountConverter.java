@@ -18,7 +18,7 @@ package uk.org.openbanking.datamodel.service.converter;
 import uk.org.openbanking.datamodel.account.*;
 import uk.org.openbanking.datamodel.payment.OBExternalAccountIdentification2Code;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Convert OB account data-model in different version
@@ -96,7 +96,7 @@ public class OBAccountConverter {
         if (account1.getAccount().getSecondaryIdentification() != null) {
             account2Account.secondaryIdentification(account1.getAccount().getSecondaryIdentification());
         }
-        account2.account(Arrays.asList(account2Account));
+        account2.account(Collections.singletonList(account2Account));
 
         //servicer
         if (account2.getServicer() != null) {
@@ -109,18 +109,9 @@ public class OBAccountConverter {
     }
 
     private static OBExternalAccountIdentification2Code toOBExternalAccountIdentification2Code(String obExternalAccountIdentification3Code) {
-        return OBExternalAccountIdentification2Code.valueOfReference(obExternalAccountIdentification3Code.toString());
+        return OBExternalAccountIdentification2Code.valueOfReference(obExternalAccountIdentification3Code);
     }
 
-    private static OBExternalAccountIdentification3Code toOBExternalAccountIdentification3Code(OBExternalAccountIdentification2Code obExternalAccountIdentification2Code) {
-        switch (obExternalAccountIdentification2Code) {
-            case IBAN:
-                return OBExternalAccountIdentification3Code.IBAN;
-            case SortCodeAccountNumber:
-                return OBExternalAccountIdentification3Code.SORTCODEACCOUNTNUMBER;
-            default:
-                return OBExternalAccountIdentification3Code.IBAN;
-        }
-    }
+
 
 }
