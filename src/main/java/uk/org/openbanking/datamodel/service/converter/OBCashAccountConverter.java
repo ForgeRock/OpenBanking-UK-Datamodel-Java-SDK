@@ -16,10 +16,7 @@
  */
 package uk.org.openbanking.datamodel.service.converter;
 
-import uk.org.openbanking.datamodel.account.OBCashAccount1;
-import uk.org.openbanking.datamodel.account.OBCashAccount2;
-import uk.org.openbanking.datamodel.account.OBCashAccount3;
-import uk.org.openbanking.datamodel.account.OBExternalAccountIdentification3Code;
+import uk.org.openbanking.datamodel.account.*;
 import uk.org.openbanking.datamodel.payment.OBExternalAccountIdentification2Code;
 
 
@@ -47,8 +44,30 @@ public class OBCashAccountConverter {
         return new OBCashAccount2()
                 .identification(cashAccount3.getIdentification())
                 .name(cashAccount3.getName())
-                .schemeName(OBExternalAccountIdentification3Code.valueOf(cashAccount3.getSchemeName()))
+                .schemeName(schemeNameToOBExternalAccountIdentification3Code(cashAccount3.getSchemeName()))
                 .secondaryIdentification(cashAccount3.getSecondaryIdentification());
+    }
+
+    private static OBExternalAccountIdentification3Code schemeNameToOBExternalAccountIdentification3Code(String schemeName) {
+        // Try OBExternalAccountIdentification4Code
+        OBExternalAccountIdentification4Code accountId4Code = OBExternalAccountIdentification4Code.fromValue(schemeName);
+        if (accountId4Code!=null) {
+            return OBExternalAccountIdentificationConverter.toOBExternalAccountIdentification3(accountId4Code);
+        }
+
+        // Try OBExternalAccountIdentification3Code
+        OBExternalAccountIdentification3Code accountId3Code = OBExternalAccountIdentification3Code.fromValue(schemeName);
+        if (accountId3Code!=null) {
+            return accountId3Code;
+        }
+
+        // Try OBExternalAccountIdentification2Code
+        OBExternalAccountIdentification2Code accountId2Code = OBExternalAccountIdentification2Code.valueOfReference(schemeName);
+        if (accountId2Code!=null) {
+            return OBExternalAccountIdentificationConverter.toOBExternalAccountIdentification3(accountId2Code);
+        }
+
+        return null;
     }
 
     /**
@@ -57,10 +76,11 @@ public class OBCashAccountConverter {
      * @return cash account in V3 format
      */
     public static OBCashAccount3 toOBCashAccount3(OBCashAccount1 cashAccount1) {
+        OBExternalAccountIdentification4Code code = OBExternalAccountIdentification4Code.fromValue(cashAccount1.getSchemeName().toString());
         return new OBCashAccount3()
                 .identification(cashAccount1.getIdentification())
                 .name(cashAccount1.getName())
-                .schemeName(cashAccount1.getSchemeName().toString())
+                .schemeName((code==null) ? cashAccount1.getSchemeName().toString() : code.toString())
                 .secondaryIdentification(cashAccount1.getSecondaryIdentification());
     }
 }
