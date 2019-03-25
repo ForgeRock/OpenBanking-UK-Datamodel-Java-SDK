@@ -109,7 +109,7 @@ public class OBInitiation1 {
    * @return instructedAmount
   **/
   @ApiModelProperty(value = "")
-
+  @NotNull
   @Valid
 
   public OBActiveOrHistoricCurrencyAndAmount getInstructedAmount() {
