@@ -16,8 +16,12 @@
  */
 package uk.org.openbanking.datamodel.payment;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModel;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.jackson.payment.OBSupplementaryData1Deserializer;
+import uk.org.openbanking.jackson.payment.OBSupplementaryData1Serializer;
 
 import java.util.Objects;
 
@@ -28,7 +32,19 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-01-28T11:15:38.268Z")
 
+@JsonDeserialize(using = OBSupplementaryData1Deserializer.class)
+@JsonSerialize(using = OBSupplementaryData1Serializer.class)
 public class OBSupplementaryData1   {
+
+  private String data;
+
+  public String getData() {
+    return data;
+  }
+
+  public void setData(String data) {
+    this.data = data;
+  }
 
   @Override
   public boolean equals(Object o) {
@@ -50,7 +66,7 @@ public class OBSupplementaryData1   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBSupplementaryData1 {\n");
-
+    sb.append(data);
     sb.append("}");
     return sb.toString();
   }

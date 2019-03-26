@@ -16,8 +16,12 @@
  */
 package uk.org.openbanking.datamodel.account;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModel;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.jackson.account.OBRisk2Deserializer;
+import uk.org.openbanking.jackson.account.OBRisk2Serializer;
 
 import java.util.Objects;
 
@@ -28,7 +32,19 @@ import java.util.Objects;
 @Validated
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-10-01T11:26:57.876+01:00")
 
+@JsonDeserialize(using = OBRisk2Deserializer.class)
+@JsonSerialize(using = OBRisk2Serializer.class)
 public class OBRisk2   {
+
+  private String data;
+
+  public String getData() {
+    return data;
+  }
+
+  public void setData(String data) {
+    this.data = data;
+  }
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -50,7 +66,7 @@ public class OBRisk2   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBRisk2 {\n");
-    
+    sb.append(data);
     sb.append("}");
     return sb.toString();
   }
