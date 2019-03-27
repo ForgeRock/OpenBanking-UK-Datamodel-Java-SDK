@@ -36,7 +36,7 @@ import java.util.Objects;
 @JsonSerialize(using = OBSupplementaryData1Serializer.class)
 public class OBSupplementaryData1   {
 
-  private String data;
+  private String data = "{}";
 
   public String getData() {
     return data;
