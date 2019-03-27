@@ -36,7 +36,7 @@ import java.util.Objects;
 @JsonSerialize(using = OBRisk2Serializer.class)
 public class OBRisk2   {
 
-  private String data;
+  private String data = "{}";
 
   public String getData() {
     return data;
