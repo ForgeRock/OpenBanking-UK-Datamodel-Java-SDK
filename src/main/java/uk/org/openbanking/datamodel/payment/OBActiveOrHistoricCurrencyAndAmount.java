@@ -48,8 +48,7 @@ public class OBActiveOrHistoricCurrencyAndAmount   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
-
+  @Pattern(regexp="^\\d{1,13}\\.\\d{1,5}$")
   public String getAmount() {
     return amount;
   }
@@ -69,8 +68,7 @@ public class OBActiveOrHistoricCurrencyAndAmount   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
-@Pattern(regexp="^[A-Z]{3,3}$") 
+  @Pattern(regexp="^[A-Z]{3,3}$")
   public String getCurrency() {
     return currency;
   }
