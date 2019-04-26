@@ -19,6 +19,7 @@ package uk.org.openbanking.datamodel.payment;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
+import uk.org.openbanking.validation.ValidISOCurrencyCode;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -48,8 +49,7 @@ public class OBActiveOrHistoricCurrencyAndAmount   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
-
+  @Pattern(regexp="^\\d{1,13}\\.\\d{1,5}$")
   public String getAmount() {
     return amount;
   }
@@ -69,8 +69,8 @@ public class OBActiveOrHistoricCurrencyAndAmount   {
   **/
   @ApiModelProperty(required = true, value = "")
   @NotNull
-
-@Pattern(regexp="^[A-Z]{3,3}$") 
+  @ValidISOCurrencyCode
+  @Pattern(regexp="^[A-Z]{3,3}$")
   public String getCurrency() {
     return currency;
   }
