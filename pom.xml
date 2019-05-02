@@ -176,9 +176,13 @@
     </scm>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>bintray-repo</id>
-            <url>https://api.bintray.com/maven/forgerock/ORBI/openbanking-sdk/;publish=1</url>
+            <id>sonatype-repo</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 
