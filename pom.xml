@@ -164,33 +164,33 @@
         </plugins>
     </build>
 
-    <!--<profiles>-->
-        <!--<profile>-->
-            <!--<id>travis</id>-->
-            <!--<build>-->
-                <!--<plugins>-->
-                    <!--<plugin>-->
-                        <!--<groupId>org.apache.maven.plugins</groupId>-->
-                        <!--<artifactId>maven-gpg-plugin</artifactId>-->
-                        <!--<version>1.6</version>-->
-                        <!--<configuration>-->
-                            <!--<passphrase>${env.GPG_PASSPHRASE}</passphrase>-->
-                            <!--<keyname>DA5A83E21839FB2F60811F8E56780DDF77F42B2C</keyname>-->
-                        <!--</configuration>-->
-                        <!--<executions>-->
-                            <!--<execution>-->
-                                <!--<id>sign-artifacts</id>-->
-                                <!--<phase>verify</phase>-->
-                                <!--<goals>-->
-                                    <!--<goal>sign</goal>-->
-                                <!--</goals>-->
-                            <!--</execution>-->
-                        <!--</executions>-->
-                    <!--</plugin>-->
-                <!--</plugins>-->
-            <!--</build>-->
-        <!--</profile>-->
-    <!--</profiles>-->
+    <profiles>
+        <profile>
+            <id>travis</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <configuration>
+                            <passphrase>${env.GPG_PASSPHRASE}</passphrase>
+                            <keyname>52FB7F8237935771ED0E7FB8575660E3F10201A1</keyname>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <scm>
         <connection>scm:git:ssh://git@github.com/ForgeRock/OpenBanking-Java-SDK.git</connection>
