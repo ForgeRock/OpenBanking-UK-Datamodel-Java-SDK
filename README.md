@@ -15,13 +15,12 @@
 -->
 [![Build Status](https://travis-ci.org/ForgeRock/OpenBanking-Java-SDK.svg?branch=master)](https://travis-ci.org/ForgeRock/OpenBanking-Java-SDK)
 # OpenBanking-Java-SDK
-A Java SDK to help implementing the Open Banking standard : https://www.openbanking.org.uk/read-write-apis/
+A Java SDK to help implementing the Open Banking standard : https://www.openbanking.org.uk/read-write-apis/  .
+This project is compiled with JDK 8.
 
 ## Release to maven central
-1. Go to https://bintray.com/forgerock/ORBI/openbanking-sdk/
-1. Choose the version
-1. Click `Maven Central` tab
-1. Click `Sync`
+This project is built and released to maven using Travis CI. When a change is merged to master branch, Travis CI will increment the version, build the project, sign the release artifacts and release it to maven central (https://oss.sonatype.org).
+We no longer use Bintray in this project.
 
 ## Licence
 License:	CDDLv1.0 \
