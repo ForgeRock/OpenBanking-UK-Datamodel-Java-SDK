@@ -4,8 +4,10 @@
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
         <server>
+            <!-- This id must match the distributionManagement section in pom.xml -->
             <id>ossrh</id>
             <username>forgerock.deployer</username>
+            <!-- Credential stored in Travis CI -->
             <password>${env.SONATYPE_PASSWORD}</password>
         </server>
     </servers>
