@@ -1,17 +1,18 @@
 language: java
-jdk: openjdk8
+jdk: openjdk8 # Required otherwise will default to latest which may not compile
 deploy:
 - provider: script
-  script: bash release.sh
+  script: bash release.sh # Perform actual release to maven
   on:
-    branch: master
+    branch: master # Only master building will trigger a release
 cache:
   directories:
   - "$HOME/.m2"
 branches:
   only:
-  - master
+  - master # Only master will trigger a build in travis ci
 before_install:
+# Decrypt and install the GPG key for signing artifacts
 - openssl aes-256-cbc -K $encrypted_515142cb6f1b_key -iv $encrypted_515142cb6f1b_iv
   -in maven.asc.enc -out maven.asc -d
 - gpg --import --passphrase ${GPG_PASSPHRASE} --batch maven.asc
