@@ -32,7 +32,7 @@ package uk.org.openbanking.datamodel.payment;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.threeten.bp.OffsetDateTime;
+import org.joda.time.DateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -56,10 +56,10 @@ public class OBInternationalStandingOrder3 {
     private String numberOfPayments = null;
 
     @JsonProperty("FirstPaymentDateTime")
-    private OffsetDateTime firstPaymentDateTime = null;
+    private DateTime firstPaymentDateTime = null;
 
     @JsonProperty("FinalPaymentDateTime")
-    private OffsetDateTime finalPaymentDateTime = null;
+    private DateTime finalPaymentDateTime = null;
 
     @JsonProperty("Purpose")
     private String purpose = null;
@@ -150,7 +150,7 @@ public class OBInternationalStandingOrder3 {
         this.numberOfPayments = numberOfPayments;
     }
 
-    public OBInternationalStandingOrder3 firstPaymentDateTime(OffsetDateTime firstPaymentDateTime) {
+    public OBInternationalStandingOrder3 firstPaymentDateTime(DateTime firstPaymentDateTime) {
         this.firstPaymentDateTime = firstPaymentDateTime;
         return this;
     }
@@ -163,15 +163,15 @@ public class OBInternationalStandingOrder3 {
     @NotNull
     @Valid
     @ApiModelProperty(required = true, value = "The date on which the first payment for a Standing Order schedule will be made. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getFirstPaymentDateTime() {
+    public DateTime getFirstPaymentDateTime() {
         return firstPaymentDateTime;
     }
 
-    public void setFirstPaymentDateTime(OffsetDateTime firstPaymentDateTime) {
+    public void setFirstPaymentDateTime(DateTime firstPaymentDateTime) {
         this.firstPaymentDateTime = firstPaymentDateTime;
     }
 
-    public OBInternationalStandingOrder3 finalPaymentDateTime(OffsetDateTime finalPaymentDateTime) {
+    public OBInternationalStandingOrder3 finalPaymentDateTime(DateTime finalPaymentDateTime) {
         this.finalPaymentDateTime = finalPaymentDateTime;
         return this;
     }
@@ -183,11 +183,11 @@ public class OBInternationalStandingOrder3 {
      **/
     @Valid
     @ApiModelProperty(value = "The date on which the final payment for a Standing Order schedule will be made. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getFinalPaymentDateTime() {
+    public DateTime getFinalPaymentDateTime() {
         return finalPaymentDateTime;
     }
 
-    public void setFinalPaymentDateTime(OffsetDateTime finalPaymentDateTime) {
+    public void setFinalPaymentDateTime(DateTime finalPaymentDateTime) {
         this.finalPaymentDateTime = finalPaymentDateTime;
     }
 

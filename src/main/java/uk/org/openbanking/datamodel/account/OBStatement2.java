@@ -32,7 +32,7 @@ package uk.org.openbanking.datamodel.account;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.threeten.bp.OffsetDateTime;
+import org.joda.time.DateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -60,13 +60,13 @@ public class OBStatement2 {
     private OBExternalStatementType1Code type = null;
 
     @JsonProperty("StartDateTime")
-    private OffsetDateTime startDateTime = null;
+    private DateTime startDateTime = null;
 
     @JsonProperty("EndDateTime")
-    private OffsetDateTime endDateTime = null;
+    private DateTime endDateTime = null;
 
     @JsonProperty("CreationDateTime")
-    private OffsetDateTime creationDateTime = null;
+    private DateTime creationDateTime = null;
 
     @JsonProperty("StatementDescription")
     private List<String> statementDescription = null;
@@ -174,7 +174,7 @@ public class OBStatement2 {
         this.type = type;
     }
 
-    public OBStatement2 startDateTime(OffsetDateTime startDateTime) {
+    public OBStatement2 startDateTime(DateTime startDateTime) {
         this.startDateTime = startDateTime;
         return this;
     }
@@ -187,15 +187,15 @@ public class OBStatement2 {
     @NotNull
     @Valid
     @ApiModelProperty(required = true, value = "Date and time at which the statement period starts. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getStartDateTime() {
+    public DateTime getStartDateTime() {
         return startDateTime;
     }
 
-    public void setStartDateTime(OffsetDateTime startDateTime) {
+    public void setStartDateTime(DateTime startDateTime) {
         this.startDateTime = startDateTime;
     }
 
-    public OBStatement2 endDateTime(OffsetDateTime endDateTime) {
+    public OBStatement2 endDateTime(DateTime endDateTime) {
         this.endDateTime = endDateTime;
         return this;
     }
@@ -208,15 +208,15 @@ public class OBStatement2 {
     @NotNull
     @Valid
     @ApiModelProperty(required = true, value = "Date and time at which the statement period ends. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getEndDateTime() {
+    public DateTime getEndDateTime() {
         return endDateTime;
     }
 
-    public void setEndDateTime(OffsetDateTime endDateTime) {
+    public void setEndDateTime(DateTime endDateTime) {
         this.endDateTime = endDateTime;
     }
 
-    public OBStatement2 creationDateTime(OffsetDateTime creationDateTime) {
+    public OBStatement2 creationDateTime(DateTime creationDateTime) {
         this.creationDateTime = creationDateTime;
         return this;
     }
@@ -229,11 +229,11 @@ public class OBStatement2 {
     @NotNull
     @Valid
     @ApiModelProperty(required = true, value = "Date and time at which the resource was created. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getCreationDateTime() {
+    public DateTime getCreationDateTime() {
         return creationDateTime;
     }
 
-    public void setCreationDateTime(OffsetDateTime creationDateTime) {
+    public void setCreationDateTime(DateTime creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
 

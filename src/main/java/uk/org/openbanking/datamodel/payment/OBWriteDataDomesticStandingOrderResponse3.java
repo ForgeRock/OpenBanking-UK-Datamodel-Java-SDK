@@ -31,7 +31,7 @@ package uk.org.openbanking.datamodel.payment;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import org.threeten.bp.OffsetDateTime;
+import org.joda.time.DateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -52,13 +52,13 @@ public class OBWriteDataDomesticStandingOrderResponse3 {
     private String consentId = null;
 
     @JsonProperty("CreationDateTime")
-    private OffsetDateTime creationDateTime = null;
+    private DateTime creationDateTime = null;
 
     @JsonProperty("Status")
     private OBExternalStatus1Code status = null;
 
     @JsonProperty("StatusUpdateDateTime")
-    private OffsetDateTime statusUpdateDateTime = null;
+    private DateTime statusUpdateDateTime = null;
 
     @JsonProperty("Charges")
     private List<OBCharge2> charges = null;
@@ -111,7 +111,7 @@ public class OBWriteDataDomesticStandingOrderResponse3 {
         this.consentId = consentId;
     }
 
-    public OBWriteDataDomesticStandingOrderResponse3 creationDateTime(OffsetDateTime creationDateTime) {
+    public OBWriteDataDomesticStandingOrderResponse3 creationDateTime(DateTime creationDateTime) {
         this.creationDateTime = creationDateTime;
         return this;
     }
@@ -124,11 +124,11 @@ public class OBWriteDataDomesticStandingOrderResponse3 {
     @NotNull
     @Valid
     @ApiModelProperty(required = true, value = "Date and time at which the resource was created. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getCreationDateTime() {
+    public DateTime getCreationDateTime() {
         return creationDateTime;
     }
 
-    public void setCreationDateTime(OffsetDateTime creationDateTime) {
+    public void setCreationDateTime(DateTime creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
 
@@ -153,7 +153,7 @@ public class OBWriteDataDomesticStandingOrderResponse3 {
         this.status = status;
     }
 
-    public OBWriteDataDomesticStandingOrderResponse3 statusUpdateDateTime(OffsetDateTime statusUpdateDateTime) {
+    public OBWriteDataDomesticStandingOrderResponse3 statusUpdateDateTime(DateTime statusUpdateDateTime) {
         this.statusUpdateDateTime = statusUpdateDateTime;
         return this;
     }
@@ -166,11 +166,11 @@ public class OBWriteDataDomesticStandingOrderResponse3 {
     @NotNull
     @Valid
     @ApiModelProperty(required = true, value = "Date and time at which the resource status was updated. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getStatusUpdateDateTime() {
+    public DateTime getStatusUpdateDateTime() {
         return statusUpdateDateTime;
     }
 
-    public void setStatusUpdateDateTime(OffsetDateTime statusUpdateDateTime) {
+    public void setStatusUpdateDateTime(DateTime statusUpdateDateTime) {
         this.statusUpdateDateTime = statusUpdateDateTime;
     }
 

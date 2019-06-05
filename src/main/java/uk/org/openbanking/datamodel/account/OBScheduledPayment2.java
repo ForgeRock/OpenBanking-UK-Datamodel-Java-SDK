@@ -31,7 +31,7 @@ package uk.org.openbanking.datamodel.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import org.threeten.bp.OffsetDateTime;
+import org.joda.time.DateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -50,7 +50,7 @@ public class OBScheduledPayment2 {
     private String scheduledPaymentId = null;
 
     @JsonProperty("ScheduledPaymentDateTime")
-    private OffsetDateTime scheduledPaymentDateTime = null;
+    private DateTime scheduledPaymentDateTime = null;
 
     @JsonProperty("ScheduledType")
     private OBExternalScheduleType1Code scheduledType = null;
@@ -108,7 +108,7 @@ public class OBScheduledPayment2 {
         this.scheduledPaymentId = scheduledPaymentId;
     }
 
-    public OBScheduledPayment2 scheduledPaymentDateTime(OffsetDateTime scheduledPaymentDateTime) {
+    public OBScheduledPayment2 scheduledPaymentDateTime(DateTime scheduledPaymentDateTime) {
         this.scheduledPaymentDateTime = scheduledPaymentDateTime;
         return this;
     }
@@ -121,11 +121,11 @@ public class OBScheduledPayment2 {
     @NotNull
     @Valid
     @ApiModelProperty(required = true, value = "The date on which the scheduled payment will be made. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getScheduledPaymentDateTime() {
+    public DateTime getScheduledPaymentDateTime() {
         return scheduledPaymentDateTime;
     }
 
-    public void setScheduledPaymentDateTime(OffsetDateTime scheduledPaymentDateTime) {
+    public void setScheduledPaymentDateTime(DateTime scheduledPaymentDateTime) {
         this.scheduledPaymentDateTime = scheduledPaymentDateTime;
     }
 
