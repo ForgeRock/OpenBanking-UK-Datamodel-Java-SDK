@@ -31,7 +31,7 @@ package uk.org.openbanking.datamodel.payment;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import org.threeten.bp.OffsetDateTime;
+import org.joda.time.DateTime;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -49,19 +49,19 @@ public class OBWriteDataDomesticStandingOrderConsentResponse3 {
     private String consentId = null;
 
     @JsonProperty("CreationDateTime")
-    private OffsetDateTime creationDateTime = null;
+    private DateTime creationDateTime = null;
 
     @JsonProperty("Status")
     private OBExternalConsentStatus1Code status = null;
 
     @JsonProperty("StatusUpdateDateTime")
-    private OffsetDateTime statusUpdateDateTime = null;
+    private DateTime statusUpdateDateTime = null;
 
     @JsonProperty("Permission")
     private OBExternalPermissions2Code permission = null;
 
     @JsonProperty("CutOffDateTime")
-    private OffsetDateTime cutOffDateTime = null;
+    private DateTime cutOffDateTime = null;
 
     @JsonProperty("Charges")
     private List<OBCharge2> charges = null;
@@ -93,7 +93,7 @@ public class OBWriteDataDomesticStandingOrderConsentResponse3 {
         this.consentId = consentId;
     }
 
-    public OBWriteDataDomesticStandingOrderConsentResponse3 creationDateTime(OffsetDateTime creationDateTime) {
+    public OBWriteDataDomesticStandingOrderConsentResponse3 creationDateTime(DateTime creationDateTime) {
         this.creationDateTime = creationDateTime;
         return this;
     }
@@ -106,11 +106,11 @@ public class OBWriteDataDomesticStandingOrderConsentResponse3 {
     @NotNull
     @Valid
     @ApiModelProperty(required = true, value = "Date and time at which the resource was created. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getCreationDateTime() {
+    public DateTime getCreationDateTime() {
         return creationDateTime;
     }
 
-    public void setCreationDateTime(OffsetDateTime creationDateTime) {
+    public void setCreationDateTime(DateTime creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
 
@@ -135,7 +135,7 @@ public class OBWriteDataDomesticStandingOrderConsentResponse3 {
         this.status = status;
     }
 
-    public OBWriteDataDomesticStandingOrderConsentResponse3 statusUpdateDateTime(OffsetDateTime statusUpdateDateTime) {
+    public OBWriteDataDomesticStandingOrderConsentResponse3 statusUpdateDateTime(DateTime statusUpdateDateTime) {
         this.statusUpdateDateTime = statusUpdateDateTime;
         return this;
     }
@@ -148,11 +148,11 @@ public class OBWriteDataDomesticStandingOrderConsentResponse3 {
     @NotNull
     @Valid
     @ApiModelProperty(required = true, value = "Date and time at which the resource status was updated. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getStatusUpdateDateTime() {
+    public DateTime getStatusUpdateDateTime() {
         return statusUpdateDateTime;
     }
 
-    public void setStatusUpdateDateTime(OffsetDateTime statusUpdateDateTime) {
+    public void setStatusUpdateDateTime(DateTime statusUpdateDateTime) {
         this.statusUpdateDateTime = statusUpdateDateTime;
     }
 
@@ -177,7 +177,7 @@ public class OBWriteDataDomesticStandingOrderConsentResponse3 {
         this.permission = permission;
     }
 
-    public OBWriteDataDomesticStandingOrderConsentResponse3 cutOffDateTime(OffsetDateTime cutOffDateTime) {
+    public OBWriteDataDomesticStandingOrderConsentResponse3 cutOffDateTime(DateTime cutOffDateTime) {
         this.cutOffDateTime = cutOffDateTime;
         return this;
     }
@@ -189,11 +189,11 @@ public class OBWriteDataDomesticStandingOrderConsentResponse3 {
      **/
     @Valid
     @ApiModelProperty(value = "Specified cut-off date and time for the payment consent. All dates in the JSON payloads are represented in ISO 8601 date-time format.  All date-time fields in responses must include the timezone. An example is below: 2017-04-05T10:43:07+00:00")
-    public OffsetDateTime getCutOffDateTime() {
+    public DateTime getCutOffDateTime() {
         return cutOffDateTime;
     }
 
-    public void setCutOffDateTime(OffsetDateTime cutOffDateTime) {
+    public void setCutOffDateTime(DateTime cutOffDateTime) {
         this.cutOffDateTime = cutOffDateTime;
     }
 
