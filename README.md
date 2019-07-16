@@ -18,6 +18,16 @@
 A Java SDK to help implementing the Open Banking standard : https://www.openbanking.org.uk/read-write-apis/  .
 This project is compiled with JDK 8.
 
+## Usage
+```
+<dependency>
+    <groupId>com.forgerock.openbanking</groupId>
+    <artifactId>openbanking-sdk</artifactId>
+    <version>3.1.2.0</version>
+</dependency>
+
+```
+
 ## Class generation
 Many of the classes are generated from OB Swagger documentation. When a new version of OB API is released, 
 the following steps are performed:
