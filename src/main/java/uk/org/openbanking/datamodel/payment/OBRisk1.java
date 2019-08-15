@@ -22,6 +22,7 @@ import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
@@ -55,9 +56,7 @@ public class OBRisk1   {
    * @return paymentContextCode
   **/
   @ApiModelProperty(value = "")
-
   @Valid
-
   public OBExternalPaymentContext1Code getPaymentContextCode() {
     return paymentContextCode;
   }

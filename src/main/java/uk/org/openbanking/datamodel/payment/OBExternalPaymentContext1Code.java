@@ -19,6 +19,9 @@ package uk.org.openbanking.datamodel.payment;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+
 /**
  * Specifies the payment context
  */
@@ -48,12 +51,15 @@ public enum OBExternalPaymentContext1Code {
 
   @JsonCreator
   public static OBExternalPaymentContext1Code fromValue(String text) {
+    if (text == null) {
+      return null;
+    }
     for (OBExternalPaymentContext1Code b : OBExternalPaymentContext1Code.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return null;
+    throw new IllegalArgumentException("PaymentContextCode is not one of the valid values: " + OBExternalPaymentContext1Code.values());
   }
 }
 
