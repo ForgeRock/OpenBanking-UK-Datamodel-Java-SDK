@@ -59,7 +59,7 @@ public enum OBExternalPaymentContext1Code {
         return b;
       }
     }
-    throw new IllegalArgumentException("PaymentContextCode is not one of the valid values: " + OBExternalPaymentContext1Code.values());
+    throw new IllegalArgumentException("PaymentContextCode is not one of the valid values");
   }
 }
 
