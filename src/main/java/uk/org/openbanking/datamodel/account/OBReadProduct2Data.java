@@ -34,16 +34,16 @@ import java.util.Objects;
 public class OBReadProduct2Data   {
   @JsonProperty("Product")
   @Valid
-  private List<OBProduct2> product = null;
+  private List<OBReadProduct2DataProduct> product = null;
 
-  public OBReadProduct2Data product(List<OBProduct2> product) {
+  public OBReadProduct2Data product(List<OBReadProduct2DataProduct> product) {
     this.product = product;
     return this;
   }
 
-  public OBReadProduct2Data addProductItem(OBProduct2 productItem) {
+  public OBReadProduct2Data addProductItem(OBReadProduct2DataProduct productItem) {
     if (this.product == null) {
-      this.product = new ArrayList<OBProduct2>();
+      this.product = new ArrayList<OBReadProduct2DataProduct>();
     }
     this.product.add(productItem);
     return this;
@@ -52,16 +52,14 @@ public class OBReadProduct2Data   {
   /**
    * Get product
    * @return product
-  **/
-  @ApiModelProperty(value = "")
-
+   **/
   @Valid
-
-  public List<OBProduct2> getProduct() {
+  @ApiModelProperty(value = "")
+  public List<OBReadProduct2DataProduct> getProduct() {
     return product;
   }
 
-  public void setProduct(List<OBProduct2> product) {
+  public void setProduct(List<OBReadProduct2DataProduct> product) {
     this.product = product;
   }
 
@@ -87,7 +85,7 @@ public class OBReadProduct2Data   {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OBReadProduct2Data {\n");
-    
+
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("}");
     return sb.toString();
